@@ -6,177 +6,183 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
+    --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
 
-    --color-primary: hsl(20, 91%, 48%);
-    --color-primary-amber: #f59e0b;
-    --color-primary-orange: #ea580c;
-    --color-primary-red: #dc2626;
-    --color-text-primary: #240f05;
-    --color-text-secondary: #3d2c2a;
+    /* Brand Burnt Orange (Base #e85a24) */
+    --color-primary-50:  oklch(0.96 0.02 41);
+    --color-primary-100: oklch(0.91 0.05 41);
+    --color-primary-200: oklch(0.83 0.10 41);
+    --color-primary-300: oklch(0.75 0.15 41);
+    --color-primary-400: oklch(0.67 0.19 41);
+    --color-primary-500: oklch(0.58 0.21 41);
+    --color-primary-600: oklch(0.51 0.19 41);
+    --color-primary-700: oklch(0.43 0.16 41);
+    --color-primary-800: oklch(0.35 0.13 41);
+    --color-primary-900: oklch(0.28 0.10 41);
+    --color-primary-950: oklch(0.18 0.07 41);
+
+    /* Golden Accent (Base #f39e1e) */
+    --color-secondary-50:  oklch(0.97 0.03 72);
+    --color-secondary-100: oklch(0.92 0.06 72);
+    --color-secondary-200: oklch(0.87 0.10 72);
+    --color-secondary-300: oklch(0.82 0.13 72);
+    --color-secondary-400: oklch(0.78 0.15 72);
+    --color-secondary-500: oklch(0.75 0.16 72); /* Exact #f39e1e */
+    --color-secondary-600: oklch(0.65 0.15 72);
+    --color-secondary-700: oklch(0.55 0.13 72);
+    --color-secondary-800: oklch(0.45 0.11 72);
+    --color-secondary-900: oklch(0.35 0.09 72);
+    --color-secondary-950: oklch(0.22 0.06 72);
+
+    /* Primary Palette (Warm Earth) - Refined with #26140d at the base */
+    --color-brand-dark-50:  oklch(0.97 0.01 35);
+    --color-brand-dark-100: oklch(0.92 0.02 35);
+    --color-brand-dark-200: oklch(0.85 0.03 35);
+    --color-brand-dark-300: oklch(0.75 0.04 35);
+    --color-brand-dark-400: oklch(0.65 0.05 35);
+    --color-brand-dark-500: oklch(0.55 0.05 35);
+    --color-brand-dark-600: oklch(0.45 0.05 35);
+    --color-brand-dark-700: oklch(0.35 0.05 35);
+    --color-brand-dark-800: oklch(0.25 0.05 35);
+    --color-brand-dark-900: oklch(0.18 0.04 35);
+    --color-brand-dark-950: oklch(0.14 0.03 35); /* Exact #26140d */
+
+    /* Brand Accents */
+
+    /* Amber Scale (Hue 77) */
+    --color-amber-50: oklch(0.96 0.03 77);
+    --color-amber-100: oklch(0.92 0.07 77);
+    --color-amber-200: oklch(0.88 0.12 77);
+    --color-amber-300: oklch(0.83 0.15 77);
+    --color-amber-400: oklch(0.79 0.16 77);
+    --color-amber-500: oklch(0.77 0.17 77); /* Base #f59e0b */
+    --color-amber-600: oklch(0.68 0.16 77);
+    --color-amber-700: oklch(0.55 0.14 77);
+    --color-amber-800: oklch(0.42 0.12 77);
+    --color-amber-900: oklch(0.32 0.1 77);
+    --color-amber-950: oklch(0.2 0.08 77);
+
+    /* Orange Scale (Hue 41) */
+    --color-orange-50: oklch(0.95 0.03 41);
+    --color-orange-100: oklch(0.9 0.06 41);
+    --color-orange-200: oklch(0.82 0.1 41);
+    --color-orange-300: oklch(0.74 0.14 41);
+    --color-orange-400: oklch(0.66 0.17 41);
+    --color-orange-500: oklch(0.58 0.19 41); /* Base #ea580c */
+    --color-orange-600: oklch(0.5 0.18 41);
+    --color-orange-700: oklch(0.42 0.16 41);
+    --color-orange-800: oklch(0.35 0.14 41);
+    --color-orange-900: oklch(0.28 0.12 41);
+    --color-orange-950: oklch(0.18 0.1 41);
+
+    /* Semantic Aliases */
+    --color-background: oklch(1 0 0);
+    --color-foreground: var(--color-primary-900);
+    --color-border: oklch(92.9% 0.013 255.508);
+    --color-ring: var(--color-amber-500);
+
+    /* Animations */
+    --animate-fade-in: fadeIn 0.6s ease-out;
+    --animate-slide-up: slideUp 0.6s ease-out;
+    --animate-scale-in: scaleIn 0.4s ease-out;
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
 }
 
-/* Base Styles */
-html {
-    scroll-behavior: smooth;
-}
-body {
-    font-feature-settings: "rlig" 1, "calt" 1;
-    color: var(--color-text-primary);
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scrollbar-gutter: stable; /* Prevents layout jump when scrollbar appears */
+    }
+
+    body {
+        @apply bg-background text-foreground antialiased;
+        font-feature-settings:
+            "rlig" 1,
+            "calt" 1;
+        min-height: 100vh;
+    }
+
+    *,
+    ::before,
+    ::after {
+        @apply border-border outline-ring/50;
+    }
 }
 
-/* Custom Components & Utilities */
+/* =========================
+   Utilities (v4-safe)
+   ========================= */
 
-.gradient-primary {
+@utility gradient-primary {
     background: linear-gradient(
         135deg,
-        var(--color-primary-amber) 0%,
-        var(--color-primary-orange) 100%
+        var(--color-primary-500),
+        var(--color-secondary-500)
     );
 }
 
-.text-gradient {
+@utility text-gradient {
     background: linear-gradient(
         to right,
-        theme(colors.amber.500),
-        theme(colors.orange.600)
+        var(--color-primary-500),
+        var(--color-secondary-500)
     );
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
 
-.hover-lift {
-    transition: all 0.3s ease;
-}
-.hover-lift:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-        0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    transform: translateY(-0.25rem);
-}
-
-.glass-effect {
-    background-color: rgba(255, 255, 255, 0.1);
+@utility glass-effect {
+    background-color: color-mix(
+        in srgb,
+        var(--color-background),
+        transparent 90%
+    );
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid
+        color-mix(in srgb, var(--color-foreground), transparent 90%);
 }
 
-/* Custom scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
 ::-webkit-scrollbar-track {
-    background-color: theme(colors.slate.100);
+    background: var(--color-secondary-50);
 }
 ::-webkit-scrollbar-thumb {
     background: linear-gradient(
         to bottom,
-        theme(colors.amber.400),
-        theme(colors.orange.500)
+        var(--color-amber-500),
+        var(--color-orange-500)
     );
-    border-radius: theme(borderRadius.full);
-}
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(
-        to bottom,
-        theme(colors.amber.500),
-        theme(colors.orange.600)
-    );
-}
-
-/* Smooth animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@utility animate-fade-in {
-    animation: fadeIn 0.6s ease-out;
-}
-@utility animate-slide-up {
-    animation: slideUp 0.6s ease-out;
-}
-@utility animate-scale-in {
-    animation: scaleIn 0.4s ease-out;
-}
-
-/* Focus styles for accessibility */
-@utility focus-ring {
-    &:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px theme(colors.amber.500),
-            0 0 0 4px theme(colors.amber.500);
-    }
-}
-
-/* text-balance */
-.text-balance {
-    text-wrap: balance;
-}
-
-/* Intersection Observer Animation Classes */
-.animate-on-scroll {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease-out;
-}
-.animate-on-scroll.animate {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.animate-on-scroll-left {
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.8s ease-out;
-}
-.animate-on-scroll-left.animate {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.animate-on-scroll-right {
-    opacity: 0;
-    transform: translateX(50px);
-    transition: all 0.8s ease-out;
-}
-.animate-on-scroll-right.animate {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.animate-on-scroll-scale {
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.8s ease-out;
-}
-.animate-on-scroll-scale.animate {
-    opacity: 1;
-    transform: scale(1);
+    border-radius: 100px;
 }

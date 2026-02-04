@@ -10,7 +10,7 @@ class EmailSubscriptionController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'email' => 'required|email|unique:email_subscriptions,email',
+            'email' => ['required', 'string', 'email', 'max:150', 'unique:email_subscriptions,email'],
         ], [
             'email.required' => 'Please enter your email address.',
             'email.email' => 'Please enter a valid email address.',
@@ -23,6 +23,6 @@ class EmailSubscriptionController extends Controller
             'user_agent' => $request->userAgent(),
         ]);
 
-        return redirect()->back()->with('success', 'Thanks for subscribing!');
+        return redirect()->route('contact')->with('success', 'Thanks for subscribing!');
     }
 }

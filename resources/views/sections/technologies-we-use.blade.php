@@ -1,12 +1,14 @@
 <section class="py-24 {{ $class ?? 'bg-slate-50' }}">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <div class="inline-flex items-center gap-2 px-4 py-2 bg-amber-100 rounded-full mb-6"><span
-                    class="text-sm font-medium text-amber-800">Technologies</span></div>
-            <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Built With <span class="text-primary">Modern
-                    Tech</span></h2>
-            <p class="text-xl text-slate-600 max-w-3xl mx-auto">We use the latest technologies to build fast,
-                secure, and scalable solutions
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-secondary-100 rounded-full mb-6">
+                <span class="text-sm font-medium text-secondary-800">Technologies</span>
+            </div>
+            <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+                Built With <span class="text-gradient">Modern Tech</span>
+            </h2>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                We use the latest technologies to build fast, secure, and scalable solutions
             </p>
         </div>
         <div class="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">

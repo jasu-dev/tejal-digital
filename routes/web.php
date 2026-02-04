@@ -4,7 +4,7 @@ use App\Http\Controllers\ContactRequestController;
 use App\Http\Controllers\EmailSubscriptionController;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/', 'home')->name('home');
+Route::view('/', 'home.index')->name('home');
 Route::view('/about', 'about')->name('about');
 Route::view('/services', 'services')->name('services');
 Route::view('/portfolio', 'portfolio')->name('portfolio');
