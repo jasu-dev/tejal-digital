@@ -9,6 +9,6 @@ class EmailSubscription extends Model
     protected $fillable = [
         'email',
         'ip_address',
-        'user_agent'
+        'user_agent',
     ];
 }

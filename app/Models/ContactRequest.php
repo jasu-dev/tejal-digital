@@ -14,6 +14,6 @@ class ContactRequest extends Model
         'service',
         'message',
         'ip_address',
-        'user_agent'
+        'user_agent',
     ];
 }

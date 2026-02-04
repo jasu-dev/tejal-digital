@@ -20,5 +20,5 @@ return [
         'API Development & Integration',
         'Security & Performance Optimization',
         'Website Maintenance',
-    ]
+    ],
 ];

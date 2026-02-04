@@ -12,6 +12,5 @@ Route::view('/contact', 'contact')->name('contact');
 Route::post('/contact', [ContactRequestController::class, 'store'])->name('contact.store');
 Route::post('/subscribe', [EmailSubscriptionController::class, 'store'])->name('subscribe');
 
-
-//redirecations 
+// redirecations
 Route::redirect('/contact-us', '/contact', 301);
