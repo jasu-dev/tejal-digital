@@ -30,7 +30,8 @@
             A high-performance stack curated for speed, security, and scalability.
         </p>
     </div>
-    <div class="mask-edges flex overflow-hidden select-none gap-8">
+    <div class="max-w-7xl mx-auto mask-edges flex overflow-hidden select-none gap-8" data-aos="fade-up"
+        data-aos-delay="150" data-aos-duration="800">
         <div class="flex flex-none items-center justify-around gap-8 animate-infinite-scroll">
             @foreach (array_merge($techs, $techs) as $tech)
                 <div

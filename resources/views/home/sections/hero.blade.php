@@ -55,7 +55,7 @@
                     </a>
                 </div>
             </div>
-            <div class="px-10">
+            <div class="px-6 lg:px-10">
                 <div class="relative">
                     <div class="relative bg-white rounded-3xl shadow-2xl p-8 border border-slate-200">
                         <div class="flex items-center gap-2 mb-6 pb-4 border-b border-slate-200">
@@ -78,7 +78,7 @@
                                 <div class="text-white ml-4">&lt;/h1&gt;</div>
                                 <div class="text-blue-400">&lt;/div&gt;</div>
                             </div>
-                            <div class="grid grid-cols-2 gap-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div
                                     class="bg-gradient-to-br from-secondary-50 to-primary-50 rounded-lg p-4 border border-secondary-200">
                                     <div class="text-2xl font-bold text-secondary-600">
@@ -86,7 +86,7 @@
                                     <div class="text-sm text-secondary-700">Projects</div>
                                 </div>
                                 <div
-                                    class="bg-gradient-to-br from-primary-50 to-red-50 rounded-lg p-4 border border-primary-200">
+                                    class="hidden md:block bg-gradient-to-br from-primary-50 to-red-50 rounded-lg p-4 border border-primary-200">
                                     <div class="text-2xl font-bold text-primary-600">
                                         {{ config('staticdata.satisfaction') }}%</div>
                                     <div class="text-sm text-primary-700">Success Rate</div>

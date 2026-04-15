@@ -106,9 +106,11 @@
                         class="text-white hover:text-amber-600 transition-colors font-medium">
                         Portfolio
                     </a>
-                    <a href="{{ route('contact') }}"
-                        class="bg-primary text-white px-4 py-2 rounded w-fit font-medium transition">
-                        Get Started
+                    <a href="{{ route('contact') }}">
+                        <x-form.primary-button type="button" class="px-6 rounded-2xl">
+                            <span>Start Now</span>
+                            <x-icons.go class="w-4 h-4" />
+                        </x-form.primary-button>
                     </a>
                 </div>
             </div>

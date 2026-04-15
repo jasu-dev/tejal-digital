@@ -21,13 +21,13 @@
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
             
-            <a href="{{ route('contact') }}" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+            <a href="{{ route('contact') }}" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                 <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
                     <span>Get Free Consultation</span>
                     <x-icons.go class="w-4 h-4" />
                 </x-form.primary-button>
             </a>
-            <a href="{{ config('staticdata.whatsapp_url') }}" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+            <a href="{{ config('staticdata.whatsapp_url') }}" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                 <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
                     <x-icons.whatsapp class="w-5 h-5" />
                 <span>Chat on WhatsApp</span>
