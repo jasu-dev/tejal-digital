@@ -1,6 +1,6 @@
 <button {{ 
     $attributes->merge([
-        'class' => 'cursor-pointer inline-flex items-center gap-2 border border-brand-dark-200 text-brand-dark-600 hover:bg-brand-dark-900 hover:border-brand-dark-900 hover:text-white px-4 py-2 font-medium transition-all duration-300'
+        'class' => 'cursor-pointer inline-flex items-center gap-2 border border-white text-white hover:bg-white hover:border-white hover:text-primary-600 px-4 py-2 font-medium transition-all duration-300'
     ]) 
 }}>
     {{ $slot }}

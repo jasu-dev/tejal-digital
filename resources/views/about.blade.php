@@ -21,25 +21,24 @@
 @endsection
 @section('content')
     {{-- Hero Section --}}
-    <section class="relative pt-20 pb-32 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-secondary-50/20"></div>
+    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20">
         <div
-            class="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/30 rounded-full blur-3xl">
+            class="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/30 rounded-full blur-3xl">
         </div>
         <div
-            class="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-primary-400/10 to-secondary-500/20 rounded-full blur-3xl">
+            class="hidden sm:block absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-br from-primary-400/10 to-secondary-500/20 rounded-full blur-3xl">
         </div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-4xl mx-auto">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-secondary-100 rounded-full mb-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
                     <x-icons.users class="w-4 h-4" />
-                    <span class="text-sm font-medium text-secondary-800">About Our Team</span>
+                    <span class="text-sm font-medium">About Our Team</span>
                 </div>
                 <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-                    <span class="text-slate-900">Meet the</span><br>
+                    <span class="text-white">Meet the</span><br>
                     <span class="text-gradient">Creative Minds</span>
                 </h1>
-                <p class="text-xl text-slate-600 leading-relaxed mb-8 max-w-3xl mx-auto">We're a passionate team of
+                <p class="text-xl text-on-surface/60 leading-relaxed mb-8 max-w-3xl mx-auto">We're a passionate team of
                     developers, designers, and digital strategists dedicated to creating exceptional web experiences
                     that drive business growth.
                 </p>
@@ -60,61 +59,62 @@
             </div>
         </div>
     </section>
+
     {{-- Stats Section --}}
     @include('home.sections.stats')
+
     {{-- About Section --}}
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-8">
-                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-secondary-100 rounded-full">
-                        <x-icons.target class="w-4 h-4" />
-                        <span class="text-sm font-medium text-secondary-800">Our Mission</span>
-                    </div>
-                    <h2 class="text-4xl lg:text-5xl font-bold text-slate-900">
-                        Empowering <span class="text-gradient">Digital Success</span></h2>
+    <section class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                {{-- Left Side: Mission Content --}}
+                <div class="space-y-10" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                     <div class="space-y-6">
-                        <p class="text-lg text-slate-600 leading-relaxed">
-                            To empower businesses with cutting-edge web solutions that not only look stunning but also
-                            drive measurable results. We believe in the power of great design and robust development to
-                            transform how businesses connect with their customers.
-                        </p>
-                        <p class="text-lg text-slate-600 leading-relaxed">
-                            Every project we undertake is an opportunity to push boundaries, explore new technologies,
-                            and create digital experiences that make a lasting impact.
-                        </p>
+                        <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
+                            <x-icons.target class="w-4 h-4" />
+                            <span class="text-sm font-medium">Our Mission</span>
+                        </div>
+
+                        <h2 class="text-4xl lg:text-6xl font-black text-white leading-tight tracking-tight">
+                            Empowering Digital Success
+                        </h2>
+
+                        <div class="space-y-6">
+                            <p class="text-lg text-on-surface/70 leading-relaxed">
+                                To empower businesses with cutting-edge web solutions that not only look stunning but also
+                                drive measurable results. We believe in the power of great design and robust development.
+                            </p>
+                            <p class="text-on-surface/50 leading-relaxed italic border-l-2 border-primary/30 pl-6">
+                                "Every project we undertake is an opportunity to push boundaries and create digital
+                                experiences that make a lasting impact."
+                            </p>
+                        </div>
                     </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <x-icons.check class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                            <span class="text-slate-700">{{ config('staticdata.experience_years') }}+ years of industry
-                                experience</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <x-icons.check class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                            <span class="text-slate-700">{{ config('staticdata.projects') }}+ successful projects
-                                completed</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <x-icons.check class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                            <span class="text-slate-700">{{ config('staticdata.satisfaction') }}% client satisfaction
-                                rate</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <x-icons.check class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                            <span class="text-slate-700">24/7 support and maintenance</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <x-icons.check class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                            <span class="text-slate-700">Cutting-edge technology stack</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <x-icons.check class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                            <span class="text-slate-700">Transparent pricing and communication</span>
-                        </div>
+
+                    {{-- Feature List: Clean & Minimal --}}
+                    <div class="grid sm:grid-cols-2 gap-y-4 gap-x-8">
+                        @php
+                            $features = [
+                                config('staticdata.experience_years') . '+ Years Experience',
+                                config('staticdata.projects') . '+ Projects Done',
+                                config('staticdata.satisfaction') . '% Satisfaction Rate',
+                                '24/7 Expert Support',
+                                'Modern Tech Stack',
+                                'Transparent Pricing',
+                            ];
+                        @endphp
+                        @foreach ($features as $feature)
+                            <div class="flex items-center gap-3 group">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <x-icons.check class="w-4 h-4 text-primary" />
+                                </div>
+                                <span class="text-sm font-medium text-on-surface/60">{{ $feature }}</span>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
-                <div class="relative">
+                {{-- Right Side: Floating Vision Card --}}
+                <div class="relative" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
                     <div class="relative bg-white rounded-3xl shadow-2xl p-8 border">
                         <div class="text-center space-y-6">
                             <div class="w-20 h-20 bg-primary-500 rounded-2xl mx-auto flex items-center justify-center">
@@ -127,12 +127,14 @@
                             <div class="grid grid-cols-2 gap-4 pt-4">
                                 <div
                                     class="bg-gradient-to-br from-secondary-50 to-primary-50 rounded-lg p-4 border border-secondary-200">
-                                    <div class="text-2xl font-bold text-secondary-600">{{ config('staticdata.experience_years') }}+</div>
+                                    <div class="text-2xl font-bold text-secondary-600">
+                                        {{ config('staticdata.experience_years') }}+</div>
                                     <div class="text-sm text-secondary-700">Years Experience</div>
                                 </div>
                                 <div
                                     class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg p-4 border border-primary-200">
-                                    <div class="text-2xl font-bold text-primary-600">{{ config('staticdata.clients') }}+</div>
+                                    <div class="text-2xl font-bold text-primary-600">{{ config('staticdata.clients') }}+
+                                    </div>
                                     <div class="text-sm text-primary-700">Happy Clients</div>
                                 </div>
                             </div>
@@ -148,97 +150,118 @@
             </div>
         </div>
     </section>
+
     {{-- Our Values Section --}}
-    <section class="py-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-secondary-100 rounded-full mb-6">
-                    <span class="text-sm font-medium text-secondary-800">Our Values</span>
+    <section class="py-24 bg-surface-container relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            {{-- Header: Minimal & Tight --}}
+            <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
+                    <span class="text-sm font-medium">Our Values</span>
                 </div>
-                <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-                    What Drives <span class="text-gradient">Our Work</span>
+                <h2 class="text-4xl lg:text-6xl font-black text-white mb-6 tracking-tight">
+                    What Drives Our Work
                 </h2>
-                <p class="text-xl text-slate-600">The principles that guide everything we do</p>
+                <p class="text-lg text-on-surface/60 max-w-2xl mx-auto leading-relaxed">
+                    The core principles that guide every line of code we write.
+                </p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div
-                    class="rounded-lg bg-white text-gray-800 group hover:shadow-xl transition-all duration-300 border text-center">
-                    <div class="p-8">
-                        <div
-                            class="w-16 h-16 bg-primary-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <x-icons.target class="w-6 h-6 text-white" />
+            {{-- 4-Column High-Contrast Grid --}}
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                @php
+                    $values = [
+                        [
+                            'icon' => 'target',
+                            'title' => 'Excellence',
+                            'desc' =>
+                                'We strive for perfection in every project, ensuring the highest quality standards.',
+                        ],
+                        [
+                            'icon' => 'users',
+                            'title' => 'Collaboration',
+                            'desc' => 'We work closely with our clients as partners, not just service providers.',
+                        ],
+                        [
+                            'icon' => 'love',
+                            'title' => 'Passion',
+                            'desc' => 'We love what we do and it shows in the deep attention to detail in our work.',
+                        ],
+                        [
+                            'icon' => 'hot',
+                            'title' => 'Innovation',
+                            'desc' => 'We stay ahead of trends and use cutting-edge Laravel & Tailwind stacks.',
+                        ],
+                    ];
+                @endphp
+
+                @foreach ($values as $value)
+                    <div data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}" data-aos-duration="800"
+                        class="group relative p-8 rounded-2xl bg-surface-container-high border border-outline-variant/20 hover:border-primary/40 transition-all duration-500 overflow-hidden">
+
+                        <div class="relative z-10">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-surface-container border border-outline-variant/50 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-inner">
+                                @php $iconName = 'icons.' . $value['icon']; @endphp
+                                <x-dynamic-component :component="$iconName"
+                                    class="w-6 h-6 text-primary group-hover:text-surface transition-colors" />
+                            </div>
+
+                            <h3 class="text-xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">
+                                {{ $value['title'] }}
+                            </h3>
+
+                            <p
+                                class="text-sm text-on-surface/50 leading-relaxed group-hover:text-on-surface/70 transition-colors">
+                                {{ $value['desc'] }}
+                            </p>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-4">Excellence</h3>
-                        <p class="text-slate-600">We strive for perfection in every project, ensuring the highest
-                            quality standards.
-                        </p>
-                    </div>
-                </div>
-                <div
-                    class="rounded-lg bg-white text-gray-800 group hover:shadow-xl transition-all duration-300 border text-center">
-                    <div class="p-8">
+
                         <div
-                            class="w-16 h-16 bg-primary-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <x-icons.users class="w-6 h-6 text-white" />
+                            class="absolute bottom-0 right-0 w-24 h-24 bg-primary/10 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity">
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-4">Collaboration</h3>
-                        <p class="text-slate-600">We work closely with our clients as partners, not just service
-                            providers.
-                        </p>
                     </div>
-                </div>
-                <div
-                    class="rounded-lg bg-white text-gray-800 group hover:shadow-xl transition-all duration-300 border text-center">
-                    <div class="p-8">
-                        <div
-                            class="w-16 h-16 bg-primary-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <x-icons.love class="w-6 h-6 text-white" />
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-4">Passion</h3>
-                        <p class="text-slate-600">We love what we do and it shows in the quality of our work.</p>
-                    </div>
-                </div>
-                <div
-                    class="rounded-lg bg-white text-gray-800 group hover:shadow-xl transition-all duration-300 border text-center">
-                    <div class="p-8">
-                        <div
-                            class="w-16 h-16 bg-primary-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <x-icons.hot class="w-6 h-6 text-white" />
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-4">Innovation</h3>
-                        <p class="text-slate-600">We stay ahead of trends and use cutting-edge technologies.</p>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>
-    {{-- Contact Section --}}
-    <section class="py-24 bg-primary-600 relative overflow-hidden border-b border-brand-dark-200/50">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0"
-                style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;); background-size: 60px 60px;">
-            </div>
-        </div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Ready to Work Together?
-            </h2>
-            <p class="text-xl text-white mb-8 max-w-2xl mx-auto">
-                Let's discuss how we can help bring your digital vision to life
-            </p>
-            <div class="flex flex-col sm:flex-row gap-6 justify-center">
 
-                <a href="{{ route('contact') }}">
-                    <x-form.secondary-button type="button" class="px-7 py-2 bg-white border-white rounded-lg">
+    {{-- CTA Section --}}
+    <section class="py-26 relative overflow-hidden">
+        <div
+            class="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/30 rounded-full blur-3xl">
+        </div>
+        <div
+            class="absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-br from-primary-400/10 to-secondary-500/20 rounded-full blur-3xl">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
+                    <span class="text-sm font-medium">Get in Touch</span>
+                </div>
+                <h2 class="text-4xl lg:text-6xl font-black text-white mb-8">
+                    Ready to Work Together?
+                </h2>
+
+                <p class="text-xl text-on-surface/60 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    Let's discuss how we can help bring your digital vision to life.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+
+                <a href="{{ route('contact') }}" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
                         <span>Get Free Consultation</span>
                         <x-icons.go class="w-4 h-4" />
-                    </x-form.secondary-button>
+                    </x-form.primary-button>
                 </a>
 
-                <a href="{{ config('staticdata.whatsapp_url') }}">
-                    <x-form.secondary-button type="button" class="px-7 py-2 text-white border-white rounded-lg">
+                <a href="{{ config('staticdata.whatsapp_url') }}"  data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+                    <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
                         <x-icons.whatsapp class="w-5 h-5" />
-                        <span>Chat Now</span>
+                        <span>Chat on WhatsApp</span>
                     </x-form.secondary-button>
                 </a>
             </div>

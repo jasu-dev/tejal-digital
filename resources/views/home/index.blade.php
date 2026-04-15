@@ -134,6 +134,9 @@
     {{-- Technologies We Use Section --}}
     @include('sections.technologies-we-use')
 
+    {{-- Working Process Section --}}
+    @include('sections.working-process')
+
     {{-- Projects Section --}}
     @include('home.sections.projects')
 
@@ -141,5 +144,5 @@
     @include('home.sections.testimonials')
 
     {{-- Contact Section --}}
-    @include('home.sections.contact')
+    @include('sections.contact')
 @endsection

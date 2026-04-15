@@ -48,29 +48,29 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+<body class="bg-surface text-on-surface">
+    <nav class="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <a href="/" class="flex items-center">
-                    <img src="{{ asset('assets/images/logo.svg') }}" alt="Tejal Digital" class="h-7 w-auto" />
+                    <img src="{{ asset('assets/images/logo-white.svg') }}" alt="Tejal Digital" class="h-7 w-auto" />
                 </a>
                 {{-- Desktop Navigation --}}
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="{{ route('home') }}" class="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+                    <a href="{{ route('home') }}" class="text-white hover:text-amber-600 transition-colors font-medium">
                         Home
                     </a>
-                    <a href="{{ route('about') }}" class="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+                    <a href="{{ route('about') }}" class="text-white hover:text-amber-600 transition-colors font-medium">
                         About
                     </a>
-                    <a href="{{ route('services') }}" class="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+                    <a href="{{ route('services') }}" class="text-white hover:text-amber-600 transition-colors font-medium">
                         Services
                     </a>
-                    <a href="{{ route('portfolio') }}" class="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+                    <a href="{{ route('portfolio') }}" class="text-white hover:text-amber-600 transition-colors font-medium">
                         Portfolio
                     </a>
                     <a href="{{ route('contact') }}">
-                        <x-form.primary-button type="button" class="rounded-2xl">
+                        <x-form.primary-button type="button" class="px-6 rounded-2xl">
                             <span>Start Now</span>
                             <x-icons.go class="w-4 h-4" />
                         </x-form.primary-button>
@@ -78,19 +78,11 @@
                 </div>
                 {{-- Mobile menu toggle button --}}
                 <div class="md:hidden">
-                    <button id="mobile-menu-toggle" class="text-gray-700 hover:text-amber-600">
+                    <button id="mobile-menu-toggle" class="text-white hover:text-amber-600">
                         <!-- Hamburger Icon -->
-                        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
+                        <x-icons.menu class="h-6 w-6 block" />
                         <!-- Close Icon -->
-                        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
-                        </svg>
+                        <x-icons.close class="h-6 w-6 hidden" />
                     </button>
                 </div>
             </div>
@@ -99,19 +91,19 @@
             <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-gray-100">
                 <div class="flex flex-col space-y-4">
                     <a href="{{ route('home') }}"
-                        class="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+                        class="text-white hover:text-amber-600 transition-colors font-medium">
                         Home
                     </a>
                     <a href="{{ route('about') }}"
-                        class="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+                        class="text-white hover:text-amber-600 transition-colors font-medium">
                         About
                     </a>
                     <a href="{{ route('services') }}"
-                        class="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+                        class="text-white hover:text-amber-600 transition-colors font-medium">
                         Services
                     </a>
                     <a href="{{ route('portfolio') }}"
-                        class="text-gray-700 hover:text-amber-600 transition-colors font-medium">
+                        class="text-white hover:text-amber-600 transition-colors font-medium">
                         Portfolio
                     </a>
                     <a href="{{ route('contact') }}"
@@ -125,8 +117,8 @@
     <main>
         @yield('content')
     </main>
-    <footer class="bg-brand-dark-950 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer class="bg-neutral-950 w-full py-4 border-t border-neutral-900 text-neutral-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {{-- Company Info --}}
                 <div class="space-y-4">
@@ -139,29 +131,17 @@
                         <a href="https://www.facebook.com/tejaldigitalworks/"
                             class="text-gray-400 hover:text-amber-500 transition-colors">
                             {{-- Facebook Icon --}}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path d="M18 2h-3a6 6 0 00-6 6v3H6v4h3v8h4v-8h3l1-4h-4V8a2 2 0 012-2h3z" />
-                            </svg>
+                            <x-icons.facebook class="h-5 w-5" />
                         </a>
                         <a href="http://linkedin.com/jaswant-lohmror"
                             class="text-gray-400 hover:text-amber-500 transition-colors">
                             {{-- LinkedIn Icon --}}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path d="M16 8a6 6 0 016 6v6h-4v-6a2 2 0 00-4 0v6h-4v-6a6 6 0 016-6zM2 9h4v12H2z" />
-                                <circle cx="4" cy="4" r="2" />
-                            </svg>
+                            <x-icons.linkedin class="h-5 w-5" />
                         </a>
                         <a href="https://www.instagram.com/tejal.digital/"
                             class="text-gray-400 hover:text-amber-500 transition-colors">
                             {{-- Instagram Icon --}}
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                viewBox="0 0 24 24" stroke="currentColor">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-                                <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
-                            </svg>
+                            <x-icons.instagram class="h-5 w-5" />
                         </a>
                     </div>
                 </div>
@@ -239,7 +219,7 @@
                 </div>
             </div>
             {{-- Footer Bottom --}}
-            <div class="border-t border-brand-dark-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="border-t border-outline-variant/20 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-brand-dark-100 text-sm">© {{ date('Y') }} Tejal Digital. All rights reserved.</p>
                 <div class="flex space-x-6 mt-4 md:mt-0">
                     <a href="#" class="text-brand-dark-100 hover:text-secondary-500 text-sm">Privacy Policy</a>

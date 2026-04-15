@@ -44,25 +44,24 @@
 @endsection
 @section('content')
     {{-- Hero Section --}}
-    <section class="relative pt-20 pb-32 overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-secondary-50/20"></div>
+    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20">
         <div
-            class="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/30 rounded-full blur-3xl">
+            class="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/30 rounded-full blur-3xl">
         </div>
         <div
-            class="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-primary-400/10 to-secondary-500/20 rounded-full blur-3xl">
+            class="hidden sm:block absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-br from-primary-400/10 to-secondary-500/20 rounded-full blur-3xl">
         </div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-4xl mx-auto">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-secondary-100 rounded-full mb-6">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
                     <x-icons.whatsapp class="w-4 h-4" />
-                    <span class="text-sm font-medium text-secondary-800">Get in Touch</span>
+                    <span class="text-sm font-medium">Get in Touch</span>
                 </div>
                 <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-                    <span class="text-slate-900">Let's Build Something</span><br>
+                    <span class="text-white">Let's Build Something</span><br>
                     <span class="text-gradient">Amazing Together</span>
                 </h1>
-                <p class="text-xl text-slate-600 leading-relaxed mb-8 max-w-3xl mx-auto">
+                <p class="text-xl text-on-surface/60 leading-relaxed mb-8 max-w-3xl mx-auto">
                     Ready to transform your digital presence? Get in touch with our team of experts and let's discuss your
                     project.
                 </p>
@@ -83,80 +82,109 @@
             </div>
         </div>
     </section>
+
     {{-- Contact Options --}}
-    <section class="pb-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center gap-2 px-4 py-2 bg-secondary-100 rounded-full mb-6">
-                    <span class="text-sm font-medium text-secondary-800">Contact Information</span>
+    <section class="py-24 bg-surface-container">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+            {{-- Header --}}
+            <div class="text-center mb-20">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
+                    <span class="text-sm font-medium">Contact Information</span>
                 </div>
-                <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-                    Get In <span class="text-gradient">Touch</span>
+                <h2 class="text-4xl lg:text-6xl font-black text-white mb-6 tracking-tight">
+                    Get In Touch
                 </h2>
-                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-                    Multiple ways to reach us - choose what works best for you
+                <p class="text-lg text-on-surface/60 max-w-2xl mx-auto leading-relaxed">
+                    Choose the channel that works best for you. We're ready to help.
                 </p>
             </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div
-                    class="rounded-lg bg-white text-gray-800 group hover:shadow-xl transition-all duration-300 border text-center">
-                    <div class="p-8">
-                        <div
-                            class="w-16 h-16 bg-primary-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <x-icons.email class="w-8 h-8 text-white" />
+
+            {{-- Contact Cards Grid --}}
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                @php
+                    $contactItems = [
+                        [
+                            'icon' => 'email',
+                            'label' => 'Email Us',
+                            'val' => config('staticdata.email'),
+                            'sub' => 'Send us an email anytime',
+                        ],
+                        [
+                            'icon' => 'call',
+                            'label' => 'Call Us',
+                            'val' => config('staticdata.phone'),
+                            'sub' => 'Mon-Fri from 8am to 6pm',
+                        ],
+                        [
+                            'icon' => 'target',
+                            'label' => 'Visit Us',
+                            'val' => 'Plot No. 3, Shiv Colony',
+                            'sub' => 'Nagaur, Rajasthan',
+                        ],
+                        [
+                            'icon' => 'time',
+                            'label' => 'Working Hours',
+                            'val' => '8AM - 6PM',
+                            'sub' => 'Weekend: By appointment',
+                        ],
+                    ];
+                @endphp
+
+                @foreach ($contactItems as $item)
+                    <div
+                        class="group relative bg-surface-container-high rounded-2xl border border-outline-variant/20 p-8 text-center transition-all duration-500 hover:border-primary/40 hover:-translate-y-2"
+                        data-aos="fade-up" data-aos-delay="{{ 100 * $loop->iteration }}" data-aos-duration="800">
+
+                        {{-- Icon: The "Glow" Container --}}
+                        <div class="relative w-16 h-16 mx-auto mb-8">
+                            {{-- Animated background glow --}}
+                            <div
+                                class="absolute inset-0 bg-primary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all opacity-0 group-hover:opacity-100">
+                            </div>
+
+                            <div
+                                class="relative w-full h-full bg-surface-container rounded-2xl border border-outline-variant/50 flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all duration-500">
+                                @php $iconName = 'icons.' . $item['icon']; @endphp
+                                <x-dynamic-component :component="$iconName"
+                                    class="w-7 h-7 text-primary group-hover:text-surface transition-colors duration-500" />
+                            </div>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Email Us</h3>
-                        <p class="text-lg font-medium text-slate-800 mb-2">{{ config('staticdata.email') }}</p>
-                        <p class="text-slate-600 text-sm">Send us an email anytime</p>
-                    </div>
-                </div>
-                <div
-                    class="rounded-lg bg-white text-gray-800 group hover:shadow-xl transition-all duration-300 border text-center">
-                    <div class="p-8">
+
+                        {{-- Text Content --}}
+                        <h3 class="text-sm font-bold text-on-surface/40 uppercase tracking-widest mb-3">
+                            {{ $item['label'] }}
+                        </h3>
+
+                        <p
+                            class="text-lg font-bold text-on-surface mb-2 tracking-tight group-hover:text-primary transition-colors">
+                            {{ $item['val'] }}
+                        </p>
+
+                        <p class="text-xs text-on-surface/50 font-medium">
+                            {{ $item['sub'] }}
+                        </p>
+
+                        {{-- Subtle hover accent bar --}}
                         <div
-                            class="w-16 h-16 bg-primary-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <x-icons.call class="w-8 h-8 text-white" />
+                            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-primary rounded-t-full group-hover:w-12 transition-all duration-500">
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Call Us</h3>
-                        <p class="text-lg font-medium text-slate-800 mb-2">{{ config('staticdata.phone') }}</p>
-                        <p class="text-slate-600 text-sm">Mon-Fri from 8am to 6pm</p>
                     </div>
-                </div>
-                <div
-                    class="rounded-lg bg-white text-gray-800 group hover:shadow-xl transition-all duration-300 border text-center">
-                    <div class="p-8">
-                        <div
-                            class="w-16 h-16 bg-primary-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <x-icons.target class="w-8 h-8 text-white" />
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Visit Us</h3>
-                        <p class="text-lg font-medium text-slate-800 mb-2">Plot No. 3, Shiv Colony</p>
-                        <p class="text-slate-600 text-sm">Nagaur, Rajasthan</p>
-                    </div>
-                </div>
-                <div
-                    class="rounded-lg bg-white text-gray-800 group hover:shadow-xl transition-all duration-300 border text-center">
-                    <div class="p-8">
-                        <div
-                            class="w-16 h-16 bg-primary-500 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <x-icons.time class="w-8 h-8 text-white" />
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Working Hours</h3>
-                        <p class="text-lg font-medium text-slate-800 mb-2">Mon - Fri: 8AM - 6PM</p>
-                        <p class="text-slate-600 text-sm">Weekend: By appointment</p>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>
+
     {{-- Contact Form --}}
-    <section class="py-24 bg-slate-50" id="contactForm">
+    <section class="py-24" id="contactForm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16">
-                <div class="relative">
-                    <div class="lg:sticky top-15 rounded-lg bg-white text-gray-800 border shadow-xl">
+                <div class="relative" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
+                    <div class="lg:sticky top-15 rounded-lg bg-surface-container-low border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative">
                         <div class="p-8">
-                            <h3 class="text-2xl font-bold text-slate-900 mb-6">Get In Touch</h3>
+                            <h3 class="text-2xl font-bold text-on-surface mb-6">Get In Touch</h3>
                             @if (session('success'))
                                 <div class="text-green-600 font-medium mb-4">
                                     {{ session('success') }}
@@ -185,8 +213,8 @@
                                 </div>
                                 <div>
                                     <x-form.label for="email" required>Email</x-form.label>
-                                    <x-form.input id="email" name="email" placeholder="team@tejaldigital.com" type="email"
-                                        value="{{ old('email') }}" required />
+                                    <x-form.input id="email" name="email" placeholder="team@tejaldigital.com"
+                                        type="email" value="{{ old('email') }}" required />
 
                                     @error('email')
                                         <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
@@ -215,7 +243,9 @@
                                 </div>
                                 <div>
                                     <x-form.label for="message" required>Message</x-form.label>
-                                    <x-form.textarea id="message" name="message" placeholder="Tell us about your project..." rows="5" required>{{ old('message') }}</x-form.textarea>
+                                    <x-form.textarea id="message" name="message"
+                                        placeholder="Tell us about your project..." rows="5"
+                                        required>{{ old('message') }}</x-form.textarea>
 
                                     @error('message')
                                         <p class="text-sm text-red-600 mt-1">{{ $message }}</p>
@@ -229,73 +259,70 @@
                         </div>
                     </div>
                 </div>
-                <div class="space-y-8">
+                <div class="space-y-6" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
                     <div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-6">Why Choose Tejal Digital?</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-3">
-                                <x-icons.check class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                                <span class="text-slate-700">{{ config('staticdata.experience_years') }}+ years of industry experience</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <x-icons.check class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                                <span class="text-slate-700">{{ config('staticdata.projects') }}+ successful projects completed</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <x-icons.check class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                                <span class="text-slate-700">{{ config('staticdata.satisfaction') }}% client satisfaction rate</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <x-icons.check class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                                <span class="text-slate-700">24/7 support and maintenance</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <x-icons.check class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                                <span class="text-slate-700">Cutting-edge technology stack</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <x-icons.check class="w-5 h-5 text-primary-500 flex-shrink-0" />
-                                <span class="text-slate-700">Transparent pricing and communication</span>
-                            </div>
+                        <h3 class="text-2xl font-bold text-white mb-6">Why Choose Tejal Digital?</h3>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            @php
+                                $stats = [
+                                    [
+                                        'label' => 'Experience',
+                                        'val' => config('staticdata.experience_years') . '+ Years',
+                                    ],
+                                    ['label' => 'Projects', 'val' => config('staticdata.projects') . '+ Done'],
+                                    [
+                                        'label' => 'Client Satisfaction',
+                                        'val' => config('staticdata.satisfaction') . '%',
+                                    ],
+                                    ['label' => 'Support', 'val' => '24/7 Expert'],
+                                ];
+                            @endphp
+                            @foreach ($stats as $stat)
+                                <div class="p-4 rounded-2xl border border-outline-variant/10 bg-surface-container-high">
+                                    <div class="text-primary font-black text-xl">{{ $stat['val'] }}</div>
+                                    <div class="text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">
+                                        {{ $stat['label'] }}</div>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h3>
+                        <h3 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h3>
                         <div class="space-y-4">
                             <div
-                                class="rounded-lg bg-white text-gray-800 shadow-2xs border border-slate-200 hover:shadow-md transition-shadow">
+                                class="rounded-lg bg-surface-container border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative">
                                 <div class="p-6">
-                                    <h4 class="font-bold text-slate-800 mb-2">How long does a typical project take?
+                                    <h4 class="font-bold text-on-surface mb-2">How long does a typical project take?
                                     </h4>
-                                    <p class="text-slate-600 text-sm">Project timelines vary based on complexity, but
+                                    <p class="text-on-surface/60 text-sm">Project timelines vary based on complexity, but
                                         most websites take 4-8 weeks from start to finish.
                                     </p>
                                 </div>
                             </div>
                             <div
-                                class="rounded-lg bg-white text-gray-800 shadow-2xs border border-slate-200 hover:shadow-md transition-shadow">
+                                class="rounded-lg bg-surface-container border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative">
                                 <div class="p-6">
-                                    <h4 class="font-bold text-slate-800 mb-2">Do you provide ongoing support?</h4>
-                                    <p class="text-slate-600 text-sm">Yes, we offer comprehensive maintenance and
+                                    <h4 class="font-bold text-on-surface mb-2">Do you provide ongoing support?</h4>
+                                    <p class="text-on-surface/60 text-sm">Yes, we offer comprehensive maintenance and
                                         support packages to keep your website running smoothly.
                                     </p>
                                 </div>
                             </div>
                             <div
-                                class="rounded-lg bg-white text-gray-800 shadow-2xs border border-slate-200 hover:shadow-md transition-shadow">
+                                class="rounded-lg bg-surface-container border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative">
                                 <div class="p-6">
-                                    <h4 class="font-bold text-slate-800 mb-2">What's your development process?</h4>
-                                    <p class="text-slate-600 text-sm">We follow a structured 6-step process: Discovery,
+                                    <h4 class="font-bold text-on-surface mb-2">What's your development process?</h4>
+                                    <p class="text-on-surface/60 text-sm">We follow a structured 6-step process: Discovery,
                                         Planning, Design, Development, Testing, and Launch.
                                     </p>
                                 </div>
                             </div>
                             <div
-                                class="rounded-lg bg-white text-gray-800 shadow-2xs border border-slate-200 hover:shadow-md transition-shadow">
+                                class="rounded-lg bg-surface-container border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative">
                                 <div class="p-6">
-                                    <h4 class="font-bold text-slate-800 mb-2">Can you work with our existing brand?
+                                    <h4 class="font-bold text-on-surface mb-2">Can you work with our existing brand?
                                     </h4>
-                                    <p class="text-slate-600 text-sm">We can work with your existing brand guidelines
+                                    <p class="text-on-surface/60 text-sm">We can work with your existing brand guidelines
                                         or help develop new branding.
                                     </p>
                                 </div>
@@ -306,21 +333,31 @@
             </div>
         </div>
     </section>
+
     {{-- CTA Section --}}
-    <section class="py-24 bg-primary-600 relative overflow-hidden border-b border-brand-dark-200/50">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute inset-0"
-                style="background-image: url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E&quot;); background-size: 60px 60px;">
-            </div>
+    <section class="py-26 relative overflow-hidden">
+        <div
+            class="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/30 rounded-full blur-3xl">
         </div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Ready to Get Started?
-            </h2>
-            <p class="text-xl text-white mb-8 max-w-2xl mx-auto">
-                Join 100+ satisfied clients who have transformed their businesses with our solutions
-            </p>
-            <div class="flex items-center justify-center gap-8 text-white/80 mb-10">
+        <div
+            class="absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-br from-primary-400/10 to-secondary-500/20 rounded-full blur-3xl">
+        </div>
+
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
+                    <span class="text-sm font-medium">Get in Touch</span>
+                </div>
+                <h2 class="text-4xl lg:text-6xl font-black text-white mb-8">
+                    Ready to Get Started?
+                </h2>
+
+                <p class="text-xl text-on-surface/60 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    Join 100+ satisfied clients who have transformed their businesses with our solutions
+                </p>
+            </div>
+
+            <div class="flex items-center justify-center gap-8 text-on-surface/80 mb-10" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
                 <div class="flex items-center gap-2">
                     <x-icons.launch class="w-5 h-5" />
                     <span>Award Winning</span>
@@ -334,18 +371,20 @@
                     <span>Proven Results</span>
                 </div>
             </div>
-            <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="{{ route('contact') }}">
-                    <x-form.secondary-button type="button" class="px-7 py-2 bg-white border-white rounded-lg">
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+
+                <a href="{{ route('contact') }}" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+                    <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
                         <span>Get Free Consultation</span>
                         <x-icons.go class="w-4 h-4" />
-                    </x-form.secondary-button>
+                    </x-form.primary-button>
                 </a>
 
-                <a href="{{ config('staticdata.whatsapp_url') }}">
-                    <x-form.secondary-button type="button" class="px-7 py-2 text-white border-white rounded-lg">
+                <a href="{{ config('staticdata.whatsapp_url') }}" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+                    <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
                         <x-icons.whatsapp class="w-5 h-5" />
-                        <span>Start Chatting</span>
+                        <span>Chat on WhatsApp</span>
                     </x-form.secondary-button>
                 </a>
             </div>

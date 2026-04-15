@@ -1,108 +1,99 @@
+@php
+    $projects = [
+        [
+            'title' => 'Attendance Manager System',
+            'category' => 'Attendance System',
+            'image' => '/assets/images/attendance.png',
+            'desc' =>
+                'Laravel-powered system featuring geo-restriction, selfie verification, and real-time leave management.',
+            'tags' => ['Laravel', 'Geo Location', 'Tailwind'],
+        ],
+        [
+            'title' => 'KrishnaAcademy LMS',
+            'category' => 'Learning Platform',
+            'image' => 'assets/images/krishna-academy.png',
+            'desc' => 'Comprehensive LMS for video courses and automated quizzes with Razorpay integration.',
+            'tags' => ['LMS', 'Razorpay', 'PHP'],
+        ],
+        [
+            'title' => 'Kifayat Card System',
+            'category' => 'Loyalty Program',
+            'image' => 'assets/images/kifayatcard.png',
+            'desc' => 'B2B loyalty point system with real-time tracking, shop owner panels, and redemption logic.',
+            'tags' => ['Reward System', 'MySQL', 'Laravel'],
+        ],
+        [
+            'title' => 'Jixicloud - Custom Laravel Website',
+            'category' => 'Custom Website',
+            'desc' =>
+                'Laravel-powered Website with admin tools for managing pricing and dynamic data. Integrated 3rd-party APIs for live domain rates and more. Fully responsive design with ongoing maintenance since launch.',
+            'image' => 'assets/images/jixicloud.png',
+            'tags' => ['Laravel', 'PHP', 'Bootstrap', 'MySQL', '3rd Party APIs'],
+        ],
+    ];
+@endphp
 <section class="py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-6">
+
+        {{-- Section title --}}
         <div class="text-center mb-16">
-            <div class="inline-flex items-center gap-2 px-4 py-2 bg-secondary-100 rounded-full mb-6">
-                <span class="text-sm font-medium text-secondary-800">Portfolio</span>
+            <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
+                <span class="text-sm font-medium">Portfolio</span>
             </div>
-            <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
-                Our <span class="text-gradient">Projects</span>
+            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Our Projects
             </h2>
-            <p class="text-xl text-slate-600 max-w-3xl mx-auto">
-                See how we've helped businesses transform their digital presence
+            <p class="text-xl text-on-surface/50 max-w-3xl mx-auto">
+                See how we've helped businesses transform their digital presence.
             </p>
         </div>
-        <div class="grid lg:grid-cols-3 gap-8">
-            <div
-                class="rounded-lg bg-white group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden">
-                <div class="aspect-video bg-gradient-to-br from-secondary-100 to-primary-100 relative overflow-hidden">
-                    <img alt="PromoFusion360 Earning Platform" loading="lazy" width="400" height="300"
-                        decoding="async"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        src="{{ asset('/assets/images/attendance.png') }}">
-                    <div class="absolute top-4 left-4">
-                        <div
-                            class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-white/90 text-slate-700 border-0">
-                            Attendance System
+
+        {{-- Grid view cards --}}
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            @foreach ($projects as $project)
+                <div
+                    data-aos="{{ $loop->index % 2 == 0 ? 'fade-right' : 'fade-left' }}"
+                    data-aos-duration="1000"
+                    class="group bg-surface-container rounded-2xl border border-outline-variant/20 overflow-hidden transition-all duration-500 hover:border-primary/40 hover:bg-surface-container-high">
+
+                    <div class="aspect-[16/10] overflow-hidden">
+                        <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+                    </div>
+
+                    {{-- Content Area --}}
+                    <div class="p-4">
+                        <div class="flex items-center gap-2 mb-3">
+                            <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
+                            <span
+                                class="text-[10px] font-bold text-on-surface/40 uppercase tracking-widest">{{ $project['category'] }}</span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">
+                            {{ $project['title'] }}
+                        </h3>
+
+                        <p class="text-on-surface/60 text-sm leading-relaxed mb-4">
+                            {{ $project['desc'] }}
+                        </p>
+
+                        {{-- Bottom Action: Simple and Bold --}}
+                        <div class="flex items-center justify-between pt-4 border-t border-outline-variant/10">
+                            <div class="flex gap-4">
+                                @foreach ($project['tags'] as $tag)
+                                    <span class="text-[10px] font-medium text-on-surface/30">{{ $tag }}</span>
+                                @endforeach
+                            </div>
+
+                            {{-- <a href="#"
+                                class="inline-flex items-center gap-2 text-xs font-bold text-primary group-hover:translate-x-1 transition-transform">
+                                VIEW CASE
+                                <x-icons.arrow-right class="w-4 h-4" />
+                            </a> --}}
                         </div>
                     </div>
                 </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Attendance Manager System</h3>
-                    <p class="text-slate-600 mb-4">
-                        A Laravel-powered attendance system for agencies, featuring geo-restriction, selfie
-                        verification, and leave applications. Built with a clean interface for both admin and
-                        employees.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <x-ui.tag>Laravel</x-ui.tag>
-                        <x-ui.tag>MySQL</x-ui.tag>
-                        <x-ui.tag>Bootstrap</x-ui.tag>
-                        <x-ui.tag>Tailwind CSS</x-ui.tag>
-                        <x-ui.tag>Geo Location</x-ui.tag>
-                        <x-ui.tag>Selfie Attendance</x-ui.tag>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="rounded-lg bg-white group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden">
-                <div class="aspect-video bg-gradient-to-br from-secondary-100 to-primary-100 relative overflow-hidden">
-                    <img alt="KrishnaAcademy LMS" loading="lazy" width="400" height="300" decoding="async"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        src="{{ asset('assets/images/krishna-academy.png') }}">
-                    <div class="absolute top-4 left-4">
-                        <div
-                            class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-white/90 text-slate-700 border-0">
-                            Learning Platform</div>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">KrishnaAcademy – LMS Platform</h3>
-                    <p class="text-slate-600 mb-4">A Laravel-powered Learning Management System for delivering
-                        video
-                        courses, quizzes with auto-evaluation and solutions, and downloadable PDFs.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <x-ui.tag>Laravel</x-ui.tag>
-                        <x-ui.tag>PHP</x-ui.tag>
-                        <x-ui.tag>Bootstrap</x-ui.tag>
-                        <x-ui.tag>MySQL</x-ui.tag>
-                        <x-ui.tag>Razorpay</x-ui.tag>
-                        <x-ui.tag>LMS</x-ui.tag>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="rounded-lg bg-white group hover:shadow-xl transition-all duration-300 border-0 shadow-lg overflow-hidden">
-                <div class="aspect-video bg-gradient-to-br from-secondary-100 to-primary-100 relative overflow-hidden">
-                    <img alt="Kifayat Card" loading="lazy" width="400" height="300" decoding="async"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        src="{{ asset('assets/images/kifayatcard.png') }}">
-                    <div class="absolute top-4 left-4">
-                        <div
-                            class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-white/90 text-slate-700 border-0">
-                            Loyalty Program</div>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <h3 class="text-xl font-bold text-slate-900 mb-2">Kifayat Card (formerly Bachatcard)</h3>
-                    <p class="text-slate-600 mb-4">A Laravel-based loyalty point system for shop owners. Full admin
-                        and user panel with real-time tracking and redemption options.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <x-ui.tag>Laravel</x-ui.tag>
-                        <x-ui.tag>PHP</x-ui.tag>
-                        <x-ui.tag>Bootstrap</x-ui.tag>
-                        <x-ui.tag>MySQL</x-ui.tag>
-                        <x-ui.tag>Reward System</x-ui.tag>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-12">
-            <a href="{{ route('portfolio') }}">
-                <x-form.secondary-button type="button" class="text-sm px-7 py-3 rounded-2xl">
-                    <span>View All Projects</span>
-                    <x-icons.go class="w-4 h-4" />
-                </x-form.secondary-button>
-            </a>
+            @endforeach
         </div>
     </div>
 </section>
