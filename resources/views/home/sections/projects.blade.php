@@ -49,7 +49,7 @@
         </div>
 
         {{-- Grid view cards --}}
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden">
             @foreach ($projects as $project)
                 <div
                     data-aos="{{ $loop->index % 2 == 0 ? 'fade-right' : 'fade-left' }}"

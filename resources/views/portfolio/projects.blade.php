@@ -167,7 +167,7 @@
                     </div>
 
                     {{-- Right Side: Content (Span 7) --}}
-                    <div class="lg:col-span-7 p-8 lg:p-12 flex flex-col">
+                    <div class="lg:col-span-7 p-4 lg:p-12 flex flex-col">
                         <h3 class="text-3xl font-black text-on-surface mb-6 group-hover:text-primary transition-colors">
                             {{ $project['title'] }}
                         </h3>
