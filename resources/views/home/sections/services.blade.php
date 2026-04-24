@@ -30,7 +30,7 @@
                     <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">Laravel Web App Development</h3>
                     <p class="text-on-surface mb-6">Scalable and secure web applications using the Laravel framework
                     </p>
-                    <div class="space-y-2 mb-6">
+                    <div class="space-y-2 mb-8">
                         <div class="flex items-center gap-2 text-sm text-on-surface">
                             <x-icons.check class="w-4 h-4 text-primary" />
                             RESTful API Integration
@@ -48,9 +48,11 @@
                             Queue & Job Handling
                         </div>
                     </div>
-                    <div class="hidden flex items-center justify-between">
-                        <span class="text-lg font-bold text-secondary-600">From $3,499</span>
-                        <x-button-primary-outline>Learn More</x-button-primary-outline>
+                    <div class="flex items-center justify-between">
+                        <a href="{{ route('services.laravel-development') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            <span>Learn More</span>
+                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -68,7 +70,7 @@
                     <p class="text-on-surface mb-6">End-to-end solutions for internal tools, client portals, and
                         business automation software
                     </p>
-                    <div class="space-y-2 mb-6">
+                    <div class="space-y-2 mb-8">
                         <div class="flex items-center gap-2 text-sm text-on-surface">
                             <x-icons.check class="w-4 h-4 text-primary" />
                             B2B/B2C Client Portals
@@ -86,9 +88,11 @@
                             Custom Laravel-Based Software
                         </div>
                     </div>
-                    <div class="hidden flex items-center justify-between">
-                        <span class="text-lg font-bold text-secondary-600">From $4,000</span>
-                        <x-button-primary-outline>Learn More</x-button-primary-outline>
+                    <div class="flex items-center justify-between">
+                        <a href="{{ route('services.custom-software') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            <span>Learn More</span>
+                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -105,7 +109,7 @@
                     <p class="text-on-surface mb-6">Tailored CRM systems to manage clients, leads, and sales
                         pipelines
                     </p>
-                    <div class="space-y-2 mb-6">
+                    <div class="space-y-2 mb-8">
                         <div class="flex items-center gap-2 text-sm text-on-surface">
                             <x-icons.check class="w-4 h-4 text-primary" />
                             Lead Management
@@ -123,9 +127,11 @@
                             Activity Logs
                         </div>
                     </div>
-                    <div class="hidden flex items-center justify-between">
-                        <span class="text-lg font-bold text-secondary-600">From $4,500</span>
-                        <x-button-primary-outline>Learn More</x-button-primary-outline>
+                    <div class="flex items-center justify-between">
+                        <a href="{{ route('services.crm-development') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            <span>Learn More</span>
+                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -141,7 +147,7 @@
                     </div>
                     <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">WordPress Theme Development</h3>
                     <p class="text-on-surface mb-6">Pixel-perfect, fast-loading custom WordPress themes</p>
-                    <div class="space-y-2 mb-6">
+                    <div class="space-y-2 mb-8">
                         <div class="flex items-center gap-2 text-sm text-on-surface">
                             <x-icons.check class="w-4 h-4 text-primary" />
                             Gutenberg Compatible
@@ -159,9 +165,11 @@
                             SEO Best Practices
                         </div>
                     </div>
-                    <div class="hidden flex items-center justify-between">
-                        <span class="text-lg font-bold text-secondary-600">From $1,999</span>
-                        <x-button-primary-outline>Learn More</x-button-primary-outline>
+                    <div class="flex items-center justify-between">
+                        <a href="{{ route('services.wordpress-development') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            <span>Learn More</span>
+                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -178,7 +186,7 @@
                     <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">E-commerce Development</h3>
                     <p class="text-on-surface mb-6">Robust online store solutions built on WooCommerce or Laravel
                     </p>
-                    <div class="space-y-2 mb-6">
+                    <div class="space-y-2 mb-8">
                         <div class="flex items-center gap-2 text-sm text-on-surface">
                             <x-icons.check class="w-4 h-4 text-primary" />
                             Product Catalog Setup
@@ -196,9 +204,11 @@
                             Order & Inventory Management
                         </div>
                     </div>
-                    <div class="hidden flex items-center justify-between">
-                        <span class="text-lg font-bold text-secondary-600">From $2,499</span>
-                        <x-button-primary-outline>Learn More</x-button-primary-outline>
+                    <div class="flex items-center justify-between">
+                        <a href="{{ route('services.ecommerce-development') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            <span>Learn More</span>
+                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -217,7 +227,7 @@
                     <p class="text-on-surface mb-6">Interactive and scalable dashboards for managing business
                         operations
                     </p>
-                    <div class="space-y-2 mb-6">
+                    <div class="space-y-2 mb-8">
                         <div class="flex items-center gap-2 text-sm text-on-surface">
                             <x-icons.check class="w-4 h-4 text-primary" />
                             Real-Time Analytics
@@ -235,9 +245,11 @@
                             CRUD Management
                         </div>
                     </div>
-                    <div class="hidden flex items-center justify-between">
-                        <span class="text-lg font-bold text-secondary-600">From $3,000</span>
-                        <x-button-primary-outline>Learn More</x-button-primary-outline>
+                    <div class="flex items-center justify-between">
+                        <a href="{{ route('services.admin-dashboards') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            <span>Learn More</span>
+                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -254,7 +266,7 @@
                     </div>
                     <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">API Development & Integration</h3>
                     <p class="text-on-surface mb-6">Robust RESTful APIs and seamless 3rd-party integrations</p>
-                    <div class="space-y-2 mb-6">
+                    <div class="space-y-2 mb-8">
                         <div class="flex items-center gap-2 text-sm text-on-surface">
                             <x-icons.check class="w-4 h-4 text-primary" />
                             REST & JSON APIs
@@ -272,9 +284,11 @@
                             Webhooks & Callbacks
                         </div>
                     </div>
-                    <div class="hidden flex items-center justify-between">
-                        <span class="text-lg font-bold text-secondary-600">From $1,800</span>
-                        <x-button-primary-outline>Learn More</x-button-primary-outline>
+                    <div class="flex items-center justify-between">
+                        <a href="{{ route('services.api-development') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            <span>Learn More</span>
+                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -291,7 +305,7 @@
                     </div>
                     <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">Security & Performance Optimization</h3>
                     <p class="text-on-surface mb-6">Hardening, speed tuning, and securing your applications</p>
-                    <div class="space-y-2 mb-6">
+                    <div class="space-y-2 mb-8">
                         <div class="flex items-center gap-2 text-sm text-on-surface">
                             <x-icons.check class="w-4 h-4 text-primary" />
                             Laravel Security Patches
@@ -309,9 +323,11 @@
                             DB Query Optimization
                         </div>
                     </div>
-                    <div class="hidden flex items-center justify-between">
-                        <span class="text-lg font-bold text-secondary-600">From $999</span>
-                        <x-button-primary-outline>Learn More</x-button-primary-outline>
+                    <div class="flex items-center justify-between">
+                        <a href="{{ route('services.security-performance') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            <span>Learn More</span>
+                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </a>
                     </div>
                 </div>
             </div>
@@ -328,8 +344,8 @@
                     </div>
                     <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">Maintenance</h3>
                     <p class="text-on-surface mb-6">Keep your website secure, updated, and performing at its best
-                    </p>
-                    <div class="space-y-2 mb-6">
+331:                     </p>
+                    <div class="space-y-2 mb-8">
                         <div class="flex items-center gap-2 text-sm text-on-surface">
                             <x-icons.check class="w-4 h-4 text-primary" />
                             Security Updates
@@ -347,12 +363,12 @@
                             Support
                         </div>
                     </div>
-                    <div class="hidden flex items-center justify-between">
-                        <span class="text-lg font-bold text-secondary-600">From $299/mo</span>
-                        <x-button-primary-outline>Learn More</x-button-primary-outline>
+                    <div class="flex items-center justify-between">
+                        <a href="{{ route('services.maintenance') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                            <span>Learn More</span>
+                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                        </a>
                     </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
