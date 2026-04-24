@@ -2,6 +2,7 @@
     $projects = [
         [
             'title' => 'Attendance Manager System',
+            'link' => route('portfolio.attendance-manager'),
             'category' => 'Attendance System',
             'image' => '/assets/images/attendance.png',
             'desc' =>
@@ -10,6 +11,7 @@
         ],
         [
             'title' => 'KrishnaAcademy LMS',
+            'link' => route('portfolio.krishna-academy'),
             'category' => 'Learning Platform',
             'image' => 'assets/images/krishna-academy.png',
             'desc' => 'Comprehensive LMS for video courses and automated quizzes with Razorpay integration.',
@@ -17,6 +19,7 @@
         ],
         [
             'title' => 'Kifayat Card System',
+            'link' => route('portfolio.kifayat-card'),
             'category' => 'Loyalty Program',
             'image' => 'assets/images/kifayatcard.png',
             'desc' => 'B2B loyalty point system with real-time tracking, shop owner panels, and redemption logic.',
@@ -24,6 +27,7 @@
         ],
         [
             'title' => 'Jixicloud - Custom Laravel Website',
+            'link' => route('portfolio.jixicloud'),
             'category' => 'Custom Website',
             'desc' =>
                 'Laravel-powered Website with admin tools for managing pricing and dynamic data. Integrated 3rd-party APIs for live domain rates and more. Fully responsive design with ongoing maintenance since launch.',
@@ -85,7 +89,7 @@
                                 @endforeach
                             </div>
 
-                            <a href="#"
+                            <a href="{{ $project['link'] }}"
                                 class="inline-flex items-center gap-2 text-xs font-bold text-primary group-hover:translate-x-1 transition-transform">
                                 VIEW CASE
                                 <x-icons.chevron-right class="w-4 h-4" />
