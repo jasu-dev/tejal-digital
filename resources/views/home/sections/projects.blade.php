@@ -85,11 +85,11 @@
                                 @endforeach
                             </div>
 
-                            {{-- <a href="#"
+                            <a href="#"
                                 class="inline-flex items-center gap-2 text-xs font-bold text-primary group-hover:translate-x-1 transition-transform">
                                 VIEW CASE
-                                <x-icons.arrow-right class="w-4 h-4" />
-                            </a> --}}
+                                <x-icons.chevron-right class="w-4 h-4" />
+                            </a>
                         </div>
                     </div>
                 </div>

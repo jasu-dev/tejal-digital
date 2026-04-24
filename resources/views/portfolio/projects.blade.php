@@ -4,6 +4,7 @@
         [
             'title' => 'Attendance Manager System',
             'category' => 'Attendance System',
+            'route' => 'portfolio.attendance-manager',
             'description' =>
                 'A Laravel-powered attendance system for agencies, featuring geo-restriction, selfie verification, and leave applications. Built with a clean interface for both admin and employees.',
             'image' => 'assets/images/attendance.png',
@@ -18,6 +19,7 @@
         [
             'title' => 'PromoFusion360 – Earning Platform',
             'category' => 'Earning Platform',
+            'route' => 'portfolio.promofusion360',
             'description' =>
                 'A Laravel-based platform that allows users to earn by watching videos and referring new users after subscribing to a plan. Built with dual payment gateway support and a smooth multi-panel experience.',
             'image' => 'assets/images/promofusion360.png',
@@ -32,6 +34,7 @@
         [
             'title' => 'KrishnaAcademy – LMS Platform',
             'category' => 'Learning Platform',
+            'route' => 'portfolio.krishna-academy',
             'description' =>
                 'A Laravel-powered Learning Management System for delivering video courses, quizzes with auto-evaluation and solutions, and downloadable PDFs. Includes role-based access for admins, teachers, and students with Razorpay-integrated checkout flow.',
             'image' => 'assets/images/krishna-academy.png',
@@ -46,6 +49,7 @@
         [
             'title' => 'Kifayat Card (formerly Bachatcard)',
             'category' => 'Loyalty Program',
+            'route' => 'portfolio.kifayat-card',
             'description' =>
                 'A Laravel-based loyalty point system for shop owners. Merchants register and assign digital reward cards to their customers, who earn and redeem points on purchases. Full admin and user panel with real-time tracking and redemption options.',
             'image' => 'assets/images/kifayatcard.png',
@@ -60,6 +64,7 @@
         [
             'title' => 'Tech Nukti – Custom WP Theme',
             'category' => 'WordPress Theme',
+            'route' => 'portfolio.tech-nukti',
             'description' =>
                 'A blazing-fast, custom WordPress theme built from scratch for Technukti.com. Designed with a clean, minimal layout, full responsiveness, and zero dependence on optimization plugins.',
             'image' => 'assets/images/technukti.png',
@@ -74,6 +79,7 @@
         [
             'title' => 'Growix: Smart QR',
             'category' => 'Custom Software',
+            'route' => 'portfolio.growix-smart-qr',
             'description' =>
                 'Custom Laravel-based software for filtering negative reviews using unique QR codes for businesses. Admin and user panels included with Razorpay integration for seamless plan management and purchases.',
             'image' => 'assets/images/growix.png',
@@ -88,6 +94,7 @@
         [
             'title' => 'TechUpkar Theme',
             'category' => 'WordPress Theme',
+            'route' => 'portfolio.tech-upkar',
             'description' =>
                 'A blazing-fast, hand-coded WordPress theme built for 100/100 PageSpeed scores — no caching, no optimization plugins. Fully responsive, clean design, and optimized to pass all Core Web Vitals flawlessly.',
             'image' => 'assets/images/techupkar.png',
@@ -102,6 +109,7 @@
         [
             'title' => 'Jixicloud - Custom Laravel Website',
             'category' => 'Custom Website',
+            'route' => 'portfolio.jixicloud',
             'description' =>
                 'Laravel-powered Website with admin tools for managing pricing and dynamic data. Integrated 3rd-party APIs for live domain rates and more. Fully responsive design with ongoing maintenance since launch.',
             'image' => 'assets/images/jixicloud.png',
@@ -116,6 +124,7 @@
         [
             'title' => 'Gujjutak News Portal',
             'category' => 'News Portal',
+            'route' => 'portfolio.gujjutak-news',
             'description' =>
                 'Gujarati news portal powered by Laravel with a full-featured admin panel for article management, SEO tools, sitemap control, and ad placements. Clean, responsive UI with a robust backend.',
             'image' => 'assets/images/gujjutak.png',
@@ -130,6 +139,7 @@
         [
             'title' => 'GMJ Child Pro Theme',
             'category' => 'WordPress Theme',
+            'route' => 'portfolio.gmj-child-pro',
             'description' =>
                 'Custom child theme built on the Genesis Framework. Optimized for speed, written in HTML & CSS only (JS-free), and tailored for Hindi blog websites.',
             'image' => 'assets/images/gmjchildpro.png',
@@ -210,7 +220,7 @@
                                 @endforeach
                             </div>
 
-                            {{-- <a href="#"
+                            <a href="{{ route($project['route']) }}"
                                 class="inline-flex items-center gap-3 text-sm font-bold text-on-surface group/link">
                                 <span class="relative">
                                     View Full Case Study
@@ -219,9 +229,9 @@
                                 </span>
                                 <div
                                     class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center group-hover/link:bg-primary group-hover/link:border-primary transition-all">
-                                    <x-icon.arrow-right class="w-4 h-4 text-on-surface group-hover/link:text-surface" />
+                                    <x-icons.chevron-right class="w-4 h-4 text-on-surface group-hover/link:text-surface" />
                                 </div>
-                            </a> --}}
+                            </a>
                         </div>
                     </div>
                 </div>
