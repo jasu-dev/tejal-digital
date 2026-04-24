@@ -150,32 +150,32 @@
                 {{-- Quick Links --}}
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li>
+                    <ul class="space-y-2 list-disc ml-4">
+                        <li class="pl-2">
                             <a href="{{ route('home') }}"
                                 class="text-gray-300 hover:text-secondary-500 transition-colors text-sm">
                                 Home
                             </a>
                         </li>
-                        <li>
+                        <li class="pl-2">
                             <a href="{{ route('about') }}"
                                 class="text-gray-300 hover:text-secondary-500 transition-colors text-sm">
                                 About Us
                             </a>
                         </li>
-                        <li>
+                        <li class="pl-2">
                             <a href="{{ route('services') }}"
                                 class="text-gray-300 hover:text-secondary-500 transition-colors text-sm">
                                 Services
                             </a>
                         </li>
-                        <li>
+                        <li class="pl-2">
                             <a href="{{ route('portfolio') }}"
                                 class="text-gray-300 hover:text-secondary-500 transition-colors text-sm">
                                 Portfolio
                             </a>
                         </li>
-                        <li>
+                        <li class="pl-2">
                             <a href="{{ route('contact') }}"
                                 class="text-gray-300 hover:text-secondary-500 transition-colors text-sm">
                                 Contact
@@ -186,10 +186,17 @@
                 {{-- Services --}}
                 <div>
                     <h3 class="text-lg font-semibold mb-4">Services</h3>
-                    <ul class="space-y-2">
-                        @foreach (['Laravel Web App Development', 'Web Portals & Custom Software', 'Custom CRM Development', 'WordPress Theme Development', 'E-commerce Development'] as $item)
-                            <li>
-                                <a href="{{ route('services') }}"
+                    <ul class="space-y-2 list-disc ml-4">
+                        @foreach ([
+                            'laravel-development' => 'Laravel Web App Development',
+                            'custom-software' => 'Web Portals & Custom Software',
+                            'wordpress-development' => 'WordPress Theme Development',
+                            'ecommerce-development' => 'E-commerce Development',
+                            'api-development' => 'API Development',
+                            'maintenance' => 'Maintenance & Support'
+                        ] as $slug => $item)
+                            <li class="pl-2">
+                                <a href="{{ route('services.' . $slug) }}"
                                     class="text-gray-300 hover:text-secondary-500 transition-colors text-sm">
                                     {{ $item }}
                                 </a>
