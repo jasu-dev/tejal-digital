@@ -1,11 +1,11 @@
-<section class="py-26 relative overflow-hidden">
-    {{-- Background Ambient Glow --}}
+<section class="py-26 relative overflow-hidden" style="background: var(--color-gradient-cta)">
+    {{-- Background Ambient Glow
     <div
         class="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/30 rounded-full blur-3xl">
     </div>
     <div
         class="absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-br from-primary-400/10 to-secondary-500/20 rounded-full blur-3xl">
-    </div>
+    </div> --}}
 
     <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
         <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">

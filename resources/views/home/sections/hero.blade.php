@@ -1,4 +1,4 @@
-<section class="relative pt-20 pb-32 overflow-hidden">
+<section class="relative py-20 overflow-hidden border-b border-outline-variant/20">
     <div
         class="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/20 rounded-full blur-3xl">
     </div>

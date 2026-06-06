@@ -9,22 +9,22 @@
     --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
 
     /* Brand Burnt Orange (Base #e85a24) */
-    --color-primary-50:  oklch(0.96 0.02 41);
+    --color-primary-50: oklch(0.96 0.02 41);
     --color-primary-100: oklch(0.91 0.05 41);
-    --color-primary-200: oklch(0.83 0.10 41);
+    --color-primary-200: oklch(0.83 0.1 41);
     --color-primary-300: oklch(0.75 0.15 41);
     --color-primary-400: oklch(0.67 0.19 41);
     --color-primary-500: oklch(0.58 0.21 41);
     --color-primary-600: oklch(0.51 0.19 41);
     --color-primary-700: oklch(0.43 0.16 41);
     --color-primary-800: oklch(0.35 0.13 41);
-    --color-primary-900: oklch(0.28 0.10 41);
+    --color-primary-900: oklch(0.28 0.1 41);
     --color-primary-950: oklch(0.18 0.07 41);
 
     /* Golden Accent (Base #f39e1e) */
-    --color-secondary-50:  oklch(0.97 0.03 72);
+    --color-secondary-50: oklch(0.97 0.03 72);
     --color-secondary-100: oklch(0.92 0.06 72);
-    --color-secondary-200: oklch(0.87 0.10 72);
+    --color-secondary-200: oklch(0.87 0.1 72);
     --color-secondary-300: oklch(0.82 0.13 72);
     --color-secondary-400: oklch(0.78 0.15 72);
     --color-secondary-500: oklch(0.75 0.16 72); /* Exact #f39e1e */
@@ -35,32 +35,42 @@
     --color-secondary-950: oklch(0.22 0.06 72);
 
     /* Semantic Aliases */
-    --color-background: oklch(1 0 0);
-    --color-foreground: var(--color-primary-900);
-    --color-border: oklch(92.9% 0.013 255.508);
+    --color-background: oklch(0.16 0.012 250);
+    --color-foreground: oklch(0.97 0.005 250);
+    --color-muted-foreground: oklch(0.7 0.02 250);
+    --color-surface: oklch(0.21 0.014 250);
+    --color-surface-elevated: oklch(0.25 0.014 250);
+    --color-card: oklch(0.21 0.014 250);
+    --color-card-foreground: oklch(0.97 0.005 250);
+    --color-border: oklch(0.3 0.015 250);
+    --color-input: oklch(0.27 0.014 250);
+    --color-ring: oklch(0.72 0.19 45);
 
-    --color-surface: oklch(20.46% 0 0);
-    --color-on-surface: oklch(90.62% 0.003 36.6);
-
-    --color-surface-container: oklch(24.73% 0.001 24.3);
-    --color-surface-container-low: oklch(23.16% 0.001 24.3);
-    --color-surface-container-high: oklch(28.53% 0 0);
+    --color-gradient-cta: radial-gradient(ellipse at center, oklch(0.51 0.19 41 / 0.3), transparent 70%);
 
     --color-new-primary: oklch(80.53% 0.122 30.6);
-    --color-primary : oklch(80.53% 0.122 30.6);
+    --color-primary: oklch(80.53% 0.122 30.6);
 
     --color-outline-variant: oklch(33.15% 0.034 26.5);
 
-
     /* Infinite Scroll Animation */
     @keyframes infinite-scroll {
-        from { transform: translateX(0); }
-        to { transform: translateX(-100%); }
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-100%);
+        }
     }
 
     @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-10px); }
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
     }
 
     --animate-infinite-scroll: infinite-scroll 40s linear infinite;
@@ -91,6 +101,18 @@
 /* =========================
    Utilities (v4-safe)
    ========================= */
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  background: var(--color-surface-elevated);
+  color: var(--color-muted-foreground);
+  font-size: 0.78rem;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+}
+
 
 @utility gradient-primary {
     background: linear-gradient(

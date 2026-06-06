@@ -41,7 +41,7 @@
         {{-- Highlighted Grid --}}
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach ($testimonials as $item)
-                <div class="group bg-surface-container-high rounded-2xl border border-outline-variant/20 p-8 transition-all duration-300 hover:border-primary/40 relative overflow-hidden"
+                <div class="group rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:border-primary/40 relative overflow-hidden"
                     data-aos="fade-up" data-aos-delay="{{ 100 * $loop->iteration }}" data-aos-duration="800">
 
                     <div

@@ -4,8 +4,8 @@
         [
             'title' => 'Attendance Manager System',
             'category' => 'Attendance System',
-            'route' => 'portfolio.attendance-manager',
-            'description' =>
+            'link' => route('portfolio.attendance-manager'),
+            'desc' =>
                 'A Laravel-powered attendance system for agencies, featuring geo-restriction, selfie verification, and leave applications. Built with a clean interface for both admin and employees.',
             'image' => 'assets/images/attendance.png',
             'gradient' => 'from-blue-100 to-sky-100',
@@ -19,8 +19,8 @@
         [
             'title' => 'PromoFusion360 – Earning Platform',
             'category' => 'Earning Platform',
-            'route' => 'portfolio.promofusion360',
-            'description' =>
+            'link' => route('portfolio.promofusion360'),
+            'desc' =>
                 'A Laravel-based platform that allows users to earn by watching videos and referring new users after subscribing to a plan. Built with dual payment gateway support and a smooth multi-panel experience.',
             'image' => 'assets/images/promofusion360.png',
             'gradient' => 'from-pink-100 to-rose-100',
@@ -34,8 +34,8 @@
         [
             'title' => 'KrishnaAcademy – LMS Platform',
             'category' => 'Learning Platform',
-            'route' => 'portfolio.krishna-academy',
-            'description' =>
+            'link' => route('portfolio.krishna-academy'),
+            'desc' =>
                 'A Laravel-powered Learning Management System for delivering video courses, quizzes with auto-evaluation and solutions, and downloadable PDFs. Includes role-based access for admins, teachers, and students with Razorpay-integrated checkout flow.',
             'image' => 'assets/images/krishna-academy.png',
             'gradient' => 'from-indigo-100 to-purple-100',
@@ -49,8 +49,8 @@
         [
             'title' => 'Kifayat Card (formerly Bachatcard)',
             'category' => 'Loyalty Program',
-            'route' => 'portfolio.kifayat-card',
-            'description' =>
+            'link' => route('portfolio.kifayat-card'),
+            'desc' =>
                 'A Laravel-based loyalty point system for shop owners. Merchants register and assign digital reward cards to their customers, who earn and redeem points on purchases. Full admin and user panel with real-time tracking and redemption options.',
             'image' => 'assets/images/kifayatcard.png',
             'gradient' => 'from-emerald-100 to-lime-100',
@@ -64,8 +64,8 @@
         [
             'title' => 'Tech Nukti – Custom WP Theme',
             'category' => 'WordPress Theme',
-            'route' => 'portfolio.tech-nukti',
-            'description' =>
+            'link' => route('portfolio.tech-nukti'),
+            'desc' =>
                 'A blazing-fast, custom WordPress theme built from scratch for Technukti.com. Designed with a clean, minimal layout, full responsiveness, and zero dependence on optimization plugins.',
             'image' => 'assets/images/technukti.png',
             'gradient' => 'from-yellow-100 to-amber-100',
@@ -79,8 +79,8 @@
         [
             'title' => 'Growix: Smart QR',
             'category' => 'Custom Software',
-            'route' => 'portfolio.growix-smart-qr',
-            'description' =>
+            'link' => route('portfolio.growix-smart-qr'),
+            'desc' =>
                 'Custom Laravel-based software for filtering negative reviews using unique QR codes for businesses. Admin and user panels included with Razorpay integration for seamless plan management and purchases.',
             'image' => 'assets/images/growix.png',
             'gradient' => 'from-purple-100 to-indigo-100',
@@ -94,8 +94,8 @@
         [
             'title' => 'TechUpkar Theme',
             'category' => 'WordPress Theme',
-            'route' => 'portfolio.tech-upkar',
-            'description' =>
+            'link' => route('portfolio.tech-upkar'),
+            'desc' =>
                 'A blazing-fast, hand-coded WordPress theme built for 100/100 PageSpeed scores — no caching, no optimization plugins. Fully responsive, clean design, and optimized to pass all Core Web Vitals flawlessly.',
             'image' => 'assets/images/techupkar.png',
             'gradient' => 'from-lime-100 to-emerald-100',
@@ -109,8 +109,8 @@
         [
             'title' => 'Jixicloud - Custom Laravel Website',
             'category' => 'Custom Website',
-            'route' => 'portfolio.jixicloud',
-            'description' =>
+            'link' => route('portfolio.jixicloud'),
+            'desc' =>
                 'Laravel-powered Website with admin tools for managing pricing and dynamic data. Integrated 3rd-party APIs for live domain rates and more. Fully responsive design with ongoing maintenance since launch.',
             'image' => 'assets/images/jixicloud.png',
             'gradient' => 'from-sky-100 to-blue-100',
@@ -124,8 +124,8 @@
         [
             'title' => 'Gujjutak News Portal',
             'category' => 'News Portal',
-            'route' => 'portfolio.gujjutak-news',
-            'description' =>
+            'link' => route('portfolio.gujjutak-news'),
+            'desc' =>
                 'Gujarati news portal powered by Laravel with a full-featured admin panel for article management, SEO tools, sitemap control, and ad placements. Clean, responsive UI with a robust backend.',
             'image' => 'assets/images/gujjutak.png',
             'gradient' => 'from-green-100 to-lime-100',
@@ -139,8 +139,8 @@
         [
             'title' => 'GMJ Child Pro Theme',
             'category' => 'WordPress Theme',
-            'route' => 'portfolio.gmj-child-pro',
-            'description' =>
+            'link' => route('portfolio.gmj-child-pro'),
+            'desc' =>
                 'Custom child theme built on the Genesis Framework. Optimized for speed, written in HTML & CSS only (JS-free), and tailored for Hindi blog websites.',
             'image' => 'assets/images/gmjchildpro.png',
             'gradient' => 'from-amber-100 to-orange-100',
@@ -155,88 +155,10 @@
 
 <section class="py-24">
     <div class="max-w-6xl mx-auto px-6 space-y-12">
-        @foreach ($projects as $project)
-            <div
-                class="group relative bg-surface-container rounded-2xl border border-outline-variant/20 overflow-hidden transition-all duration-500 hover:border-primary/30 shadow-2xl shadow-surface/50 overflow-hidden"
-                data-aos="fade-up" data-aos-delay="{{ 50 * $loop->iteration }}" data-aos-duration="800">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32"></div>
-                <div class="grid lg:grid-cols-12 items-stretch">
-
-                    {{-- Left Side: Image (Span 5) --}}
-                    <div class="lg:col-span-5 relative overflow-hidden">
-                        <img src="{{ $project['image'] }}" alt="{{ $project['title'] }}"
-                            class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
-
-                        {{-- Category Badge --}}
-                        <div class="absolute top-6 left-6">
-                            <span
-                                class="backdrop-blur-xl bg-surface/60 text-on-surface text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-lg border border-on-surface/10">
-                                {{ $project['category'] }}
-                            </span>
-                        </div>
-                    </div>
-
-                    {{-- Right Side: Content (Span 7) --}}
-                    <div class="lg:col-span-7 p-4 lg:p-12 flex flex-col">
-                        <h3 class="text-3xl font-black text-on-surface mb-6 group-hover:text-primary transition-colors">
-                            {{ $project['title'] }}
-                        </h3>
-
-                        <div class="grid sm:grid-cols-2 gap-8 mb-8">
-                            {{-- Challenge Section --}}
-                            <div class="space-y-2">
-                                <h4
-                                    class="text-[10px] font-bold text-primary uppercase tracking-widest flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                                    Challenge
-                                </h4>
-                                <p class="text-on-surface/60 text-sm leading-relaxed">
-                                    {{ $project['challenge'] }}
-                                </p>
-                            </div>
-
-                            {{-- Solution Section --}}
-                            <div class="space-y-2">
-                                <h4
-                                    class="text-[10px] font-bold text-primary uppercase tracking-widest flex items-center gap-2">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                                    Solution
-                                </h4>
-                                <p class="text-on-surface/60 text-sm leading-relaxed">
-                                    {{ $project['solution'] }}
-                                </p>
-                            </div>
-                        </div>
-
-                        {{-- Tech Stack & CTA --}}
-                        <div
-                            class="mt-auto pt-8 border-t border-outline-variant/10 flex flex-wrap items-center justify-between gap-6">
-                            <div class="flex flex-wrap gap-2">
-                                @foreach ($project['tags'] as $tag)
-                                    <span
-                                        class="text-[9px] font-bold text-on-surface/40 bg-surface px-2 py-1 rounded border border-outline-variant/10 uppercase">
-                                        {{ $tag }}
-                                    </span>
-                                @endforeach
-                            </div>
-
-                            <a href="{{ route($project['route']) }}"
-                                class="inline-flex items-center gap-3 text-sm font-bold text-on-surface group/link">
-                                <span class="relative">
-                                    View Full Case Study
-                                    <span
-                                        class="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover/link:w-full transition-all duration-300"></span>
-                                </span>
-                                <div
-                                    class="w-8 h-8 rounded-full border border-outline-variant/30 flex items-center justify-center group-hover/link:bg-primary group-hover/link:border-primary transition-all">
-                                    <x-icons.chevron-right class="w-4 h-4 text-on-surface group-hover/link:text-surface" />
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        @endforeach
-
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden">
+            @foreach ($projects as $project)
+                <x-product-card :project="$project" />
+            @endforeach
+        </div>
     </div>
 </section>

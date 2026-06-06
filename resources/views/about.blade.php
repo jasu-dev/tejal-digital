@@ -196,11 +196,11 @@
 
                 @foreach ($values as $value)
                     <div data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}" data-aos-duration="800"
-                        class="group relative p-8 rounded-2xl bg-surface-container-high border border-outline-variant/20 hover:border-primary/40 transition-all duration-500 overflow-hidden">
+                        class="group relative p-8 rounded-2xl border border-border bg-card hover:border-primary/40 transition-all duration-500 overflow-hidden">
 
                         <div class="relative z-10">
                             <div
-                                class="w-14 h-14 rounded-xl bg-surface-container border border-outline-variant/50 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-inner">
+                                class="w-14 h-14 rounded-xl bg-primary/10 border border-outline-variant/50 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-inner">
                                 @php $iconName = 'icons.' . $value['icon']; @endphp
                                 <x-dynamic-component :component="$iconName"
                                     class="w-6 h-6 text-primary group-hover:text-surface transition-colors" />
@@ -227,13 +227,13 @@
     </section>
 
     {{-- CTA Section --}}
-    <section class="py-26 relative overflow-hidden">
-        <div
+    <section class="py-26 relative overflow-hidden" style="background: var(--color-gradient-cta)">
+        {{-- <div
             class="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/30 rounded-full blur-3xl">
         </div>
         <div
             class="absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-br from-primary-400/10 to-secondary-500/20 rounded-full blur-3xl">
-        </div>
+        </div> --}}
 
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">

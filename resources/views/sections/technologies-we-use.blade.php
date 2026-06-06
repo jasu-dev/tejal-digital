@@ -34,7 +34,7 @@
         <div class="flex flex-none items-center justify-around gap-8 animate-infinite-scroll">
             @foreach (array_merge($techs, $techs) as $tech)
                 <div
-                    class="flex items-center gap-4 px-6 py-4 bg-surface-container-high rounded-2xl border border-on-surface/5 shadow-xl hover:border-primary/40 transition-colors group">
+                    class="flex items-center gap-4 px-6 py-4 rounded-2xl border border-border bg-card shadow-xl hover:border-primary/40 transition-colors group">
                     <img src="{{ asset('assets/icons/' . $tech['icon']) }}" alt="{{ $tech['name'] }}"
                         class="w-8 h-8 grayscale group-hover:grayscale-0 transition-all duration-500" />
                     <span class="text-on-surface font-medium">{{ $tech['name'] }}</span>
@@ -44,7 +44,7 @@
         <div class="flex flex-none items-center justify-around gap-8 animate-infinite-scroll" aria-hidden="true">
             @foreach (array_merge($techs, $techs) as $tech)
                 <div
-                    class="flex items-center gap-4 px-6 py-4 bg-surface-container-high rounded-2xl border border-on-surface/5 shadow-xl hover:border-primary/40 transition-colors group">
+                    class="flex items-center gap-4 px-6 py-4 rounded-2xl border border-border bg-card shadow-xl hover:border-primary/40 transition-colors group">
                     <img src="{{ asset('assets/icons/' . $tech['icon']) }}" alt="{{ $tech['name'] }}"
                         class="w-8 h-8 grayscale group-hover:grayscale-0 transition-all duration-500" />
                     <span class="text-on-surface font-medium">{{ $tech['name'] }}</span>

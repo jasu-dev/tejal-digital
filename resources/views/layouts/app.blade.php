@@ -48,7 +48,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-surface text-on-surface">
+<body class="min-h-screen bg-background text-foreground">
     <nav class="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">

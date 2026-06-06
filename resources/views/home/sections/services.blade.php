@@ -1,3 +1,125 @@
+@php
+    $services = [
+        [
+            'icon' => 'laravel',
+            'popular' => true,
+            'title' => 'Custom Web App Development (Laravel)',
+            'description' => 'Scalable, ultra-secure custom web applications built with Laravel to streamline complex business workflows.',
+            'key_points' => [
+                'Tailored business logic architecture',
+                'High-performance backend coding',
+                'Optimized database engineering',
+                'Advanced built-in security',
+                'Scalable, future-proof codebase',
+            ],
+        ],
+        [
+            'icon' => 'window',
+            'popular' => true,
+            'title' => 'Corporate & Small Business Website Development',
+            'description' => 'Professional, fast websites engineered to build brand authority and convert visitors into customers.',
+            'key_points' => [
+                'Mobile-first, responsive design',
+                'SEO-optimized site architecture',
+                'High-converting CTA placements',
+                'Fast-loading, clean code',
+                'Full hosting & launch setup',
+            ],
+        ],
+        [
+            'icon' => 'wordpress',
+            'popular' => true,
+            'title' => 'Custom WordPress Website Development',
+            'description' => 'Lightweight, custom WordPress websites built from scratch for full control without template bloat.',
+            'key_points' => [
+                'Bespoke theme development',
+                'Bloat-free, high-speed coding',
+                'Easy Gutenberg & ACF editing',
+                'Advanced security hardening',
+                'Clean custom plugin integration',
+            ],
+        ],
+        [
+            'icon' => 'cart',
+            'popular' => true,
+            'title' => 'eCommerce Development (Shopify & WooCommerce)',
+            'description' => 'High-converting storefronts equipped with streamlined checkouts, automated inventory, and secure payments.',
+            'key_points' => [
+                'Secure payment gateway integration',
+                'Automated inventory tracking',
+                'Mobile-optimized checkout funnels',
+                'Custom discounts & shipping rules',
+                'High-traffic database scaling',
+            ],
+        ],
+        [
+            'icon' => 'dashboard',
+            'popular' => true,
+            'title' => 'SaaS Application Development',
+            'description' => 'Turn your software idea into a profitable subscription product with secure multi-tenant infrastructure.',
+            'key_points' => [
+                'Secure multi-tenant architecture',
+                'Automated subscription billing systems',
+                'Frictionless user onboarding flows',
+                'Scalable cloud architecture infrastructure',
+                'Admin analytics control panels',
+            ],
+        ],
+        [
+            'icon' => 'users',
+            'popular' => false,
+            'title' => 'Custom CRM & ERP Development',
+            'description' => 'Centralize your operations, automate manual workflows, and track customer data with a tailored system.',
+            'key_points' => [
+                'Custom lead tracking systems',
+                'Automated billing & workflows',
+                'Role-based data access (RBAC)',
+                'Real-time analytics dashboards',
+                'Internal communication tools',
+            ],
+        ],
+        [
+            'icon' => 'plugin',
+            'popular' => false,
+            'title' => 'Third-Party API Development & Integration',
+            'description' => 'Securely connect external tools, payment processors, and logistics systems to synchronize your data.',
+            'key_points' => [
+                'RESTful & GraphQL development',
+                'Flawless third-party integrations',
+                'Automated real-time data sync',
+                'Robust error-handling & webhooks',
+                'Secure OAuth2 / JWT protocols',
+            ],
+        ],
+        [
+            'icon' => 'security',
+            'popular' => false,
+            'title' => 'Website Speed & Security Optimization',
+            'description' => 'Boost search engine rankings and shield digital assets by accelerating speed and fixing vulnerabilities.',
+            'key_points' => [
+                'Database & server-side caching',
+                'Core Web Vitals remediation',
+                'Malware scanning & firewalls',
+                'Image & asset compression',
+                'SSL & security header setup',
+            ],
+        ],
+        [
+            'icon' => 'tools',
+            'popular' => false,
+            'title' => 'Ongoing Website & App Maintenance',
+            'description' => 'Prevent unexpected downtime and patch bugs via proactive updates and secure cloud backups.',
+            'key_points' => [
+                'Regular core & framework patches',
+                'Automated daily cloud backups',
+                '24/7 server uptime monitoring',
+                'Continuous bug fixing support',
+                'Periodic database health tune-ups',
+            ],
+        ],
+    ];
+@endphp
+
 <section class="py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
@@ -12,363 +134,49 @@
             </p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            <div class="rounded-2xl bg-surface-container group border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative overflow-hidden"
-                data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                <div class="absolute right-5 top-5">
-                    <div
-                        class="inline-flex items-center rounded-full text-xs font-semibold bg-primary/10 text-on-surface px-4 py-1">
-                        <x-icons.star class="w-3 h-3 mr-1" />
-                        <span>Most Popular</span>
+            @foreach ($services as $service)
+                <div class="rounded-2xl border border-border bg-card transition-all duration-300 group relative overflow-hidden"
+                    data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 100 }}" data-aos-duration="600">
+                    @if ($service['popular'])
+                        <div class="absolute right-5 top-5">
+                            <div
+                                class="inline-flex items-center rounded-full text-xs font-semibold bg-primary/10 text-on-surface px-4 py-1">
+                                <x-icons.star class="w-3 h-3 mr-1" />
+                                <span>Most Popular</span>
+                            </div>
+                        </div>
+                    @endif
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div class="space-y-6 p-8">
+                        <div
+                            class="w-14 h-14 bg-primary/10 text-primary rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <x-dynamic-component :component="'icons.' . $service['icon']" class="w-6 h-6" />
+                        </div>
+                        <h3 class="text-xl lg:text-2xl font-bold text-white">
+                            {{ $service['title'] }}
+                        </h3>
+                        <p class="text-muted-foreground">
+                            {{ $service['description'] }}
+                        </p>
+                        <div class="space-y-3">
+                            @foreach ($service['key_points'] as $point)
+                                <div class="flex items-center gap-3 text-sm text-muted-foreground">
+                                    <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
+                                    {{ $point }}
+                                </div>
+                            @endforeach
+                        </div>
+                        <div class="flex items-center justify-end">
+                            <a href="{{ route('services.laravel-development') }}"
+                                class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                                <span>Learn More</span>
+                                <x-icons.chevron-right
+                                    class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32"></div>
-                <div class="p-8">
-                    <div
-                        class="w-14 h-14 bg-surface-container-high rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <x-icons.laravel class="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">Laravel Web App Development</h3>
-                    <p class="text-on-surface mb-6">Scalable and secure web applications using the Laravel framework
-                    </p>
-                    <div class="space-y-2 mb-8">
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            RESTful API Integration
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            MVC Architecture
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Authentication & Authorization
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Queue & Job Handling
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <a href="{{ route('services.laravel-development') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
-                            <span>Learn More</span>
-                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="rounded-2xl bg-surface-container group border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative overflow-hidden"
-                data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32"></div>
-                <div class="p-8">
-                    <div
-                        class="w-14 h-14 bg-surface-container-high rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <x-icons.window class="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">Web Portals & Custom Software</h3>
-                    <p class="text-on-surface mb-6">End-to-end solutions for internal tools, client portals, and
-                        business automation software
-                    </p>
-                    <div class="space-y-2 mb-8">
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            B2B/B2C Client Portals
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Internal Business Tools
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Project or Task Management Systems
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Custom Laravel-Based Software
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <a href="{{ route('services.custom-software') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
-                            <span>Learn More</span>
-                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rounded-2xl bg-surface-container group border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative overflow-hidden"
-                data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32"></div>
-                <div class="p-8">
-                    <div
-                        class="w-14 h-14 bg-surface-container-high rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <x-icons.users class="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">Custom CRM Development</h3>
-                    <p class="text-on-surface mb-6">Tailored CRM systems to manage clients, leads, and sales
-                        pipelines
-                    </p>
-                    <div class="space-y-2 mb-8">
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Lead Management
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Contact Segmentation
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Email Tracking
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Activity Logs
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <a href="{{ route('services.crm-development') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
-                            <span>Learn More</span>
-                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="rounded-2xl bg-surface-container group border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative overflow-hidden"
-                data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32"></div>
-                <div class="p-8">
-                    <div
-                        class="w-14 h-14 bg-surface-container-high rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <x-icons.wordpress class="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">WordPress Theme Development</h3>
-                    <p class="text-on-surface mb-6">Pixel-perfect, fast-loading custom WordPress themes</p>
-                    <div class="space-y-2 mb-8">
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Gutenberg Compatible
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Mobile Optimized
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Cross-browser Tested
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            SEO Best Practices
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <a href="{{ route('services.wordpress-development') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
-                            <span>Learn More</span>
-                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="rounded-2xl bg-surface-container group border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative overflow-hidden"
-                data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32"></div>
-                <div class="p-8">
-                    <div
-                        class="w-14 h-14 bg-surface-container-high rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <x-icons.cart class="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">E-commerce Development</h3>
-                    <p class="text-on-surface mb-6">Robust online store solutions built on WooCommerce or Laravel
-                    </p>
-                    <div class="space-y-2 mb-8">
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Product Catalog Setup
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Secure Checkout
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Payment Gateway Integration
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Order & Inventory Management
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <a href="{{ route('services.ecommerce-development') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
-                            <span>Learn More</span>
-                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="rounded-2xl bg-surface-container group border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative overflow-hidden"
-                data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
-                </div>
-                <div class="p-8">
-                    <div
-                        class="w-14 h-14 bg-surface-container-high rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <x-icons.dashboard class="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">Custom Admin Dashboards</h3>
-                    <p class="text-on-surface mb-6">Interactive and scalable dashboards for managing business
-                        operations
-                    </p>
-                    <div class="space-y-2 mb-8">
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Real-Time Analytics
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Role-Based Access
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Custom Reports
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            CRUD Management
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <a href="{{ route('services.admin-dashboards') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
-                            <span>Learn More</span>
-                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="rounded-2xl bg-surface-container group border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative overflow-hidden"
-                data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
-                </div>
-                <div class="p-8">
-                    <div
-                        class="w-14 h-14 bg-surface-container-high rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <x-icons.plugin class="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">API Development & Integration</h3>
-                    <p class="text-on-surface mb-6">Robust RESTful APIs and seamless 3rd-party integrations</p>
-                    <div class="space-y-2 mb-8">
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            REST & JSON APIs
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Payment Gateways (Stripe, PayPal)
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            External API Integrations
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Webhooks & Callbacks
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <a href="{{ route('services.api-development') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
-                            <span>Learn More</span>
-                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="rounded-2xl bg-surface-container group border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative overflow-hidden"
-                data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
-                </div>
-                <div class="p-8">
-                    <div
-                        class="w-14 h-14 bg-surface-container-high rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <x-icons.security class="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">Security & Performance Optimization</h3>
-                    <p class="text-on-surface mb-6">Hardening, speed tuning, and securing your applications</p>
-                    <div class="space-y-2 mb-8">
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Laravel Security Patches
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            WordPress Firewall Setup
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Page Speed Improvements
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            DB Query Optimization
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <a href="{{ route('services.security-performance') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
-                            <span>Learn More</span>
-                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="rounded-2xl bg-surface-container group border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative overflow-hidden"
-                data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
-                </div>
-                <div class="p-8">
-                    <div
-                        class="w-14 h-14 bg-surface-container-high rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <x-icons.tools class="w-6 h-6 text-primary" />
-                    </div>
-                    <h3 class="text-xl lg:text-2xl font-bold text-white mb-3">Maintenance</h3>
-                    <p class="text-on-surface mb-6">Keep your website secure, updated, and performing at its best
-331:                     </p>
-                    <div class="space-y-2 mb-8">
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Security Updates
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Performance Monitoring
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Backups
-                        </div>
-                        <div class="flex items-center gap-2 text-sm text-on-surface">
-                            <x-icons.check class="w-4 h-4 text-primary" />
-                            Support
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-between">
-                        <a href="{{ route('services.maintenance') }}" class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
-                            <span>Learn More</span>
-                            <x-icons.chevron-right class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                        </a>
-                    </div>
+            @endforeach
         </div>
-    </div>
 </section>
