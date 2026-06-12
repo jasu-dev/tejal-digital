@@ -18,10 +18,8 @@
 
 @section('content')
     {{-- Service Hero --}}
-    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20">
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
-
+    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20"
+        style="background:var(--color-gradient-hero)">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
                 <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
@@ -35,7 +33,8 @@
 
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div data-aos="fade-right" data-aos-duration="1000">
-                    <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 rounded-full border border-primary/20">
+                    <span
+                        class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 rounded-full border border-primary/20">
                         Expert PHP Development
                     </span>
                     <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
@@ -43,10 +42,11 @@
                         <span class="text-gradient">Development</span>
                     </h1>
                     <p class="text-xl text-on-surface/60 leading-relaxed mb-8">
-                        Build powerful, secure, and future-proof web applications with the world's most popular PHP framework. We deliver custom solutions that scale with your business.
+                        Build powerful, secure, and future-proof web applications with the world's most popular PHP
+                        framework. We deliver custom solutions that scale with your business.
                     </p>
                     <div class="flex flex-wrap gap-4">
-                         <a href="{{ route('contact') }}">
+                        <a href="{{ route('contact') }}">
                             <x-form.primary-button type="button" class="px-8 py-4 rounded-2xl">
                                 <span>Start Your Project</span>
                                 <x-icons.go class="w-4 h-4" />
@@ -55,16 +55,32 @@
                     </div>
                 </div>
                 <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
-                    <div class="aspect-square max-w-md mx-auto bg-surface-container rounded-[40px] border border-outline-variant/20 p-12 flex items-center justify-center relative overflow-hidden group">
-                        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                        <x-icons.laravel class="w-32 h-32 text-primary relative z-10" />
-                        
-                        {{-- Floating Tags --}}
-                        <div class="absolute top-10 right-10 p-3 bg-surface rounded-xl border border-outline-variant/20 shadow-xl animate-bounce" style="animation-duration: 3s;">
-                            <span class="text-xs font-bold text-primary">Scalable</span>
+                    <div
+                        class="max-w-md h-80 mx-auto border border-border bg-card rounded-2xl p-12 flex items-center justify-center relative overflow-hidden group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <div class="absolute bottom-20 left-10 p-3 bg-surface rounded-xl border border-outline-variant/20 shadow-xl animate-bounce" style="animation-duration: 4s;">
-                            <span class="text-xs font-bold text-secondary">Secure</span>
+                        <x-icons.laravel class="w-32 h-32 text-red-500 relative z-10" />
+                    </div>
+                    {{-- Floating Tags --}}
+                    <div
+                        class="absolute -top-7 right-10 flex items-center gap-2 rounded-xl bg-surface/95 px-4 py-3 ring-1 ring-border backdrop-blur">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
+                            <x-icons.target class="w-4 h-4" />
+                        </span>
+                        <div class="text-xs">
+                            <div class="text-muted-foreground">Scalable</div>
+                            <div class="font-semibold text-foreground">10x Faster Delivery</div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -bottom-7 left-10 flex items-center gap-2 rounded-xl bg-surface/95 px-4 py-3 ring-1 ring-border backdrop-blur">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
+                            <x-icons.security class="w-4 h-4" />
+                        </span>
+                        <div class="text-xs">
+                            <div class="text-muted-foreground">Security</div>
+                            <div class="font-semibold text-foreground">100% Secure</div>
                         </div>
                     </div>
                 </div>
@@ -72,108 +88,245 @@
         </div>
     </section>
 
-    {{-- Service Details Section --}}
-    <section class="py-24 bg-surface">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-12">
-                {{-- Left Side: Main Content --}}
-                <div class="lg:col-span-2 space-y-16">
-                    {{-- Why Laravel? --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
-                            <span class="w-8 h-1 bg-primary rounded-full"></span>
-                            Why Choose Laravel?
-                        </h2>
-                        <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed space-y-4">
-                            <p>
-                                Laravel is the premier PHP framework for building modern web applications. Its elegant syntax, robust security features, and extensive ecosystem make it the ideal choice for businesses looking to build high-quality digital products.
-                            </p>
-                            <p>
-                                At Tejal Digital, we leverage the full potential of Laravel to create applications that are not just functional, but also maintainable and scalable. From simple APIs to complex enterprise systems, our Laravel expertise ensures your project is built on a solid foundation.
-                            </p>
-                        </div>
-                    </div>
 
-                    {{-- Our Laravel Services --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-8">What We Offer</h2>
-                        <div class="grid md:grid-cols-2 gap-6">
-                            @php
-                                $subservices = [
-                                    ['title' => 'Custom Web Apps', 'desc' => 'Bespoke applications tailored to your specific business logic and workflows.'],
-                                    ['title' => 'RESTful API Development', 'desc' => 'High-performance APIs for mobile apps, internal tools, or third-party integrations.'],
-                                    ['title' => 'E-commerce Solutions', 'desc' => 'Secure and scalable online stores built with Laravel and custom checkout flows.'],
-                                    ['title' => 'Enterprise Portals', 'desc' => 'Internal tools and dashboards for data management and business automation.'],
-                                    ['title' => 'Legacy Migration', 'desc' => 'Modernizing old PHP applications by migrating them to the latest Laravel version.'],
-                                    ['title' => 'Laravel Performance Tuning', 'desc' => 'Optimizing queries, caching, and infrastructure for maximum speed.'],
-                                ];
-                            @endphp
-                            @foreach ($subservices as $s)
-                                <div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
-                                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">{{ $s['title'] }}</h4>
-                                    <p class="text-on-surface/60 text-sm leading-relaxed">{{ $s['desc'] }}</p>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
+    <!-- Intro Context Block -->
+    <section class="py-12 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xl text-muted-foreground">
+                "Whether you are a fast-growing startup looking to build a Minimum Viable Product (MVP) or an established
+                enterprise migrating a legacy system, we build bespoke, high-performance web applications tailored to your
+                unique business goals."
+            </p>
+        </div>
+    </section>
 
-                    {{-- Technical Expertise --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6">Technical Expertise</h2>
-                        <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed">
-                            <p>
-                                Our Laravel development process follows industry best practices, including:
-                            </p>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li><strong>MVC Architecture:</strong> Clean separation of logic, data, and presentation.</li>
-                                <li><strong>Eloquent ORM:</strong> Efficient and expressive database management.</li>
-                                <li><strong>Blade Templating:</strong> Fast and modular UI components.</li>
-                                <li><strong>Queue & Jobs:</strong> Handling heavy tasks in the background for a smooth UX.</li>
-                                <li><strong>Automated Testing:</strong> Ensuring stability with PHPUnit and Laravel Dusk.</li>
-                                <li><strong>Security First:</strong> Protection against XSS, CSRF, and SQL injection out of the box.</li>
-                            </ul>
-                        </div>
+    <!-- Why Choose Laravel Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                    Why Choose <span class="text-gradient">Laravel Framework</span> for Your Project?
+                </h2>
+                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                    Laravel has rightfully earned its reputation as <span class="font-semibold">"The PHP Framework for Web
+                        Artisans."</span> It is the go-to choice for modern enterprises because it streamlines development
+                    without compromising features.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Benefit 1 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
                     </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.security class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Unmatched Security</h3>
+                    <p class="text-sm leading-relaxed">Built-in protection against SQL injection, cross-site
+                        request forgery (CSRF), and cross-site scripting (XSS).</p>
                 </div>
-
-                {{-- Right Side: Meta Info & CTA --}}
-                <div class="space-y-8">
-                    <div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/20 sticky top-24">
-                        <h3 class="text-xl font-bold text-white mb-6">Key Benefits</h3>
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex gap-3 text-on-surface/70 text-sm">
-                                <x-icons.check class="w-5 h-5 text-primary shrink-0" />
-                                Rapid Development Cycles
-                            </li>
-                            <li class="flex gap-3 text-on-surface/70 text-sm">
-                                <x-icons.check class="w-5 h-5 text-primary shrink-0" />
-                                Scalable Infrastructure
-                            </li>
-                            <li class="flex gap-3 text-on-surface/70 text-sm">
-                                <x-icons.check class="w-5 h-5 text-primary shrink-0" />
-                                Robust Security Standards
-                            </li>
-                            <li class="flex gap-3 text-on-surface/70 text-sm">
-                                <x-icons.check class="w-5 h-5 text-primary shrink-0" />
-                                Large Community Support
-                            </li>
-                        </ul>
-                        <div class="pt-6 border-t border-outline-variant/10">
-                             <a href="{{ route('contact') }}">
-                                <x-form.primary-button type="button" class="w-full justify-center py-4 rounded-2xl">
-                                    <span>Get Free Quote</span>
-                                    <x-icons.go class="w-4 h-4" />
-                                </x-form.primary-button>
-                            </a>
-                        </div>
+                <!-- Benefit 2 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
                     </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.launch class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">High Performance</h3>
+                    <p class="text-sm leading-relaxed">Powerful caching systems and seamless database
+                        migration tools to handle intense traffic loads effortlessly.</p>
+                </div>
+                <!-- Benefit 3 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.time class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Faster Time-to-Market</h3>
+                    <p class="text-sm leading-relaxed">Modular architecture and pre-built packages allow our
+                        <strong>dedicated Laravel developers</strong> to deploy fast.
+                    </p>
+                </div>
+                <!-- Benefit 4 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.plugin class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Seamless Integrations</h3>
+                    <p class="text-sm leading-relaxed">Connects flawlessly with complex third-party tools,
+                        global payment gateways, and business CRMs.</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center text-sm">
+                Investing in <span class="font-semibold">professional Laravel services</span> guarantees a
+                future-proof foundation for your product.
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                    Our Comprehensive <span class="text-gradient">Laravel Development Services</span>
+                </h2>
+                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                    We offer end-to-end <span class="font-semibold">Laravel application development</span>
+                    to cover every stage of your digital transformation journey.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
+                <!-- Service 1 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">01</span>
+                    <h3 class="text-xl font-bold mb-3">Custom Laravel Web Development
+                    </h3>
+                    <p class="text-sm leading-relaxed">We build tailor-made,
+                        feature-rich web applications from scratch, ensuring the architecture aligns perfectly with your
+                        workflow.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">02</span>
+                    <h3 class="text-xl font-bold mb-3">Laravel Enterprise Solutions
+                    </h3>
+                    <p class="text-sm leading-relaxed">For large-scale
+                        corporations requiring complex data handling, we build robust applications designed to scale
+                        cleanly.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">03</span>
+                    <h3 class="text-xl font-bold mb-3">Laravel eCommerce Development
+                    </h3>
+                    <p class="text-sm leading-relaxed">Launch an online store
+                        leveraging flexible, highly secure, fast-loading, and conversion-optimized checkout layouts.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">04</span>
+                    <h3 class="text-xl font-bold mb-3">API Development & Integration
+                    </h3>
+                    <p class="text-sm leading-relaxed">We specialize in building
+                        secure, well-documented RESTful APIs that connect seamlessly with external software.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">05</span>
+                    <h3 class="text-xl font-bold mb-3">Legacy Migration to Laravel
+                    </h3>
+                    <p class="text-sm leading-relaxed">Outdated frameworks
+                        slowing you down? Our specialized <strong class="font-medium">Laravel migration services</strong>
+                        ensure safely transitioned codebases.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">06</span>
+                    <h3 class="text-xl font-bold mb-3">24/7 Support & Maintenance
+                    </h3>
+                    <p class="text-sm leading-relaxed">From regular security
+                        patches and performance optimization to feature additions, we keep your platform running perfectly.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="{{ route('contact') }}" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <span>Get Free Consultation</span>
+                        <x-icons.go class="w-4 h-4" />
+                    </x-form.primary-button>
+                </a>
+                <a href="{{ config('staticdata.whatsapp_url') }}" data-aos="fade-up" data-aos-delay="100"
+                    data-aos-duration="800">
+                    <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <x-icons.whatsapp class="w-5 h-5" />
+                        <span>Chat on WhatsApp</span>
+                    </x-form.secondary-button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Q1 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-laravel">Q.</span> Why should I choose Laravel over other PHP frameworks?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Laravel stands out because of its elegant syntax, robust built-in security features, excellent
+                        documentation, and extensive ecosystem (like Forge, Vapor, and Nova). It significantly reduces
+                        development time while ensuring top-tier application performance.
+                    </p>
+                </div>
+                <!-- Q2 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-laravel">Q.</span> How much does a Laravel web development project cost?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        The cost of <strong class="font-medium">Laravel application development</strong>
+                        depends entirely on the scope, complexity, integrated features, and timeline of your project. We
+                        offer customized pricing models to fit both startup budgets and enterprise demands. Contact us for a
+                        detailed breakdown.
+                    </p>
+                </div>
+                <!-- Q3 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-laravel">Q.</span> Can you migrate my existing website to Laravel?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Yes, absolutely. We specialize in migrating legacy PHP applications, CodeIgniter, or WordPress sites
+                        over to Laravel smoothly, ensuring complete data integrity and zero data loss.
+                    </p>
+                </div>
+                <!-- Q4 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-laravel">Q.</span> Will I have full ownership of the source code?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Yes. Once the project is completed and payment milestones are cleared, you will own 100% of the
+                        source code, intellectual property rights, and documentation.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     {{-- Related Projects --}}
-    <section class="py-24 border-t border-outline-variant/20 bg-surface-container/30">
+    <section class="py-24 border-b border-outline-variant/20">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
@@ -183,21 +336,27 @@
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                 <a href="{{ route('portfolio.attendance-manager') }}" class="group bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/20 hover:border-primary/30 transition-all">
+                <a href="{{ route('portfolio.attendance-manager') }}"
+                    class="group rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('assets/images/attendance.png') }}" alt="Attendance Manager" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <img src="{{ asset('assets/images/attendance.png') }}" alt="Attendance Manager"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Attendance Manager System</h3>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Attendance
+                            Manager System</h3>
                         <p class="text-on-surface/60 text-sm">Geo-fenced attendance tracking with selfie verification.</p>
                     </div>
                 </a>
-                <a href="{{ route('portfolio.krishna-academy') }}" class="group bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/20 hover:border-primary/30 transition-all">
+                <a href="{{ route('portfolio.krishna-academy') }}"
+                    class="group rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('assets/images/krishna-academy.png') }}" alt="Krishna Academy" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <img src="{{ asset('assets/images/krishna-academy.png') }}" alt="Krishna Academy"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">KrishnaAcademy – LMS Platform</h3>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                            KrishnaAcademy – LMS Platform</h3>
                         <p class="text-on-surface/60 text-sm">Educational platform with video lessons and quiz modules.</p>
                     </div>
                 </a>

@@ -29,11 +29,13 @@ Route::prefix('portfolio')->group(function () {
 // Services
 Route::prefix('services')->group(function () {
     Route::view('/laravel-development', 'services.laravel-development')->name('services.laravel-development');
-    Route::view('/custom-software-development', 'services.custom-software')->name('services.custom-software');
-    Route::view('/custom-crm-development', 'services.crm-development')->name('services.crm-development');
     Route::view('/wordpress-development', 'services.wordpress-development')->name('services.wordpress-development');
     Route::view('/ecommerce-development', 'services.ecommerce-development')->name('services.ecommerce-development');
-    Route::view('/admin-dashboard-development', 'services.admin-dashboards')->name('services.admin-dashboards');
+    Route::view('/business-website-development', 'services.business-website')->name('services.business-website');
+
+
+    Route::view('/custom-software-development', 'services.custom-software')->name('services.custom-software');
+    Route::view('/custom-crm-development', 'services.crm-development')->name('services.crm-development');
     Route::view('/rest-api-development', 'services.api-development')->name('services.api-development');
     Route::view('/security-performance-optimization', 'services.security-performance')->name('services.security-performance');
     Route::view('/maintenance-support', 'services.maintenance')->name('services.maintenance');

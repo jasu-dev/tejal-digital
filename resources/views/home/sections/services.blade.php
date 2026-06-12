@@ -3,6 +3,7 @@
         [
             'icon' => 'laravel',
             'popular' => true,
+            'link' => "route('services.laravel-development')",
             'title' => 'Custom Web App Development (Laravel)',
             'description' => 'Scalable, ultra-secure custom web applications built with Laravel to streamline complex business workflows.',
             'key_points' => [
@@ -16,7 +17,8 @@
         [
             'icon' => 'window',
             'popular' => true,
-            'title' => 'Corporate & Small Business Website Development',
+            'link' => "route('services.wordpress-websites')",
+            'title' => 'Corporate & Business Website Development',
             'description' => 'Professional, fast websites engineered to build brand authority and convert visitors into customers.',
             'key_points' => [
                 'Mobile-first, responsive design',
@@ -29,8 +31,9 @@
         [
             'icon' => 'wordpress',
             'popular' => true,
-            'title' => 'Custom WordPress Website Development',
-            'description' => 'Lightweight, custom WordPress websites built from scratch for full control without template bloat.',
+            'link' => "route('services.wordpress-websites')",
+            'title' => 'WordPress Website Development',
+            'description' => 'Lightweight, WordPress websites built from scratch for full control without template bloat.',
             'key_points' => [
                 'Bespoke theme development',
                 'Bloat-free, high-speed coding',
