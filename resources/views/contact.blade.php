@@ -44,61 +44,42 @@
 @endsection
 @section('content')
     {{-- Hero Section --}}
-    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20">
+
+    <section class="relative -mt-20 pt-20 flex flex-col items-center pb-24 text-sm bg-cover bg-center bg-no-repeat"
+        style="background-image: url('{{ asset('assets/images/hero-gradient-bg.png') }}')">
+
         <div
-            class="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/30 rounded-full blur-3xl">
+            class="flex flex-wrap items-center justify-center p-2 px-4 mt-20 md:mt-32 bg-white/50 backdrop-blur-xl border border-white/20 rounded-2xl">
+            <x-icons.whatsapp class="w-4 h-4" />
+            <p class="ml-2 text-foreground">Get in Touch</p>
         </div>
-        <div
-            class="hidden sm:block absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-br from-primary-400/10 to-secondary-500/20 rounded-full blur-3xl">
-        </div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-4xl mx-auto">
-                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-foreground">
+
+        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl m-5 text-secondary">
+            Let's Build Something <br> Amazing Together
+        </h1>
+        <p class="text-foreground md:text-base max-md:px-2 text-center max-w-xl mt-3">
+            Ready to transform your digital presence? Get in touch with our team of experts and let's discuss your project.
+        </p>
+
+        <div class="flex flex-col justify-center sm:flex-row gap-4 mt-5">
+            <a href="#contactForm">
+                <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
+                    <span>Schedule a Call</span>
+                    <x-icons.go class="w-4 h-4" />
+                </x-form.primary-button>
+            </a>
+            <a href="{{ config('staticdata.whatsapp_url') }}">
+                <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
                     <x-icons.whatsapp class="w-4 h-4" />
-                    <span class="text-sm font-medium">Get in Touch</span>
-                </div>
-                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-                    <span class="text-foreground">Let's Build Something</span><br>
-                    <span class="text-gradient">Amazing Together</span>
-                </h1>
-                <p class="text-xl text-on-surface/60 leading-relaxed mb-8 max-w-3xl mx-auto">
-                    Ready to transform your digital presence? Get in touch with our team of experts and let's discuss your
-                    project.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contactForm">
-                        <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
-                            <span>Schedule a Call</span>
-                            <x-icons.go class="w-4 h-4" />
-                        </x-form.primary-button>
-                    </a>
-                    <a href="{{ config('staticdata.whatsapp_url') }}">
-                        <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
-                            <x-icons.whatsapp class="w-4 h-4" />
-                            <span>Start a Chat</span>
-                        </x-form.secondary-button>
-                    </a>
-                </div>
-            </div>
+                    <span>Start a Chat</span>
+                </x-form.secondary-button>
+            </a>
         </div>
     </section>
 
     {{-- Contact Options --}}
-    <section class="py-24 bg-surface-container">
+    <section class="py-16">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-            {{-- Header --}}
-            <div class="text-center mb-20">
-                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-foreground">
-                    <span class="text-sm font-medium">Contact Information</span>
-                </div>
-                <h2 class="text-4xl lg:text-6xl font-black text-foreground mb-6 tracking-tight">
-                    Get In Touch
-                </h2>
-                <p class="text-lg text-on-surface/60 max-w-2xl mx-auto leading-relaxed">
-                    Choose the channel that works best for you. We're ready to help.
-                </p>
-            </div>
 
             {{-- Contact Cards Grid --}}
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -133,8 +114,7 @@
                 @endphp
 
                 @foreach ($contactItems as $item)
-                    <div
-                        class="group relative bg-surface-container-high rounded-2xl border border-outline-variant/20 p-8 text-center transition-all duration-500 hover:border-primary/40 hover:-translate-y-2"
+                    <div class="group relative rounded-2xl border border-border p-8 text-center transition-all duration-500 hover:border-primary/40"
                         data-aos="fade-up" data-aos-delay="{{ 100 * $loop->iteration }}" data-aos-duration="800">
 
                         {{-- Icon: The "Glow" Container --}}
@@ -145,7 +125,7 @@
                             </div>
 
                             <div
-                                class="relative w-full h-full bg-surface-container rounded-2xl border border-outline-variant/50 flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all duration-500">
+                                class="relative w-full h-full rounded-2xl border border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all duration-500">
                                 @php $iconName = 'icons.' . $item['icon']; @endphp
                                 <x-dynamic-component :component="$iconName"
                                     class="w-7 h-7 text-primary group-hover:text-surface transition-colors duration-500" />
@@ -182,7 +162,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16">
                 <div class="relative" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
-                    <div class="lg:sticky top-15 rounded-lg bg-surface-container-low border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative">
+                    <div class="lg:sticky top-15 rounded-lg border border-border  transition-all duration-300 relative">
                         <div class="p-8">
                             <h3 class="text-2xl font-bold text-on-surface mb-6">Get In Touch</h3>
                             @if (session('success'))
@@ -278,7 +258,7 @@
                                 ];
                             @endphp
                             @foreach ($stats as $stat)
-                                <div class="p-4 rounded-2xl border border-outline-variant/10 bg-surface-container-high">
+                                <div class="p-4 rounded-2xl border border-border">
                                     <div class="text-primary font-black text-xl">{{ $stat['val'] }}</div>
                                     <div class="text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">
                                         {{ $stat['label'] }}</div>
@@ -289,8 +269,7 @@
                     <div>
                         <h3 class="text-2xl font-bold text-foreground mb-6">Frequently Asked Questions</h3>
                         <div class="space-y-4">
-                            <div
-                                class="rounded-lg bg-surface-container border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative">
+                            <div class="rounded-lg border border-border transition-all duration-300 relative">
                                 <div class="p-6">
                                     <h4 class="font-bold text-on-surface mb-2">How long does a typical project take?
                                     </h4>
@@ -299,8 +278,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                class="rounded-lg bg-surface-container border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative">
+                            <div class="rounded-lg border border-border transition-all duration-300 relative">
                                 <div class="p-6">
                                     <h4 class="font-bold text-on-surface mb-2">Do you provide ongoing support?</h4>
                                     <p class="text-on-surface/60 text-sm">Yes, we offer comprehensive maintenance and
@@ -308,8 +286,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                class="rounded-lg bg-surface-container border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative">
+                            <div class="rounded-lg border border-border transition-all duration-300 relative">
                                 <div class="p-6">
                                     <h4 class="font-bold text-on-surface mb-2">What's your development process?</h4>
                                     <p class="text-on-surface/60 text-sm">We follow a structured 6-step process: Discovery,
@@ -317,8 +294,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                class="rounded-lg bg-surface-container border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative">
+                            <div class="rounded-lg border border-border transition-all duration-300 relative">
                                 <div class="p-6">
                                     <h4 class="font-bold text-on-surface mb-2">Can you work with our existing brand?
                                     </h4>
@@ -335,18 +311,13 @@
     </section>
 
     {{-- CTA Section --}}
-    <section class="py-26 relative overflow-hidden">
-        <div
-            class="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/30 rounded-full blur-3xl">
-        </div>
-        <div
-            class="absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-br from-primary-400/10 to-secondary-500/20 rounded-full blur-3xl">
-        </div>
+    <section class="py-26 relative overflow-hidden bg-gradient-to-b from-background via-[#fffbee] to-primary-500/20">
 
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-foreground">
-                    <span class="text-sm font-medium">Get in Touch</span>
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                    <span class="text-sm font-semibold">Get in Touch</span>
                 </div>
                 <h2 class="text-4xl lg:text-6xl font-black text-foreground mb-8">
                     Ready to Get Started?
@@ -357,7 +328,8 @@
                 </p>
             </div>
 
-            <div class="flex items-center justify-center gap-8 text-on-surface/80 mb-10" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+            <div class="flex items-center justify-center gap-8 text-on-surface/80 mb-10" data-aos="fade-up"
+                data-aos-delay="150" data-aos-duration="800">
                 <div class="flex items-center gap-2">
                     <x-icons.launch class="w-5 h-5" />
                     <span>Award Winning</span>
@@ -381,7 +353,8 @@
                     </x-form.primary-button>
                 </a>
 
-                <a href="{{ config('staticdata.whatsapp_url') }}" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+                <a href="{{ config('staticdata.whatsapp_url') }}" data-aos="fade-up" data-aos-delay="150"
+                    data-aos-duration="800">
                     <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
                         <x-icons.whatsapp class="w-5 h-5" />
                         <span>Chat on WhatsApp</span>

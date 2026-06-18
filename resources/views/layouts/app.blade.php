@@ -103,6 +103,8 @@
                 class="block px-4 py-2.5 rounded-lg text-sm @activeMobileLink('services')">Services</a>
             <a href="{{ route('portfolio') }}"
                 class="block px-4 py-2.5 rounded-lg text-sm @activeMobileLink('portfolio')">Portfolio</a>
+            <a href="{{ route('contact') }}"
+                class="block px-4 py-2.5 rounded-lg text-sm @activeMobileLink('contact')">Contact</a>
             <a href="{{ route('contact') }}" class="block">
                 <x-form.primary-button type="button" class="rounded-full">
                     Get started
