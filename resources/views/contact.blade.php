@@ -53,12 +53,12 @@
         </div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-4xl mx-auto">
-                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-foreground">
                     <x-icons.whatsapp class="w-4 h-4" />
                     <span class="text-sm font-medium">Get in Touch</span>
                 </div>
                 <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-                    <span class="text-white">Let's Build Something</span><br>
+                    <span class="text-foreground">Let's Build Something</span><br>
                     <span class="text-gradient">Amazing Together</span>
                 </h1>
                 <p class="text-xl text-on-surface/60 leading-relaxed mb-8 max-w-3xl mx-auto">
@@ -89,10 +89,10 @@
 
             {{-- Header --}}
             <div class="text-center mb-20">
-                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-foreground">
                     <span class="text-sm font-medium">Contact Information</span>
                 </div>
-                <h2 class="text-4xl lg:text-6xl font-black text-white mb-6 tracking-tight">
+                <h2 class="text-4xl lg:text-6xl font-black text-foreground mb-6 tracking-tight">
                     Get In Touch
                 </h2>
                 <p class="text-lg text-on-surface/60 max-w-2xl mx-auto leading-relaxed">
@@ -261,7 +261,7 @@
                 </div>
                 <div class="space-y-6" data-aos="fade-left" data-aos-delay="100" data-aos-duration="1000">
                     <div>
-                        <h3 class="text-2xl font-bold text-white mb-6">Why Choose Tejal Digital?</h3>
+                        <h3 class="text-2xl font-bold text-foreground mb-6">Why Choose Tejal Digital?</h3>
                         <div class="grid sm:grid-cols-2 gap-4">
                             @php
                                 $stats = [
@@ -287,7 +287,7 @@
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h3>
+                        <h3 class="text-2xl font-bold text-foreground mb-6">Frequently Asked Questions</h3>
                         <div class="space-y-4">
                             <div
                                 class="rounded-lg bg-surface-container border-1 border-outline-variant/20  transition-all duration-300 hover:bg-surface-container-high relative">
@@ -345,10 +345,10 @@
 
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-foreground">
                     <span class="text-sm font-medium">Get in Touch</span>
                 </div>
-                <h2 class="text-4xl lg:text-6xl font-black text-white mb-8">
+                <h2 class="text-4xl lg:text-6xl font-black text-foreground mb-8">
                     Ready to Get Started?
                 </h2>
 

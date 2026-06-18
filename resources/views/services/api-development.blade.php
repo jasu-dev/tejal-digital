@@ -38,7 +38,7 @@
                     <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 rounded-full border border-indigo-500/20">
                         Seamless Connectivity
                     </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
                         API Development <br>
                         <span class="text-gradient from-indigo-400 to-purple-500">& Integration</span>
                     </h1>
@@ -72,7 +72,7 @@
                 <div class="lg:col-span-2 space-y-16">
                     {{-- The Bridge --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
+                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
                             <span class="w-8 h-1 bg-indigo-500 rounded-full"></span>
                             The Backbone of Modern Apps
                         </h2>
@@ -88,7 +88,7 @@
 
                     {{-- API Services --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-8">Our API Expertise</h2>
+                        <h2 class="text-3xl font-bold text-foreground mb-8">Our API Expertise</h2>
                         <div class="grid md:grid-cols-2 gap-6">
                             @php
                                 $services = [
@@ -102,7 +102,7 @@
                             @endphp
                             @foreach ($services as $s)
                                 <div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-indigo-500/30 transition-all group">
-                                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-indigo-400 transition-colors">{{ $s['title'] }}</h4>
+                                    <h4 class="text-lg font-bold text-foreground mb-2 group-hover:text-indigo-400 transition-colors">{{ $s['title'] }}</h4>
                                     <p class="text-on-surface/60 text-sm leading-relaxed">{{ $s['desc'] }}</p>
                                 </div>
                             @endforeach
@@ -111,7 +111,7 @@
 
                     {{-- Technical Focus --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6">Security & Performance</h2>
+                        <h2 class="text-3xl font-bold text-foreground mb-6">Security & Performance</h2>
                         <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed">
                             <p>
                                 We prioritize the integrity and speed of every API we build:
@@ -130,7 +130,7 @@
                 {{-- Right Side: Meta Info & CTA --}}
                 <div class="space-y-8">
                     <div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/20 sticky top-24">
-                        <h3 class="text-xl font-bold text-white mb-6">Service Benefits</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-6">Service Benefits</h3>
                         <ul class="space-y-4 mb-8">
                             <li class="flex gap-3 text-on-surface/70 text-sm">
                                 <x-icons.check class="w-5 h-5 text-indigo-400 shrink-0" />
@@ -168,7 +168,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Integration Showcase</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Integration Showcase</h2>
                     <p class="text-on-surface/60">Projects that leverage the power of APIs and connectivity.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
@@ -179,7 +179,7 @@
                         <img src="{{ asset('assets/images/jixicloud.png') }}" alt="Jixicloud" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Jixicloud Hosting Portal</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Jixicloud Hosting Portal</h3>
                         <p class="text-on-surface/60 text-sm">Deep integration with domain registrar APIs for live rates.</p>
                     </div>
                 </a>
@@ -188,7 +188,7 @@
                         <img src="{{ asset('assets/images/promofusion360.png') }}" alt="PromoFusion360" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">PromoFusion360 Portal</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">PromoFusion360 Portal</h3>
                         <p class="text-on-surface/60 text-sm">Automated payment processing via multiple gateway APIs.</p>
                     </div>
                 </a>

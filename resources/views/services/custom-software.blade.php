@@ -38,7 +38,7 @@
                     <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20">
                         Bespoke Solutions
                     </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
                         Web Portals & <br>
                         <span class="text-gradient from-blue-400 to-sky-500">Custom Software</span>
                     </h1>
@@ -72,7 +72,7 @@
                 <div class="lg:col-span-2 space-y-16">
                     {{-- The Value --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
+                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
                             <span class="w-8 h-1 bg-blue-500 rounded-full"></span>
                             Powering Business Operations
                         </h2>
@@ -88,7 +88,7 @@
 
                     {{-- Portal Solutions --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-8">What We Build</h2>
+                        <h2 class="text-3xl font-bold text-foreground mb-8">What We Build</h2>
                         <div class="grid md:grid-cols-2 gap-6">
                             @php
                                 $portals = [
@@ -102,7 +102,7 @@
                             @endphp
                             @foreach ($portals as $p)
                                 <div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-blue-500/30 transition-all group">
-                                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">{{ $p['title'] }}</h4>
+                                    <h4 class="text-lg font-bold text-foreground mb-2 group-hover:text-blue-400 transition-colors">{{ $p['title'] }}</h4>
                                     <p class="text-on-surface/60 text-sm leading-relaxed">{{ $p['desc'] }}</p>
                                 </div>
                             @endforeach
@@ -111,7 +111,7 @@
 
                     {{-- Approach --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6">Our Development Approach</h2>
+                        <h2 class="text-3xl font-bold text-foreground mb-6">Our Development Approach</h2>
                         <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed">
                             <p>
                                 We follow a structured methodology to ensure the success of your custom software project:
@@ -130,7 +130,7 @@
                 {{-- Right Side: Meta Info & CTA --}}
                 <div class="space-y-8">
                     <div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/20 sticky top-24">
-                        <h3 class="text-xl font-bold text-white mb-6">Service Highlights</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-6">Service Highlights</h3>
                         <ul class="space-y-4 mb-8">
                             <li class="flex gap-3 text-on-surface/70 text-sm">
                                 <x-icons.check class="w-5 h-5 text-blue-400 shrink-0" />
@@ -168,7 +168,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Related Work</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Related Work</h2>
                     <p class="text-on-surface/60">Explore portals and custom software we've delivered recently.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
@@ -179,7 +179,7 @@
                         <img src="{{ asset('assets/images/jixicloud.png') }}" alt="Jixicloud" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Jixicloud Hosting Portal</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Jixicloud Hosting Portal</h3>
                         <p class="text-on-surface/60 text-sm">Custom CMS with real-time domain rate integrations.</p>
                     </div>
                 </a>
@@ -188,7 +188,7 @@
                         <img src="{{ asset('assets/images/kifayatcard.png') }}" alt="Kifayat Card" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Kifayat Card System</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Kifayat Card System</h3>
                         <p class="text-on-surface/60 text-sm">Digital loyalty point software for merchants and customers.</p>
                     </div>
                 </a>

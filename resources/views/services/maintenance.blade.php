@@ -38,7 +38,7 @@
                     <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-on-surface/60 bg-surface-container rounded-full border border-outline-variant/20">
                         Long-term Support
                     </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
                         Website <br>
                         <span class="text-gradient from-on-surface/80 to-on-surface">Maintenance</span>
                     </h1>
@@ -47,7 +47,7 @@
                     </p>
                     <div class="flex flex-wrap gap-4">
                          <a href="{{ route('contact') }}">
-                            <x-form.primary-button type="button" class="px-8 py-4 rounded-2xl bg-surface-container hover:bg-surface-container-high border-outline-variant/30 text-white">
+                            <x-form.primary-button type="button" class="px-8 py-4 rounded-2xl bg-surface-container hover:bg-surface-container-high border-outline-variant/30 text-foreground">
                                 <span>View Support Plans</span>
                                 <x-icons.go class="w-4 h-4" />
                             </x-form.primary-button>
@@ -72,7 +72,7 @@
                 <div class="lg:col-span-2 space-y-16">
                     {{-- The Maintenance Mindset --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
+                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
                             <span class="w-8 h-1 bg-on-surface/40 rounded-full"></span>
                             Protecting Your Investment
                         </h2>
@@ -88,7 +88,7 @@
 
                     {{-- Maintenance Services --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-8">What's Included</h2>
+                        <h2 class="text-3xl font-bold text-foreground mb-8">What's Included</h2>
                         <div class="grid md:grid-cols-2 gap-6">
                             @php
                                 $services = [
@@ -102,7 +102,7 @@
                             @endphp
                             @foreach ($services as $s)
                                 <div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-on-surface/30 transition-all group">
-                                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-on-surface transition-colors">{{ $s['title'] }}</h4>
+                                    <h4 class="text-lg font-bold text-foreground mb-2 group-hover:text-on-surface transition-colors">{{ $s['title'] }}</h4>
                                     <p class="text-on-surface/60 text-sm leading-relaxed">{{ $s['desc'] }}</p>
                                 </div>
                             @endforeach
@@ -111,7 +111,7 @@
 
                     {{-- Why Support Matters --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6">Long-Term Growth</h2>
+                        <h2 class="text-3xl font-bold text-foreground mb-6">Long-Term Growth</h2>
                         <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed">
                             <p>
                                 Maintenance is not just about fixing things when they break; it's about continuous improvement. Our support plans include:
@@ -129,7 +129,7 @@
                 {{-- Right Side: Meta Info & CTA --}}
                 <div class="space-y-8">
                     <div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/20 sticky top-24">
-                        <h3 class="text-xl font-bold text-white mb-6">Plan Benefits</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-6">Plan Benefits</h3>
                         <ul class="space-y-4 mb-8">
                             <li class="flex gap-3 text-on-surface/70 text-sm">
                                 <x-icons.check class="w-5 h-5 text-on-surface/60 shrink-0" />
@@ -150,7 +150,7 @@
                         </ul>
                         <div class="pt-6 border-t border-outline-variant/10">
                              <a href="{{ route('contact') }}">
-                                <x-form.primary-button type="button" class="w-full justify-center py-4 rounded-2xl bg-surface-container-high border-outline-variant/20 text-white">
+                                <x-form.primary-button type="button" class="w-full justify-center py-4 rounded-2xl bg-surface-container-high border-outline-variant/20 text-foreground">
                                     <span>Choose Your Plan</span>
                                     <x-icons.go class="w-4 h-4" />
                                 </x-form.primary-button>

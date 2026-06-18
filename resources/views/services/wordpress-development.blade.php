@@ -39,7 +39,7 @@
                         class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20">
                         WordPress Development Company
                     </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
                         High-Performance <br>
                         <span class="text-gradient from-blue-400 to-blue-600">WordPress Website Development</span> Services
                     </h1>
@@ -93,7 +93,7 @@
         <div class="max-w-5xl mx-auto px-6 text-center">
             <p class="text-lg sm:text-xl text-on-surface/60 italic">
                 "Whether you need an elegant corporate website, a fast-scaling WooCommerce storefront, or a complex
-                enterprise multisite network, our <strong class="text-white">professional WordPress services</strong> turn
+                enterprise multisite network, our <strong class="text-foreground">professional WordPress services</strong> turn
                 your creative vision into a strategic business engine."
             </p>
         </div>
@@ -103,11 +103,11 @@
     <section class="py-24 border-b border-outline-variant/20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     Why Choose <span class="text-gradient">WordPress CMS</span> for Your Web Project?
                 </h2>
                 <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
-                    WordPress powers over <span class="font-semibold text-white">40% of all websites</span> globally. It is
+                    WordPress powers over <span class="font-semibold text-foreground">40% of all websites</span> globally. It is
                     the gold standard for growth-focused brands because it pairs seamless marketing autonomy with infinite
                     scalability.
                 </p>
@@ -121,7 +121,7 @@
                         class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <x-icons.planning class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Easy Content Editing</h3>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">Easy Content Editing</h3>
                     <p class="text-sm text-on-surface/70 leading-relaxed">Empower your marketing team to update copy,
                         publish blogs, and launch landing pages instantly using the block editor without calling a
                         developer.</p>
@@ -134,7 +134,7 @@
                         class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <x-icons.deep-search class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">SEO-Friendly Core</h3>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">SEO-Friendly Core</h3>
                     <p class="text-sm text-on-surface/70 leading-relaxed">Clean code structures, rapid indexing setups, and
                         semantic layouts ensure search engines love crawling your platform from day one.</p>
                 </div>
@@ -146,7 +146,7 @@
                         class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <x-icons.launch class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Infinite Scalability</h3>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">Infinite Scalability</h3>
                     <p class="text-sm text-on-surface/70 leading-relaxed">WordPress grows with you. Easily integrate
                         customized client portals, CRM sync pipes, and multilingual localizations as you expand.</p>
                 </div>
@@ -159,14 +159,14 @@
                         class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <x-icons.cart class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">WooCommerce Ready</h3>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">WooCommerce Ready</h3>
                     <p class="text-sm text-on-surface/70 leading-relaxed">Seamlessly launch high-conversion digital
                         storefronts, handle dynamic cart logistics, and anchor into leading payment gateways securely.</p>
                 </div>
             </div>
 
             <div class="mt-12 text-center text-sm text-on-surface/60">
-                Investing in <span class="font-semibold text-white">professional WordPress development services</span>
+                Investing in <span class="font-semibold text-foreground">professional WordPress development services</span>
                 guarantees a dynamic, secure, and easily manageable infrastructure.
             </div>
         </div>
@@ -176,9 +176,9 @@
     <section id="services" class="py-24 border-b border-outline-variant/20 bg-card/20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-20">
-                <h2 class="text-4xl font-bold text-white mb-6">Our Comprehensive WordPress Services</h2>
+                <h2 class="text-4xl font-bold text-foreground mb-6">Our Comprehensive WordPress Services</h2>
                 <p class="text-lg text-on-surface/60">
-                    We deliver specialized, end-to-end <span class="text-white font-medium">WordPress application
+                    We deliver specialized, end-to-end <span class="text-foreground font-medium">WordPress application
                         development</span> workflows engineered for cross-device compatibility.
                 </p>
             </div>
@@ -189,7 +189,7 @@
                     class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">01</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Custom WordPress Theme Development</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">Custom WordPress Theme Development</h3>
                         <p class="text-on-surface/70 text-sm leading-relaxed">Say goodbye to bloated, slow off-the-shelf
                             templates. We hand-code lightweight, unique themes tailored to your exact branding standards for
                             pixel-perfect presentation.</p>
@@ -201,7 +201,7 @@
                     class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">02</div>
-                        <h3 class="text-xl font-bold text-white mb-3">WooCommerce Development</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">WooCommerce Development</h3>
                         <p class="text-on-surface/70 text-sm leading-relaxed">Transform your site into a global sales
                             powerhouse. We build optimized eCommerce architectures that maximize checkouts, manage thousands
                             of SKUs, and keep sales fluid.</p>
@@ -213,7 +213,7 @@
                     class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">03</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Custom Plugin Engineering</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">Custom Plugin Engineering</h3>
                         <p class="text-on-surface/70 text-sm leading-relaxed">Need custom business logic? Our engineering
                             team designs secure, light, custom plugins that extend the core functionalities of WordPress
                             without dragging down speeds.</p>
@@ -225,7 +225,7 @@
                     class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">04</div>
-                        <h3 class="text-xl font-bold text-white mb-3">API & Third-Party Integrations</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">API & Third-Party Integrations</h3>
                         <p class="text-on-surface/70 text-sm leading-relaxed">We connect your WordPress engine with
                             enterprise applications, including internal ERP systems, complex Hubspot CRM pipelines,
                             marketing automation tools, and legacy software.</p>
@@ -237,7 +237,7 @@
                     class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">05</div>
-                        <h3 class="text-xl font-bold text-white mb-3">CMS Headless WordPress Solutions</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">CMS Headless WordPress Solutions</h3>
                         <p class="text-on-surface/70 text-sm leading-relaxed">Experience ultimate speed. We decoupled the
                             admin panel using REST/GraphQL APIs, rendering ultra-fast frontends via modern tech stacks like
                             Next.js or Nuxt.</p>
@@ -249,7 +249,7 @@
                     class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">06</div>
-                        <h3 class="text-xl font-bold text-white mb-3">24/7 Support & Optimization</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">24/7 Support & Optimization</h3>
                         <p class="text-on-surface/70 text-sm leading-relaxed">Websites require ongoing vigilance. We manage
                             routine cloud backups, database tuning, proactive security updates, and regular optimization to
                             prevent slowdowns.</p>
@@ -270,7 +270,7 @@
                 <div class="relative z-10 text-center max-w-3xl mx-auto">
                     <span class="text-primary font-bold text-sm tracking-widest uppercase block mb-3">Let’s Discuss Your
                         Web Strategy</span>
-                    <h2 class="text-3xl sm:text-5xl font-bold text-white mb-6">Build a Future-Proof WordPress Site Today
+                    <h2 class="text-3xl sm:text-5xl font-bold text-foreground mb-6">Build a Future-Proof WordPress Site Today
                     </h2>
                     <p class="text-on-surface/70 text-lg mb-8 leading-relaxed">
                         Don't let sluggish templates or outdated plugins limit your user experience. Connect with our
@@ -302,7 +302,7 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Our Quality
                     Standard</span>
-                <h2 class="text-4xl font-bold text-white mb-6">Why Hire Our Dedicated WordPress Developers?</h2>
+                <h2 class="text-4xl font-bold text-foreground mb-6">Why Hire Our Dedicated WordPress Developers?</h2>
                 <p class="text-lg text-on-surface/50">
                     We combine technical mastery with transparent project pipelines to ensure your development journey runs
                     smoothly.
@@ -319,7 +319,7 @@
                             class="w-12 h-12 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <x-icons.launch class="w-5 h-5" />
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">Core Web Vitals Focus</h3>
+                        <h3 class="text-lg font-bold text-foreground mb-2">Core Web Vitals Focus</h3>
                         <p class="text-on-surface/70 text-xs sm:text-sm leading-relaxed">We optimize for performance. We
                             eliminate render-blocking elements to secure high page-speed scores on mobile and desktop
                             platforms.</p>
@@ -335,9 +335,9 @@
                             class="w-12 h-12 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <x-icons.security class="w-5 h-5" />
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">Bulletproof Security</h3>
+                        <h3 class="text-lg font-bold text-foreground mb-2">Bulletproof Security</h3>
                         <p class="text-on-surface/70 text-xs sm:text-sm leading-relaxed">Our <strong
-                                class="font-medium text-white">expert WordPress developers</strong> implement strict
+                                class="font-medium text-foreground">expert WordPress developers</strong> implement strict
                             directory hardening, brute-force filters, and automated malware monitoring modules.</p>
                     </div>
                 </div>
@@ -351,7 +351,7 @@
                             class="w-12 h-12 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <x-icons.discover class="w-5 h-5" />
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">Strict IP Protection</h3>
+                        <h3 class="text-lg font-bold text-foreground mb-2">Strict IP Protection</h3>
                         <p class="text-on-surface/70 text-xs sm:text-sm leading-relaxed">Your unique concepts, databases,
                             and structural assets belong entirely to you. We work under strict, transparent NDA agreements.
                         </p>
@@ -367,7 +367,7 @@
                             class="w-12 h-12 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <x-icons.whatsapp class="w-5 h-5" />
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">Agile Communication</h3>
+                        <h3 class="text-lg font-bold text-foreground mb-2">Agile Communication</h3>
                         <p class="text-on-surface/70 text-xs sm:text-sm leading-relaxed">Stay updated with transparent
                             tracking, clean code logs, staging links, and structured project milestones.</p>
                     </div>
@@ -380,13 +380,13 @@
     <section class="py-24 border-t border-outline-variant/20 bg-card/10">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white">Frequently Asked Questions</h2>
+                <h2 class="text-3xl font-bold text-foreground">Frequently Asked Questions</h2>
             </div>
 
             <div class="space-y-6">
                 <!-- Q1 -->
                 <div class="bg-card p-6 sm:p-8 rounded-2xl border border-border relative overflow-hidden">
-                    <h3 class="text-lg font-bold text-white mb-3 flex items-start gap-2">
+                    <h3 class="text-lg font-bold text-foreground mb-3 flex items-start gap-2">
                         <span class="text-primary">Q.</span> Will my custom WordPress site be slow?
                     </h3>
                     <p class="text-on-surface/70 pl-6 text-sm sm:text-base leading-relaxed">
@@ -397,7 +397,7 @@
                 </div>
                 <!-- Q2 -->
                 <div class="bg-card p-6 sm:p-8 rounded-2xl border border-border relative overflow-hidden">
-                    <h3 class="text-lg font-bold text-white mb-3 flex items-start gap-2">
+                    <h3 class="text-lg font-bold text-foreground mb-3 flex items-start gap-2">
                         <span class="text-primary">Q.</span> Can you securely migrate my existing website to WordPress?
                     </h3>
                     <p class="text-on-surface/70 pl-6 text-sm sm:text-base leading-relaxed">
@@ -408,7 +408,7 @@
                 </div>
                 <!-- Q3 -->
                 <div class="bg-card p-6 sm:p-8 rounded-2xl border border-border relative overflow-hidden">
-                    <h3 class="text-lg font-bold text-white mb-3 flex items-start gap-2">
+                    <h3 class="text-lg font-bold text-foreground mb-3 flex items-start gap-2">
                         <span class="text-primary">Q.</span> Who owns the website after development wraps up?
                     </h3>
                     <p class="text-on-surface/70 pl-6 text-sm sm:text-base leading-relaxed">
@@ -427,7 +427,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">WordPress Showcase</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">WordPress Showcase</h2>
                     <p class="text-on-surface/60">Blazing fast themes we've built for our clients.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
@@ -440,7 +440,7 @@
                             class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Tech Nukti
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Tech Nukti
                             – Custom Theme</h3>
                         <p class="text-on-surface/60 text-sm">100/100 PageSpeed scores with zero caching plugins.</p>
                     </div>
@@ -452,7 +452,7 @@
                             class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">TechUpkar
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">TechUpkar
                             Theme</h3>
                         <p class="text-on-surface/60 text-sm">High-performance Genesis child theme for content sites.</p>
                     </div>

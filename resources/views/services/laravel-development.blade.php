@@ -37,7 +37,7 @@
                         class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 rounded-full border border-primary/20">
                         Expert PHP Development
                     </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
                         Laravel Web App <br>
                         <span class="text-gradient">Development</span>
                     </h1>
@@ -104,7 +104,7 @@
     <section class="py-24 border-b border-outline-variant/20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     Why Choose <span class="text-gradient">Laravel Framework</span> for Your Project?
                 </h2>
                 <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
@@ -176,7 +176,7 @@
     <section class="py-24 border-b border-outline-variant/20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     Our Comprehensive <span class="text-gradient">Laravel Development Services</span>
                 </h2>
                 <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
@@ -274,7 +274,7 @@
     <section class="py-24 border-b border-outline-variant/20">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
             </div>
 
             <div class="space-y-6">
@@ -330,7 +330,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Related Projects</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Related Projects</h2>
                     <p class="text-on-surface/60">See how we've used Laravel to deliver real-world value.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
@@ -343,7 +343,7 @@
                             class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Attendance
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Attendance
                             Manager System</h3>
                         <p class="text-on-surface/60 text-sm">Geo-fenced attendance tracking with selfie verification.</p>
                     </div>
@@ -355,7 +355,7 @@
                             class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                             KrishnaAcademy – LMS Platform</h3>
                         <p class="text-on-surface/60 text-sm">Educational platform with video lessons and quiz modules.</p>
                     </div>

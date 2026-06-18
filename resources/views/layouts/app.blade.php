@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,6 +34,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="preload" as="image" href="{{ asset('assets/images/hero-gradient-bg.png') }}" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCTZ3ZDDYB"></script>
     <script>
@@ -48,195 +50,204 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="min-h-screen bg-background text-foreground">
-    <nav class="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur-xl border-b border-outline-variant/20 shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="/" class="flex items-center">
-                    <img src="{{ asset('assets/images/logo-white.svg') }}" alt="Tejal Digital" class="h-7 w-auto" />
-                </a>
-                {{-- Desktop Navigation --}}
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="{{ route('home') }}" class="text-white hover:text-amber-600 transition-colors font-medium">
-                        Home
-                    </a>
-                    <a href="{{ route('about') }}" class="text-white hover:text-amber-600 transition-colors font-medium">
-                        About
-                    </a>
-                    <a href="{{ route('services') }}" class="text-white hover:text-amber-600 transition-colors font-medium">
-                        Services
-                    </a>
-                    <a href="{{ route('portfolio') }}" class="text-white hover:text-amber-600 transition-colors font-medium">
-                        Portfolio
-                    </a>
-                    <a href="{{ route('contact') }}">
-                        <x-form.primary-button type="button" class="px-6 rounded-2xl">
-                            <span>Start Now</span>
-                            <x-icons.go class="w-4 h-4" />
-                        </x-form.primary-button>
-                    </a>
-                </div>
-                {{-- Mobile menu toggle button --}}
-                <div class="md:hidden">
-                    <button id="mobile-menu-toggle" class="text-white hover:text-amber-600">
-                        <!-- Hamburger Icon -->
-                        <x-icons.menu class="h-6 w-6 block" />
-                        <!-- Close Icon -->
-                        <x-icons.close class="h-6 w-6 hidden" />
-                    </button>
-                </div>
-            </div>
 
-            {{-- Mobile Navigation --}}
-            <div id="mobile-menu" class="hidden md:hidden py-4 border-t border-gray-100">
-                <div class="flex flex-col space-y-4">
-                    <a href="{{ route('home') }}"
-                        class="text-white hover:text-amber-600 transition-colors font-medium">
-                        Home
-                    </a>
-                    <a href="{{ route('about') }}"
-                        class="text-white hover:text-amber-600 transition-colors font-medium">
-                        About
-                    </a>
-                    <a href="{{ route('services') }}"
-                        class="text-white hover:text-amber-600 transition-colors font-medium">
-                        Services
-                    </a>
-                    <a href="{{ route('portfolio') }}"
-                        class="text-white hover:text-amber-600 transition-colors font-medium">
-                        Portfolio
-                    </a>
-                    <a href="{{ route('contact') }}">
-                        <x-form.primary-button type="button" class="px-6 rounded-2xl">
-                            <span>Start Now</span>
-                            <x-icons.go class="w-4 h-4" />
-                        </x-form.primary-button>
-                    </a>
-                </div>
-            </div>
+<body class="min-h-screen bg-background text-foreground">
+    <nav
+        class="sticky top-0 z-50 bg-white/50 backdrop-blur-xl px-6 md:px-12 lg:px-24 xl:px-40 py-4 flex items-center justify-between relative">
+        <a href="{{ url('/') }}">
+            <img src="{{ asset('assets/images/logo.svg') }}" alt="Tejal Digital" class="h-7 w-auto" />
+        </a>
+
+        <!-- Desktop Nav Items -->
+        <div class="hidden md:flex items-center bg-zinc-50 border border-zinc-200 rounded-full px-1 py-1 gap-2">
+            <a href="{{ route('home') }}"
+                class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400 @activeDesktopLink('home')">Home</a>
+            <a href="{{ route('about') }}"
+                class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400 @activeDesktopLink('about')">About</a>
+            <a href="{{ route('services') }}"
+                class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400 @activeDesktopLink('services')">Services</a>
+            <a href="{{ route('portfolio') }}"
+                class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400 @activeDesktopLink('portfolio')">Portfolio</a>
+            <a href="{{ route('contact') }}"
+                class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400 @activeDesktopLink('contact')">Contact</a>
+        </div>
+
+        <!-- Desktop CTA Button -->
+        <a href="{{ route('contact') }}" class="hidden md:flex">
+            <x-form.primary-button type="button" class="rounded-full">
+                Get started
+                <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
+                    <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M.6 4.602h10m-4-4 4 4-4 4" stroke="#3f3f47" stroke-width="1.2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </span>
+            </x-form.primary-button>
+        </a>
+
+        <!-- Mobile Hamburger -->
+        <button id="hamburger" onclick="toggleMenu()"
+            class="md:hidden flex flex-col gap-1.5 cursor-pointer bg-transparent border-0 p-1">
+            <span id="bar1" class="block w-6 h-0.5 bg-zinc-800 transition-transform"></span>
+            <span id="bar2" class="block w-6 h-0.5 bg-zinc-800 transition-opacity"></span>
+            <span id="bar3" class="block w-6 h-0.5 bg-zinc-800 transition-transform"></span>
+        </button>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu"
+            class="hidden absolute top-full left-0 w-full bg-white border-t border-zinc-200 flex-col p-5 gap-1 md:hidden z-50">
+            <a href="{{ route('home') }}" class="block px-4 py-2.5 rounded-lg text-sm @activeMobileLink('home')">Home</a>
+            <a href="{{ route('about') }}" class="block px-4 py-2.5 rounded-lg text-sm @activeMobileLink('about')">About</a>
+            <a href="{{ route('services') }}"
+                class="block px-4 py-2.5 rounded-lg text-sm @activeMobileLink('services')">Services</a>
+            <a href="{{ route('portfolio') }}"
+                class="block px-4 py-2.5 rounded-lg text-sm @activeMobileLink('portfolio')">Portfolio</a>
+            <a href="{{ route('contact') }}" class="block">
+                <x-form.primary-button type="button" class="rounded-full">
+                    Get started
+                    <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
+                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M.6 4.602h10m-4-4 4 4-4 4" stroke="#3f3f47" stroke-width="1.2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </x-form.primary-button>
+            </a>
         </div>
     </nav>
+
+    <script>
+        let menuOpen = false;
+
+        function toggleMenu() {
+            menuOpen = !menuOpen;
+            const menu = document.getElementById('mobileMenu');
+            const bar1 = document.getElementById('bar1');
+            const bar2 = document.getElementById('bar2');
+            const bar3 = document.getElementById('bar3');
+            if (menuOpen) {
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+                bar1.classList.add('rotate-45', 'translate-y-2');
+                bar2.classList.add('opacity-0');
+                bar3.classList.add('-rotate-45', '-translate-y-2');
+            } else {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+                bar1.classList.remove('rotate-45', 'translate-y-2');
+                bar2.classList.remove('opacity-0');
+                bar3.classList.remove('-rotate-45', '-translate-y-2');
+            }
+        }
+    </script>
+
     <main>
         @yield('content')
     </main>
-    <footer class="bg-neutral-950 w-full py-4 border-t border-neutral-900 text-neutral-500">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {{-- Company Info --}}
-                <div class="space-y-4">
+
+    <footer class="relative overflow-hidden px-6 md:px-16 lg:px-24 xl:px-32 w-full text-sm text-white bg-black pt-10">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-14 py-10">
+            <div class="flex flex-col space-y-4">
+                <a href="/">
                     <img src="{{ asset('assets/images/logo-white.svg') }}" alt="Tejal Digital"
-                        class="h-8 w-auto brightness-0 invert" />
-                    <p class="text-gray-300 text-sm">
-                        Crafting digital experiences that drive growth and innovation for businesses worldwide.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/tejaldigitalworks/"
-                            class="text-gray-400 hover:text-amber-500 transition-colors">
-                            {{-- Facebook Icon --}}
-                            <x-icons.facebook class="h-5 w-5" />
-                        </a>
-                        <a href="http://linkedin.com/jaswant-lohmror"
-                            class="text-gray-400 hover:text-amber-500 transition-colors">
-                            {{-- LinkedIn Icon --}}
-                            <x-icons.linkedin class="h-5 w-5" />
-                        </a>
-                        <a href="https://www.instagram.com/tejal.digital/"
-                            class="text-gray-400 hover:text-amber-500 transition-colors">
-                            {{-- Instagram Icon --}}
-                            <x-icons.instagram class="h-5 w-5" />
-                        </a>
-                    </div>
-                </div>
-                {{-- Quick Links --}}
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
-                    <ul class="space-y-2 list-disc ml-4">
-                        <li class="pl-2">
-                            <a href="{{ route('home') }}"
-                                class="text-gray-300 hover:text-secondary-500 transition-colors text-sm">
-                                Home
-                            </a>
-                        </li>
-                        <li class="pl-2">
-                            <a href="{{ route('about') }}"
-                                class="text-gray-300 hover:text-secondary-500 transition-colors text-sm">
-                                About Us
-                            </a>
-                        </li>
-                        <li class="pl-2">
-                            <a href="{{ route('services') }}"
-                                class="text-gray-300 hover:text-secondary-500 transition-colors text-sm">
-                                Services
-                            </a>
-                        </li>
-                        <li class="pl-2">
-                            <a href="{{ route('portfolio') }}"
-                                class="text-gray-300 hover:text-secondary-500 transition-colors text-sm">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li class="pl-2">
-                            <a href="{{ route('contact') }}"
-                                class="text-gray-300 hover:text-secondary-500 transition-colors text-sm">
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                {{-- Services --}}
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Services</h3>
-                    <ul class="space-y-2 list-disc ml-4">
-                        @foreach ([
-                            'laravel-development' => 'Laravel Web App Development',
-                            'custom-software' => 'Web Portals & Custom Software',
-                            'wordpress-development' => 'WordPress Theme Development',
-                            'ecommerce-development' => 'E-commerce Development',
-                            'api-development' => 'API Development',
-                            'maintenance' => 'Maintenance & Support'
-                        ] as $slug => $item)
-                            <li class="pl-2">
-                                <a href="{{ route('services.' . $slug) }}"
-                                    class="text-gray-300 hover:text-secondary-500 transition-colors text-sm">
-                                    {{ $item }}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-                {{-- Newsletter --}}
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Stay Updated</h3>
-                    <p class="text-gray-300 text-sm mb-4">
-                        Subscribe to our newsletter for the latest insights and updates.
-                    </p>
-                    <form action="{{ route('subscribe') }}" method="POST" class="flex space-x-2">
-                        @csrf
-                        <input type="email" name="email" value="{{ old('email') }}" placeholder="Your email"
-                            class="bg-brand-dark-800 border border-brand-dark-800 text-white placeholder-white/50 text-sm px-3 py-2 rounded w-full focus:outline-none" />
-                        <button type="submit"
-                            class="bg-primary-500 cursor-pointer text-white px-4 py-2 rounded text-sm hover:opacity-90">
-                            Subscribe
-                        </button>
-                    </form>
-                    @error('email')
-                        <p class="text-sm text-red-600 mt-2">{{ $message }}</p>
-                    @enderror
-                    @if (session('success'))
-                        <p class="text-sm text-green-600 mt-2">{{ session('success') }}</p>
-                    @endif
+                        class="h-10 w-auto brightness-0 invert" />
+                </a>
+                <p class="text-sm/7 mt-6">
+                    Crafting digital experiences that drive growth and innovation for businesses worldwide.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://www.facebook.com/tejaldigitalworks/"
+                        class="text-gray-400 hover:text-amber-500 transition-colors">
+                        <x-icons.facebook class="h-5 w-5" />
+                    </a>
+                    <a href="http://linkedin.com/jaswant-lohmror"
+                        class="text-gray-400 hover:text-amber-500 transition-colors">
+                        <x-icons.linkedin class="h-5 w-5" />
+                    </a>
+                    <a href="https://www.instagram.com/tejal.digital/"
+                        class="text-gray-400 hover:text-amber-500 transition-colors">
+                        <x-icons.instagram class="h-5 w-5" />
+                    </a>
                 </div>
             </div>
-            {{-- Footer Bottom --}}
-            <div class="border-t border-outline-variant/20 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-brand-dark-100 text-sm">© {{ date('Y') }} Tejal Digital. All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-brand-dark-100 hover:text-secondary-500 text-sm">Privacy Policy</a>
-                    <a href="#" class="text-brand-dark-100 hover:text-secondary-500 text-sm">Terms of Service</a>
+            <div class="flex flex-col">
+                <div class="flex flex-col text-sm space-y-2.5">
+                    <h2 class="text-lg font-bold mb-5 text-white">Company</h2>
+                    <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm" href="#">Home</a>
+                    <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm" href="#">About
+                        us</a>
+                    <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm" href="#">Contact
+                        us</a>
+                    <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm"
+                        href="#">Portfolio</a>
+                    <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm"
+                        href="#">Services</a>
                 </div>
             </div>
+            <div class="flex flex-col">
+                <div class="flex flex-col text-sm space-y-2.5">
+                    <h2 class="text-lg font-bold mb-5 text-white">Services</h2>
+                    <a href="https://td-v2.test/services/laravel-development"
+                        class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
+                        Laravel Web App Development
+                    </a>
+                    <a href="https://td-v2.test/services/custom-software-development"
+                        class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
+                        Web Portals &amp; Custom Software
+                    </a>
+                    <a href="https://td-v2.test/services/wordpress-development"
+                        class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
+                        WordPress Theme Development
+                    </a>
+                    <a href="https://td-v2.test/services/ecommerce-development"
+                        class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
+                        E-commerce Development
+                    </a>
+                    <a href="https://td-v2.test/services/rest-api-development"
+                        class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
+                        API Development
+                    </a>
+                    <a href="https://td-v2.test/services/maintenance-support"
+                        class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
+                        Maintenance &amp; Support
+                    </a>
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <div class="flex flex-col text-sm space-y-2.5">
+                    <h2 class="text-lg font-bold mb-5 text-white">Get in touch</h2>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3">
+                            <x-icons.map-pin class="h-4 w-4 shrink-0" />
+                            <span>Shiv Colony, Nagaur, RJ, 341001</span></li>
+                        <li>
+                            <a href="tel:+918949714118" class="flex items-center gap-3 transition hover:text-primary">
+                                <x-icons.call class="h-4 w-4 shrink-0"/>
+                                +91 8949714118
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:team@tejaldigital.in"
+                                class="flex items-center gap-3 transition hover:text-primary">
+                                <x-icons.email class="h-4 w-4 shrink-0"/>
+                                team@tejaldigital.in
+                            </a>
+                        </li>
+                        <li class="pt-1 text-white/80">Mon – Sat: 10:00 AM – 7:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center py-6 border-t mt-6 border-white/10">
+            <p class="text-center">
+                Copyright 2025 © Tejal Digital. All Right Reserved.
+            </p>
         </div>
     </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const toggle = document.getElementById('mobile-menu-toggle');
@@ -252,4 +263,5 @@
         });
     </script>
 </body>
+
 </html>

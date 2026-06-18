@@ -38,7 +38,7 @@
                     <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 rounded-full border border-emerald-500/20">
                         Relationship Management
                     </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
                         Custom CRM <br>
                         <span class="text-gradient from-emerald-400 to-teal-500">Development</span>
                     </h1>
@@ -72,7 +72,7 @@
                 <div class="lg:col-span-2 space-y-16">
                     {{-- The Need --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
+                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
                             <span class="w-8 h-1 bg-emerald-500 rounded-full"></span>
                             Why a Custom CRM?
                         </h2>
@@ -88,7 +88,7 @@
 
                     {{-- CRM Features --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-8">Core CRM Features</h2>
+                        <h2 class="text-3xl font-bold text-foreground mb-8">Core CRM Features</h2>
                         <div class="grid md:grid-cols-2 gap-6">
                             @php
                                 $features = [
@@ -102,7 +102,7 @@
                             @endphp
                             @foreach ($features as $f)
                                 <div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-emerald-500/30 transition-all group">
-                                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">{{ $f['title'] }}</h4>
+                                    <h4 class="text-lg font-bold text-foreground mb-2 group-hover:text-emerald-400 transition-colors">{{ $f['title'] }}</h4>
                                     <p class="text-on-surface/60 text-sm leading-relaxed">{{ $f['desc'] }}</p>
                                 </div>
                             @endforeach
@@ -111,7 +111,7 @@
 
                     {{-- Integration & Automation --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6">Automation & Integration</h2>
+                        <h2 class="text-3xl font-bold text-foreground mb-6">Automation & Integration</h2>
                         <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed">
                             <p>
                                 A CRM doesn't live in isolation. We ensure your custom system talks to the tools you already use:
@@ -129,7 +129,7 @@
                 {{-- Right Side: Meta Info & CTA --}}
                 <div class="space-y-8">
                     <div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/20 sticky top-24">
-                        <h3 class="text-xl font-bold text-white mb-6">Service Benefits</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-6">Service Benefits</h3>
                         <ul class="space-y-4 mb-8">
                             <li class="flex gap-3 text-on-surface/70 text-sm">
                                 <x-icons.check class="w-5 h-5 text-emerald-400 shrink-0" />
@@ -167,7 +167,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Case Studies</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Case Studies</h2>
                     <p class="text-on-surface/60">How our custom systems are helping businesses manage growth.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
@@ -178,7 +178,7 @@
                         <img src="{{ asset('assets/images/attendance.png') }}" alt="Attendance Manager" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Attendance Manager System</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Attendance Manager System</h3>
                         <p class="text-on-surface/60 text-sm">Internal CRM for managing employee check-ins and performance.</p>
                     </div>
                 </a>
@@ -187,7 +187,7 @@
                         <img src="{{ asset('assets/images/promofusion360.png') }}" alt="PromoFusion360" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">PromoFusion360 Portal</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">PromoFusion360 Portal</h3>
                         <p class="text-on-surface/60 text-sm">User and admin panels for tracking referrals and sales earnings.</p>
                     </div>
                 </a>

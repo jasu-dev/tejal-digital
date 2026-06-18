@@ -41,10 +41,11 @@
 
         {{-- Section title --}}
         <div class="text-center mb-16">
-            <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
-                <span class="text-sm font-medium">Portfolio</span>
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                <span class="text-sm font-semibold">Portfolio</span>
             </div>
-            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 Our Projects
             </h2>
             <p class="text-xl text-on-surface/50 max-w-3xl mx-auto">

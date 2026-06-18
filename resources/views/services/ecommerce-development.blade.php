@@ -39,7 +39,7 @@
                         class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-green-400 bg-green-500/10 rounded-full border border-green-500/20">
                         High-Converting Retail Engineering
                     </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
                         Custom <span class="text-gradient">eCommerce Website Development</span> Services
                     </h1>
                     <p class="text-lg leading-relaxed mb-8">
@@ -90,7 +90,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Scale Globally</span>
-                <h2 class="text-3xl lg:text-4xl font-bold text-white mb-6">How an eCommerce Website Helps Your Business Grow Online</h2>
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-6">How an eCommerce Website Helps Your Business Grow Online</h2>
                 <p class="text-md text-on-surface/60">
                     Transitioning from localized retail patterns or expanding a digital footprint unlocking uninterrupted market equity.
                 </p>
@@ -98,19 +98,19 @@
 
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="p-6 rounded-2xl bg-card border border-border">
-                    <h4 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <h4 class="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
                         <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> 24/7 Global Sales Channel
                     </h4>
                     <p class="text-xs sm:text-sm text-on-surface/70 leading-relaxed">Break geographical limitations and timezone constraints. Your storefront runs continuously, closing acquisitions automatically without staff dependencies.</p>
                 </div>
                 <div class="p-6 rounded-2xl bg-card border border-border">
-                    <h4 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <h4 class="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
                         <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Direct Behavioral Insights
                     </h4>
                     <p class="text-xs sm:text-sm text-on-surface/70 leading-relaxed">Gather precise transactional telemetry data, tracking cart drop factors, item affinity matrices, and real customer pathways to improve operational layout decisions.</p>
                 </div>
                 <div class="p-6 rounded-2xl bg-card border border-border">
-                    <h4 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                    <h4 class="text-lg font-bold text-foreground mb-3 flex items-center gap-2">
                         <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Frictionless Overhead Scaling
                     </h4>
                     <p class="text-xs sm:text-sm text-on-surface/70 leading-relaxed">Process hundreds of orders concurrently. Digital structures manage inventory expansion profiles without demanding matching physical showroom investments.</p>
@@ -124,7 +124,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Core Competency Matrix</span>
-                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     eCommerce Platforms We Work With
                 </h2>
                 <p class="text-xl text-on-surface/50 max-w-4xl mx-auto">
@@ -139,7 +139,7 @@
                     <div class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <x-icons.wordpress class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">WooCommerce Solutions</h3>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">WooCommerce Solutions</h3>
                     <p class="text-sm text-on-surface/70 leading-relaxed">Perfect for complete data ownership and content-driven brands. We construct custom WordPress themes and custom operational extensions built to keep transactional processes smooth without recurrent software tax structures.</p>
                 </div>
 
@@ -149,7 +149,7 @@
                     <div class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <x-icons.shopify class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Shopify Development</h3>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">Shopify Development</h3>
                     <p class="text-sm text-on-surface/70 leading-relaxed">Built for rapid market scaling and flawless checkout management. We assemble light Liquid system templates or ultra-responsive headless storefront structures that eliminate server administration stress.</p>
                 </div>
 
@@ -159,7 +159,7 @@
                     <div class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                         <x-icons.laravel class="w-6 h-6" />
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-white">Custom Laravel Engines</h3>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">Custom Laravel Engines</h3>
                     <p class="text-sm text-on-surface/70 leading-relaxed">Designed for enterprise setups running complex logic rules. We write custom database applications from scratch, maintaining exact numeric precision types across global order catalogs.</p>
                 </div>
             </div>
@@ -171,7 +171,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-20">
                 <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Our Capabilities</span>
-                <h2 class="text-4xl font-bold text-white mb-6">Targeted eCommerce Development Services</h2>
+                <h2 class="text-4xl font-bold text-foreground mb-6">Targeted eCommerce Development Services</h2>
                 <p class="text-lg text-on-surface/60">
                     We deliver comprehensive engineering scopes to keep your product visibility, data syncs, and shopping funnels completely streamlined.
                 </p>
@@ -182,7 +182,7 @@
                 <div class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">01</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Online Store Development</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">Online Store Development</h3>
                         <p class="text-on-surface/70 text-sm leading-relaxed">Turnkey direct-to-consumer storefront structures. We code optimized item pages, complex product filters, and rapid payment gateway paths designed to boost average cart values.</p>
                     </div>
                 </div>
@@ -191,7 +191,7 @@
                 <div class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">02</div>
-                        <h3 class="text-xl font-bold text-white mb-3">B2B & B2C Marketplaces</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">B2B & B2C Marketplaces</h3>
                         <p class="text-on-surface/70 text-sm leading-relaxed">Architecting enterprise commerce logic networks. From advanced tier pricing matrices, dynamic tax calculation algorithms, and custom volume bulk purchase flows.</p>
                     </div>
                 </div>
@@ -200,7 +200,7 @@
                 <div class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">03</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Multi-vendor Platforms</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">Multi-vendor Platforms</h3>
                         <p class="text-on-surface/70 text-sm leading-relaxed">Complex multi-tenant environments similar to Amazon. We construct independent store dashboards, dynamic vendor commission splits, and unified shipping pipelines.</p>
                     </div>
                 </div>
@@ -209,7 +209,7 @@
                 <div class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">04</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Ecommerce Website Design</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">Ecommerce Website Design</h3>
                         <p class="text-on-surface/70 text-sm leading-relaxed">Bespoke UI/UX digital layouts focusing heavily on mobile usability. We eliminate unnecessary design steps, crafting clear paths from cart view to checkout confirmation.</p>
                     </div>
                 </div>
@@ -218,7 +218,7 @@
                 <div class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">05</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Platform Migrations</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">Platform Migrations</h3>
                         <p class="text-on-surface/70 text-sm leading-relaxed">Safely extract historical asset pools. We manage complete transaction logs, user account files, and complex product variation sets with zero data loss or ranking drop alerts.</p>
                     </div>
                 </div>
@@ -227,7 +227,7 @@
                 <div class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">06</div>
-                        <h3 class="text-xl font-bold text-white mb-3">Continuous Enterprise Support</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">Continuous Enterprise Support</h3>
                         <p class="text-on-surface/70 text-sm leading-relaxed">Ensuring system reliability during peak traffic spikes. We handle API validation loops, secure patch maintenance, and checkout routine stress tests.</p>
                     </div>
                 </div>
@@ -242,7 +242,7 @@
                 <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] -ml-64 -mb-64"></div>
                 <div class="relative z-10 text-center max-w-3xl mx-auto">
                     <span class="text-primary font-bold text-sm tracking-widest uppercase block mb-3">Let’s Discuss Your Tech Strategy</span>
-                    <h2 class="text-3xl sm:text-5xl font-bold text-white mb-6">Launch Your High-Performance Store Today</h2>
+                    <h2 class="text-3xl sm:text-5xl font-bold text-foreground mb-6">Launch Your High-Performance Store Today</h2>
                     <p class="text-on-surface/70 text-lg mb-8 leading-relaxed">
                         Don't let clunky templates or buggy checkout steps slow down your digital revenue growth. Connect with our technical engineering division to design a secure, fast web store.
                     </p>
@@ -271,7 +271,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">The Engineering Standard</span>
-                <h2 class="text-4xl font-bold text-white mb-6">Why Choose Us for eCommerce Website Development?</h2>
+                <h2 class="text-4xl font-bold text-foreground mb-6">Why Choose Us for eCommerce Website Development?</h2>
                 <p class="text-lg text-on-surface/50">
                     We balance clean performance metrics with operational safety structures to keep your platform completely stable.
                 </p>
@@ -285,7 +285,7 @@
                         <div class="w-12 h-12 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <x-icons.launch class="w-5 h-5" />
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">Core Web Vitals Blueprint</h3>
+                        <h3 class="text-lg font-bold text-foreground mb-2">Core Web Vitals Blueprint</h3>
                         <p class="text-on-surface/70 text-xs sm:text-sm leading-relaxed">We optimize your store code for speed. Fast loading speeds help reduce bounce rates and improve visibility in search engine layouts.</p>
                     </div>
                 </div>
@@ -297,7 +297,7 @@
                         <div class="w-12 h-12 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <x-icons.security class="w-5 h-5" />
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">Ironclad Security Defenses</h3>
+                        <h3 class="text-lg font-bold text-foreground mb-2">Ironclad Security Defenses</h3>
                         <p class="text-on-surface/70 text-xs sm:text-sm leading-relaxed">We secure order data handling processes, deploying directory hardening rules, cross-site transaction protection, and automated anomaly scans.</p>
                     </div>
                 </div>
@@ -309,7 +309,7 @@
                         <div class="w-12 h-12 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <x-icons.deep-search class="w-5 h-5" />
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">Structured Schema Injection</h3>
+                        <h3 class="text-lg font-bold text-foreground mb-2">Structured Schema Injection</h3>
                         <p class="text-on-surface/70 text-xs sm:text-sm leading-relaxed">We deploy validated, rich product schemas and aggregate price review data parameters, helping your inventory stand out clearly in Google Shopping layouts.</p>
                     </div>
                 </div>
@@ -321,7 +321,7 @@
                         <div class="w-12 h-12 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                             <x-icons.plugin class="w-5 h-5" />
                         </div>
-                        <h3 class="text-lg font-bold text-white mb-2">Seamless System Syncs</h3>
+                        <h3 class="text-lg font-bold text-foreground mb-2">Seamless System Syncs</h3>
                         <p class="text-on-surface/70 text-xs sm:text-sm leading-relaxed">We keep systems unified, ensuring web platforms communicate cleanly with third-party tracking portals and internal management tools.</p>
                     </div>
                 </div>
@@ -334,7 +334,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Our Featured Work</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Our Featured Work</h2>
                     <p class="text-on-surface/60">High-converting digital storefronts built to process sales seamlessly.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
@@ -349,7 +349,7 @@
                     </div>
                     <div class="p-8">
                         <span class="text-xs uppercase tracking-widest text-primary font-mono block mb-2">// WooCommerce Architecture</span>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Performance-Tuned Brand Hub</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Performance-Tuned Brand Hub</h3>
                         <p class="text-on-surface/60 text-sm">Custom SKU option handling built for fast transactions and low cart abandonment rates.</p>
                     </div>
                 </a>
@@ -362,7 +362,7 @@
                     </div>
                     <div class="p-8">
                         <span class="text-xs uppercase tracking-widest text-primary font-mono block mb-2">// Headless Laravel Engine</span>
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Enterprise B2B Wholesale System</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Enterprise B2B Wholesale System</h3>
                         <p class="text-on-surface/60 text-sm">Bespoke bulk price calculation tables integrated seamlessly with back-office inventory networks.</p>
                     </div>
                 </a>
@@ -374,22 +374,22 @@
     <section class="py-24 border-t border-outline-variant/20 bg-card/10">
         <div class="max-w-4xl mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-white">Frequently Asked Questions</h2>
+                <h2 class="text-3xl font-bold text-foreground">Frequently Asked Questions</h2>
             </div>
 
             <div class="space-y-6">
                 <!-- Q1 -->
                 <div class="bg-card p-6 sm:p-8 rounded-2xl border border-border relative overflow-hidden">
-                    <h3 class="text-lg font-bold text-white mb-3 flex items-start gap-2">
+                    <h3 class="text-lg font-bold text-foreground mb-3 flex items-start gap-2">
                         <span class="text-primary">Q.</span> How do I decide the best platform for eCommerce web development?
                     </h3>
                     <p class="text-on-surface/70 pl-6 text-sm sm:text-base leading-relaxed">
-                        It depends entirely on your catalog size and workflow. <span class="text-white font-medium">Shopify</span> is ideal for rapid launches with zero infrastructure management burdens. <span class="text-white font-medium">WooCommerce</span> works perfectly for brands wanting full layout customization and data ownership via WordPress. For complex enterprise workflows or custom logic rules, a standalone <span class="text-white font-medium">Laravel build</span> offers absolute scalability.
+                        It depends entirely on your catalog size and workflow. <span class="text-foreground font-medium">Shopify</span> is ideal for rapid launches with zero infrastructure management burdens. <span class="text-foreground font-medium">WooCommerce</span> works perfectly for brands wanting full layout customization and data ownership via WordPress. For complex enterprise workflows or custom logic rules, a standalone <span class="text-foreground font-medium">Laravel build</span> offers absolute scalability.
                     </p>
                 </div>
                 <!-- Q2 -->
                 <div class="bg-card p-6 sm:p-8 rounded-2xl border border-border relative overflow-hidden">
-                    <h3 class="text-lg font-bold text-white mb-3 flex items-start gap-2">
+                    <h3 class="text-lg font-bold text-foreground mb-3 flex items-start gap-2">
                         <span class="text-primary">Q.</span> How long does it take to develop an eCommerce website?
                     </h3>
                     <p class="text-on-surface/70 pl-6 text-sm sm:text-base leading-relaxed">
@@ -398,7 +398,7 @@
                 </div>
                 <!-- Q3 -->
                 <div class="bg-card p-6 sm:p-8 rounded-2xl border border-border relative overflow-hidden">
-                    <h3 class="text-lg font-bold text-white mb-3 flex items-start gap-2">
+                    <h3 class="text-lg font-bold text-foreground mb-3 flex items-start gap-2">
                         <span class="text-primary">Q.</span> Do you offer eCommerce website hosting?
                     </h3>
                     <p class="text-on-surface/70 pl-6 text-sm sm:text-base leading-relaxed">
@@ -407,7 +407,7 @@
                 </div>
                 <!-- Q4 -->
                 <div class="bg-card p-6 sm:p-8 rounded-2xl border border-border relative overflow-hidden">
-                    <h3 class="text-lg font-bold text-white mb-3 flex items-start gap-2">
+                    <h3 class="text-lg font-bold text-foreground mb-3 flex items-start gap-2">
                         <span class="text-primary">Q.</span> Is it possible to integrate my existing CRM or inventory system with the new eCommerce site?
                     </h3>
                     <p class="text-on-surface/70 pl-6 text-sm sm:text-base leading-relaxed">
@@ -416,7 +416,7 @@
                 </div>
                 <!-- Q5 -->
                 <div class="bg-card p-6 sm:p-8 rounded-2xl border border-border relative overflow-hidden">
-                    <h3 class="text-lg font-bold text-white mb-3 flex items-start gap-2">
+                    <h3 class="text-lg font-bold text-foreground mb-3 flex items-start gap-2">
                         <span class="text-primary">Q.</span> Will my eCommerce website be mobile-friendly?
                     </h3>
                     <p class="text-on-surface/70 pl-6 text-sm sm:text-base leading-relaxed">

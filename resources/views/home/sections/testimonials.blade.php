@@ -27,10 +27,11 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
         <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-            <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
-                <span class="text-sm font-medium">Testimonials</span>
+            <div
+                class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                <span class="text-sm font-semibold">Testimonials</span>
             </div>
-            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-6">
+            <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                 Client Success Stories
             </h2>
             <p class="text-xl text-on-surface/50 max-w-3xl mx-auto">

@@ -44,7 +44,7 @@
                     <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 rounded-full border border-primary/20">
                         Custom Software Development
                     </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
                         Attendance Manager <br>
                         <span class="text-gradient">System</span>
                     </h1>
@@ -70,7 +70,7 @@
                             </div>
                             <div>
                                 <p class="text-xs text-on-surface/60 font-bold uppercase tracking-wider">Impact</p>
-                                <p class="text-lg font-black text-white">100% Precise Tracking</p>
+                                <p class="text-lg font-black text-foreground">100% Precise Tracking</p>
                             </div>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                 <div class="lg:col-span-2 space-y-16">
                     {{-- The Challenge --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
+                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
                             <span class="w-8 h-1 bg-primary rounded-full"></span>
                             The Challenge
                         </h2>
@@ -109,7 +109,7 @@
 
                     {{-- The Solution --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
+                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
                             <span class="w-8 h-1 bg-secondary rounded-full"></span>
                             The Solution
                         </h2>
@@ -128,7 +128,7 @@
 
                     {{-- Key Features --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-8">Core Features</h2>
+                        <h2 class="text-3xl font-bold text-foreground mb-8">Core Features</h2>
                         <div class="grid md:grid-cols-2 gap-6">
                             @php
                                 $features = [
@@ -142,7 +142,7 @@
                             @endphp
                             @foreach ($features as $f)
                                 <div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
-                                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-primary transition-colors">{{ $f['title'] }}</h4>
+                                    <h4 class="text-lg font-bold text-foreground mb-2 group-hover:text-primary transition-colors">{{ $f['title'] }}</h4>
                                     <p class="text-on-surface/60 text-sm leading-relaxed">{{ $f['desc'] }}</p>
                                 </div>
                             @endforeach
@@ -153,7 +153,7 @@
                 {{-- Right Side: Meta Info & CTA --}}
                 <div class="space-y-8">
                     <div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/20 sticky top-24">
-                        <h3 class="text-xl font-bold text-white mb-6">Project Info</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-6">Project Info</h3>
                         <div class="space-y-6">
                             <div>
                                 <p class="text-[10px] font-bold text-primary uppercase tracking-widest mb-1">Client Category</p>
@@ -185,7 +185,7 @@
     {{-- Tech Stack Visual --}}
     <section class="py-24 bg-surface-container/30 border-t border-outline-variant/20">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-white mb-12">Technologies Behind the Project</h2>
+            <h2 class="text-3xl font-bold text-foreground mb-12">Technologies Behind the Project</h2>
             <div class="flex flex-wrap justify-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                 {{-- These would be tech icons, for now just labels with stylized text --}}
                 <div class="flex flex-col items-center gap-3">
@@ -213,7 +213,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Other Case Studies</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Case Studies</h2>
                     <p class="text-on-surface/60">Explore more of our recent work and digital transformations.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
@@ -225,7 +225,7 @@
                         <img src="{{ asset('assets/images/promofusion360.png') }}" alt="PromoFusion360" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">PromoFusion360 – Earning Platform</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">PromoFusion360 – Earning Platform</h3>
                         <p class="text-on-surface/60 text-sm">Laravel-based earning platform with multi-gateway support.</p>
                     </div>
                 </a>
@@ -234,7 +234,7 @@
                         <img src="{{ asset('assets/images/krishna-academy.png') }}" alt="Krishna Academy" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">KrishnaAcademy – LMS Platform</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">KrishnaAcademy – LMS Platform</h3>
                         <p class="text-on-surface/60 text-sm">Educational platform with video lessons and quiz modules.</p>
                     </div>
                 </a>

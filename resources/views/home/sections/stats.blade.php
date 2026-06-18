@@ -23,7 +23,7 @@
     ];
 @endphp
 
-<section class="py-20 bg-surface-container-low overflow-hidden border-b border-outline-variant/20">
+<section class="py-15 overflow-hidden border-b border-outline-variant/20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
             @foreach ($stats as $index => $stat)

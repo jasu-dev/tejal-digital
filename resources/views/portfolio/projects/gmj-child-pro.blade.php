@@ -38,7 +38,7 @@
                     <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 rounded-full border border-amber-500/20">
                         WP Child Theme Development
                     </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-white leading-tight mb-6">
+                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
                         GMJ Child <br>
                         <span class="text-gradient from-amber-400 to-orange-500">Pro Theme</span>
                     </h1>
@@ -64,7 +64,7 @@
                             </div>
                             <div>
                                 <p class="text-xs text-on-surface/60 font-bold uppercase tracking-wider">Goal</p>
-                                <p class="text-lg font-black text-white">JS-Free Architecture</p>
+                                <p class="text-lg font-black text-foreground">JS-Free Architecture</p>
                             </div>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                 <div class="lg:col-span-2 space-y-16">
                     {{-- The Challenge --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
+                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
                             <span class="w-8 h-1 bg-amber-500 rounded-full"></span>
                             The Challenge
                         </h2>
@@ -103,7 +103,7 @@
 
                     {{-- The Solution --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-6 flex items-center gap-4">
+                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
                             <span class="w-8 h-1 bg-orange-500 rounded-full"></span>
                             The Solution
                         </h2>
@@ -122,7 +122,7 @@
 
                     {{-- Key Features --}}
                     <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-white mb-8">Core Features</h2>
+                        <h2 class="text-3xl font-bold text-foreground mb-8">Core Features</h2>
                         <div class="grid md:grid-cols-2 gap-6">
                             @php
                                 $features = [
@@ -136,7 +136,7 @@
                             @endphp
                             @foreach ($features as $f)
                                 <div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-amber-500/30 transition-all group">
-                                    <h4 class="text-lg font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">{{ $f['title'] }}</h4>
+                                    <h4 class="text-lg font-bold text-foreground mb-2 group-hover:text-amber-400 transition-colors">{{ $f['title'] }}</h4>
                                     <p class="text-on-surface/60 text-sm leading-relaxed">{{ $f['desc'] }}</p>
                                 </div>
                             @endforeach
@@ -147,7 +147,7 @@
                 {{-- Right Side: Meta Info & CTA --}}
                 <div class="space-y-8">
                     <div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/20 sticky top-24">
-                        <h3 class="text-xl font-bold text-white mb-6">Project Info</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-6">Project Info</h3>
                         <div class="space-y-6">
                             <div>
                                 <p class="text-[10px] font-bold text-amber-400 uppercase tracking-widest mb-1">Service Type</p>
@@ -181,7 +181,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Other Case Studies</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Case Studies</h2>
                     <p class="text-on-surface/60">Explore more of our recent work and digital transformations.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
@@ -192,7 +192,7 @@
                         <img src="{{ asset('assets/images/techupkar.png') }}" alt="Tech Upkar" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">TechUpkar Theme</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">TechUpkar Theme</h3>
                         <p class="text-on-surface/60 text-sm">Lightning-fast WordPress blog solution.</p>
                     </div>
                 </a>
@@ -201,7 +201,7 @@
                         <img src="{{ asset('assets/images/technukti.png') }}" alt="Tech Nukti" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">Tech Nukti – Custom WP Theme</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Tech Nukti – Custom WP Theme</h3>
                         <p class="text-on-surface/60 text-sm">Blazing-fast WordPress theme with perfect PageSpeed scores.</p>
                     </div>
                 </a>

@@ -23,44 +23,39 @@
 @endsection
 @section('content')
     {{-- Hero Section --}}
-    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20">
+    <section class="relative -mt-20 pt-20 flex flex-col items-center pb-24 text-sm bg-cover bg-center bg-no-repeat"
+        style="background-image: url('{{ asset('assets/images/hero-gradient-bg.png') }}')">
+
         <div
-            class="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/30 rounded-full blur-3xl">
+            class="flex flex-wrap items-center justify-center p-2 px-4 mt-20 md:mt-32 bg-white/50 backdrop-blur-xl border border-white/20 rounded-2xl">
+            <x-icons.launch class="w-4 h-4" />
+            <p class="ml-2 text-foreground">Our Portfolio</p>
         </div>
-        <div
-            class="hidden sm:block absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-br from-primary-400/10 to-secondary-500/20 rounded-full blur-3xl">
-        </div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-4xl mx-auto">
-                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
-                    <x-icons.users class="w-4 h-4" />
-                    <span class="text-sm font-medium">Our Portfolio</span>
-                </div>
-                <h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-                    <span class="text-white">Explore</span><br>
-                    <span class="text-gradient">Our Portfolio</span>
-                </h1>
-                <p class="text-xl text-on-surface/60 leading-relaxed mb-8 max-w-3xl mx-auto">
-                    Explore our collection of successful projects that showcase our expertise in web development,
-                    design, and digital solutions.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="{{ route('contact') }}">
-                        <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
-                            <span>Start Your Project</span>
-                            <x-icons.go class="w-4 h-4" />
-                        </x-form.primary-button>
-                    </a>
-                    <a href="{{ config('staticdata.whatsapp_url') }}">
-                        <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
-                            <x-icons.whatsapp class="w-4 h-4" />
-                            <span>Chat with Us</span>
-                        </x-form.secondary-button>
-                    </a>
-                </div>
-            </div>
+
+        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl m-5 text-secondary">
+            Our Portfolio of Successful Digital Projects
+        </h1>
+        <p class="text-foreground md:text-base max-md:px-2 text-center max-w-xl mt-3">
+            Explore our collection of successful projects that showcase our expertise in web development, design, and
+            digital solutions.
+        </p>
+
+        <div class="flex flex-col justify-center sm:flex-row gap-4 mt-5">
+            <a href="{{ route('contact') }}">
+                <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
+                    <span>Start Your Project</span>
+                    <x-icons.go class="w-4 h-4" />
+                </x-form.primary-button>
+            </a>
+            <a href="{{ config('staticdata.whatsapp_url') }}">
+                <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
+                    <x-icons.whatsapp class="w-4 h-4" />
+                    <span>Chat with Us</span>
+                </x-form.secondary-button>
+            </a>
         </div>
     </section>
+
     {{-- Stats Section --}}
     @include('home.sections.stats')
     {{-- list of projects --}}
@@ -68,44 +63,38 @@
     {{-- Testimonials --}}
     @include('home.sections.testimonials')
     {{-- Contact Section --}}
-    <section class="py-26 relative overflow-hidden">
-    {{-- Background Ambient Glow --}}
-    <div
-        class="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-br from-secondary-400/20 to-primary-500/30 rounded-full blur-3xl">
-    </div>
-    <div
-        class="absolute -bottom-24 -left-24 w-96 h-96 bg-gradient-to-br from-primary-400/10 to-secondary-500/20 rounded-full blur-3xl">
-    </div>
+    <section class="py-26 relative overflow-hidden bg-gradient-to-b from-background via-[#fffbee] to-primary-500/20">
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                    <span class="text-sm font-semibold">Get in Touch</span>
+                </div>
+                <h2 class="text-4xl lg:text-6xl font-black text-foreground mb-8">
+                    Have a Project Idea in Mind?
+                </h2>
 
-    <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
-        <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-            <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 gradient-primary rounded-full text-white">
-                <span class="text-sm font-medium">Get in Touch</span>
+                <p class="text-xl text-on-surface/60 mb-12 max-w-2xl mx-auto leading-relaxed">
+                    Let's discuss your project and see how we can help bring your vision to life.
+                </p>
             </div>
-            <h2 class="text-4xl lg:text-6xl font-black text-white mb-8">
-                Have a Project Idea in Mind?
-            </h2>
 
-            <p class="text-xl text-on-surface/60 mb-12 max-w-2xl mx-auto leading-relaxed">
-                Let's discuss your project and see how we can help bring your vision to life.
-            </p>
-        </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            
-            <a href="{{ route('contact') }}" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
-                    <span>Get Free Consultation</span>
-                    <x-icons.go class="w-4 h-4" />
-                </x-form.primary-button>
-            </a>
-            <a href="{{ config('staticdata.whatsapp_url') }}" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
-                <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
-                    <x-icons.whatsapp class="w-5 h-5" />
-                <span>Chat on WhatsApp</span>
-                </x-form.secondary-button>
-            </a>
+                <a href="{{ route('contact') }}" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <span>Get Free Consultation</span>
+                        <x-icons.go class="w-4 h-4" />
+                    </x-form.primary-button>
+                </a>
+                <a href="{{ config('staticdata.whatsapp_url') }}" data-aos="fade-up" data-aos-delay="200"
+                    data-aos-duration="800">
+                    <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <x-icons.whatsapp class="w-5 h-5" />
+                        <span>Chat on WhatsApp</span>
+                    </x-form.secondary-button>
+                </a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection
