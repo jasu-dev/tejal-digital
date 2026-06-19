@@ -9,14 +9,6 @@
                 'Scalable, ultra-secure custom web applications built with Laravel to streamline complex business workflows.',
         ],
         [
-            'icon' => 'window',
-            'popular' => true,
-            'link' => "route('services.wordpress-websites')",
-            'title' => 'Corporate & Business Website Development',
-            'description' =>
-                'Professional, fast websites engineered to build brand authority and convert visitors into customers.',
-        ],
-        [
             'icon' => 'wordpress',
             'popular' => true,
             'link' => "route('services.wordpress-websites')",
@@ -53,6 +45,14 @@
                 'Securely connect external tools, payment processors, and logistics systems to synchronize your data.',
         ],
         [
+            'icon' => 'window',
+            'popular' => false,
+            'link' => "route('services.wordpress-websites')",
+            'title' => 'Corporate & Business Website Development',
+            'description' =>
+                'Professional, fast websites engineered to build brand authority and convert visitors into customers.',
+        ],
+        [
             'icon' => 'security',
             'popular' => false,
             'title' => 'Website Speed & Security Optimization',
@@ -62,7 +62,7 @@
         [
             'icon' => 'tools',
             'popular' => false,
-            'title' => 'Ongoing Website & App Maintenance',
+            'title' => 'Ongoing Website Maintenance',
             'description' =>
                 'Prevent unexpected downtime and patch bugs via proactive updates and secure cloud backups.',
         ],

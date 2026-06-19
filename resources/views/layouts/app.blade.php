@@ -77,11 +77,7 @@
             <x-form.primary-button type="button" class="rounded-full">
                 Get started
                 <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
-                    <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M.6 4.602h10m-4-4 4 4-4 4" stroke="#3f3f47" stroke-width="1.2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
+                    <x-icons.go class="w-4 h-4 text-foreground" />
                 </span>
             </x-form.primary-button>
         </a>
@@ -109,11 +105,7 @@
                 <x-form.primary-button type="button" class="rounded-full">
                     Get started
                     <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
-                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M.6 4.602h10m-4-4 4 4-4 4" stroke="#3f3f47" stroke-width="1.2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <x-icons.go class="w-4 h-4 text-foreground" />
                     </span>
                 </x-form.primary-button>
             </a>
@@ -223,17 +215,18 @@
                     <ul class="space-y-3">
                         <li class="flex items-center gap-3">
                             <x-icons.map-pin class="h-4 w-4 shrink-0" />
-                            <span>Shiv Colony, Nagaur, RJ, 341001</span></li>
+                            <span>Shiv Colony, Nagaur, RJ, 341001</span>
+                        </li>
                         <li>
                             <a href="tel:+918949714118" class="flex items-center gap-3 transition hover:text-primary">
-                                <x-icons.call class="h-4 w-4 shrink-0"/>
+                                <x-icons.call class="h-4 w-4 shrink-0" />
                                 +91 8949714118
                             </a>
                         </li>
                         <li>
                             <a href="mailto:team@tejaldigital.in"
                                 class="flex items-center gap-3 transition hover:text-primary">
-                                <x-icons.email class="h-4 w-4 shrink-0"/>
+                                <x-icons.email class="h-4 w-4 shrink-0" />
                                 team@tejaldigital.in
                             </a>
                         </li>

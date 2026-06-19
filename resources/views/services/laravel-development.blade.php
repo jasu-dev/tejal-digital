@@ -18,8 +18,8 @@
 
 @section('content')
     {{-- Service Hero --}}
-    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20"
-        style="background:var(--color-gradient-hero)">
+    <section class="relative pb-24 -mt-20 pt-35 overflow-hidden border-b border-border bg-cover"
+        style="background-image: url('{{ asset('assets/images/background/doted.svg') }}')">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
                 <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
@@ -33,13 +33,13 @@
 
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div data-aos="fade-right" data-aos-duration="1000">
-                    <span
-                        class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-primary bg-primary/10 rounded-full border border-primary/20">
-                        Expert PHP Development
-                    </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
-                        Laravel Web App <br>
-                        <span class="text-gradient">Development</span>
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                        <span class="text-xs font-semibold">Expert PHP Development</span>
+                    </div>
+                    <h1 class="text-3xl lg:text-5xl font-bold text-foreground mb-5">
+                        High-Performance <br>
+                        <span class="text-gradient">Laravel Application </span>Development Services
                     </h1>
                     <p class="text-xl text-on-surface/60 leading-relaxed mb-8">
                         Build powerful, secure, and future-proof web applications with the world's most popular PHP
@@ -47,16 +47,18 @@
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="{{ route('contact') }}">
-                            <x-form.primary-button type="button" class="px-8 py-4 rounded-2xl">
-                                <span>Start Your Project</span>
-                                <x-icons.go class="w-4 h-4" />
+                            <x-form.primary-button type="button" class="rounded-full">
+                                Start Your Project
+                                <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
+                                    <x-icons.go class="w-4 h-4 text-foreground" />
+                                </span>
                             </x-form.primary-button>
                         </a>
                     </div>
                 </div>
                 <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
                     <div
-                        class="max-w-md h-80 mx-auto border border-border bg-card rounded-2xl p-12 flex items-center justify-center relative overflow-hidden group">
+                        class="max-w-md h-80 mx-auto border border-border/50 bg-background backdrop-blur-xl rounded-2xl p-12 flex items-center justify-center relative overflow-hidden group">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
@@ -64,7 +66,7 @@
                     </div>
                     {{-- Floating Tags --}}
                     <div
-                        class="absolute -top-7 right-10 flex items-center gap-2 rounded-xl bg-surface/95 px-4 py-3 ring-1 ring-border backdrop-blur">
+                        class="absolute -top-7 right-10 flex items-center gap-2 rounded-xl border border-border bg-background/95 backdrop-blur-xl px-4 py-3">
                         <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
                             <x-icons.target class="w-4 h-4" />
                         </span>
@@ -74,7 +76,7 @@
                         </div>
                     </div>
                     <div
-                        class="absolute -bottom-7 left-10 flex items-center gap-2 rounded-xl bg-surface/95 px-4 py-3 ring-1 ring-border backdrop-blur">
+                        class="absolute -bottom-7 left-10 flex items-center gap-2 rounded-xl px-4 py-3 border border-border bg-background/95 backdrop-blur-xl">
                         <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
                             <x-icons.security class="w-4 h-4" />
                         </span>

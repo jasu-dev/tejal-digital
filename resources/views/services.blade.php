@@ -159,8 +159,8 @@
             [
                 'icon' => 'laravel',
                 'popular' => true,
-                'link' => "route('services.laravel-development')",
-                'title' => 'Custom Web App Development (Laravel)',
+                'link' => route('services.laravel-development'),
+                'title' => 'Custom Website Development (Laravel)',
                 'description' =>
                     'Scalable, ultra-secure custom web applications built with Laravel to streamline complex business workflows.',
                 'key_points' => [
@@ -172,24 +172,9 @@
                 ],
             ],
             [
-                'icon' => 'window',
-                'popular' => true,
-                'link' => "route('services.wordpress-websites')",
-                'title' => 'Corporate & Business Website Development',
-                'description' =>
-                    'Professional, fast websites engineered to build brand authority and convert visitors into customers.',
-                'key_points' => [
-                    'Mobile-first, responsive design',
-                    'SEO-optimized site architecture',
-                    'High-converting CTA placements',
-                    'Fast-loading, clean code',
-                    'Full hosting & launch setup',
-                ],
-            ],
-            [
                 'icon' => 'wordpress',
                 'popular' => true,
-                'link' => "route('services.wordpress-websites')",
+                'link' => route('services.wordpress-development'),
                 'title' => 'WordPress Website Development',
                 'description' =>
                     'Lightweight, WordPress websites built from scratch for full control without template bloat.',
@@ -204,7 +189,8 @@
             [
                 'icon' => 'cart',
                 'popular' => true,
-                'title' => 'eCommerce Development (Shopify & WooCommerce)',
+                'link' => route('services.ecommerce-development'),
+                'title' => 'eCommerce Website Development',
                 'description' =>
                     'High-converting storefronts equipped with streamlined checkouts, automated inventory, and secure payments.',
                 'key_points' => [
@@ -219,6 +205,7 @@
                 'icon' => 'dashboard',
                 'popular' => true,
                 'title' => 'SaaS Application Development',
+                'link' => route('services.saas-development'),
                 'description' =>
                     'Turn your software idea into a profitable subscription product with secure multi-tenant infrastructure.',
                 'key_points' => [
@@ -233,6 +220,7 @@
                 'icon' => 'users',
                 'popular' => false,
                 'title' => 'Custom CRM & ERP Development',
+                'link' => route('services.crm-development'),
                 'description' =>
                     'Centralize your operations, automate manual workflows, and track customer data with a tailored system.',
                 'key_points' => [
@@ -246,6 +234,7 @@
             [
                 'icon' => 'plugin',
                 'popular' => false,
+                'link' => route('services.api-development'),
                 'title' => 'Third-Party API Development & Integration',
                 'description' =>
                     'Securely connect external tools, payment processors, and logistics systems to synchronize your data.',
@@ -255,6 +244,20 @@
                     'Automated real-time data sync',
                     'Robust error-handling & webhooks',
                     'Secure OAuth2 / JWT protocols',
+                ],
+            ],
+            [
+                'icon' => 'window',
+                'popular' => false,
+                'title' => 'Corporate & Business Website Development',
+                'description' =>
+                    'Professional, fast websites engineered to build brand authority and convert visitors into customers.',
+                'key_points' => [
+                    'Mobile-first, responsive design',
+                    'SEO-optimized site architecture',
+                    'High-converting CTA placements',
+                    'Fast-loading, clean code',
+                    'Full hosting & launch setup',
                 ],
             ],
             [
@@ -336,14 +339,16 @@
                                     </div>
                                 @endforeach
                             </div>
+                            @if(isset($service['link']))
                             <div class="flex items-center justify-end">
-                                <a href="{{ route('services.laravel-development') }}"
+                                <a href="{{ $service['link'] }}"
                                     class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
-                                    <span>Learn More</span>
+                                    <span>Explore service</span>
                                     <x-icons.chevron-right
                                         class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                                 </a>
                             </div>
+                            @endif
                         </div>
                     </div>
                 @endforeach

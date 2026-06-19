@@ -18,9 +18,8 @@
 
 @section('content')
     {{-- Service Hero --}}
-    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20">
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl"></div>
+    <section class="relative pb-24 -mt-20 pt-35 overflow-hidden border-b border-border bg-cover"
+        style="background-image: url('{{ asset('assets/images/background/doted.svg') }}')">
 
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
@@ -33,13 +32,13 @@
                 </ol>
             </nav>
 
-            <div class="grid lg:grid-cols-3 gap-16 items-center">
-                <div class="lg:col-span-2" data-aos="fade-right" data-aos-duration="1000">
-                    <span
-                        class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20">
-                        WordPress Development Company
-                    </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                        <span class="text-xs font-semibold">WordPress Development Company</span>
+                    </div>
+                    <h1 class="text-3xl lg:text-5xl font-bold text-foreground mb-5">
                         High-Performance <br>
                         <span class="text-gradient from-blue-400 to-blue-600">WordPress Website Development</span> Services
                     </h1>
@@ -50,23 +49,18 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="{{ route('contact') }}" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-                            <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
-                                <span>Get Free Consultation</span>
-                                <x-icons.go class="w-4 h-4" />
+                            <x-form.primary-button type="button" class="rounded-full">
+                                Start Your Project
+                                <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
+                                    <x-icons.go class="w-4 h-4 text-foreground" />
+                                </span>
                             </x-form.primary-button>
-                        </a>
-                        <a href="{{ config('staticdata.whatsapp_url') }}" data-aos="fade-up" data-aos-delay="100"
-                            data-aos-duration="800">
-                            <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
-                                <x-icons.whatsapp class="w-5 h-5" />
-                                <span>Chat on WhatsApp</span>
-                            </x-form.secondary-button>
                         </a>
                     </div>
                 </div>
                 <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
                     <div
-                        class="max-w-md h-80 mx-auto border border-border bg-card rounded-2xl p-12 flex items-center justify-center relative overflow-hidden group">
+                        class="max-w-md h-80 mx-auto border border-border/50 bg-background backdrop-blur-xl rounded-2xl p-12 flex items-center justify-center relative overflow-hidden group">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
@@ -74,7 +68,7 @@
                     </div>
                     {{-- Floating Tags --}}
                     <div
-                        class="absolute -bottom-7 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-xl bg-surface/95 px-4 py-3 ring-1 ring-border backdrop-blur">
+                        class="absolute -bottom-7 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-xl px-4 py-3 border border-border bg-background/95 backdrop-blur-xl">
                         <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
                             <x-icons.launch class="w-4 h-4" />
                         </span>
