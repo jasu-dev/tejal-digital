@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home.index')->name('home');
 Route::view('/about', 'about')->name('about');
-Route::view('/services', 'services')->name('services');
 Route::view('/portfolio', 'portfolio.index')->name('portfolio');
 Route::view('/contact', 'contact')->name('contact');
 Route::post('/contact', [ContactRequestController::class, 'store'])->name('contact.store');
@@ -28,11 +27,11 @@ Route::prefix('portfolio')->group(function () {
 
 // Services
 Route::prefix('services')->group(function () {
+    Route::view('/', 'services')->name('services.index');
     Route::view('/laravel-development', 'services.laravel-development')->name('services.laravel-development');
     Route::view('/wordpress-development', 'services.wordpress-development')->name('services.wordpress-development');
     Route::view('/ecommerce-development', 'services.ecommerce-development')->name('services.ecommerce-development');
-
-    Route::view('/custom-software-development', 'services.custom-software')->name('services.saas-development');
+    Route::view('/saas-development', 'services.saas-development')->name('services.saas-development');
     Route::view('/custom-crm-development', 'services.crm-development')->name('services.crm-development');
     Route::view('/rest-api-development', 'services.api-development')->name('services.api-development');
 });

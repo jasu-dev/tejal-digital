@@ -25,14 +25,14 @@
                 <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
                     <li><a href="{{ route('home') }}" class="hover:text-primary transition-colors">Home</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
-                    <li><a href="{{ route('services') }}" class="hover:text-primary transition-colors">Services</a></li>
+                    <li><a href="{{ route('services.index') }}" class="hover:text-primary transition-colors">Services</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
                     <li class="text-on-surface font-medium">Laravel Development</li>
                 </ol>
             </nav>
 
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right" data-aos-duration="1000">
+                <div>
                     <div
                         class="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
                         <span class="text-xs font-semibold">Expert PHP Development</span>
@@ -56,7 +56,7 @@
                         </a>
                     </div>
                 </div>
-                <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="relative">
                     <div
                         class="max-w-md h-80 mx-auto border border-border/50 bg-background backdrop-blur-xl rounded-2xl p-12 flex items-center justify-center relative overflow-hidden group">
                         <div

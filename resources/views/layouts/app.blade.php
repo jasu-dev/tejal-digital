@@ -64,8 +64,8 @@
                 class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400 @activeDesktopLink('home')">Home</a>
             <a href="{{ route('about') }}"
                 class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400 @activeDesktopLink('about')">About</a>
-            <a href="{{ route('services') }}"
-                class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400 @activeDesktopLink('services')">Services</a>
+            <a href="{{ route('services.index') }}"
+                class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400 @activeDesktopLink('services.*')">Services</a>
             <a href="{{ route('portfolio') }}"
                 class="px-4 py-1.5 rounded-full text-sm transition-colors text-zinc-500 hover:text-zinc-400 @activeDesktopLink('portfolio')">Portfolio</a>
             <a href="{{ route('contact') }}"
@@ -95,7 +95,7 @@
             class="hidden absolute top-full left-0 w-full bg-white border-t border-zinc-200 flex-col p-5 gap-1 md:hidden z-50">
             <a href="{{ route('home') }}" class="block px-4 py-2.5 rounded-lg text-sm @activeMobileLink('home')">Home</a>
             <a href="{{ route('about') }}" class="block px-4 py-2.5 rounded-lg text-sm @activeMobileLink('about')">About</a>
-            <a href="{{ route('services') }}"
+            <a href="{{ route('services.index') }}"
                 class="block px-4 py-2.5 rounded-lg text-sm @activeMobileLink('services')">Services</a>
             <a href="{{ route('portfolio') }}"
                 class="block px-4 py-2.5 rounded-lg text-sm @activeMobileLink('portfolio')">Portfolio</a>
@@ -187,9 +187,9 @@
                         class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
                         Laravel Web App Development
                     </a>
-                    <a href="https://td-v2.test/services/custom-software-development"
+                    <a href="https://td-v2.test/services/saas-development"
                         class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
-                        Web Portals &amp; Custom Software
+                        SaaS Application Development
                     </a>
                     <a href="https://td-v2.test/services/wordpress-development"
                         class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
@@ -202,10 +202,6 @@
                     <a href="https://td-v2.test/services/rest-api-development"
                         class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
                         API Development
-                    </a>
-                    <a href="https://td-v2.test/services/maintenance-support"
-                        class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
-                        Maintenance &amp; Support
                     </a>
                 </div>
             </div>

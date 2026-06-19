@@ -27,7 +27,7 @@
                 <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
                     <li><a href="{{ route('home') }}" class="hover:text-primary transition-colors">Home</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
-                    <li><a href="{{ route('services') }}" class="hover:text-primary transition-colors">Services</a></li>
+                    <li><a href="{{ route('services.index') }}" class="hover:text-primary transition-colors">Services</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
                     <li class="text-on-surface font-medium">Custom Software</li>
                 </ol>
