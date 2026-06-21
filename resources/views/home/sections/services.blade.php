@@ -3,54 +3,106 @@
         [
             'icon' => 'laravel',
             'popular' => true,
-            'link' => "route('services.laravel-development')",
-            'title' => 'Custom Web App Development (Laravel)',
+            'link' => route('services.laravel-development'),
+            'title' => 'Custom Website Development (Laravel)',
             'description' =>
                 'Scalable, ultra-secure custom web applications built with Laravel to streamline complex business workflows.',
+            'key_points' => [
+                'Tailored business logic architecture',
+                'High-performance backend coding',
+                'Optimized database engineering',
+                'Advanced built-in security',
+                'Scalable, future-proof codebase',
+            ],
         ],
         [
             'icon' => 'wordpress',
             'popular' => true,
-            'link' => "route('services.wordpress-websites')",
+            'link' => route('services.wordpress-development'),
             'title' => 'WordPress Website Development',
             'description' =>
                 'Lightweight, WordPress websites built from scratch for full control without template bloat.',
+            'key_points' => [
+                'Bespoke theme development',
+                'Bloat-free, high-speed coding',
+                'Easy Gutenberg & ACF editing',
+                'Advanced security hardening',
+                'Clean custom plugin integration',
+            ],
         ],
         [
             'icon' => 'cart',
             'popular' => true,
-            'title' => 'eCommerce Development (Shopify & WooCommerce)',
+            'link' => route('services.ecommerce-development'),
+            'title' => 'eCommerce Website Development',
             'description' =>
                 'High-converting storefronts equipped with streamlined checkouts, automated inventory, and secure payments.',
+            'key_points' => [
+                'Secure payment gateway integration',
+                'Automated inventory tracking',
+                'Mobile-optimized checkout funnels',
+                'Custom discounts & shipping rules',
+                'High-traffic database scaling',
+            ],
         ],
         [
             'icon' => 'dashboard',
             'popular' => true,
             'title' => 'SaaS Application Development',
+            'link' => route('services.saas-development'),
             'description' =>
                 'Turn your software idea into a profitable subscription product with secure multi-tenant infrastructure.',
+            'key_points' => [
+                'Secure multi-tenant architecture',
+                'Automated subscription billing systems',
+                'Frictionless user onboarding flows',
+                'Scalable cloud architecture infrastructure',
+                'Admin analytics control panels',
+            ],
         ],
         [
             'icon' => 'users',
             'popular' => false,
             'title' => 'Custom CRM & ERP Development',
+            'link' => route('services.crm-development'),
             'description' =>
                 'Centralize your operations, automate manual workflows, and track customer data with a tailored system.',
+            'key_points' => [
+                'Custom lead tracking systems',
+                'Automated billing & workflows',
+                'Role-based data access (RBAC)',
+                'Real-time analytics dashboards',
+                'Internal communication tools',
+            ],
         ],
         [
             'icon' => 'plugin',
             'popular' => false,
+            'link' => route('services.api-development'),
             'title' => 'Third-Party API Development & Integration',
             'description' =>
                 'Securely connect external tools, payment processors, and logistics systems to synchronize your data.',
+            'key_points' => [
+                'RESTful & GraphQL development',
+                'Flawless third-party integrations',
+                'Automated real-time data sync',
+                'Robust error-handling & webhooks',
+                'Secure OAuth2 / JWT protocols',
+            ],
         ],
         [
             'icon' => 'window',
             'popular' => false,
-            'link' => "route('services.wordpress-websites')",
             'title' => 'Corporate & Business Website Development',
             'description' =>
                 'Professional, fast websites engineered to build brand authority and convert visitors into customers.',
+            'key_points' => [
+                'Mobile-first, responsive design',
+                'SEO-optimized site architecture',
+                'High-converting CTA placements',
+                'Fast-loading, clean code',
+                'Full hosting & launch setup',
+            ],
         ],
         [
             'icon' => 'security',
@@ -58,13 +110,27 @@
             'title' => 'Website Speed & Security Optimization',
             'description' =>
                 'Boost search engine rankings and shield digital assets by accelerating speed and fixing vulnerabilities.',
+            'key_points' => [
+                'Database & server-side caching',
+                'Core Web Vitals remediation',
+                'Malware scanning & firewalls',
+                'Image & asset compression',
+                'SSL & security header setup',
+            ],
         ],
         [
             'icon' => 'tools',
             'popular' => false,
-            'title' => 'Ongoing Website Maintenance',
+            'title' => 'Ongoing Website & App Maintenance',
             'description' =>
                 'Prevent unexpected downtime and patch bugs via proactive updates and secure cloud backups.',
+            'key_points' => [
+                'Regular core & framework patches',
+                'Automated daily cloud backups',
+                '24/7 server uptime monitoring',
+                'Continuous bug fixing support',
+                'Periodic database health tune-ups',
+            ],
         ],
     ];
 @endphp
@@ -107,14 +173,16 @@
                         <p class="text-muted-foreground">
                             {{ $service['description'] }}
                         </p>
-                        <div class="flex items-center justify-end">
-                            <a href="{{ route('services.laravel-development') }}"
-                                class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
-                                <span>Explore service</span>
-                                <x-icons.chevron-right
-                                    class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                            </a>
-                        </div>
+                        @if (isset($service['link']))
+                            <div class="flex items-center justify-end">
+                                <a href="{{ $service['link'] }}"
+                                    class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                                    <span>Explore service</span>
+                                    <x-icons.chevron-right
+                                        class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                                </a>
+                            </div>
+                        @endif
                     </div>
                 </div>
             @endforeach
