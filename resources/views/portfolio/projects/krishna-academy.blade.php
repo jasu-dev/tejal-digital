@@ -1,27 +1,31 @@
 @extends('layouts.app')
 
 @section('head')
-    <title>KrishnaAcademy | Custom Laravel LMS with Razorpay Integration</title>
+    <title>KrishnaAcademy | Custom Laravel LMS & E-Learning Solution</title>
     <meta name="description"
-        content="Explore how we built KrishnaAcademy, a comprehensive Learning Management System with video streaming, automated quizzes, and secure Razorpay integration.">
+        content="Discover how Tejal Digital engineered KrishnaAcademy, a premium Learning Management System featuring protected video streaming, auto-evaluated quizzes, and Razorpay.">
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="keywords"
-        content="KrishnaAcademy, LMS Platform, Laravel Education Software, Online Quiz System, Razorpay Integration Laravel, Video Course Platform">
+        content="KrishnaAcademy, Laravel LMS, E-Learning Platform development, Razorpay payment gateway, online quiz software, protected video streaming, custom school portal">
 
     <!-- Open Graph -->
     <meta property="og:title" content="KrishnaAcademy LMS Case Study | Tejal Digital">
     <meta property="og:description"
-        content="Building a scalable education platform with Laravel, featuring auto-evaluating quizzes and secure payments.">
+        content="A deep dive into building a secure, scalable Learning Management System using Laravel, S3 Signed URLs, and MySQL.">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('assets/images/krishna-academy.png') }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:title" content="KrishnaAcademy LMS | Project Showcase">
+    <meta name="twitter:description"
+        content="Securing and scaling digital learning environments with custom Laravel architectures.">
+    <meta name="twitter:image" content="{{ asset('assets/images/krishna-academy.png') }}">
 @endsection
 
 @section('content')
     {{-- Project Hero --}}
-    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20">
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-
+    <section class="relative pb-24 -mt-20 pt-35 overflow-hidden border-b border-border bg-cover"
+        style="background-image: url('{{ asset('assets/images/background/doted.svg') }}')">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
                 <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
@@ -34,141 +38,58 @@
             </nav>
 
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 rounded-full border border-indigo-500/20">
-                        EdTech Solution
-                    </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                        <span class="text-xs font-semibold">Custom EdTech Solution</span>
+                    </div>
+                    <h1 class="text-3xl lg:text-5xl font-bold text-foreground mb-5">
                         KrishnaAcademy <br>
-                        <span class="text-gradient from-indigo-400 to-purple-500">LMS Platform</span>
+                        <span class="text-gradient">LMS Platform</span>
                     </h1>
                     <p class="text-xl text-on-surface/60 leading-relaxed mb-8">
-                        A feature-rich Learning Management System designed to deliver seamless educational experiences through video content, interactive assessments, and secure enrollment.
+                        A custom, secure Learning Management System empowering educators to stream premium courses, run automated assessments, and process enrollments seamlessly.
                     </p>
-                    <div class="flex flex-wrap gap-3 mb-10">
-                        @foreach (['Laravel', 'Razorpay', 'Video Streaming', 'Auto-Quizzes', 'Certification System'] as $tech)
-                            <span class="px-4 py-2 bg-surface-container rounded-xl border border-outline-variant/20 text-sm font-medium text-on-surface/80">
-                                {{ $tech }}
-                            </span>
-                        @endforeach
+                    <div class="flex flex-wrap gap-4">
+                        <a href="{{ route('contact') }}">
+                            <x-form.primary-button type="button" class="rounded-full">
+                                Build Similar App
+                                <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
+                                    <x-icons.go class="w-4 h-4 text-foreground" />
+                                </span>
+                            </x-form.primary-button>
+                        </a>
                     </div>
                 </div>
-                <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
-                    <div class="aspect-video rounded-3xl overflow-hidden border border-outline-variant/30 shadow-2xl">
-                        <img src="{{ asset('assets/images/krishna-academy.png') }}" alt="KrishnaAcademy Interface" class="w-full h-full object-cover">
-                    </div>
-                    <div class="absolute -bottom-6 -right-6 bg-surface-container p-6 rounded-2xl border border-outline-variant/20 shadow-xl hidden md:block">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center">
-                                <x-icons.play class="w-6 h-6 text-indigo-400" />
-                            </div>
-                            <div>
-                                <p class="text-xs text-on-surface/60 font-bold uppercase tracking-wider">Content</p>
-                                <p class="text-lg font-black text-foreground">500+ Video Lessons</p>
-                            </div>
+                <div class="relative">
+                    <div
+                        class="max-w-md mx-auto border border-border/50 bg-background backdrop-blur-xl rounded-2xl p-4 flex items-center justify-center relative overflow-hidden group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="aspect-video rounded-xl overflow-hidden border border-outline-variant/30 relative z-10">
+                            <img src="{{ asset('assets/images/krishna-academy.png') }}" alt="KrishnaAcademy LMS Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- Project Details Section --}}
-    <section class="py-24 bg-surface">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-12">
-                {{-- Left Side: Main Content --}}
-                <div class="lg:col-span-2 space-y-16">
-                    {{-- The Challenge --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
-                            <span class="w-8 h-1 bg-indigo-500 rounded-full"></span>
-                            The Challenge
-                        </h2>
-                        <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed space-y-4">
-                            <p>
-                                The client required a scalable platform that could host thousands of students while providing a distraction-free learning environment. The core challenge was implementing a quiz system that could handle complex question types with automated grading and instant feedback.
-                            </p>
-                            <p>
-                                Key objectives included:
-                            </p>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Protecting premium video content from unauthorized downloads.</li>
-                                <li>Building a multi-role system (Admin, Teacher, Student) with distinct permissions.</li>
-                                <li>Integrating a reliable Indian payment gateway (Razorpay) for course sales.</li>
-                                <li>Generating dynamic certificates upon course completion.</li>
-                            </ul>
+                    {{-- Floating Tags --}}
+                    <div
+                        class="absolute -top-7 right-10 flex items-center gap-2 rounded-xl border border-border bg-background/95 backdrop-blur-xl px-4 py-3">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
+                            <x-icons.security class="w-4 h-4" />
+                        </span>
+                        <div class="text-xs">
+                            <div class="text-muted-foreground">Streaming</div>
+                            <div class="font-semibold text-foreground">Anti-Piracy Check</div>
                         </div>
                     </div>
-
-                    {{-- The Solution --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
-                            <span class="w-8 h-1 bg-purple-500 rounded-full"></span>
-                            The Solution
-                        </h2>
-                        <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed space-y-4">
-                            <p>
-                                We built KrishnaAcademy on the Laravel framework, utilizing its robust Eloquent ORM to manage complex relationships between courses, lessons, quizzes, and enrollments. 
-                            </p>
-                            <p>
-                                **Assessment Engine:** We developed a custom quiz module that supports multiple choice, true/false, and descriptive questions. Results are calculated instantly, and students receive detailed performance analytics.
-                            </p>
-                            <p>
-                                **Payment & Security:** Razorpay was integrated for seamless INR transactions. We also implemented secure URL signing and cloud-hosted video protection to ensure content remains exclusive to paid subscribers.
-                            </p>
-                        </div>
-                    </div>
-
-                    {{-- Key Features --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-8">Core Features</h2>
-                        <div class="grid md:grid-cols-2 gap-6">
-                            @php
-                                $features = [
-                                    ['title' => 'Structured Courses', 'desc' => 'Organize content into modules, lessons, and downloadable PDF resources.'],
-                                    ['title' => 'Interactive Quizzes', 'desc' => 'Automated assessments with solutions, timer support, and retake options.'],
-                                    ['title' => 'Razorpay Checkout', 'desc' => 'Secure payment processing with instant course activation.'],
-                                    ['title' => 'Progress Tracking', 'desc' => 'Visual indicators for student progress across various course modules.'],
-                                    ['title' => 'Digital Certificates', 'desc' => 'Automatically generated, verifiable PDF certificates for graduates.'],
-                                    ['title' => 'Teacher Panel', 'desc' => 'Dedicated tools for instructors to upload content and track student performance.'],
-                                ];
-                            @endphp
-                            @foreach ($features as $f)
-                                <div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-indigo-500/30 transition-all group">
-                                    <h4 class="text-lg font-bold text-foreground mb-2 group-hover:text-indigo-400 transition-colors">{{ $f['title'] }}</h4>
-                                    <p class="text-on-surface/60 text-sm leading-relaxed">{{ $f['desc'] }}</p>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Right Side: Meta Info & CTA --}}
-                <div class="space-y-8">
-                    <div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/20 sticky top-24">
-                        <h3 class="text-xl font-bold text-foreground mb-6">Project Info</h3>
-                        <div class="space-y-6">
-                            <div>
-                                <p class="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1">Sector</p>
-                                <p class="text-on-surface/80 font-medium">Education / EdTech</p>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1">Technologies</p>
-                                <p class="text-on-surface/80 font-medium">Laravel, PHP, MySQL, Razorpay</p>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-indigo-400 uppercase tracking-widest mb-1">Scale</p>
-                                <p class="text-on-surface/80 font-medium">5,000+ Enrolled Students</p>
-                            </div>
-                            <div class="pt-6 border-t border-outline-variant/10">
-                                <a href="{{ route('contact') }}">
-                                    <x-form.primary-button type="button" class="w-full justify-center py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 border-indigo-600">
-                                        <span>Build Your LMS</span>
-                                        <x-icons.go class="w-4 h-4" />
-                                    </x-form.primary-button>
-                                </a>
-                            </div>
+                    <div
+                        class="absolute -bottom-7 left-10 flex items-center gap-2 rounded-xl px-4 py-3 border border-border bg-background/95 backdrop-blur-xl">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
+                            <x-icons.target class="w-4 h-4" />
+                        </span>
+                        <div class="text-xs">
+                            <div class="text-muted-foreground">Assessments</div>
+                            <div class="font-semibold text-foreground">Auto Quiz Engine</div>
                         </div>
                     </div>
                 </div>
@@ -176,29 +97,234 @@
         </div>
     </section>
 
-    {{-- More Projects --}}
-    <section class="py-24 border-t border-outline-variant/20">
+    <!-- Intro Context Block -->
+    <section class="py-12 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xl text-muted-foreground">
+                "Delivering secure online video lessons, orchestrating instant quiz evaluations, and facilitating payment routing. We engineered a scalable EdTech platform built with Laravel."
+            </p>
+        </div>
+    </section>
+
+    <!-- Challenges & Objectives Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    Project <span class="text-gradient">Challenges & Objectives</span>
+                </h2>
+                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                    Traditional online classrooms suffer from content leaks and high grading overhead. The objective was to build a secure, automated environment:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Objective 1 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.security class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Video Protection</h3>
+                    <p class="text-sm leading-relaxed">Protect paid course lectures from unauthorized downloads and sharing by using signed request limits.</p>
+                </div>
+                <!-- Objective 2 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.target class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Auto Quiz Engine</h3>
+                    <p class="text-sm leading-relaxed">Generate timed interactive questions with auto-evaluations, instant scores, and custom feedback pipelines.</p>
+                </div>
+                <!-- Objective 3 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.launch class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Razorpay Checkout</h3>
+                    <p class="text-sm leading-relaxed">Seamless student enrollment through secure domestic payment integrations and direct portal provision.</p>
+                </div>
+                <!-- Objective 4 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.plugin class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">PDF Certifications</h3>
+                    <p class="text-sm leading-relaxed">Auto-generate verifiable completion certificates dynamically stamped with student scores and unique hashes.</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center text-sm">
+                Deploying a <span class="font-semibold">secure custom LMS portal</span> drives scalable digital learning operations.
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Solutions Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    How We Built It: <span class="text-gradient">Laravel Solutions</span>
+                </h2>
+                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                    We engineered a secure e-learning portal using Laravel ORM relationships, AWS signed channels, and automated webhook routing.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
+                <!-- Solution 1 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">01</span>
+                    <h3 class="text-xl font-bold mb-3">Signed URL Streams</h3>
+                    <p class="text-sm leading-relaxed">Attaching unique encryption signatures to S3 media endpoints to block unauthenticated course video downloads.</p>
+                </div>
+                <!-- Solution 2 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">02</span>
+                    <h3 class="text-xl font-bold mb-3">Eloquent Course Schema</h3>
+                    <p class="text-sm leading-relaxed">Designing relational database constraints between lessons, quizzes, and user milestones to track completion status.</p>
+                </div>
+                <!-- Solution 3 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">03</span>
+                    <h3 class="text-xl font-bold mb-3">Grading Rules Engine</h3>
+                    <p class="text-sm leading-relaxed">Building backend quiz logical models that calculate test grades, log responses, and restrict quiz retakes.</p>
+                </div>
+                <!-- Solution 4 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">04</span>
+                    <h3 class="text-xl font-bold mb-3">Razorpay Webhooks</h3>
+                    <p class="text-sm leading-relaxed">Integrating webhook endpoints to automatically provision course access and generate payment invoice logs.</p>
+                </div>
+                <!-- Solution 5 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">05</span>
+                    <h3 class="text-xl font-bold mb-3">Hash-Verified PDFs</h3>
+                    <p class="text-sm leading-relaxed">Using dynamic PDF generation layout engines to stamp unique validation hashes onto student certificate pages.</p>
+                </div>
+                <!-- Solution 6 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">06</span>
+                    <h3 class="text-xl font-bold mb-3">Horizon Queue Workers</h3>
+                    <p class="text-sm leading-relaxed">Offloading PDF processing, email dispatching, and notification logs to Laravel Horizon to keep pages highly responsive.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="{{ route('contact') }}">
+                    <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <span>Get Free Consultation</span>
+                        <x-icons.go class="w-4 h-4" />
+                    </x-form.primary-button>
+                </a>
+                <a href="{{ config('staticdata.whatsapp_url') }}">
+                    <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <x-icons.whatsapp class="w-5 h-5" />
+                        <span>Chat on WhatsApp</span>
+                    </x-form.secondary-button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Q1 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> How are streaming videos protected from direct downloads?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Course videos are stored in private Cloud storage. The player requests short-lived signed URLs generated on the server. Once the signature expires, the direct media link becomes invalid.
+                    </p>
+                </div>
+                <!-- Q2 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> Can the quiz system support multiple-choice and written answers?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Yes. Multiple-choice and true/false questions are graded automatically by the Laravel core engine. Descriptive questions can be reviewed and manually graded by teachers in the Admin dashboard.
+                    </p>
+                </div>
+                <!-- Q3 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> How do course certifications stay secure and verifiable?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Every certificate PDF is generated with a unique MD5 hash recorded in our database. Third parties can query this hash on a public validation URL to verify certificate authenticity.
+                    </p>
+                </div>
+                <!-- Q4 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> How does the platform handle payment transaction failures?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Our integration with Razorpay webhooks verifies transaction signatures. If a network interruption occurs, the webhook retries in the background, ensuring course access is provisioned as soon as payment settles.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Related Projects --}}
+    <section class="py-24 border-b border-outline-variant/20">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Case Studies</h2>
-                    <p class="text-on-surface/60">Explore more of our recent work and digital transformations.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Projects</h2>
+                    <p class="text-on-surface/60">See how we've built custom portals to drive growth.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                 <a href="{{ route('portfolio.promofusion360') }}" class="group bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/20 hover:border-primary/30 transition-all">
+                <a href="{{ route('portfolio.promofusion360') }}"
+                    class="group rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('assets/images/promofusion360.png') }}" alt="PromoFusion360" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <img src="{{ asset('assets/images/promofusion360.png') }}" alt="PromoFusion360 Portal"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">PromoFusion360 – Earning Platform</h3>
-                        <p class="text-on-surface/60 text-sm">Laravel-based earning platform with multi-gateway support.</p>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">PromoFusion360 Portal</h3>
+                        <p class="text-on-surface/60 text-sm">Automated payment processing via multiple gateway APIs.</p>
                     </div>
                 </a>
-                <a href="{{ route('portfolio.attendance-manager') }}" class="group bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/20 hover:border-primary/30 transition-all">
+                <a href="{{ route('portfolio.attendance-manager') }}"
+                    class="group rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('assets/images/attendance.png') }}" alt="Attendance Manager" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <img src="{{ asset('assets/images/attendance.png') }}" alt="Attendance Manager"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Attendance Manager System</h3>

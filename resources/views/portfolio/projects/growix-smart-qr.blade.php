@@ -1,27 +1,31 @@
 @extends('layouts.app')
 
 @section('head')
-    <title>Growix Smart QR | Review Management & Reputation SaaS</title>
+    <title>Growix Smart QR | Custom Google Review Filter & Reputation SaaS</title>
     <meta name="description"
-        content="Discover how we built Growix, a smart QR code system for businesses to manage online reviews and improve their digital reputation using Laravel.">
+        content="Discover how Tejal Digital built Growix, a premium review filtering SaaS using dynamic QR codes. Divert negative reviews to private logs while routing positive ones to Google.">
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="keywords"
-        content="Growix, Smart QR, Review Management Software, Reputation SaaS, Laravel SaaS Development, Google Reviews Filtering">
+        content="Growix, Smart QR code review, Google reviews filter, online reputation management software, customer rating SaaS, Razorpay subscription Laravel, feedback routing platform">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Growix Smart QR Case Study | Tejal Digital">
     <meta property="og:description"
-        content="A unique review management SaaS built with Laravel, featuring dynamic QR codes and payment integration.">
+        content="Building a reputation management SaaS with Laravel, dynamic QR generation, and custom rating redirect rules.">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('assets/images/growix.png') }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:title" content="Growix Smart QR | Project Showcase">
+    <meta name="twitter:description"
+        content="Scaling businesses with intelligent QR codes that filter reviews and enhance online standings.">
+    <meta name="twitter:image" content="{{ asset('assets/images/growix.png') }}">
 @endsection
 
 @section('content')
     {{-- Project Hero --}}
-    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20">
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
-
+    <section class="relative pb-24 -mt-20 pt-35 overflow-hidden border-b border-border bg-cover"
+        style="background-image: url('{{ asset('assets/images/background/doted.svg') }}')">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
                 <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
@@ -34,141 +38,58 @@
             </nav>
 
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-purple-400 bg-purple-500/10 rounded-full border border-purple-500/20">
-                        SaaS Development
-                    </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                        <span class="text-xs font-semibold">Custom SaaS Platform</span>
+                    </div>
+                    <h1 class="text-3xl lg:text-5xl font-bold text-foreground mb-5">
                         Growix: <br>
-                        <span class="text-gradient from-purple-400 to-indigo-500">Smart QR System</span>
+                        <span class="text-gradient">Smart QR System</span>
                     </h1>
                     <p class="text-xl text-on-surface/60 leading-relaxed mb-8">
-                        An innovative reputation management platform that leverages dynamic QR technology to help businesses capture positive feedback and manage concerns privately.
+                        An intelligent reputation engine using dynamic QR routing blocks to direct positive reviews directly to Google, while collecting critical feedback privately.
                     </p>
-                    <div class="flex flex-wrap gap-3 mb-10">
-                        @foreach (['Laravel', 'QR Engine', 'Razorpay', 'SaaS', 'Admin Panels'] as $tech)
-                            <span class="px-4 py-2 bg-surface-container rounded-xl border border-outline-variant/20 text-sm font-medium text-on-surface/80">
-                                {{ $tech }}
-                            </span>
-                        @endforeach
+                    <div class="flex flex-wrap gap-4">
+                        <a href="{{ route('contact') }}">
+                            <x-form.primary-button type="button" class="rounded-full">
+                                Build Similar SaaS
+                                <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
+                                    <x-icons.go class="w-4 h-4 text-foreground" />
+                                </span>
+                            </x-form.primary-button>
+                        </a>
                     </div>
                 </div>
-                <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
-                    <div class="aspect-video rounded-3xl overflow-hidden border border-outline-variant/30 shadow-2xl">
-                        <img src="{{ asset('assets/images/growix.png') }}" alt="Growix Application Dashboard" class="w-full h-full object-cover">
-                    </div>
-                    <div class="absolute -bottom-6 -right-6 bg-surface-container p-6 rounded-2xl border border-outline-variant/20 shadow-xl hidden md:block">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center">
-                                <x-icons.star class="w-6 h-6 text-purple-400" />
-                            </div>
-                            <div>
-                                <p class="text-xs text-on-surface/60 font-bold uppercase tracking-wider">Result</p>
-                                <p class="text-lg font-black text-foreground">85% Review Improvement</p>
-                            </div>
+                <div class="relative">
+                    <div
+                        class="max-w-md mx-auto border border-border/50 bg-background backdrop-blur-xl rounded-2xl p-4 flex items-center justify-center relative overflow-hidden group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="aspect-video rounded-xl overflow-hidden border border-outline-variant/30 relative z-10">
+                            <img src="{{ asset('assets/images/growix.png') }}" alt="Growix Application Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- Project Details Section --}}
-    <section class="py-24 bg-surface">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-12">
-                {{-- Left Side: Main Content --}}
-                <div class="lg:col-span-2 space-y-16">
-                    {{-- The Challenge --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
-                            <span class="w-8 h-1 bg-purple-500 rounded-full"></span>
-                            The Challenge
-                        </h2>
-                        <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed space-y-4">
-                            <p>
-                                Online reviews can make or break a business. Often, happy customers forget to leave reviews, while unhappy ones are quick to vent on public platforms like Google or Yelp. Business owners needed a way to encourage positive reviews while intercepting negative feedback privately to resolve issues.
-                            </p>
-                            <p>
-                                The project required:
-                            </p>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>A way to distinguish between satisfied and dissatisfied customers instantly.</li>
-                                <li>Dynamic QR codes for each business that link to a custom landing page.</li>
-                                <li>A subscription model for business owners to access the service.</li>
-                                <li>Automated redirection based on user rating.</li>
-                            </ul>
+                    {{-- Floating Tags --}}
+                    <div
+                        class="absolute -top-7 right-10 flex items-center gap-2 rounded-xl border border-border bg-background/95 backdrop-blur-xl px-4 py-3">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
+                            <x-icons.star class="w-4 h-4" />
+                        </span>
+                        <div class="text-xs">
+                            <div class="text-muted-foreground">Rating</div>
+                            <div class="font-semibold text-foreground">85% Boost Rate</div>
                         </div>
                     </div>
-
-                    {{-- The Solution --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
-                            <span class="w-8 h-1 bg-indigo-500 rounded-full"></span>
-                            The Solution
-                        </h2>
-                        <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed space-y-4">
-                            <p>
-                                We developed Growix as a comprehensive SaaS platform using Laravel. The heart of the system is the "Review Filter" logic. When a customer scans the QR code, they are asked to rate their experience.
-                            </p>
-                            <p>
-                                **The Filter Logic:** If the customer selects 4 or 5 stars, the system automatically redirects them to the business's official Google Review page. If they select 3 stars or less, they are redirected to a private feedback form that notifies the owner immediately.
-                            </p>
-                            <p>
-                                **SaaS Management:** We integrated Razorpay to handle monthly and yearly subscriptions, providing business owners with a dashboard to track their QR scans, review redirections, and private feedback received.
-                            </p>
-                        </div>
-                    </div>
-
-                    {{-- Key Features --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-8">Core Features</h2>
-                        <div class="grid md:grid-cols-2 gap-6">
-                            @php
-                                $features = [
-                                    ['title' => 'Smart Redirection', 'desc' => 'Logic-based routing that sends happy customers to public review sites and others to private forms.'],
-                                    ['title' => 'Dynamic QR Engine', 'desc' => 'Generate and manage high-quality QR codes for tables, counters, or marketing materials.'],
-                                    ['title' => 'Admin Dashboard', 'desc' => 'Track analytics on total scans, star ratings received, and redirection success.'],
-                                    ['title' => 'Subscription Billing', 'desc' => 'Automated recurring payments and plan management using Razorpay.'],
-                                    ['title' => 'Feedback Portal', 'desc' => 'Private area for owners to read and respond to customer concerns before they go public.'],
-                                    ['title' => 'White-Label Options', 'desc' => 'Allow businesses to customize the landing page with their own logos and brand colors.'],
-                                ];
-                            @endphp
-                            @foreach ($features as $f)
-                                <div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-purple-500/30 transition-all group">
-                                    <h4 class="text-lg font-bold text-foreground mb-2 group-hover:text-purple-400 transition-colors">{{ $f['title'] }}</h4>
-                                    <p class="text-on-surface/60 text-sm leading-relaxed">{{ $f['desc'] }}</p>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Right Side: Meta Info & CTA --}}
-                <div class="space-y-8">
-                    <div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/20 sticky top-24">
-                        <h3 class="text-xl font-bold text-foreground mb-6">Project Info</h3>
-                        <div class="space-y-6">
-                            <div>
-                                <p class="text-[10px] font-bold text-purple-400 uppercase tracking-widest mb-1">Service Type</p>
-                                <p class="text-on-surface/80 font-medium">SaaS Platform Development</p>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-purple-400 uppercase tracking-widest mb-1">Industry</p>
-                                <p class="text-on-surface/80 font-medium">Digital Marketing / Hospitality</p>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-purple-400 uppercase tracking-widest mb-1">Core Tech</p>
-                                <p class="text-on-surface/80 font-medium">Laravel, MySQL, Razorpay, QR Library</p>
-                            </div>
-                            <div class="pt-6 border-t border-outline-variant/10">
-                                <a href="{{ route('contact') }}">
-                                    <x-form.primary-button type="button" class="w-full justify-center py-4 rounded-2xl bg-purple-600 hover:bg-purple-700 border-purple-600">
-                                        <span>Build SaaS Like This</span>
-                                        <x-icons.go class="w-4 h-4" />
-                                    </x-form.primary-button>
-                                </a>
-                            </div>
+                    <div
+                        class="absolute -bottom-7 left-10 flex items-center gap-2 rounded-xl px-4 py-3 border border-border bg-background/95 backdrop-blur-xl">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
+                            <x-icons.target class="w-4 h-4" />
+                        </span>
+                        <div class="text-xs">
+                            <div class="text-muted-foreground">Routing</div>
+                            <div class="font-semibold text-foreground">Reviews Filtered</div>
                         </div>
                     </div>
                 </div>
@@ -176,33 +97,238 @@
         </div>
     </section>
 
-    {{-- More Projects --}}
-    <section class="py-24 border-t border-outline-variant/20">
+    <!-- Intro Context Block -->
+    <section class="py-12 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xl text-muted-foreground">
+                "Filtering public customer opinions, generating customizable dynamic QR layouts, and tracking multi-store feedback logs. We engineered a robust reputation management SaaS portal."
+            </p>
+        </div>
+    </section>
+
+    <!-- Challenges & Objectives Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    Project <span class="text-gradient">Challenges & Objectives</span>
+                </h2>
+                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                    Dissatisfied clients rush to write negative public reviews, while happy ones rarely do. The goal was to build a filtering loop:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Objective 1 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.target class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Intelligent Filter</h3>
+                    <p class="text-sm leading-relaxed">Direct 4-5 star reviews directly to Google, while steering lower ratings to private logs forms.</p>
+                </div>
+                <!-- Objective 2 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.plugin class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dynamic QR Codes</h3>
+                    <p class="text-sm leading-relaxed">Generate unique vectors matching business IDs instantly, allowing quick downloads for counter placards.</p>
+                </div>
+                <!-- Objective 3 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.launch class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Subscription Billing</h3>
+                    <p class="text-sm leading-relaxed">Automate month/year subscription setups via Razorpay, enabling clean dynamic paywall gates.</p>
+                </div>
+                <!-- Objective 4 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.users class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Feedback Alerts</h3>
+                    <p class="text-sm leading-relaxed">Notify store owners via real-time alerts the moment a negative rating is captured to enable quick resolutions.</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center text-sm">
+                Deploying a <span class="font-semibold">custom reputation management portal</span> increases positive ratings and preserves consumer trust.
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Solutions Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    How We Built It: <span class="text-gradient">SaaS Solutions Architecture</span>
+                </h2>
+                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                    We engineered a robust platform using Laravel multi-tenant subscriptions, dynamic QR vectors generation, and database ratings routing logic.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
+                <!-- Solution 1 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">01</span>
+                    <h3 class="text-xl font-bold mb-3">Rating Filter Logic</h3>
+                    <p class="text-sm leading-relaxed">Routing customer feedback endpoints dynamically based on raw star counts to direct users to correct public or private destinations.</p>
+                </div>
+                <!-- Solution 2 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">02</span>
+                    <h3 class="text-xl font-bold mb-3">Dynamic QR Renders</h3>
+                    <p class="text-sm leading-relaxed">Leveraging PHP vectors library to render custom QR codes matching business dashboard settings dynamically without latency.</p>
+                </div>
+                <!-- Solution 3 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">03</span>
+                    <h3 class="text-xl font-bold mb-3">Razorpay SaaS Flow</h3>
+                    <p class="text-sm leading-relaxed">Seamless recurring subscription billing models mapped in Laravel to provision client access gates smoothly.</p>
+                </div>
+                <!-- Solution 4 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">04</span>
+                    <h3 class="text-xl font-bold mb-3">Private Feedback Logs</h3>
+                    <p class="text-sm leading-relaxed">Securing negative review logs inside encrypted MySQL database schema logs, accessible only by verified administrators.</p>
+                </div>
+                <!-- Solution 5 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">05</span>
+                    <h3 class="text-xl font-bold mb-3">Instant Alerts Pipeline</h3>
+                    <p class="text-sm leading-relaxed">Connecting SMS and email triggers to notify client executives instantly when negative logs are posted.</p>
+                </div>
+                <!-- Solution 6 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">06</span>
+                    <h3 class="text-xl font-bold mb-3">White-Label Branding</h3>
+                    <p class="text-sm leading-relaxed">Implementing dynamic client theme stylesheets, allowing store owners to customize feedback headers with brand vectors.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="{{ route('contact') }}">
+                    <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <span>Get Free Consultation</span>
+                        <x-icons.go class="w-4 h-4" />
+                    </x-form.primary-button>
+                </a>
+                <a href="{{ config('staticdata.whatsapp_url') }}">
+                    <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <x-icons.whatsapp class="w-5 h-5" />
+                        <span>Chat on WhatsApp</span>
+                    </x-form.secondary-button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Q1 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> How does the smart routing logic direct reviews?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        When a customer scans a table QR, they are presented with a rating screen. If they choose 4 or 5 stars, they are routed to the public Google Review page. If they choose 1-3 stars, they are sent to a private contact page.
+                    </p>
+                </div>
+                <!-- Q2 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> Can we customize the landing pages for each business table?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Yes. The SaaS console includes color pickers and image upload controls, letting businesses white-label review screens with their custom logos and styling.
+                    </p>
+                </div>
+                <!-- Q3 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> How does the notification pipeline dispatch alerts?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Low reviews trigger background jobs that dispatch instant SMS and email notifications to the restaurant manager, giving them the chance to resolve issues before the customer leaves.
+                    </p>
+                </div>
+                <!-- Q4 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> Are subscription paywalls handled automatically?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Yes. Razorpay handles payment events. If a user cancels or misses a renewal payment, webhook triggers automatically freeze their active QR redirection pages.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Related Projects --}}
+    <section class="py-24 border-b border-outline-variant/20">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Case Studies</h2>
-                    <p class="text-on-surface/60">Explore more of our recent work and digital transformations.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Projects</h2>
+                    <p class="text-on-surface/60">See how we've built custom portals to drive growth.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                 <a href="{{ route('portfolio.kifayat-card') }}" class="group bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/20 hover:border-primary/30 transition-all">
+                <a href="{{ route('portfolio.kifayat-card') }}"
+                    class="group rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('assets/images/kifayatcard.png') }}" alt="Kifayat Card" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <img src="{{ asset('assets/images/kifayatcard.png') }}" alt="Kifayat Card"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Kifayat Card</h3>
-                        <p class="text-on-surface/60 text-sm">Digital loyalty point system for merchants.</p>
+                        <p class="text-on-surface/60 text-sm">Merchant loyalty ledger system with secure QR code scanners.</p>
                     </div>
                 </a>
-                <a href="{{ route('portfolio.attendance-manager') }}" class="group bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/20 hover:border-primary/30 transition-all">
+                <a href="{{ route('portfolio.attendance-manager') }}"
+                    class="group rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('assets/images/attendance.png') }}" alt="Attendance Manager" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <img src="{{ asset('assets/images/attendance.png') }}" alt="Attendance Manager"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Attendance Manager System</h3>
-                        <p class="text-on-surface/60 text-sm">Geo-fenced attendance tracking with selfie verification.</p>
+                        <p class="text-on-surface/60 text-sm">Employee geolocation tracking with camera verification checks.</p>
                     </div>
                 </a>
             </div>

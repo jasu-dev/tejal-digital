@@ -1,27 +1,31 @@
 @extends('layouts.app')
 
 @section('head')
-    <title>Gujjutak News | Scalable Regional News CMS & Portal</title>
+    <title>Gujjutak News | Custom High-Traffic Regional News CMS</title>
     <meta name="description"
-        content="Discover how we built Gujjutak News, a high-traffic regional news platform with advanced SEO tools, ad management, and a lightning-fast Laravel backend.">
+        content="Discover how Tejal Digital built Gujjutak News, a high-concurrency regional news platform using Laravel, Redis page caching, and automated Google News sitemaps.">
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="keywords"
-        content="Gujjutak News, News CMS Laravel, Regional News Portal, News Website Development, Laravel News Platform, Gujarati News Site">
+        content="Gujjutak News, regional news CMS, Laravel news portal, Gujarati news website developer, high concurrency media server, Google News sitemap generator, Redis news caching">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Gujjutak News Case Study | Tejal Digital">
     <meta property="og:description"
-        content="A deep dive into building a high-performance regional news portal using Laravel and MySQL.">
+        content="Handling heavy visitor traffic on regional news portals with Laravel, Redis caching layers, and database indices.">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('assets/images/gujjutak.png') }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:title" content="Gujjutak News CMS | Project Showcase">
+    <meta name="twitter:description"
+        content="Structuring optimized database index queries for high-volume regional media sites.">
+    <meta name="twitter:image" content="{{ asset('assets/images/gujjutak.png') }}">
 @endsection
 
 @section('content')
     {{-- Project Hero --}}
-    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20">
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-green-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-lime-500/10 rounded-full blur-3xl"></div>
-
+    <section class="relative pb-24 -mt-20 pt-35 overflow-hidden border-b border-border bg-cover"
+        style="background-image: url('{{ asset('assets/images/background/doted.svg') }}')">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
                 <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
@@ -34,141 +38,58 @@
             </nav>
 
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-green-400 bg-green-500/10 rounded-full border border-green-500/20">
-                        Media & Publishing
-                    </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                        <span class="text-xs font-semibold">Custom Media Portal</span>
+                    </div>
+                    <h1 class="text-3xl lg:text-5xl font-bold text-foreground mb-5">
                         Gujjutak <br>
-                        <span class="text-gradient from-green-400 to-lime-500">News Portal</span>
+                        <span class="text-gradient">News CMS Portal</span>
                     </h1>
                     <p class="text-xl text-on-surface/60 leading-relaxed mb-8">
-                        A robust regional news platform engineered for high-volume content publishing and rapid consumption, featuring advanced SEO and ad-monetization tools.
+                        A robust, high-concurrency publishing engine built to serve news content to thousands of concurrent readers with zero layout latency.
                     </p>
-                    <div class="flex flex-wrap gap-3 mb-10">
-                        @foreach (['Laravel', 'MySQL', 'SEO Engine', 'Ad Management', 'Multilingual Support'] as $tech)
-                            <span class="px-4 py-2 bg-surface-container rounded-xl border border-outline-variant/20 text-sm font-medium text-on-surface/80">
-                                {{ $tech }}
-                            </span>
-                        @endforeach
+                    <div class="flex flex-wrap gap-4">
+                        <a href="{{ route('contact') }}">
+                            <x-form.primary-button type="button" class="rounded-full">
+                                Build Similar Portal
+                                <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
+                                    <x-icons.go class="w-4 h-4 text-foreground" />
+                                </span>
+                            </x-form.primary-button>
+                        </a>
                     </div>
                 </div>
-                <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
-                    <div class="aspect-video rounded-3xl overflow-hidden border border-outline-variant/30 shadow-2xl">
-                        <img src="{{ asset('assets/images/gujjutak.png') }}" alt="Gujjutak News Interface" class="w-full h-full object-cover">
-                    </div>
-                    <div class="absolute -bottom-6 -right-6 bg-surface-container p-6 rounded-2xl border border-outline-variant/20 shadow-xl hidden md:block">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
-                                <x-icons.dashboard class="w-6 h-6 text-green-400" />
-                            </div>
-                            <div>
-                                <p class="text-xs text-on-surface/60 font-bold uppercase tracking-wider">Traffic</p>
-                                <p class="text-lg font-black text-foreground">100k+ Monthly Reads</p>
-                            </div>
+                <div class="relative">
+                    <div
+                        class="max-w-md mx-auto border border-border/50 bg-background backdrop-blur-xl rounded-2xl p-4 flex items-center justify-center relative overflow-hidden group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="aspect-video rounded-xl overflow-hidden border border-outline-variant/30 relative z-10">
+                            <img src="{{ asset('assets/images/gujjutak.png') }}" alt="Gujjutak News Showcase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- Project Details Section --}}
-    <section class="py-24 bg-surface">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-12">
-                {{-- Left Side: Main Content --}}
-                <div class="lg:col-span-2 space-y-16">
-                    {{-- The Challenge --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
-                            <span class="w-8 h-1 bg-green-500 rounded-full"></span>
-                            The Challenge
-                        </h2>
-                        <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed space-y-4">
-                            <p>
-                                Gujjutak.com required a scalable platform that could handle thousands of daily readers while providing news editors with an intuitive, fast-acting CMS. The primary challenge was managing high database concurrency during breaking news events and optimizing the site for search engines in a regional language (Gujarati).
-                            </p>
-                            <p>
-                                Project requirements:
-                            </p>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>A custom CMS optimized for rapid news entry and categorization.</li>
-                                <li>Integrated SEO suite to manage slugs, meta tags, and automated sitemaps.</li>
-                                <li>Flexible ad-management system for various banner positions and Google AdSense.</li>
-                                <li>Zero-latency content delivery across all devices.</li>
-                            </ul>
+                    {{-- Floating Tags --}}
+                    <div
+                        class="absolute -top-7 right-10 flex items-center gap-2 rounded-xl border border-border bg-background/95 backdrop-blur-xl px-4 py-3">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
+                            <x-icons.target class="w-4 h-4" />
+                        </span>
+                        <div class="text-xs">
+                            <div class="text-muted-foreground">Caching</div>
+                            <div class="font-semibold text-foreground">Redis Server Enabled</div>
                         </div>
                     </div>
-
-                    {{-- The Solution --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
-                            <span class="w-8 h-1 bg-lime-500 rounded-full"></span>
-                            The Solution
-                        </h2>
-                        <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed space-y-4">
-                            <p>
-                                We leveraged Laravel's caching mechanisms and optimized MySQL queries to ensure the site remains responsive even under heavy traffic. The CMS was built using a custom-tailored admin panel that prioritizes speed and ease of use for the editorial team.
-                            </p>
-                            <p>
-                                **SEO Architecture:** We implemented deep SEO controls, allowing editors to define custom meta descriptions and social media preview images for every article. The system also generates real-time XML sitemaps for Google News indexing.
-                            </p>
-                            <p>
-                                **Monetization Tools:** A centralized ad manager allows admins to inject advertisement code into specific zones (Header, Sidebar, In-Content) without touching any code, providing the client with full control over their revenue streams.
-                            </p>
-                        </div>
-                    </div>
-
-                    {{-- Key Features --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-8">Core Features</h2>
-                        <div class="grid md:grid-cols-2 gap-6">
-                            @php
-                                $features = [
-                                    ['title' => 'Article Management', 'desc' => 'Rich-text editor with support for media embeds, galleries, and custom tags.'],
-                                    ['title' => 'Advanced SEO Tools', 'desc' => 'In-dashboard optimization for better visibility in Google News and Search.'],
-                                    ['title' => 'Ad Management Zone', 'desc' => 'Manage all banner and script-based advertisements from a single interface.'],
-                                    ['title' => 'Responsive Reader UI', 'desc' => 'A clean, distraction-free reading experience optimized for mobile users.'],
-                                    ['title' => 'Real-time Analytics', 'desc' => 'Integration with Google Analytics and internal tracking for article popularity.'],
-                                    ['title' => 'Sitemap Control', 'desc' => 'Dynamic XML generation tailored for standard and news-specific search engines.'],
-                                ];
-                            @endphp
-                            @foreach ($features as $f)
-                                <div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-green-500/30 transition-all group">
-                                    <h4 class="text-lg font-bold text-foreground mb-2 group-hover:text-green-400 transition-colors">{{ $f['title'] }}</h4>
-                                    <p class="text-on-surface/60 text-sm leading-relaxed">{{ $f['desc'] }}</p>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Right Side: Meta Info & CTA --}}
-                <div class="space-y-8">
-                    <div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/20 sticky top-24">
-                        <h3 class="text-xl font-bold text-foreground mb-6">Project Info</h3>
-                        <div class="space-y-6">
-                            <div>
-                                <p class="text-[10px] font-bold text-green-400 uppercase tracking-widest mb-1">Service Type</p>
-                                <p class="text-on-surface/80 font-medium">News Portal / CMS Development</p>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-green-400 uppercase tracking-widest mb-1">Scale</p>
-                                <p class="text-on-surface/80 font-medium">10k+ Articles Published</p>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-green-400 uppercase tracking-widest mb-1">Core Tech</p>
-                                <p class="text-on-surface/80 font-medium">Laravel, PHP, MySQL, jQuery</p>
-                            </div>
-                            <div class="pt-6 border-t border-outline-variant/10">
-                                <a href="{{ route('contact') }}">
-                                    <x-form.primary-button type="button" class="w-full justify-center py-4 rounded-2xl bg-green-600 hover:bg-green-700 border-green-600">
-                                        <span>Build News Portal</span>
-                                        <x-icons.go class="w-4 h-4" />
-                                    </x-form.primary-button>
-                                </a>
-                            </div>
+                    <div
+                        class="absolute -bottom-7 left-10 flex items-center gap-2 rounded-xl px-4 py-3 border border-border bg-background/95 backdrop-blur-xl">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
+                            <x-icons.users class="w-4 h-4" />
+                        </span>
+                        <div class="text-xs">
+                            <div class="text-muted-foreground">Concurrency</div>
+                            <div class="font-semibold text-foreground">100k+ Monthly Reads</div>
                         </div>
                     </div>
                 </div>
@@ -176,33 +97,238 @@
         </div>
     </section>
 
-    {{-- More Projects --}}
-    <section class="py-24 border-t border-outline-variant/20">
+    <!-- Intro Context Block -->
+    <section class="py-12 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xl text-muted-foreground">
+                "Handling spike load events during breaking news hours, serving structured regional language sitemaps, and managing dynamic banner zones. We developed a robust media publishing network."
+            </p>
+        </div>
+    </section>
+
+    <!-- Challenges & Objectives Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    Project <span class="text-gradient">Challenges & Objectives</span>
+                </h2>
+                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                    News portals suffer from sudden traffic spikes during breaking updates, which can lock databases. Our core engineering metrics included:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Objective 1 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.launch class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Load Mitigation</h3>
+                    <p class="text-sm leading-relaxed">Offload article reading database connections to clean Redis cache layers during traffic surges.</p>
+                </div>
+                <!-- Objective 2 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.plugin class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Google News RSS</h3>
+                    <p class="text-sm leading-relaxed">Output dynamic, structured XML sitemaps to secure instant indexing triggers on Google News crawler bots.</p>
+                </div>
+                <!-- Objective 3 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.target class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Modular Categories</h3>
+                    <p class="text-sm leading-relaxed">Implement hierarchical tag taxonomies, allowing editors to assign posts to multiple categories cleanly.</p>
+                </div>
+                <!-- Objective 4 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.security class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Ad-Space Controls</h3>
+                    <p class="text-sm leading-relaxed">Develop layout block configurations, letting admins insert scripts inside headers or posts securely.</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center text-sm">
+                Structuring an <span class="font-semibold">optimized content delivery scheme</span> maintains portal uptime under high volume traffic.
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Solutions Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    How We Built It: <span class="text-gradient">Media Portal Architecture</span>
+                </h2>
+                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                    We engineered a lightning-fast news site utilizing Redis database caching, layout-shift control containers, and news XML sitemaps.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
+                <!-- Solution 1 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">01</span>
+                    <h3 class="text-xl font-bold mb-3">Redis Caching tag</h3>
+                    <p class="text-sm leading-relaxed">Caching dynamic database queries for articles using tags, invalidating caches instantly when posts are updated.</p>
+                </div>
+                <!-- Solution 2 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">02</span>
+                    <h3 class="text-xl font-bold mb-3">Google News Sitemaps</h3>
+                    <p class="text-sm leading-relaxed">Developing real-time XML index configurations that update as new articles are saved to push rankings.</p>
+                </div>
+                <!-- Solution 3 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">03</span>
+                    <h3 class="text-xl font-bold mb-3">In-Content Ad Injects</h3>
+                    <p class="text-sm leading-relaxed">Dynamically injecting AdSense scripts mid-article paragraphs without corrupting underlying post text strings.</p>
+                </div>
+                <!-- Solution 4 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">04</span>
+                    <h3 class="text-xl font-bold mb-3">Optimized MySQL Indices</h3>
+                    <p class="text-sm leading-relaxed">Setting up composite database indices on slugs, active dates, and status codes to query posts under 10ms.</p>
+                </div>
+                <!-- Solution 5 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">05</span>
+                    <h3 class="text-xl font-bold mb-3">Lazy-Loaded Visuals</h3>
+                    <p class="text-sm leading-relaxed">Using native browser loading attributes combined with base64 placeholder vectors to streamline initial rendering times.</p>
+                </div>
+                <!-- Solution 6 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">06</span>
+                    <h3 class="text-xl font-bold mb-3">Hierarchical Admin CMS</h3>
+                    <p class="text-sm leading-relaxed">Structuring role access controls to divide Super Admins, Chief Editors, and local writers for database updates.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="{{ route('contact') }}">
+                    <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <span>Get Free Consultation</span>
+                        <x-icons.go class="w-4 h-4" />
+                    </x-form.primary-button>
+                </a>
+                <a href="{{ config('staticdata.whatsapp_url') }}">
+                    <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <x-icons.whatsapp class="w-5 h-5" />
+                        <span>Chat on WhatsApp</span>
+                    </x-form.secondary-button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Q1 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> How does Redis cache help handle high concurrency traffic?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Rather than querying database tables for every page hit, Laravel pulls pre-rendered article structures from Redis memory. This reduces database operations, maintaining uptime during high traffic events.
+                    </p>
+                </div>
+                <!-- Q2 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> What format does the Google News sitemap use?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        It conforms to the official Google News XML sitemap schema, including publication tags, release timestamps, and specific language keys, allowing news to index in search results within minutes.
+                    </p>
+                </div>
+                <!-- Q3 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> Can we change ad slots configurations from the dashboard?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Yes. The custom CMS includes a dedicated ad settings section where admins can paste Google AdSense or HTML iframe script blocks, immediately updating site advertisement zones.
+                    </p>
+                </div>
+                <!-- Q4 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> Are social media previews configured automatically?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Yes. When an article is saved, the portal generates Open Graph meta properties. If no preview image is supplied, the category vector fallback is automatically injected in OG tags.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Related Projects --}}
+    <section class="py-24 border-b border-outline-variant/20">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Case Studies</h2>
-                    <p class="text-on-surface/60">Explore more of our recent work and digital transformations.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Projects</h2>
+                    <p class="text-on-surface/60">See how we've built custom portals to drive growth.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                 <a href="{{ route('portfolio.jixicloud') }}" class="group bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/20 hover:border-primary/30 transition-all">
+                <a href="{{ route('portfolio.jixicloud') }}"
+                    class="group rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('assets/images/jixicloud.png') }}" alt="Jixicloud" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <img src="{{ asset('assets/images/jixicloud.png') }}" alt="Jixicloud Hosting Portal"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Jixicloud Hosting Portal</h3>
-                        <p class="text-on-surface/60 text-sm">Modular CMS with real-time domain API integration.</p>
+                        <p class="text-on-surface/60 text-sm">Modular CMS with live domain API pricing integrations.</p>
                     </div>
                 </a>
-                <a href="{{ route('portfolio.attendance-manager') }}" class="group bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/20 hover:border-primary/30 transition-all">
+                <a href="{{ route('portfolio.attendance-manager') }}"
+                    class="group rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('assets/images/attendance.png') }}" alt="Attendance Manager" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <img src="{{ asset('assets/images/attendance.png') }}" alt="Attendance Manager System"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Attendance Manager System</h3>
-                        <p class="text-on-surface/60 text-sm">Geo-fenced attendance tracking with selfie verification.</p>
+                        <p class="text-on-surface/60 text-sm">Employee geolocation tracking with selfie verification checks.</p>
                     </div>
                 </a>
             </div>

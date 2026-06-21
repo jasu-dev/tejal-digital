@@ -1,27 +1,31 @@
 @extends('layouts.app')
 
 @section('head')
-    <title>Tech Nukti | High-Performance Custom WordPress Theme</title>
+    <title>Tech Nukti | Custom High-Speed WordPress Theme</title>
     <meta name="description"
-        content="See how we built a blazing-fast, custom WordPress theme for Technukti.com that achieves perfect Lighthouse scores without optimization plugins.">
+        content="Discover how Tejal Digital built Tech Nukti, a blazing-fast, custom WordPress theme achieving perfect 100/100 Lighthouse performance scores without bloat.">
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="keywords"
-        content="Tech Nukti, Custom WordPress Development, Fast WP Themes, Core Web Vitals, Lightweight WordPress Design, Technukti Theme">
+        content="Tech Nukti, custom WordPress theme, Technukti theme design, Google PageSpeed optimization, fast WP templates, Core Web Vitals, lightweight Gutenberg blocks">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Tech Nukti Case Study | Tejal Digital">
+    <meta property="og:title" content="Tech Nukti Theme Case Study | Tejal Digital">
     <meta property="og:description"
-        content="A deep dive into high-performance WordPress theme development with zero external dependencies.">
+        content="Building custom, zero-bloat WordPress themes for Technukti to maximize ad-revenue and SEO performance.">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('assets/images/technukti.png') }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:title" content="Tech Nukti Theme | Project Showcase">
+    <meta name="twitter:description"
+        content="Achieving a perfect 100/100 Lighthouse performance on WordPress blogs with custom layouts.">
+    <meta name="twitter:image" content="{{ asset('assets/images/technukti.png') }}">
 @endsection
 
 @section('content')
     {{-- Project Hero --}}
-    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20">
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl"></div>
-
+    <section class="relative pb-24 -mt-20 pt-35 overflow-hidden border-b border-border bg-cover"
+        style="background-image: url('{{ asset('assets/images/background/doted.svg') }}')">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
                 <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
@@ -34,141 +38,58 @@
             </nav>
 
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-amber-400 bg-amber-500/10 rounded-full border border-amber-500/20">
-                        WordPress Development
-                    </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                        <span class="text-xs font-semibold">Custom WordPress Theme</span>
+                    </div>
+                    <h1 class="text-3xl lg:text-5xl font-bold text-foreground mb-5">
                         Tech Nukti <br>
-                        <span class="text-gradient from-amber-400 to-yellow-500">Custom Theme</span>
+                        <span class="text-gradient">Fast WP Theme</span>
                     </h1>
                     <p class="text-xl text-on-surface/60 leading-relaxed mb-8">
-                        A custom-engineered WordPress theme built from scratch to deliver instant load times and perfect SEO health for a high-traffic tech blog.
+                        A custom-engineered WordPress theme built from scratch to deliver sub-second rendering times, zero layout shifts, and search ranking advantages.
                     </p>
-                    <div class="flex flex-wrap gap-3 mb-10">
-                        @foreach (['WordPress', 'PHP', 'Core Web Vitals', 'JS-Free', 'Semantic HTML'] as $tech)
-                            <span class="px-4 py-2 bg-surface-container rounded-xl border border-outline-variant/20 text-sm font-medium text-on-surface/80">
-                                {{ $tech }}
-                            </span>
-                        @endforeach
+                    <div class="flex flex-wrap gap-4">
+                        <a href="{{ route('contact') }}">
+                            <x-form.primary-button type="button" class="rounded-full">
+                                Build Similar Theme
+                                <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
+                                    <x-icons.go class="w-4 h-4 text-foreground" />
+                                </span>
+                            </x-form.primary-button>
+                        </a>
                     </div>
                 </div>
-                <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
-                    <div class="aspect-video rounded-3xl overflow-hidden border border-outline-variant/30 shadow-2xl">
-                        <img src="{{ asset('assets/images/technukti.png') }}" alt="Tech Nukti Theme Preview" class="w-full h-full object-cover">
-                    </div>
-                    <div class="absolute -bottom-6 -right-6 bg-surface-container p-6 rounded-2xl border border-outline-variant/20 shadow-xl hidden md:block">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-amber-500/20 flex items-center justify-center">
-                                <x-icons.hot class="w-6 h-6 text-amber-400" />
-                            </div>
-                            <div>
-                                <p class="text-xs text-on-surface/60 font-bold uppercase tracking-wider">Performance</p>
-                                <p class="text-lg font-black text-foreground">100/100 PageSpeed</p>
-                            </div>
+                <div class="relative">
+                    <div
+                        class="max-w-md mx-auto border border-border/50 bg-background backdrop-blur-xl rounded-2xl p-4 flex items-center justify-center relative overflow-hidden group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="aspect-video rounded-xl overflow-hidden border border-outline-variant/30 relative z-10">
+                            <img src="{{ asset('assets/images/technukti.png') }}" alt="Tech Nukti Theme Showcase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- Project Details Section --}}
-    <section class="py-24 bg-surface">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-12">
-                {{-- Left Side: Main Content --}}
-                <div class="lg:col-span-2 space-y-16">
-                    {{-- The Challenge --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
-                            <span class="w-8 h-1 bg-amber-500 rounded-full"></span>
-                            The Challenge
-                        </h2>
-                        <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed space-y-4">
-                            <p>
-                                The owner of Technukti.com was dissatisfied with off-the-shelf WordPress themes that were bloated with CSS, JavaScript, and unnecessary features. This bloat was hurting their SEO rankings and leading to a poor user experience, especially on mobile devices.
-                            </p>
-                            <p>
-                                The mandate was clear:
-                            </p>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Eliminate the need for caching and speed optimization plugins.</li>
-                                <li>Achieve perfect scores in Google Core Web Vitals.</li>
-                                <li>Implement a professional, minimal design that keeps the focus on content.</li>
-                                <li>Build a custom "Live Search" experience without using heavy libraries.</li>
-                            </ul>
+                    {{-- Floating Tags --}}
+                    <div
+                        class="absolute -top-7 right-10 flex items-center gap-2 rounded-xl border border-border bg-background/95 backdrop-blur-xl px-4 py-3">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
+                            <x-icons.target class="w-4 h-4" />
+                        </span>
+                        <div class="text-xs">
+                            <div class="text-muted-foreground">Speed</div>
+                            <div class="font-semibold text-foreground">Perfect 100 Score</div>
                         </div>
                     </div>
-
-                    {{-- The Solution --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
-                            <span class="w-8 h-1 bg-yellow-500 rounded-full"></span>
-                            The Solution
-                        </h2>
-                        <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed space-y-4">
-                            <p>
-                                We decided to bypass all theme frameworks and page builders. Instead, we hand-coded the theme using native WordPress functions and semantic HTML.
-                            </p>
-                            <p>
-                                **Asset Optimization:** We utilized a modular CSS approach where only the styles required for a specific page are loaded. By avoiding third-party JavaScript libraries, we reduced the main-thread work to almost zero.
-                            </p>
-                            <p>
-                                **Custom Live Search:** We built a lightweight AJAX-powered search system using vanilla PHP and JavaScript, providing instant results as users type, similar to premium newspaper themes but with a fraction of the code.
-                            </p>
-                        </div>
-                    </div>
-
-                    {{-- Key Features --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-8">Core Features</h2>
-                        <div class="grid md:grid-cols-2 gap-6">
-                            @php
-                                $features = [
-                                    ['title' => 'Zero-JS Architecture', 'desc' => 'Maximum performance by eliminating non-essential scripts from the frontend.'],
-                                    ['title' => 'Native WP Loops', 'desc' => 'Optimized database queries using core WordPress functions for lightning-fast content retrieval.'],
-                                    ['title' => 'Instant Live Search', 'desc' => 'Custom-built search module that provides real-time results without heavy plugins.'],
-                                    ['title' => 'Mobile-First Design', 'desc' => 'Fully fluid layout that adapts perfectly to any screen size with minimal CSS.'],
-                                    ['title' => 'Schema Markup', 'desc' => 'Built-in JSON-LD schema for articles and navigation to enhance SEO visibility.'],
-                                    ['title' => 'Widget-Ready', 'desc' => 'Custom sidebar and footer widget areas for easy content management.'],
-                                ];
-                            @endphp
-                            @foreach ($features as $f)
-                                <div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-amber-500/30 transition-all group">
-                                    <h4 class="text-lg font-bold text-foreground mb-2 group-hover:text-amber-400 transition-colors">{{ $f['title'] }}</h4>
-                                    <p class="text-on-surface/60 text-sm leading-relaxed">{{ $f['desc'] }}</p>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Right Side: Meta Info & CTA --}}
-                <div class="space-y-8">
-                    <div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/20 sticky top-24">
-                        <h3 class="text-xl font-bold text-foreground mb-6">Project Info</h3>
-                        <div class="space-y-6">
-                            <div>
-                                <p class="text-[10px] font-bold text-amber-400 uppercase tracking-widest mb-1">Service</p>
-                                <p class="text-on-surface/80 font-medium">Custom WordPress Theme</p>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-amber-400 uppercase tracking-widest mb-1">Performance Goal</p>
-                                <p class="text-on-surface/80 font-medium">100/100 Lighthouse Score</p>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-amber-400 uppercase tracking-widest mb-1">Key Tech</p>
-                                <p class="text-on-surface/80 font-medium">PHP, HTML5, CSS3, WP REST API</p>
-                            </div>
-                            <div class="pt-6 border-t border-outline-variant/10">
-                                <a href="{{ route('contact') }}">
-                                    <x-form.primary-button type="button" class="w-full justify-center py-4 rounded-2xl bg-amber-600 hover:bg-amber-700 border-amber-600">
-                                        <span>Custom WP Theme</span>
-                                        <x-icons.go class="w-4 h-4" />
-                                    </x-form.primary-button>
-                                </a>
-                            </div>
+                    <div
+                        class="absolute -bottom-7 left-10 flex items-center gap-2 rounded-xl px-4 py-3 border border-border bg-background/95 backdrop-blur-xl">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
+                            <x-icons.launch class="w-4 h-4" />
+                        </span>
+                        <div class="text-xs">
+                            <div class="text-muted-foreground">SEO</div>
+                            <div class="font-semibold text-foreground">Clean Gutenberg Blocks</div>
                         </div>
                     </div>
                 </div>
@@ -176,33 +97,238 @@
         </div>
     </section>
 
-    {{-- More Projects --}}
-    <section class="py-24 border-t border-outline-variant/20">
+    <!-- Intro Context Block -->
+    <section class="py-12 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xl text-muted-foreground">
+                "Eliminating bloated page builders, optimizing core web vitals, and rendering articles instantly on mobile connections. We engineered a custom, hand-coded WordPress framework to maximize blog performance."
+            </p>
+        </div>
+    </section>
+
+    <!-- Challenges & Objectives Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    Project <span class="text-gradient">Challenges & Objectives</span>
+                </h2>
+                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                    Off-the-shelf WordPress themes load hundreds of script files, damaging LCP and CLS scores. Our core speed milestones included:
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Objective 1 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.time class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sub-Second FCP</h3>
+                    <p class="text-sm leading-relaxed">Achieve First Contentful Paint times under 0.4 seconds by removing blocking CSS stylesheets.</p>
+                </div>
+                <!-- Objective 2 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.target class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Zero Layout Shift</h3>
+                    <p class="text-sm leading-relaxed">Prevent dynamic element movement (CLS) by pre-allocating exact dimensions for lazy-loaded image tags.</p>
+                </div>
+                <!-- Objective 3 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.plugin class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Custom Editor Blocks</h3>
+                    <p class="text-sm leading-relaxed">Build lightweight Gutenberg block elements that align with editorial flows without loading heavy frameworks.</p>
+                </div>
+                <!-- Objective 4 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.security class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Strict Schema Mark</h3>
+                    <p class="text-sm leading-relaxed">Incorporate schema JSON tags natively for articles, ensuring search engine bots index posts correctly.</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center text-sm">
+                Deploying a <span class="font-semibold">custom speed-optimized theme</span> enhances organic traffic retention and increases ad-click ratios.
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Solutions Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    How We Built It: <span class="text-gradient">WordPress Engineering</span>
+                </h2>
+                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                    We engineered a pure HTML5/CSS3 template from scratch using WordPress API bindings, avoiding bloated builders or speed enhancers.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
+                <!-- Solution 1 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">01</span>
+                    <h3 class="text-xl font-bold mb-3">Custom Header Preloads</h3>
+                    <p class="text-sm leading-relaxed">Coding custom resource hint headers to prefetch typography files, ensuring fonts render with zero visual delay.</p>
+                </div>
+                <!-- Solution 2 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">02</span>
+                    <h3 class="text-xl font-bold mb-3">Inline Critical CSS</h3>
+                    <p class="text-sm leading-relaxed">Extracting and inlining above-the-fold layout styles directly into the document head for immediate browser rendering.</p>
+                </div>
+                <!-- Solution 3 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">03</span>
+                    <h3 class="text-xl font-bold mb-3">Modern Gutenberg Modules</h3>
+                    <p class="text-sm leading-relaxed">Developing blocks through Advanced Custom Fields (ACF) to output optimized, markup-light structural elements.</p>
+                </div>
+                <!-- Solution 4 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">04</span>
+                    <h3 class="text-xl font-bold mb-3">Layout Shift Prevention</h3>
+                    <p class="text-sm leading-relaxed">Enforcing aspect-ratio containers on visual layouts, completely eliminating layout shifting metrics (CLS).</p>
+                </div>
+                <!-- Solution 5 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">05</span>
+                    <h3 class="text-xl font-bold mb-3">JSON-LD Metadata</h3>
+                    <p class="text-sm leading-relaxed">Generating precise structured schema payloads natively to secure rich snippet rankings on search queries.</p>
+                </div>
+                <!-- Solution 6 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">06</span>
+                    <h3 class="text-xl font-bold mb-3">Rest API Search</h3>
+                    <p class="text-sm leading-relaxed">Utilizing native WordPress REST endpoints with dynamic debounce scripting to supply fast search listings.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="{{ route('contact') }}">
+                    <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <span>Get Free Consultation</span>
+                        <x-icons.go class="w-4 h-4" />
+                    </x-form.primary-button>
+                </a>
+                <a href="{{ config('staticdata.whatsapp_url') }}">
+                    <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <x-icons.whatsapp class="w-5 h-5" />
+                        <span>Chat on WhatsApp</span>
+                    </x-form.secondary-button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Q1 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> Why did you build a custom theme instead of using speed plugins?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Speed optimization plugins act as a temporary fix for bloated code. Hand-coding the theme removes the primary source of bloat entirely, maintaining perfect speed marks permanently.
+                    </p>
+                </div>
+                <!-- Q2 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> Is this custom theme compatible with WooCommerce?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Yes. Because we follow clean standard WordPress hooks and template loops, WooCommerce hooks integrate seamlessly, keeping store products optimized.
+                    </p>
+                </div>
+                <!-- Q3 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> Do we need paid caching plugins like WP Rocket with this?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        No. The site runs at sub-second speeds natively. A simple free server-level cache layer (like Redis or Nginx FastCGI) is more than sufficient.
+                    </p>
+                </div>
+                <!-- Q4 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> Does this theme support Yoast or RankMath SEO plugins?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Yes, standard SEO plugins work perfectly. The theme is programmed to let SEO plugins control meta properties, while providing correct structured schema fallback codes automatically.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Related Projects --}}
+    <section class="py-24 border-b border-outline-variant/20">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Case Studies</h2>
-                    <p class="text-on-surface/60">Explore more of our recent work and digital transformations.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Projects</h2>
+                    <p class="text-on-surface/60">See how we've built custom portals to drive growth.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                 <a href="{{ route('portfolio.tech-upkar') }}" class="group bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/20 hover:border-primary/30 transition-all">
+                <a href="{{ route('portfolio.tech-upkar') }}"
+                    class="group rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('assets/images/techupkar.png') }}" alt="Tech Upkar" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <img src="{{ asset('assets/images/techupkar.png') }}" alt="Tech Upkar Portal"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">TechUpkar Theme</h3>
-                        <p class="text-on-surface/60 text-sm">Another perfect-score WordPress blog theme.</p>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">TechUpkar Blog Theme</h3>
+                        <p class="text-on-surface/60 text-sm">Preloaded Hindi typography and ad-sense layout compliance.</p>
                     </div>
                 </a>
-                <a href="{{ route('portfolio.gmj-child-pro') }}" class="group bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/20 hover:border-primary/30 transition-all">
+                <a href="{{ route('portfolio.gmj-child-pro') }}"
+                    class="group rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('assets/images/gmjchildpro.png') }}" alt="GMJ Child Pro" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <img src="{{ asset('assets/images/gmjchildpro.png') }}" alt="GMJ Child Pro Theme"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">GMJ Child Pro Theme</h3>
-                        <p class="text-on-surface/60 text-sm">Lightweight Hindi blog theme for Genesis Framework.</p>
+                        <p class="text-on-surface/60 text-sm">High-converting Genesis child theme with zero-JS layouts.</p>
                     </div>
                 </a>
             </div>

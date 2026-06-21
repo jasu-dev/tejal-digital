@@ -14,14 +14,18 @@
         content="Scaling a referral-based earning platform with Laravel and integrated payment solutions.">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:image" content="{{ asset('assets/images/promofusion360.png') }}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:title" content="PromoFusion360 System | Project Showcase">
+    <meta name="twitter:description"
+        content="Scaling referral-based portals with custom commission engines.">
+    <meta name="twitter:image" content="{{ asset('assets/images/promofusion360.png') }}">
 @endsection
 
 @section('content')
     {{-- Project Hero --}}
-    <section class="relative py-24 overflow-hidden border-b border-outline-variant/20">
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl"></div>
-        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl"></div>
-
+    <section class="relative pb-24 -mt-20 pt-35 overflow-hidden border-b border-border bg-cover"
+        style="background-image: url('{{ asset('assets/images/background/doted.svg') }}')">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
                 <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
@@ -34,141 +38,58 @@
             </nav>
 
             <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div data-aos="fade-right" data-aos-duration="1000">
-                    <span class="inline-block px-4 py-1.5 mb-6 text-[10px] font-bold uppercase tracking-widest text-pink-500 bg-pink-500/10 rounded-full border border-pink-500/20">
-                        Earning Platform
-                    </span>
-                    <h1 class="text-4xl lg:text-6xl font-black text-foreground leading-tight mb-6">
+                <div>
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 mb-4 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                        <span class="text-xs font-semibold">Custom Fintech Portal</span>
+                    </div>
+                    <h1 class="text-3xl lg:text-5xl font-bold text-foreground mb-5">
                         PromoFusion360 <br>
-                        <span class="text-gradient from-pink-400 to-rose-500">Platform</span>
+                        <span class="text-gradient">Earning Platform</span>
                     </h1>
                     <p class="text-xl text-on-surface/60 leading-relaxed mb-8">
-                        A dynamic Laravel-based ecosystem enabling users to monetize their time through video engagement and tiered referral networks.
+                        A high-traffic, Laravel-powered referral marketing system enabling user monetization through video watch-and-earn tasks, dual gateways, and automated payouts.
                     </p>
-                    <div class="flex flex-wrap gap-3 mb-10">
-                        @foreach (['Laravel', 'UPI Integration', 'Cashfree', 'Multi-level Referral', 'Real-time Analytics'] as $tech)
-                            <span class="px-4 py-2 bg-surface-container rounded-xl border border-outline-variant/20 text-sm font-medium text-on-surface/80">
-                                {{ $tech }}
-                            </span>
-                        @endforeach
+                    <div class="flex flex-wrap gap-4">
+                        <a href="{{ route('contact') }}">
+                            <x-form.primary-button type="button" class="rounded-full">
+                                Build Similar App
+                                <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
+                                    <x-icons.go class="w-4 h-4 text-foreground" />
+                                </span>
+                            </x-form.primary-button>
+                        </a>
                     </div>
                 </div>
-                <div class="relative" data-aos="zoom-in" data-aos-duration="1000">
-                    <div class="aspect-video rounded-3xl overflow-hidden border border-outline-variant/30 shadow-2xl">
-                        <img src="{{ asset('assets/images/promofusion360.png') }}" alt="PromoFusion360 Dashboard" class="w-full h-full object-cover">
-                    </div>
-                    <div class="absolute -bottom-6 -right-6 bg-surface-container p-6 rounded-2xl border border-outline-variant/20 shadow-xl hidden md:block">
-                        <div class="flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center">
-                                <x-icons.go class="w-6 h-6 text-pink-500" />
-                            </div>
-                            <div>
-                                <p class="text-xs text-on-surface/60 font-bold uppercase tracking-wider">Scale</p>
-                                <p class="text-lg font-black text-foreground">10k+ Active Users</p>
-                            </div>
+                <div class="relative">
+                    <div
+                        class="max-w-md mx-auto border border-border/50 bg-background backdrop-blur-xl rounded-2xl p-4 flex items-center justify-center relative overflow-hidden group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div class="aspect-video rounded-xl overflow-hidden border border-outline-variant/30 relative z-10">
+                            <img src="{{ asset('assets/images/promofusion360.png') }}" alt="PromoFusion360 Landing Overview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    {{-- Project Details Section --}}
-    <section class="py-24 bg-surface">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-12">
-                {{-- Left Side: Main Content --}}
-                <div class="lg:col-span-2 space-y-16">
-                    {{-- The Challenge --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
-                            <span class="w-8 h-1 bg-pink-500 rounded-full"></span>
-                            The Challenge
-                        </h2>
-                        <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed space-y-4">
-                            <p>
-                                The client wanted to create a platform that could handle high concurrent traffic while maintaining strict financial integrity. The primary challenge was building a referral system that accurately tracks commissions across multiple levels without performance bottlenecks.
-                            </p>
-                            <p>
-                                Key requirements included:
-                            </p>
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Secure automated payment processing for subscriptions.</li>
-                                <li>Prevention of multi-account fraud and referral gaming.</li>
-                                <li>Low-latency dashboard for real-time earning updates.</li>
-                                <li>Scalable architecture to support rapid user growth.</li>
-                            </ul>
+                    {{-- Floating Tags --}}
+                    <div
+                        class="absolute -top-7 right-10 flex items-center gap-2 rounded-xl border border-border bg-background/95 backdrop-blur-xl px-4 py-3">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
+                            <x-icons.users class="w-4 h-4" />
+                        </span>
+                        <div class="text-xs">
+                            <div class="text-muted-foreground">Scale</div>
+                            <div class="font-semibold text-foreground">10k+ Active Users</div>
                         </div>
                     </div>
-
-                    {{-- The Solution --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-6 flex items-center gap-4">
-                            <span class="w-8 h-1 bg-rose-500 rounded-full"></span>
-                            The Solution
-                        </h2>
-                        <div class="prose prose-invert max-w-none text-on-surface/70 leading-relaxed space-y-4">
-                            <p>
-                                We leveraged Laravel's queue system to handle heavy referral calculations in the background, ensuring the front-facing user experience remained lightning-fast. For payments, we integrated dual gateways (UPI and Cashfree) to provide redundancy and a seamless checkout flow.
-                            </p>
-                            <p>
-                                **Referral Engine:** A custom recursive algorithm was developed to manage multi-tiered rewards. Each referral is validated against IP and device fingerprints to maintain platform integrity.
-                            </p>
-                            <p>
-                                **User Experience:** We built separate, optimized panels for Users and Admins. The User panel focuses on simplicity, showing clear CTA for earning tasks and transparent withdrawal tracking.
-                            </p>
-                        </div>
-                    </div>
-
-                    {{-- Key Features --}}
-                    <div data-aos="fade-up">
-                        <h2 class="text-3xl font-bold text-foreground mb-8">Core Features</h2>
-                        <div class="grid md:grid-cols-2 gap-6">
-                            @php
-                                $features = [
-                                    ['title' => 'Tiered Subscriptions', 'desc' => 'Multiple plan levels with varying earning potential and referral benefits.'],
-                                    ['title' => 'Dual Payment Gateway', 'desc' => 'Integrated UPI and Cashfree for 99.9% payment success rate.'],
-                                    ['title' => 'Watch & Earn', 'desc' => 'Automated video engagement tracking with instant credit systems.'],
-                                    ['title' => 'Referral Tracking', 'desc' => 'Detailed tree view of referrals and commission history.'],
-                                    ['title' => 'Auto-Withdrawals', 'desc' => 'Streamlined payout system with admin verification workflows.'],
-                                    ['title' => 'Security Suite', 'desc' => 'Anti-fraud mechanisms and secure API endpoints for financial data.'],
-                                ];
-                            @endphp
-                            @foreach ($features as $f)
-                                <div class="p-6 bg-surface-container rounded-2xl border border-outline-variant/10 hover:border-pink-500/30 transition-all group">
-                                    <h4 class="text-lg font-bold text-foreground mb-2 group-hover:text-pink-400 transition-colors">{{ $f['title'] }}</h4>
-                                    <p class="text-on-surface/60 text-sm leading-relaxed">{{ $f['desc'] }}</p>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-
-                {{-- Right Side: Meta Info & CTA --}}
-                <div class="space-y-8">
-                    <div class="p-8 bg-surface-container rounded-3xl border border-outline-variant/20 sticky top-24">
-                        <h3 class="text-xl font-bold text-foreground mb-6">Project Info</h3>
-                        <div class="space-y-6">
-                            <div>
-                                <p class="text-[10px] font-bold text-pink-500 uppercase tracking-widest mb-1">Category</p>
-                                <p class="text-on-surface/80 font-medium">FinTech / E-learning</p>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-pink-500 uppercase tracking-widest mb-1">Tech Stack</p>
-                                <p class="text-on-surface/80 font-medium">Laravel, MySQL, Bootstrap, Cashfree</p>
-                            </div>
-                            <div>
-                                <p class="text-[10px] font-bold text-pink-500 uppercase tracking-widest mb-1">Status</p>
-                                <p class="text-on-surface/80 font-medium">Live & Scaling</p>
-                            </div>
-                            <div class="pt-6 border-t border-outline-variant/10">
-                                <a href="{{ route('contact') }}">
-                                    <x-form.primary-button type="button" class="w-full justify-center py-4 rounded-2xl bg-pink-600 hover:bg-pink-700 border-pink-600">
-                                        <span>Inquire Similar Project</span>
-                                        <x-icons.go class="w-4 h-4" />
-                                    </x-form.primary-button>
-                                </a>
-                            </div>
+                    <div
+                        class="absolute -bottom-7 left-10 flex items-center gap-2 rounded-xl px-4 py-3 border border-border bg-background/95 backdrop-blur-xl">
+                        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/15 text-green-500">
+                            <x-icons.launch class="w-4 h-4" />
+                        </span>
+                        <div class="text-xs">
+                            <div class="text-muted-foreground">Uptime</div>
+                            <div class="font-semibold text-foreground">99.9% Success Rate</div>
                         </div>
                     </div>
                 </div>
@@ -176,32 +97,247 @@
         </div>
     </section>
 
-    {{-- More Projects --}}
-    <section class="py-24 border-t border-outline-variant/20">
+    <!-- Intro Context Block -->
+    <section class="py-12 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-xl text-muted-foreground">
+                "Managing high concurrent user traffic, calculating multi-level referral commissions, and validating secure withdrawals. We built a robust fintech portal equipped with dual payment gateways and anti-fraud safeguards."
+            </p>
+        </div>
+    </section>
+
+    <!-- Challenges & Objectives Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    Project <span class="text-gradient">Challenges & Objectives</span>
+                </h2>
+                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                    The primary challenges were tracking hierarchical commissions across multiple levels without latency and integrating payment routing systems securely.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Benefit 1 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.launch class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tiered Plans</h3>
+                    <p class="text-sm leading-relaxed">Establish complex subscription levels with customized commission values and differing daily task allocations.</p>
+                </div>
+                <!-- Benefit 2 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.security class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dual Payment Gateways</h3>
+                    <p class="text-sm leading-relaxed">Integrate double payment processors to maintain 99.9% uptime, failover paths, and direct payouts to user accounts.</p>
+                </div>
+                <!-- Benefit 3 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.target class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Anti-Fraud Safeguards</h3>
+                    <p class="text-sm leading-relaxed">Implement secure device fingerprinting and IP verification to block duplicate client accounts and referral system gaming.</p>
+                </div>
+                <!-- Benefit 4 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <div
+                        class="w-14 h-14 bg-primary/10 text-primary rounded-full border-1 border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <x-icons.plugin class="w-6 h-6" />
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Background Queue Calc</h3>
+                    <p class="text-sm leading-relaxed">Offload multi-level network payouts to asynchronous queues to ensure rapid dashboard performance at peak hours.</p>
+                </div>
+            </div>
+            <div class="mt-12 text-center text-sm">
+                Implementing a <span class="font-semibold">custom fintech application</span> guarantees secure transaction records and absolute platform speed.
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Solutions Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                    How We Built It: <span class="text-gradient">Laravel Solutions</span>
+                </h2>
+                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                    We engineered a robust platform using Laravel, queues, secure session logs, and Cashfree payment routing.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-14">
+                <!-- Service 1 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">01</span>
+                    <h3 class="text-xl font-bold mb-3">Recursive Referral Trees</h3>
+                    <p class="text-sm leading-relaxed">Coding multi-level network relationships with fast MySQL queries to compute precise referral commission cuts instantly.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">02</span>
+                    <h3 class="text-xl font-bold mb-3">Dual Gateway Failover</h3>
+                    <p class="text-sm leading-relaxed">Integrating double payment gateway endpoints (Cashfree and UPI) to route deposit channels in case of vendor downtime.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">03</span>
+                    <h3 class="text-xl font-bold mb-3">Watch & Earn Tracker</h3>
+                    <p class="text-sm leading-relaxed">Creating secure, tamper-proof JavaScript trackers to verify video watch minutes before rewarding credits in database tables.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">04</span>
+                    <h3 class="text-xl font-bold mb-3">Anti-Fraud Telemetry</h3>
+                    <p class="text-sm leading-relaxed">Comparing user IP addresses, request footprints, and browser keys to intercept duplicate account creations and block proxy usage.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">05</span>
+                    <h3 class="text-xl font-bold mb-3">Central Admin Console</h3>
+                    <p class="text-sm leading-relaxed">Structuring a powerful super-admin console to manage payouts, customize plan variables, and review financial reports.</p>
+                </div>
+                <!-- Service 6 -->
+                <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
+                    </div>
+                    <span class="text-xs font-bold uppercase tracking-wider block mb-2">06</span>
+                    <h3 class="text-xl font-bold mb-3">Background Queue Handlers</h3>
+                    <p class="text-sm leading-relaxed">Moving heavy commission distribution loops and email alert templates to background queue processes to ensure sub-second response times.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="{{ route('contact') }}">
+                    <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <span>Get Free Consultation</span>
+                        <x-icons.go class="w-4 h-4" />
+                    </x-form.primary-button>
+                </a>
+                <a href="{{ config('staticdata.whatsapp_url') }}" class="flex">
+                    <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
+                        <x-icons.whatsapp class="w-5 h-5" />
+                        <span>Chat on WhatsApp</span>
+                    </x-form.secondary-button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="py-24 border-b border-outline-variant/20">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Q1 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> How does the multi-level referral system track commissions?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        It uses a recursive database schema mapping parent-child relationships. When a user purchases a plan, the system traverses up to 3 levels, calculating specific percentages and dispatching payouts via queues.
+                    </p>
+                </div>
+                <!-- Q2 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> Why integrate dual payment gateways?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        To provide redundancy. If Cashfree encounters temporary network issues, the UPI router handles transaction deposits automatically, maintaining 99.9% platform availability.
+                    </p>
+                </div>
+                <!-- Q3 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> How do you prevent users from creating fake referral accounts?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        We deploy device fingerprinting, tracking browser footprints, cookies, IP coordinate checks, and email verification. Multiple accounts matching critical tracking footprints are flagged.
+                    </p>
+                </div>
+                <!-- Q4 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> What tools are used to monitor server performance?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        We utilize Laravel Horizon to monitor queue execution health, coupled with performance diagnostics, to ensure background tasks complete under 500ms.
+                    </p>
+                </div>
+                <!-- Q5 -->
+                <div class="p-6 rounded-2xl border border-border bg-card">
+                    <h3 class="text-lg font-bold mb-3 flex items-start gap-2">
+                        <span class="text-primary">Q.</span> Can commission plans be customized dynamically by admins?
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        Yes. The custom super-admin console includes configuration sliders to adjust commission rates, plan costs, and withdrawal boundaries without altering the source code.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Related Projects --}}
+    <section class="py-24 border-b border-outline-variant/20">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>
-                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Case Studies</h2>
-                    <p class="text-on-surface/60">Explore more of our recent work and digital transformations.</p>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Projects</h2>
+                    <p class="text-on-surface/60">See how we've built custom portals to drive growth.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
-                 <a href="{{ route('portfolio.attendance-manager') }}" class="group bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/20 hover:border-primary/30 transition-all">
+                <a href="{{ route('portfolio.attendance-manager') }}"
+                    class="group rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('assets/images/attendance.png') }}" alt="Attendance Manager" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <img src="{{ asset('assets/images/attendance.png') }}" alt="Attendance Manager"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Attendance Manager System</h3>
                         <p class="text-on-surface/60 text-sm">Geo-fenced attendance tracking with selfie verification.</p>
                     </div>
                 </a>
-                <a href="{{ route('portfolio.krishna-academy') }}" class="group bg-surface-container rounded-3xl overflow-hidden border border-outline-variant/20 hover:border-primary/30 transition-all">
+                <a href="{{ route('portfolio.krishna-academy') }}"
+                    class="group rounded-2xl border border-border bg-card overflow-hidden transition-all hover:border-primary/30">
                     <div class="aspect-video overflow-hidden">
-                        <img src="{{ asset('assets/images/krishna-academy.png') }}" alt="Krishna Academy" class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
+                        <img src="{{ asset('assets/images/krishna-academy.png') }}" alt="Krishna Academy"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-700">
                     </div>
                     <div class="p-8">
-                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">KrishnaAcademy – LMS Platform</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
+                            KrishnaAcademy – LMS Platform</h3>
                         <p class="text-on-surface/60 text-sm">Educational platform with video lessons and quiz modules.</p>
                     </div>
                 </a>
