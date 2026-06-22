@@ -83,7 +83,7 @@
     </section>
 
     <!-- Strategic Value: How eCommerce Helps Business Grow -->
-    <section class="py-24 border-b border-outline-variant/20 bg-card/10">
+    <section class="py-24 border-b border-outline-variant/30 bg-card/10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Scale Globally</span>
@@ -125,7 +125,7 @@
     </section>
 
     <!-- Supported Platforms Grid Section -->
-    <section id="platforms" class="py-24 border-b border-outline-variant/20">
+    <section id="platforms" class="py-24 border-b border-outline-variant/30">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Core Competency
@@ -183,7 +183,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 border-b border-outline-variant/20 bg-card/20">
+    <section id="services" class="py-24 border-b border-outline-variant/30 bg-card/20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-20">
                 <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Our Capabilities</span>
@@ -308,7 +308,7 @@
     </section>
 
     <!-- Why Choose Us for eCommerce Website Development -->
-    <section class="py-24 border-b border-outline-variant/20">
+    <section class="py-24 border-b border-outline-variant/30">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">The Engineering

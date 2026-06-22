@@ -82,17 +82,7 @@
 
     --color-outline-variant: oklch(
         88% 0.015 26.5
-    ); /* Lightened up variant border */
-
-    /* Infinite Scroll Animation */
-    @keyframes infinite-scroll {
-        from {
-            transform: translateX(0);
-        }
-        to {
-            transform: translateX(-100%);
-        }
-    }
+    ); 
 
     @keyframes float {
         0%,
@@ -113,8 +103,6 @@
             transform: translateX(-50%);
         }
     }
-
-    --animate-infinite-scroll: infinite-scroll 40s linear infinite;
     --animate-float: float 5s ease-in-out infinite;
 }
 
@@ -186,7 +174,7 @@
 }
 
 .marquee-inner {
-    animation: marqueeScroll 35s linear infinite;
+    animation: marqueeScroll 20s linear infinite;
 }
 
 /* Custom Scrollbar */

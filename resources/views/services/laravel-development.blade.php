@@ -92,7 +92,7 @@
 
 
     <!-- Intro Context Block -->
-    <section class="py-12 border-b border-outline-variant/20">
+    <section class="py-12 border-b border-outline-variant/30">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <p class="text-xl text-muted-foreground">
                 "Whether you are a fast-growing startup looking to build a Minimum Viable Product (MVP) or an established
@@ -103,7 +103,7 @@
     </section>
 
     <!-- Why Choose Laravel Section -->
-    <section class="py-24 border-b border-outline-variant/20">
+    <section class="py-24 border-b border-outline-variant/30">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -175,7 +175,7 @@
     </section>
 
     <!-- Services Section -->
-    <section class="py-24 border-b border-outline-variant/20">
+    <section class="py-24 border-b border-outline-variant/30">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -273,7 +273,7 @@
     </section>
 
     <!-- FAQs Section -->
-    <section class="py-24 border-b border-outline-variant/20">
+    <section class="py-24 border-b border-outline-variant/30">
         <div class="max-w-5xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">Frequently Asked Questions</h2>
@@ -328,7 +328,7 @@
     </section>
 
     {{-- Related Projects --}}
-    <section class="py-24 border-b border-outline-variant/20">
+    <section class="py-24 border-b border-outline-variant/30">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
                 <div>

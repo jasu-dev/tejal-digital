@@ -36,25 +36,21 @@
         ],
     ];
 @endphp
-<section class="py-24">
-    <div class="max-w-7xl mx-auto px-6">
-
-        {{-- Section title --}}
-        <div class="text-center mb-16">
+<section class="py-10 sm:py-14 px-3 overflow-hidden border-b border-outline-variant/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-10">
             <div
                 class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
-                <span class="text-sm font-semibold">Portfolio</span>
+            <span class="text-xs sm:text-sm font-semibold">Portfolio</span>
             </div>
-            <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <h2 class="text-3xl lg:text-5xl font-bold mb-5 tracking-tight">
                 Our Projects
             </h2>
-            <p class="text-xl text-on-surface/50 max-w-3xl mx-auto">
+            <p class="text-md sm:text-lg max-w-3xl mx-auto">
                 See how we've helped businesses transform their digital presence.
             </p>
         </div>
-
-        {{-- Grid view cards --}}
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden">
             @foreach ($projects as $project)
                 <x-product-card :project="$project" />
             @endforeach

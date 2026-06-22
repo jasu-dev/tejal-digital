@@ -135,17 +135,17 @@
     ];
 @endphp
 
-<section class="py-15 border-b border-outline-variant/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+<section class="py-10 sm:py-14 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-10" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
             <div
-                class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
-                <span class="text-sm font-semibold">Our Services</span>
+                class="inline-flex items-center gap-2 px-4 py-2 mb-5 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                <span class="text-xs sm:text-sm font-semibold">Our Services</span>
             </div>
-            <h2 class="text-4xl lg:text-5xl font-bold text-primarymb-6">
+            <h2 class="text-3xl lg:text-5xl font-bold text-primary mb-5">
                 What We Create
             </h2>
-            <p class="text-xl text-on-surface max-w-3xl mx-auto">
+            <p class="text-md sm:text-lg max-w-3xl mx-auto">
                 From simple websites to complex applications, we deliver digital solutions that grow your business
             </p>
         </div>
@@ -156,7 +156,7 @@
                     @if ($service['popular'])
                         <div class="absolute right-5 top-5">
                             <div
-                                class="inline-flex items-center rounded-full text-xs font-semibold bg-primary/10 text-on-surface px-4 py-1">
+                                class="inline-flex items-center rounded-full text-xs font-semibold bg-primary/10 px-4 py-1">
                                 <x-icons.star class="w-3 h-3 mr-1" />
                                 <span>Most Popular</span>
                             </div>

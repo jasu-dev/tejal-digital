@@ -1,12 +1,11 @@
-<section class="py-20 px-4 sm:px-6 lg:px-8 bg-surface-container-low">
+<section class="py-10 sm:py-14 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
     <div class="max-w-5xl mx-auto space-y-10">
         <div class="text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-balance">
+            <h2 class="text-3xl lg:text-5xl font-bold mb-5">
                 Let's Build Your <span class="text-gradient">Digital Success Story</span>
             </h2>
-            <p class="text-lg text-on-surface max-w-2xl mx-auto">
+            <p class="text-md sm:text-lg max-w-3xl mx-auto">
                 Our strategy experts are ready to understand your business and create a custom roadmap for your growth.
-                <span class="font-bold">Let's Connect</span>
             </p>
         </div>
         <div>
@@ -45,11 +44,6 @@
                     </div>
                 </a>
             </div>
-        </div>
-        <div class="text-center" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
-            <p class="text-sm text-on-surface/50">
-                ✓ No charge for consultation • ✓ Tailored recommendations • ✓ Ready to take action
-            </p>
         </div>
     </div>
 </section>

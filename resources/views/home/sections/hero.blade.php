@@ -1,19 +1,19 @@
-<section class="relative -mt-20 pt-20 flex flex-col items-center pb-16 text-sm bg-cover bg-center bg-no-repeat"
+<section class="relative -mt-20 pt-20 pb-15 px-2 flex flex-col items-center text-sm bg-cover bg-center bg-no-repeat border-b border-outline-variant/30"
     style="background-image: url('{{ asset('assets/images/hero-gradient-bg.png') }}')">
 
     <div
-        class="flex flex-wrap items-center justify-center p-2 px-4 mt-20 md:mt-32 bg-white/50 backdrop-blur-xl border border-white/20 rounded-2xl">
+        class="flex flex-wrap items-center justify-center p-2 px-4 mt-10 md:mt-28 bg-white/50 backdrop-blur-xl border border-white/20 rounded-2xl">
         <div class="flex">
-            <x-icons.party class="w-5 h-5"/>
+            <x-icons.party class="w-5 h-5" />
         </div>
         <p class="mx-2 text-foreground">100+ Happy Clients</p>
     </div>
 
-    <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl m-5 text-secondary">
+    <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5 text-secondary">
         Best Website & Software Development Agency
     </h1>
-    <p class="text-foreground md:text-base max-md:px-2 text-center max-w-xl mt-3">
-        We create stunning websites, powerful web applications, and digital experiences that drive real business
+    <p class="text-foreground md:text-base text-center max-w-xl mt-3">
+        We create stunning websites, powerful web applications, and digital solutions that drive real business
         results.
     </p>
 
@@ -32,7 +32,7 @@
         </a>
     </div>
 
-    <div class="hidden md:block overflow-hidden w-full relative max-w-5xl mx-auto select-none mt-16">
+    <div class="hidden md:block overflow-hidden w-full relative max-w-5xl mx-auto select-none mt-14">
         <div
             class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-background to-transparent">
         </div>

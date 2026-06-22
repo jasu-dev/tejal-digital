@@ -83,7 +83,7 @@
     </section>
 
     <!-- Context Highlight Block -->
-    <section class="py-12 border-b border-outline-variant/20">
+    <section class="py-12 border-b border-outline-variant/30">
         <div class="max-w-5xl mx-auto px-6 text-center">
             <p class="text-lg sm:text-xl text-on-surface/60 italic">
                 "Whether you need an elegant corporate website, a fast-scaling WooCommerce storefront, or a complex
@@ -94,7 +94,7 @@
     </section>
 
     <!-- Why Choose WordPress Section -->
-    <section class="py-24 border-b border-outline-variant/20">
+    <section class="py-24 border-b border-outline-variant/30">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -167,7 +167,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-24 border-b border-outline-variant/20 bg-card/20">
+    <section id="services" class="py-24 border-b border-outline-variant/30 bg-card/20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-20">
                 <h2 class="text-4xl font-bold text-foreground mb-6">Our Comprehensive WordPress Services</h2>
@@ -291,7 +291,7 @@
     </section>
 
     <!-- Why Hire Our Developers (Card Section style match) -->
-    <section class="py-24 border-b border-outline-variant/20">
+    <section class="py-24 border-b border-outline-variant/30">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Our Quality

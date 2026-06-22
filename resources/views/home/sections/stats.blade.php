@@ -23,8 +23,8 @@
     ];
 @endphp
 
-<section class="py-15 overflow-hidden border-b border-outline-variant/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-10 sm:py-14 px-3 sm:px-6 lg:px-8 overflow-hidden border-b border-outline-variant/30">
+    <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
             @foreach ($stats as $index => $stat)
                 <div class="flex flex-col items-center text-center" data-aos="fade-up" data-aos-delay="{{ $index * 100 }}" data-aos-duration="800">
