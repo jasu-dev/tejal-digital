@@ -107,7 +107,7 @@
                 </div>
                 {{-- Right Side: Floating Vision Card --}}
                 <div class="relative" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
-                    <img src="{{ asset('assets/images/about-banner.svg') }}" loading="lazy" class="w-full" />
+                    <img src="{{ asset('assets/images/about-image.svg') }}" loading="lazy" class="w-full" />
                 </div>
             </div>
         </div>
