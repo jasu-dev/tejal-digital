@@ -41,7 +41,7 @@
         <div class="text-center mb-10">
             <div
                 class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
-            <span class="text-xs sm:text-sm font-semibold">Portfolio</span>
+                <span class="text-xs sm:text-sm font-semibold">Portfolio</span>
             </div>
             <h2 class="text-3xl lg:text-5xl font-bold mb-5 tracking-tight">
                 Our Projects

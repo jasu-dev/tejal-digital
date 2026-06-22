@@ -119,23 +119,24 @@
 @endsection
 @section('content')
     {{-- Hero Section --}}
-    <section class="relative -mt-20 pt-20 flex flex-col items-center pb-24 text-sm bg-cover bg-center bg-no-repeat"
+    <section
+        class="relative -mt-20 pt-20 pb-20 px-2 flex flex-col items-center text-sm bg-cover bg-center bg-no-repeat border-b border-outline-variant/30"
         style="background-image: url('{{ asset('assets/images/hero-gradient-bg.png') }}')">
 
         <div
-            class="flex flex-wrap items-center justify-center p-2 px-4 mt-20 md:mt-32 bg-white/50 backdrop-blur-xl border border-white/20 rounded-2xl">
+            class="flex flex-wrap items-center justify-center p-2 px-4 mt-10 md:mt-28 bg-white/50 backdrop-blur-xl border border-white/20 rounded-2xl">
             <x-icons.hot class="w-4 h-4" />
             <p class="ml-2 text-foreground">What We Offer</p>
         </div>
 
-        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl m-5 text-secondary">
+        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5 text-secondary">
             Digital Solutions for<br> Your Business
         </h1>
-        <p class="text-foreground md:text-base max-md:px-2 text-center max-w-xl mt-3">
+        <p class="text-foreground md:text-base text-center max-w-xl mt-3">
             End-to-end IT solutions tailored to your business needs.
         </p>
 
-        <div class="flex flex-col justify-center sm:flex-row gap-4 mt-5">
+        <div class="flex flex-col justify-center sm:flex-row gap-4 mt-8">
             <a href="{{ route('contact') }}">
                 <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
                     <span>Get a Quote</span>
@@ -150,7 +151,6 @@
             </a>
         </div>
     </section>
-
     {{-- Technologies We Use --}}
     @include('sections.technologies-we-use', ['class' => 'bg-surface-container'])
     {{-- Services Section --}}
@@ -291,17 +291,17 @@
         ];
     @endphp
 
-    <section class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+    <section class="py-10 sm:py-14 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-10" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                 <div
-                    class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
-                    <span class="text-sm font-semibold">Our Services</span>
+                    class="inline-flex items-center gap-2 px-4 py-2 mb-5 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
+                    <span class="text-xs sm:text-sm font-semibold">Our Services</span>
                 </div>
-                <h2 class="text-4xl lg:text-5xl font-bold text-primarymb-6">
+                <h2 class="text-3xl lg:text-5xl font-bold text-primary mb-5">
                     What We Create
                 </h2>
-                <p class="text-xl text-on-surface max-w-3xl mx-auto">
+                <p class="text-md sm:text-lg max-w-3xl mx-auto">
                     From simple websites to complex applications, we deliver digital solutions that grow your business
                 </p>
             </div>
@@ -339,15 +339,15 @@
                                     </div>
                                 @endforeach
                             </div>
-                            @if(isset($service['link']))
-                            <div class="flex items-center justify-end">
-                                <a href="{{ $service['link'] }}"
-                                    class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
-                                    <span>Explore service</span>
-                                    <x-icons.chevron-right
-                                        class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                                </a>
-                            </div>
+                            @if (isset($service['link']))
+                                <div class="flex items-center justify-end">
+                                    <a href="{{ $service['link'] }}"
+                                        class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                                        <span>Explore service</span>
+                                        <x-icons.chevron-right
+                                            class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                                    </a>
+                                </div>
                             @endif
                         </div>
                     </div>

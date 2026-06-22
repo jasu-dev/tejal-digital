@@ -21,24 +21,24 @@
 @endsection
 @section('content')
     {{-- Hero Section --}}
-    <section class="relative -mt-20 pt-20 flex flex-col items-center pb-24 text-sm bg-cover bg-center bg-no-repeat"
+    <section
+        class="relative -mt-20 pt-20 pb-20 px-2 flex flex-col items-center text-sm bg-cover bg-center bg-no-repeat border-b border-outline-variant/30"
         style="background-image: url('{{ asset('assets/images/hero-gradient-bg.png') }}')">
-
         <div
-            class="flex flex-wrap items-center justify-center p-2 px-4 mt-20 md:mt-32 bg-white/50 backdrop-blur-xl border border-white/20 rounded-2xl">
+            class="flex flex-wrap items-center justify-center p-2 px-4 mt-10 md:mt-28 bg-white/50 backdrop-blur-xl border border-white/20 rounded-2xl">
             <x-icons.users class="w-4 h-4" />
             <p class="ml-2 text-foreground">About Our Team</p>
         </div>
 
-        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl m-5 text-secondary">
+        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5 text-secondary">
             Meet the Creative Minds
         </h1>
-        <p class="text-foreground md:text-base max-md:px-2 text-center max-w-xl mt-3">
+        <p class="text-foreground md:text-base text-center max-w-xl mt-3">
             We're a passionate team of developers, designers, and digital strategists dedicated to creating exceptional web
             experiences that drive business growth.
         </p>
 
-        <div class="flex flex-col justify-center sm:flex-row gap-4 mt-5">
+        <div class="flex flex-col justify-center sm:flex-row gap-4 mt-8">
             <a href="{{ route('contact') }}">
                 <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
                     <span>Start Your Project</span>
@@ -53,33 +53,30 @@
             </a>
         </div>
     </section>
-
     {{-- Stats Section --}}
     @include('home.sections.stats')
-
     {{-- About Section --}}
-    <section class="py-24 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
+    <section class="py-10 sm:py-14 px-3 overflow-hidden border-b border-outline-variant/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 sm:gap-15 items-center">
                 {{-- Left Side: Mission Content --}}
                 <div class="space-y-10" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                     <div class="space-y-6">
                         <div
                             class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
-                            <x-icons.target class="w-4 h-4" />
-                            <span class="text-sm font-semibold">Our Mission</span>
+                            <span class="text-xs sm:text-sm font-semibold">Our Mission</span>
                         </div>
 
-                        <h2 class="text-4xl lg:text-6xl font-black text-foreground leading-tight tracking-tight">
+                        <h2 class="text-3xl lg:text-5xl font-bold mb-5 tracking-tight">
                             Empowering Digital Success
                         </h2>
 
                         <div class="space-y-6">
-                            <p class="text-lg text-on-surface/70 leading-relaxed">
+                            <p class="text-md sm:text-lg leading-relaxed">
                                 To empower businesses with cutting-edge web solutions that not only look stunning but also
                                 drive measurable results. We believe in the power of great design and robust development.
                             </p>
-                            <p class="text-on-surface/50 leading-relaxed italic border-l-2 border-primary/30 pl-6">
+                            <p class="text-md sm:text-lg leading-relaxed italic border-l-2 border-primary/30 pl-6">
                                 "Every project we undertake is an opportunity to push boundaries and create digital
                                 experiences that make a lasting impact."
                             </p>
@@ -103,62 +100,32 @@
                                 <div class="w-5 h-5 flex items-center justify-center">
                                     <x-icons.check class="w-4 h-4 text-primary" />
                                 </div>
-                                <span class="text-sm font-medium text-on-surface/60">{{ $feature }}</span>
+                                <span class="text-md sm:text-lg font-medium">{{ $feature }}</span>
                             </div>
                         @endforeach
                     </div>
                 </div>
                 {{-- Right Side: Floating Vision Card --}}
                 <div class="relative" data-aos="fade-left" data-aos-delay="200" data-aos-duration="1000">
-                    <div class="relative bg-white rounded-3xl shadow-2xl p-8 border">
-                        <div class="text-center space-y-6">
-                            <div class="w-20 h-20 bg-primary-500 rounded-2xl mx-auto flex items-center justify-center">
-                                <x-icons.target class="w-10 h-10 text-foreground" />
-                            </div>
-                            <h3 class="text-2xl font-bold text-slate-900">Our Vision</h3>
-                            <p class="text-slate-600">To be the leading digital partner for businesses worldwide,
-                                creating innovative solutions that drive growth and success.
-                            </p>
-                            <div class="grid grid-cols-2 gap-4 pt-4">
-                                <div
-                                    class="bg-gradient-to-br from-secondary-50 to-primary-50 rounded-lg p-4 border border-secondary-200">
-                                    <div class="text-2xl font-bold text-secondary-600">
-                                        {{ config('staticdata.experience_years') }}+</div>
-                                    <div class="text-sm text-secondary-700">Years Experience</div>
-                                </div>
-                                <div
-                                    class="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg p-4 border border-primary-200">
-                                    <div class="text-2xl font-bold text-primary-600">{{ config('staticdata.clients') }}+
-                                    </div>
-                                    <div class="text-sm text-primary-700">Happy Clients</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-secondary-400 to-primary-500 rounded-2xl opacity-80 blur-sm">
-                    </div>
-                    <div
-                        class="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-primary-400 to-secondary-500 rounded-2xl opacity-60 blur-sm">
-                    </div>
+                    <img src="{{ asset('assets/images/about-banner.svg') }}" loading="lazy" class="w-full" />
                 </div>
             </div>
         </div>
     </section>
 
     {{-- Our Values Section --}}
-    <section class="py-24 bg-surface-container relative">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <section class="py-10 sm:py-14 px-3 overflow-hidden border-b border-outline-variant/30">
+        <div class="max-w-7xl mx-auto">
             {{-- Header: Minimal & Tight --}}
-            <div class="text-center mb-20" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
+            <div class="text-center mb-10" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
                 <div
                     class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
-                    <span class="text-sm font-semibold">Our Values</span>
+                    <span class="text-xs sm:text-sm font-semibold">Our Values</span>
                 </div>
-                <h2 class="text-4xl lg:text-6xl font-black text-foreground mb-6 tracking-tight">
+                <h2 class="text-3xl lg:text-5xl font-bold mb-5 tracking-tight">
                     What Drives Our Work
                 </h2>
-                <p class="text-lg text-on-surface/60 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-md sm:text-lg max-w-3xl mx-auto">
                     The core principles that guide every line of code we write.
                 </p>
             </div>
@@ -196,10 +163,8 @@
 
                         <div class="relative z-10">
                             <div
-                                class="w-14 h-14 rounded-xl bg-primary/10 border border-outline-variant/50 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:border-primary transition-all duration-500 shadow-inner">
-                                @php $iconName = 'icons.' . $value['icon']; @endphp
-                                <x-dynamic-component :component="$iconName"
-                                    class="w-6 h-6 text-primary group-hover:text-surface transition-colors" />
+                                class="w-12 h-12 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <x-dynamic-component :component="'icons.' . $value['icon']" class="w-5 h-5" />
                             </div>
 
                             <h3 class="text-xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">
@@ -213,7 +178,7 @@
                         </div>
 
                         <div
-                            class="absolute bottom-0 right-0 w-24 h-24 bg-primary/10 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity">
+                            class="absolute -top-10 -right-10 w-24 h-24 bg-primary/10 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity">
                         </div>
                     </div>
                 @endforeach
