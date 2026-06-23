@@ -6,7 +6,8 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif;
+    --font-sans: 'Figtree', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
 
     /* Brand Burnt Orange (Base #e85a24) */
     --color-primary-50: oklch(0.96 0.02 41);
@@ -23,6 +24,7 @@
 
     /* Semantic Aliases */
     --color-primary: oklch(0.58 0.21 41);
+    --color-secondary:oklch(0.75 0.16 72);
     --color-background: oklch(97.65% 0.0054 275.0);
     --color-foreground: oklch(0.21 0.014 250);
     --color-muted-foreground: oklch(0.5 0.015 250);
@@ -51,6 +53,7 @@
 
     body {
         @apply antialiased;
+        font-family: var(--font-sans);
         font-feature-settings:
             "rlig" 1,
             "calt" 1;
@@ -70,16 +73,16 @@
 @utility gradient-primary {
     background: linear-gradient(
         135deg,
-        var(--color-primary-500),
-        var(--color-secondary-500)
+        var(--color-primary),
+        var(--color-secondary)
     );
 }
 
 @utility text-gradient {
     background: linear-gradient(
         to right,
-        var(--color-primary-500),
-        var(--color-secondary-500)
+        var(--color-primary),
+        var(--color-secondary)
     );
     -webkit-background-clip: text;
     background-clip: text;

@@ -1,20 +1,88 @@
 {
+  "_figtree-300-normal-BzOoftBZ.woff": {
+    "file": "assets/figtree-300-normal-BzOoftBZ.woff",
+    "src": "_figtree-300-normal-BzOoftBZ.woff"
+  },
+  "_figtree-300-normal-C9xDoCWy.woff2": {
+    "file": "assets/figtree-300-normal-C9xDoCWy.woff2",
+    "src": "_figtree-300-normal-C9xDoCWy.woff2"
+  },
+  "_figtree-300-normal-DoS2vUKG.woff": {
+    "file": "assets/figtree-300-normal-DoS2vUKG.woff",
+    "src": "_figtree-300-normal-DoS2vUKG.woff"
+  },
+  "_figtree-300-normal-DwPJS_xR.woff2": {
+    "file": "assets/figtree-300-normal-DwPJS_xR.woff2",
+    "src": "_figtree-300-normal-DwPJS_xR.woff2"
+  },
+  "_figtree-400-normal-BD4aNku5.woff": {
+    "file": "assets/figtree-400-normal-BD4aNku5.woff",
+    "src": "_figtree-400-normal-BD4aNku5.woff"
+  },
+  "_figtree-400-normal-CXAzuTZb.woff2": {
+    "file": "assets/figtree-400-normal-CXAzuTZb.woff2",
+    "src": "_figtree-400-normal-CXAzuTZb.woff2"
+  },
+  "_figtree-400-normal-Gbh-3PTk.woff": {
+    "file": "assets/figtree-400-normal-Gbh-3PTk.woff",
+    "src": "_figtree-400-normal-Gbh-3PTk.woff"
+  },
+  "_figtree-400-normal-g7Dtegnw.woff2": {
+    "file": "assets/figtree-400-normal-g7Dtegnw.woff2",
+    "src": "_figtree-400-normal-g7Dtegnw.woff2"
+  },
+  "_figtree-500-normal-BOEJvrb_.woff": {
+    "file": "assets/figtree-500-normal-BOEJvrb_.woff",
+    "src": "_figtree-500-normal-BOEJvrb_.woff"
+  },
+  "_figtree-500-normal-BWnGEVsr.woff2": {
+    "file": "assets/figtree-500-normal-BWnGEVsr.woff2",
+    "src": "_figtree-500-normal-BWnGEVsr.woff2"
+  },
+  "_figtree-500-normal-B_yy1phn.woff": {
+    "file": "assets/figtree-500-normal-B_yy1phn.woff",
+    "src": "_figtree-500-normal-B_yy1phn.woff"
+  },
+  "_figtree-500-normal-Du0rIuHj.woff2": {
+    "file": "assets/figtree-500-normal-Du0rIuHj.woff2",
+    "src": "_figtree-500-normal-Du0rIuHj.woff2"
+  },
+  "_figtree-600-normal-BM_oTo4n.woff": {
+    "file": "assets/figtree-600-normal-BM_oTo4n.woff",
+    "src": "_figtree-600-normal-BM_oTo4n.woff"
+  },
+  "_figtree-600-normal-CQqsimlV.woff": {
+    "file": "assets/figtree-600-normal-CQqsimlV.woff",
+    "src": "_figtree-600-normal-CQqsimlV.woff"
+  },
+  "_figtree-600-normal-Cv_xCTDl.woff2": {
+    "file": "assets/figtree-600-normal-Cv_xCTDl.woff2",
+    "src": "_figtree-600-normal-Cv_xCTDl.woff2"
+  },
+  "_figtree-600-normal-DJlfifZj.woff2": {
+    "file": "assets/figtree-600-normal-DJlfifZj.woff2",
+    "src": "_figtree-600-normal-DJlfifZj.woff2"
+  },
+  "_fonts-BAMP3bjc.css": {
+    "file": "assets/fonts-BAMP3bjc.css",
+    "src": "_fonts-BAMP3bjc.css"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-DRSwLwvA.css",
-    "src": "resources/css/app.css",
-    "isEntry": true,
+    "file": "assets/app-CU2rMRNS.css",
     "name": "app",
     "names": [
       "app.css"
-    ]
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-CkX4zi6g.js",
+    "file": "assets/app-C4KjB046.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-DvB2Xm2x.css"
+      "assets/app-PTugdkvS.css"
     ]
   }
 }

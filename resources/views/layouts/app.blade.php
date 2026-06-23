@@ -31,9 +31,6 @@
             }
         </script>
     @endverbatim
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link rel="preload" as="image" href="{{ asset('assets/images/hero-gradient-bg.png') }}" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KCTZ3ZDDYB"></script>
@@ -48,6 +45,7 @@
         gtag('config', 'G-KCTZ3ZDDYB');
     </script>
     <!-- Scripts -->
+    @fonts
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -111,31 +109,6 @@
             </a>
         </div>
     </nav>
-
-    <script>
-        let menuOpen = false;
-
-        function toggleMenu() {
-            menuOpen = !menuOpen;
-            const menu = document.getElementById('mobileMenu');
-            const bar1 = document.getElementById('bar1');
-            const bar2 = document.getElementById('bar2');
-            const bar3 = document.getElementById('bar3');
-            if (menuOpen) {
-                menu.classList.remove('hidden');
-                menu.classList.add('flex');
-                bar1.classList.add('rotate-45', 'translate-y-2');
-                bar2.classList.add('opacity-0');
-                bar3.classList.add('-rotate-45', '-translate-y-2');
-            } else {
-                menu.classList.add('hidden');
-                menu.classList.remove('flex');
-                bar1.classList.remove('rotate-45', 'translate-y-2');
-                bar2.classList.remove('opacity-0');
-                bar3.classList.remove('-rotate-45', '-translate-y-2');
-            }
-        }
-    </script>
 
     <main>
         @yield('content')
@@ -243,18 +216,28 @@
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const toggle = document.getElementById('mobile-menu-toggle');
-            const menu = document.getElementById('mobile-menu');
-            const iconMenu = document.getElementById('icon-menu');
-            const iconClose = document.getElementById('icon-close');
+        let menuOpen = false;
 
-            toggle.addEventListener('click', () => {
-                menu.classList.toggle('hidden');
-                iconMenu.classList.toggle('hidden');
-                iconClose.classList.toggle('hidden');
-            });
-        });
+        function toggleMenu() {
+            menuOpen = !menuOpen;
+            const menu = document.getElementById('mobileMenu');
+            const bar1 = document.getElementById('bar1');
+            const bar2 = document.getElementById('bar2');
+            const bar3 = document.getElementById('bar3');
+            if (menuOpen) {
+                menu.classList.remove('hidden');
+                menu.classList.add('flex');
+                bar1.classList.add('rotate-45', 'translate-y-2');
+                bar2.classList.add('opacity-0');
+                bar3.classList.add('-rotate-45', '-translate-y-2');
+            } else {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+                bar1.classList.remove('rotate-45', 'translate-y-2');
+                bar2.classList.remove('opacity-0');
+                bar3.classList.remove('-rotate-45', '-translate-y-2');
+            }
+        }
     </script>
 </body>
 
