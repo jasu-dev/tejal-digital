@@ -45,72 +45,72 @@
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Laravel Web App Development",
-                        "description": "Custom Laravel applications built with scalable, secure, and high-performance code."
+                        "name": "Custom Website Development (Laravel)",
+                        "description": "Scalable, ultra-secure custom web applications built with Laravel to streamline complex business workflows."
                     }
                     },
                     {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Web Portals & Custom Software",
-                        "description": "Development of enterprise-grade web portals and bespoke software solutions."
+                        "name": "WordPress Website Development",
+                        "description": "Lightweight, WordPress websites built from scratch for full control without template bloat."
                     }
                     },
                     {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Custom CRM Development",
-                        "description": "Tailor-made CRM solutions to manage customer relationships and business operations efficiently."
+                        "name": "eCommerce Website Development",
+                        "description": "High-converting storefronts equipped with streamlined checkouts, automated inventory, and secure payments."
                     }
                     },
                     {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "WordPress Theme Development",
-                        "description": "Custom WordPress themes designed for performance, SEO, and brand consistency."
+                        "name": "SaaS Application Development",
+                        "description": "Turn your software idea into a profitable subscription product with secure multi-tenant infrastructure."
                     }
                     },
                     {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "E-commerce Development",
-                        "description": "Robust online stores with secure payment gateways and smooth shopping experiences."
+                        "name": "Custom CRM & ERP Development",
+                        "description": "Centralize your operations, automate manual workflows, and track customer data with a tailored system."
                     }
                     },
                     {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Custom Admin Dashboards",
-                        "description": "Interactive dashboards for data management and real-time analytics."
+                        "name": "Third-Party API Development & Integration",
+                        "description": "Securely connect external tools, payment processors, and logistics systems to synchronize your data."
                     }
                     },
                     {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "API Development & Integration",
-                        "description": "RESTful API development and integration with third-party platforms."
+                        "name": "Corporate & Business Website Development",
+                        "description": "Professional, fast websites engineered to build brand authority and convert visitors into customers."
                     }
                     },
                     {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Security & Performance Optimization",
-                        "description": "Enhancing application security, speed, and overall performance."
+                        "name": "Website Speed & Security Optimization",
+                        "description": "Boost search engine rankings and shield digital assets by accelerating speed and fixing vulnerabilities."
                     }
                     },
                     {
                     "@type": "Offer",
                     "itemOffered": {
                         "@type": "Service",
-                        "name": "Maintenance",
-                        "description": "Ongoing support and updates to keep websites and applications running smoothly."
+                        "name": "Ongoing Website & App Maintenance",
+                        "description": "Prevent unexpected downtime and patch bugs via proactive updates and secure cloud backups."
                     }
                     }
                 ]
@@ -125,6 +125,9 @@
     {{-- Stats Section --}}
     @include('home.sections.stats')
 
+    {{-- Industries We Serve Section --}}
+    @include('home.sections.industries')
+    
     {{-- Services Section --}}
     @include('home.sections.services')
 

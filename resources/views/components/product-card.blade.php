@@ -25,12 +25,12 @@
         <p class="text-on-surface/60 text-sm leading-relaxed mb-4">
             {{ $project['desc'] }}
         </p>
-
-        {{-- Bottom Action: Simple and Bold --}}
-        <div class="flex flex-wrap gap-4 pt-4 border-t border-outline-variant/10">
-            @foreach ($project['tags'] as $tag)
-                <span class="chip">{{ $tag }}</span>
-            @endforeach
-        </div>
+        @if (isset($project['tags']))
+            <div class="flex flex-wrap gap-4 pt-4 border-t border-outline-variant/10">
+                @foreach ($project['tags'] as $tag)
+                    <span class="chip">{{ $tag }}</span>
+                @endforeach
+            </div>
+        @endif
     </div>
 </a>
