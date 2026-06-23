@@ -56,7 +56,7 @@
             'description' => 'Video streaming platforms, premium member galleries, and digital download portals.'
         ],
         [
-            'icon' => 'rocket',
+            'icon' => 'launch',
             'title' => 'SaaS & Tech Startups',
             'description' => 'Multi-tenant subscription architectures, stripe billing checkouts, and custom API portals.'
         ]

@@ -126,7 +126,7 @@
     @include('home.sections.stats')
 
     {{-- Industries We Serve Section --}}
-    @include('home.sections.industries')
+    @include('sections.industries')
     
     {{-- Services Section --}}
     @include('home.sections.services')
