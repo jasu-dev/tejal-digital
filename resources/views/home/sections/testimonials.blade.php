@@ -56,7 +56,7 @@
                     </div>
 
                     {{-- Quote --}}
-                    <blockquote class="text-on-surface/80 leading-relaxed italic mb-8 relative">
+                    <blockquote class=" leading-relaxed italic mb-8 relative">
                         <span class="absolute -top-4 -left-2 text-4xl text-primary/20 font-serif">“</span>
                         {{ $item['quote'] }}
                     </blockquote>
@@ -65,13 +65,13 @@
                     <div class="flex items-center gap-4 pt-4 border-t border-outline-variant/20">
                         <div
                             class="w-12 h-12 shrink-0 rounded-full bg-primary flex items-center justify-center shadow-lg">
-                            <span class="text-surface font-bold text-sm tracking-tighter">{{ $item['initials'] }}</span>
+                            <span class="font-bold text-sm tracking-tighter">{{ $item['initials'] }}</span>
                         </div>
                         <div>
-                            <div class="font-bold text-on-surface group-hover:text-primary transition-colors">
+                            <div class="font-bold  group-hover:text-primary transition-colors">
                                 {{ $item['name'] }}
                             </div>
-                            <div class="text-xs text-on-surface/40 uppercase tracking-widest mt-0.5">
+                            <div class="text-xs  uppercase tracking-widest mt-0.5">
                                 {{ $item['role'] }}
                             </div>
                         </div>

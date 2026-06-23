@@ -21,72 +21,16 @@
     --color-primary-900: oklch(0.28 0.1 41);
     --color-primary-950: oklch(0.18 0.07 41);
 
-    /* Golden Accent (Base #f39e1e) */
-    --color-secondary-50: oklch(0.97 0.03 72);
-    --color-secondary-100: oklch(0.92 0.06 72);
-    --color-secondary-200: oklch(0.87 0.1 72);
-    --color-secondary-300: oklch(0.82 0.13 72);
-    --color-secondary-400: oklch(0.78 0.15 72);
-    --color-secondary-500: oklch(0.75 0.16 72);
-    --color-secondary-600: oklch(0.65 0.15 72);
-    --color-secondary-700: oklch(0.55 0.13 72);
-    --color-secondary-800: oklch(0.45 0.11 72);
-    --color-secondary-900: oklch(0.35 0.09 72);
-    --color-secondary-950: oklch(0.22 0.06 72);
-
-    /* Semantic Aliases - Inverted for Light Mode */
+    /* Semantic Aliases */
+    --color-primary: oklch(0.58 0.21 41);
     --color-background: oklch(97.65% 0.0054 275.0);
     --color-foreground: oklch(0.21 0.014 250);
     --color-muted-foreground: oklch(0.5 0.015 250);
-
-    --color-surface: oklch(
-        1 0 0
-    ); /* Pure white for baseline cards/containers */
-    --color-surface-elevated: oklch(
-        0.96 0.008 250
-    ); /* Slightly gray tint for nested elements */
-    --color-card: oklch(1 0 0); /* Pure white card backgrounds */
-    --color-card-foreground: oklch(
-        0.21 0.014 250
-    ); /* Deep slate for card text */
-
+    --color-card: oklch(1 0 0);
     --color-border: oklch(0.92 0.01 250);
     --color-input: oklch(0.95 0.01 250);
     --color-ring: oklch(0.58 0.21 41);
-
-    /* Light Mode Hero Gradients (Bright and vibrant ambient glows) */
-    --color-gradient-hero:
-        radial-gradient(
-            ellipse at top right,
-            oklch(0.92 0.05 160 / 0.5),
-            transparent 70%
-        ),
-        radial-gradient(
-            ellipse at bottom left,
-            oklch(0.92 0.08 45 / 0.4),
-            transparent 60%
-        );
-    --color-gradient-cta: radial-gradient(
-        ellipse at center,
-        oklch(0.58 0.21 41 / 0.3),
-        transparent 60%
-    );
-
-    --color-primary: oklch(0.58 0.21 41);
-
-    --color-outline-variant: oklch(
-        88% 0.015 26.5
-    ); 
-
-    @keyframes float {
-        0%,
-        100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
-    }
+    --color-outline-variant: oklch(88% 0.015 26.5);
 
     @keyframes marqueeScroll {
         0% {
@@ -97,7 +41,6 @@
             transform: translateX(-50%);
         }
     }
-    --animate-float: float 5s ease-in-out infinite;
 }
 
 @layer base {
@@ -124,18 +67,6 @@
 /* =========================
    Utilities (v4-safe)
    ========================= */
-@utility chip {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.4rem 0.85rem;
-    border-radius: 9999px;
-    background: var(--color-surface-elevated);
-    color: var(--color-muted-foreground);
-    font-size: 0.78rem;
-    font-weight: 500;
-    border: 1px solid var(--color-border);
-}
-
 @utility gradient-primary {
     background: linear-gradient(
         135deg,
@@ -155,23 +86,9 @@
     color: transparent;
 }
 
-@utility glass-effect {
-    background-color: color-mix(
-        in srgb,
-        var(--color-background),
-        transparent 30%
-            /* Increased backdrop density for light mode legibility */
-    );
-    backdrop-filter: blur(16px);
-    border: 1px solid
-        color-mix(in srgb, var(--color-foreground), transparent 85%);
-}
-
 .marquee-inner {
     animation: marqueeScroll 20s linear infinite;
 }
-
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 4px;
 }
@@ -186,8 +103,6 @@
     );
     border-radius: 100px;
 }
-
-/* Custom fade-out mask for the carousel edges */
 .mask-edges {
     mask-image: linear-gradient(
         to right,

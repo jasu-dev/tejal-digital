@@ -9,7 +9,7 @@
         <p class="mx-2 text-foreground">100+ Happy Clients</p>
     </div>
 
-    <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5 text-secondary">
+    <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5">
         Best Website & Software Development Agency
     </h1>
     <p class="text-foreground md:text-base text-center max-w-xl mt-3">

@@ -52,7 +52,7 @@
             <x-icons.call class="w-4 h-4" />
             <p class="ml-2 text-foreground">Get in Touch</p>
         </div>
-        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5 text-secondary">
+        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5">
             Let's Build Something <br> Amazing Together
         </h1>
         <p class="text-foreground md:text-base text-center max-w-xl mt-3">
@@ -115,18 +115,16 @@
                             <div
                                 class="relative w-full h-full rounded-2xl border border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all duration-500">
                                 @php $iconName = 'icons.' . $item['icon']; @endphp
-                                <x-dynamic-component :component="$iconName"
-                                    class="w-7 h-7 text-primary group-hover:text-surface transition-colors duration-500" />
+                                <x-dynamic-component :component="$iconName" class="w-7 h-7 text-primary" />
                             </div>
                         </div>
-                        <h3 class="text-sm font-bold text-on-surface/40 uppercase tracking-widest mb-3">
+                        <h3 class="text-sm font-bold  uppercase tracking-widest mb-3">
                             {{ $item['label'] }}
                         </h3>
-                        <p
-                            class="text-lg font-bold text-on-surface mb-2 tracking-tight group-hover:text-primary transition-colors">
+                        <p class="text-lg font-bold  mb-2 tracking-tight group-hover:text-primary transition-colors">
                             {{ $item['val'] }}
                         </p>
-                        <p class="text-xs text-on-surface/50 font-medium">
+                        <p class="text-xs  font-medium">
                             {{ $item['sub'] }}
                         </p>
                         <div
@@ -144,7 +142,7 @@
                 <div class="relative" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
                     <div class="lg:sticky lg:top-15 rounded-lg border border-border  transition-all duration-300 relative">
                         <div class="p-8">
-                            <h3 class="text-2xl font-bold text-on-surface mb-6">Get In Touch</h3>
+                            <h3 class="text-2xl font-bold  mb-6">Get In Touch</h3>
                             @if (session('success'))
                                 <div class="text-green-600 font-medium mb-4">
                                     {{ session('success') }}
@@ -240,7 +238,7 @@
                             @foreach ($stats as $stat)
                                 <div class="p-4 rounded-2xl border border-border">
                                     <div class="text-primary font-black text-xl">{{ $stat['val'] }}</div>
-                                    <div class="text-on-surface/40 text-[10px] font-bold uppercase tracking-widest">
+                                    <div class=" text-[10px] font-bold uppercase tracking-widest">
                                         {{ $stat['label'] }}</div>
                                 </div>
                             @endforeach
@@ -251,34 +249,34 @@
                         <div class="space-y-4">
                             <div class="rounded-lg border border-border transition-all duration-300 relative">
                                 <div class="p-6">
-                                    <h4 class="font-bold text-on-surface mb-2">How long does a typical project take?
+                                    <h4 class="font-bold  mb-2">How long does a typical project take?
                                     </h4>
-                                    <p class="text-on-surface/60 text-sm">Project timelines vary based on complexity, but
+                                    <p class=" text-sm">Project timelines vary based on complexity, but
                                         most websites take 4-8 weeks from start to finish.
                                     </p>
                                 </div>
                             </div>
                             <div class="rounded-lg border border-border transition-all duration-300 relative">
                                 <div class="p-6">
-                                    <h4 class="font-bold text-on-surface mb-2">Do you provide ongoing support?</h4>
-                                    <p class="text-on-surface/60 text-sm">Yes, we offer comprehensive maintenance and
+                                    <h4 class="font-bold  mb-2">Do you provide ongoing support?</h4>
+                                    <p class=" text-sm">Yes, we offer comprehensive maintenance and
                                         support packages to keep your website running smoothly.
                                     </p>
                                 </div>
                             </div>
                             <div class="rounded-lg border border-border transition-all duration-300 relative">
                                 <div class="p-6">
-                                    <h4 class="font-bold text-on-surface mb-2">What's your development process?</h4>
-                                    <p class="text-on-surface/60 text-sm">We follow a structured 6-step process: Discovery,
+                                    <h4 class="font-bold  mb-2">What's your development process?</h4>
+                                    <p class=" text-sm">We follow a structured 6-step process: Discovery,
                                         Planning, Design, Development, Testing, and Launch.
                                     </p>
                                 </div>
                             </div>
                             <div class="rounded-lg border border-border transition-all duration-300 relative">
                                 <div class="p-6">
-                                    <h4 class="font-bold text-on-surface mb-2">Can you work with our existing brand?
+                                    <h4 class="font-bold  mb-2">Can you work with our existing brand?
                                     </h4>
-                                    <p class="text-on-surface/60 text-sm">We can work with your existing brand guidelines
+                                    <p class=" text-sm">We can work with your existing brand guidelines
                                         or help develop new branding.
                                     </p>
                                 </div>
@@ -290,7 +288,8 @@
         </div>
     </section>
     {{-- CTA Section --}}
-    <section class="py-20 sm:py-25 px-3 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-background via-[#fffbee] to-primary-500/20">
+    <section
+        class="py-20 sm:py-25 px-3 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-background via-[#fffbee] to-primary-500/20">
         <div class="max-w-7xl mx-auto text-center">
             <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                 <div
@@ -304,8 +303,8 @@
                     Join 100+ satisfied clients who have transformed their businesses with our solutions
                 </p>
             </div>
-            <div class="flex flex-wrap items-center justify-center gap-8 mb-10" data-aos="fade-up"
-                data-aos-delay="150" data-aos-duration="800">
+            <div class="flex flex-wrap items-center justify-center gap-8 mb-10" data-aos="fade-up" data-aos-delay="150"
+                data-aos-duration="800">
                 <div class="flex items-center gap-2">
                     <x-icons.launch class="w-5 h-5" />
                     <span>Award Winning</span>

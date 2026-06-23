@@ -28,12 +28,12 @@
         style="background-image: url('{{ asset('assets/images/background/doted.svg') }}')">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
-                <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
+                <ol class="flex items-center space-x-2 text-sm ">
                     <li><a href="{{ route('home') }}" class="hover:text-primary transition-colors">Home</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
                     <li><a href="{{ route('portfolio') }}" class="hover:text-primary transition-colors">Portfolio</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
-                    <li class="text-on-surface font-medium">Gujjutak News Portal</li>
+                    <li class=" font-medium">Gujjutak News Portal</li>
                 </ol>
             </nav>
 
@@ -47,7 +47,7 @@
                         Gujjutak <br>
                         <span class="text-gradient">News CMS Portal</span>
                     </h1>
-                    <p class="text-xl text-on-surface/60 leading-relaxed mb-8">
+                    <p class="text-xl  leading-relaxed mb-8">
                         A robust, high-concurrency publishing engine built to serve news content to thousands of concurrent readers with zero layout latency.
                     </p>
                     <div class="flex flex-wrap gap-4">
@@ -113,7 +113,7 @@
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     Project <span class="text-gradient">Challenges & Objectives</span>
                 </h2>
-                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                <p class="text-xl  max-w-5xl mx-auto">
                     News portals suffer from sudden traffic spikes during breaking updates, which can lock databases. Our core engineering metrics included:
                 </p>
             </div>
@@ -177,7 +177,7 @@
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     How We Built It: <span class="text-gradient">Media Portal Architecture</span>
                 </h2>
-                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                <p class="text-xl  max-w-5xl mx-auto">
                     We engineered a lightning-fast news site utilizing Redis database caching, layout-shift control containers, and news XML sitemaps.
                 </p>
             </div>
@@ -304,7 +304,7 @@
             <div class="flex justify-between items-end mb-12">
                 <div>
                     <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Projects</h2>
-                    <p class="text-on-surface/60">See how we've built custom portals to drive growth.</p>
+                    <p class="">See how we've built custom portals to drive growth.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
             </div>
@@ -317,7 +317,7 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Jixicloud Hosting Portal</h3>
-                        <p class="text-on-surface/60 text-sm">Modular CMS with live domain API pricing integrations.</p>
+                        <p class=" text-sm">Modular CMS with live domain API pricing integrations.</p>
                     </div>
                 </a>
                 <a href="{{ route('portfolio.attendance-manager') }}"
@@ -328,7 +328,7 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Attendance Manager System</h3>
-                        <p class="text-on-surface/60 text-sm">Employee geolocation tracking with selfie verification checks.</p>
+                        <p class=" text-sm">Employee geolocation tracking with selfie verification checks.</p>
                     </div>
                 </a>
             </div>

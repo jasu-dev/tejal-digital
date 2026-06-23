@@ -129,7 +129,7 @@
             <p class="ml-2 text-foreground">What We Offer</p>
         </div>
 
-        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5 text-secondary">
+        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5">
             Digital Solutions for<br> Your Business
         </h1>
         <p class="text-foreground md:text-base text-center max-w-xl mt-3">
@@ -152,7 +152,7 @@
         </div>
     </section>
     {{-- Technologies We Use --}}
-    @include('sections.technologies-we-use', ['class' => 'bg-surface-container'])
+    @include('sections.technologies-we-use')
     {{-- Services Section --}}
     @php
         $services = [
@@ -312,7 +312,7 @@
                         @if ($service['popular'])
                             <div class="absolute right-5 top-5">
                                 <div
-                                    class="inline-flex items-center rounded-full text-xs font-semibold bg-primary/10 text-on-surface px-4 py-1">
+                                    class="inline-flex items-center rounded-full text-xs font-semibold bg-primary/10  px-4 py-1">
                                     <x-icons.star class="w-3 h-3 mr-1" />
                                     <span>Most Popular</span>
                                 </div>

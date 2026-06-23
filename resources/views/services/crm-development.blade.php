@@ -22,12 +22,12 @@
         style="background-image: url('{{ asset('assets/images/background/doted.svg') }}')">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
-                <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
+                <ol class="flex items-center space-x-2 text-sm ">
                     <li><a href="{{ route('home') }}" class="hover:text-primary transition-colors">Home</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
                     <li><a href="{{ route('services.index') }}" class="hover:text-primary transition-colors">Services</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
-                    <li class="text-on-surface font-medium">Custom CRM Development</li>
+                    <li class=" font-medium">Custom CRM Development</li>
                 </ol>
             </nav>
 
@@ -41,7 +41,7 @@
                         Custom CRM & <br>
                         <span class="text-gradient">ERP Development</span> Services
                     </h1>
-                    <p class="text-xl text-on-surface/60 leading-relaxed mb-8">
+                    <p class="text-xl  leading-relaxed mb-8">
                         Stop struggling with generic SaaS tools and per-user monthly licensing fees. We build bespoke Customer Relationship Management (CRM) and Enterprise Resource Planning (ERP) systems that align perfectly with your operations and scale with your growth.
                     </p>
                     <div class="flex flex-wrap gap-4">
@@ -105,7 +105,7 @@
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     Why Invest in <span class="text-gradient">Custom CRM & ERP Platforms</span>?
                 </h2>
-                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                <p class="text-xl  max-w-5xl mx-auto">
                     Off-the-shelf software forces your business to adapt to its limitations. Our custom engineering keeps you in control of your data, rules, and workflows.
                 </p>
             </div>
@@ -169,7 +169,7 @@
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     Our Custom <span class="text-gradient">CRM & ERP Solutions</span>
                 </h2>
-                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                <p class="text-xl  max-w-5xl mx-auto">
                     We offer end-to-end CRM and ERP development to centralize and automate your business operations.
                 </p>
             </div>
@@ -305,7 +305,7 @@
             <div class="flex justify-between items-end mb-12">
                 <div>
                     <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Related Projects</h2>
-                    <p class="text-on-surface/60">See how we've built custom systems to help businesses manage growth.</p>
+                    <p class="">See how we've built custom systems to help businesses manage growth.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
             </div>
@@ -318,7 +318,7 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Attendance Manager System</h3>
-                        <p class="text-on-surface/60 text-sm">Internal CRM for managing employee check-ins and performance.</p>
+                        <p class=" text-sm">Internal CRM for managing employee check-ins and performance.</p>
                     </div>
                 </a>
                 <a href="{{ route('portfolio.promofusion360') }}"
@@ -329,7 +329,7 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">PromoFusion360 Portal</h3>
-                        <p class="text-on-surface/60 text-sm">User and admin panels for tracking referrals and sales earnings.</p>
+                        <p class=" text-sm">User and admin panels for tracking referrals and sales earnings.</p>
                     </div>
                 </a>
             </div>

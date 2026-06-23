@@ -28,12 +28,12 @@
         style="background-image: url('{{ asset('assets/images/background/doted.svg') }}')">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
-                <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
+                <ol class="flex items-center space-x-2 text-sm ">
                     <li><a href="{{ route('home') }}" class="hover:text-primary transition-colors">Home</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
                     <li><a href="{{ route('portfolio') }}" class="hover:text-primary transition-colors">Portfolio</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
-                    <li class="text-on-surface font-medium">Jixicloud</li>
+                    <li class=" font-medium">Jixicloud</li>
                 </ol>
             </nav>
 
@@ -47,7 +47,7 @@
                         Jixicloud <br>
                         <span class="text-gradient">Hosting Portal</span>
                     </h1>
-                    <p class="text-xl text-on-surface/60 leading-relaxed mb-8">
+                    <p class="text-xl  leading-relaxed mb-8">
                         A robust cloud services deployment dashboard featuring automated billing controls, cPanel orchestration hooks, and live domain searches.
                     </p>
                     <div class="flex flex-wrap gap-4">
@@ -113,7 +113,7 @@
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     Project <span class="text-gradient">Challenges & Objectives</span>
                 </h2>
-                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                <p class="text-xl  max-w-5xl mx-auto">
                     Displaying dynamic domain rates can trigger API timeouts. Hosting accounts provision needs secure automation:
                 </p>
             </div>
@@ -177,7 +177,7 @@
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     How We Built It: <span class="text-gradient">API Solutions Architecture</span>
                 </h2>
-                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                <p class="text-xl  max-w-5xl mx-auto">
                     We engineered a secure cloud provisioning workflow using custom PHP wrapper classes, Redis database caching, and WHMCS client automation.
                 </p>
             </div>
@@ -304,7 +304,7 @@
             <div class="flex justify-between items-end mb-12">
                 <div>
                     <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Other Projects</h2>
-                    <p class="text-on-surface/60">See how we've built custom portals to drive growth.</p>
+                    <p class="">See how we've built custom portals to drive growth.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
             </div>
@@ -317,7 +317,7 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Gujjutak News Portal</h3>
-                        <p class="text-on-surface/60 text-sm">Multilingual media platform with Redis page caching frameworks.</p>
+                        <p class=" text-sm">Multilingual media platform with Redis page caching frameworks.</p>
                     </div>
                 </a>
                 <a href="{{ route('portfolio.attendance-manager') }}"
@@ -328,7 +328,7 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Attendance Manager System</h3>
-                        <p class="text-on-surface/60 text-sm">Employee geolocation tracking with camera verification checks.</p>
+                        <p class=" text-sm">Employee geolocation tracking with camera verification checks.</p>
                     </div>
                 </a>
             </div>

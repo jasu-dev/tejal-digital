@@ -22,12 +22,12 @@
         style="background-image: url('{{ asset('assets/images/background/doted.svg') }}')">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
-                <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
+                <ol class="flex items-center space-x-2 text-sm ">
                     <li><a href="{{ route('home') }}" class="hover:text-primary transition-colors">Home</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
                     <li><a href="{{ route('services.index') }}" class="hover:text-primary transition-colors">Services</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
-                    <li class="text-on-surface font-medium">SaaS Development</li>
+                    <li class=" font-medium">SaaS Development</li>
                 </ol>
             </nav>
 
@@ -41,7 +41,7 @@
                         High-Performance <br>
                         <span class="text-gradient">SaaS Application</span> Development
                     </h1>
-                    <p class="text-xl text-on-surface/60 leading-relaxed mb-8">
+                    <p class="text-xl  leading-relaxed mb-8">
                         Turn your software idea into a profitable subscription product. We build production-ready SaaS solutions featuring secure multi-tenant partitioning, automated billing, and optimized user dashboards.
                     </p>
                     <div class="flex flex-wrap gap-4">
@@ -105,7 +105,7 @@
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     Why Partner with Us for <span class="text-gradient">SaaS Engineering</span>?
                 </h2>
-                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                <p class="text-xl  max-w-5xl mx-auto">
                     We combine robust backend security with frictionless billing integrations to deliver cloud applications that provide continuous business revenue.
                 </p>
             </div>
@@ -169,7 +169,7 @@
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     Our End-to-End <span class="text-gradient">SaaS Engineering Services</span>
                 </h2>
-                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                <p class="text-xl  max-w-5xl mx-auto">
                     We manage the entire development cycle, from software strategy and wireframing to infrastructure scaling.
                 </p>
             </div>
@@ -305,7 +305,7 @@
             <div class="flex justify-between items-end mb-12">
                 <div>
                     <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Related Projects</h2>
-                    <p class="text-on-surface/60">See how we've built portals and SaaS tools to drive growth.</p>
+                    <p class="">See how we've built portals and SaaS tools to drive growth.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
             </div>
@@ -318,7 +318,7 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Attendance Manager System</h3>
-                        <p class="text-on-surface/60 text-sm">Internal CRM for managing employee check-ins and performance.</p>
+                        <p class=" text-sm">Internal CRM for managing employee check-ins and performance.</p>
                     </div>
                 </a>
                 <a href="{{ route('portfolio.promofusion360') }}"
@@ -329,7 +329,7 @@
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">PromoFusion360 Portal</h3>
-                        <p class="text-on-surface/60 text-sm">User and admin panels for tracking referrals and sales earnings.</p>
+                        <p class=" text-sm">User and admin panels for tracking referrals and sales earnings.</p>
                     </div>
                 </a>
             </div>

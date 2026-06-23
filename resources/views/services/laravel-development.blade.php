@@ -22,12 +22,12 @@
         style="background-image: url('{{ asset('assets/images/background/doted.svg') }}')">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
             <nav class="flex mb-8" aria-label="Breadcrumb">
-                <ol class="flex items-center space-x-2 text-sm text-on-surface/60">
+                <ol class="flex items-center space-x-2 text-sm ">
                     <li><a href="{{ route('home') }}" class="hover:text-primary transition-colors">Home</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
                     <li><a href="{{ route('services.index') }}" class="hover:text-primary transition-colors">Services</a></li>
                     <li><x-icons.chevron-right class="w-4 h-4" /></li>
-                    <li class="text-on-surface font-medium">Laravel Development</li>
+                    <li class=" font-medium">Laravel Development</li>
                 </ol>
             </nav>
 
@@ -41,7 +41,7 @@
                         High-Performance <br>
                         <span class="text-gradient">Laravel Application </span>Development Services
                     </h1>
-                    <p class="text-xl text-on-surface/60 leading-relaxed mb-8">
+                    <p class="text-xl  leading-relaxed mb-8">
                         Build powerful, secure, and future-proof web applications with the world's most popular PHP
                         framework. We deliver custom solutions that scale with your business.
                     </p>
@@ -109,7 +109,7 @@
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     Why Choose <span class="text-gradient">Laravel Framework</span> for Your Project?
                 </h2>
-                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                <p class="text-xl  max-w-5xl mx-auto">
                     Laravel has rightfully earned its reputation as <span class="font-semibold">"The PHP Framework for Web
                         Artisans."</span> It is the go-to choice for modern enterprises because it streamlines development
                     without compromising features.
@@ -181,7 +181,7 @@
                 <h2 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
                     Our Comprehensive <span class="text-gradient">Laravel Development Services</span>
                 </h2>
-                <p class="text-xl text-on-surface/50 max-w-5xl mx-auto">
+                <p class="text-xl  max-w-5xl mx-auto">
                     We offer end-to-end <span class="font-semibold">Laravel application development</span>
                     to cover every stage of your digital transformation journey.
                 </p>
@@ -333,7 +333,7 @@
             <div class="flex justify-between items-end mb-12">
                 <div>
                     <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Related Projects</h2>
-                    <p class="text-on-surface/60">See how we've used Laravel to deliver real-world value.</p>
+                    <p class="">See how we've used Laravel to deliver real-world value.</p>
                 </div>
                 <a href="{{ route('portfolio') }}" class="text-primary font-bold hover:underline">View All Projects</a>
             </div>
@@ -347,7 +347,7 @@
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">Attendance
                             Manager System</h3>
-                        <p class="text-on-surface/60 text-sm">Geo-fenced attendance tracking with selfie verification.</p>
+                        <p class=" text-sm">Geo-fenced attendance tracking with selfie verification.</p>
                     </div>
                 </a>
                 <a href="{{ route('portfolio.krishna-academy') }}"
@@ -359,7 +359,7 @@
                     <div class="p-8">
                         <h3 class="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
                             KrishnaAcademy – LMS Platform</h3>
-                        <p class="text-on-surface/60 text-sm">Educational platform with video lessons and quiz modules.</p>
+                        <p class=" text-sm">Educational platform with video lessons and quiz modules.</p>
                     </div>
                 </a>
             </div>

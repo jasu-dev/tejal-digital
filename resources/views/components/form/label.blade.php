@@ -3,7 +3,7 @@
 ])
 <label
     {{ $attributes->merge([
-        'class' => 'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-on-surface/60'
+        'class' => 'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 '
     ]) }}>
     {{ $slot }}
     @if ($required)

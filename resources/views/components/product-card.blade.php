@@ -2,7 +2,7 @@
     'project' => [],
 ])
 <a href="{{ $project['link'] }}" data-aos="fade-up" data-aos-duration="1000"
-    class="rounded-2xl group border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/40 hover:bg-surface-container-high"
+    class="rounded-2xl group border border-border bg-card overflow-hidden transition-all duration-500 hover:border-primary/40"
     title="View {{ $project['title'] }} case study">
 
     <div class="aspect-[16/10] overflow-hidden">
@@ -15,14 +15,14 @@
         <div class="flex items-center gap-2 mb-3">
             <div class="w-1.5 h-1.5 rounded-full bg-primary"></div>
             <span
-                class="text-[10px] font-bold text-on-surface/40 uppercase tracking-widest">{{ $project['category'] }}</span>
+                class="text-[10px] font-bold  uppercase tracking-widest">{{ $project['category'] }}</span>
         </div>
 
-        <h3 class="text-2xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">
+        <h3 class="text-2xl font-bold  mb-3 group-hover:text-primary transition-colors">
             {{ $project['title'] }}
         </h3>
 
-        <p class="text-on-surface/60 text-sm leading-relaxed mb-4">
+        <p class=" text-sm leading-relaxed mb-4">
             {{ $project['desc'] }}
         </p>
         @if (isset($project['tags']))

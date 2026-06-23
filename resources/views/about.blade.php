@@ -30,7 +30,7 @@
             <p class="ml-2 text-foreground">About Our Team</p>
         </div>
 
-        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5 text-secondary">
+        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5">
             Meet the Creative Minds
         </h1>
         <p class="text-foreground md:text-base text-center max-w-xl mt-3">
@@ -167,12 +167,12 @@
                                 <x-dynamic-component :component="'icons.' . $value['icon']" class="w-5 h-5" />
                             </div>
 
-                            <h3 class="text-xl font-bold text-on-surface mb-3 group-hover:text-primary transition-colors">
+                            <h3 class="text-xl font-bold  mb-3 group-hover:text-primary transition-colors">
                                 {{ $value['title'] }}
                             </h3>
 
                             <p
-                                class="text-sm text-on-surface/50 leading-relaxed group-hover:text-on-surface/70 transition-colors">
+                                class="text-sm  leading-relaxed group-hover: transition-colors">
                                 {{ $value['desc'] }}
                             </p>
                         </div>

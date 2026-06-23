@@ -33,7 +33,7 @@
             <p class="ml-2 text-foreground">Our Portfolio</p>
         </div>
 
-        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5 text-secondary">
+        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5">
             Our Portfolio of Successful Digital Projects
         </h1>
         <p class="text-foreground md:text-base text-center max-w-xl mt-3">
