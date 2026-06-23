@@ -232,8 +232,11 @@
             </div>
 
         </div>
-        <div class="text-center py-6 border-t mt-6 border-white/10">
-            <p class="text-center">
+        <div class="flex flex-wrap items-center justify-center sm:justify-between gap-5 py-6 sm:py-4 border-t mt-6 border-white/10">
+            <div>
+                <img src="{{ asset('assets/images/msme-logo.png') }}" class="h-10 w-auto bg-background rounded-md"/>
+            </div>
+            <p>
                 Copyright 2025 © Tejal Digital. All Right Reserved.
             </p>
         </div>

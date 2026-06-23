@@ -44,24 +44,21 @@
 @endsection
 @section('content')
     {{-- Hero Section --}}
-
-    <section class="relative -mt-20 pt-20 flex flex-col items-center pb-24 text-sm bg-cover bg-center bg-no-repeat"
+    <section
+        class="relative -mt-20 pt-20 pb-20 px-2 flex flex-col items-center text-sm bg-cover bg-center bg-no-repeat border-b border-outline-variant/30"
         style="background-image: url('{{ asset('assets/images/hero-gradient-bg.png') }}')">
-
         <div
-            class="flex flex-wrap items-center justify-center p-2 px-4 mt-20 md:mt-32 bg-white/50 backdrop-blur-xl border border-white/20 rounded-2xl">
-            <x-icons.whatsapp class="w-4 h-4" />
+            class="flex flex-wrap items-center justify-center p-2 px-4 mt-10 md:mt-28 bg-white/50 backdrop-blur-xl border border-white/20 rounded-2xl">
+            <x-icons.call class="w-4 h-4" />
             <p class="ml-2 text-foreground">Get in Touch</p>
         </div>
-
-        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl m-5 text-secondary">
+        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5 text-secondary">
             Let's Build Something <br> Amazing Together
         </h1>
-        <p class="text-foreground md:text-base max-md:px-2 text-center max-w-xl mt-3">
+        <p class="text-foreground md:text-base text-center max-w-xl mt-3">
             Ready to transform your digital presence? Get in touch with our team of experts and let's discuss your project.
         </p>
-
-        <div class="flex flex-col justify-center sm:flex-row gap-4 mt-5">
+        <div class="flex flex-col justify-center sm:flex-row gap-4 mt-8">
             <a href="#contactForm">
                 <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
                     <span>Schedule a Call</span>
@@ -76,14 +73,10 @@
             </a>
         </div>
     </section>
-
     {{-- Contact Options --}}
-    <section class="py-16">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-
-            {{-- Contact Cards Grid --}}
+    <section class="py-10 sm:py-14 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
+        <div class="max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-
                 @php
                     $contactItems = [
                         [
@@ -112,18 +105,13 @@
                         ],
                     ];
                 @endphp
-
                 @foreach ($contactItems as $item)
                     <div class="group relative rounded-2xl border border-border p-8 text-center transition-all duration-500 hover:border-primary/40"
                         data-aos="fade-up" data-aos-delay="{{ 100 * $loop->iteration }}" data-aos-duration="800">
-
-                        {{-- Icon: The "Glow" Container --}}
                         <div class="relative w-16 h-16 mx-auto mb-8">
-                            {{-- Animated background glow --}}
                             <div
                                 class="absolute inset-0 bg-primary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all opacity-0 group-hover:opacity-100">
                             </div>
-
                             <div
                                 class="relative w-full h-full rounded-2xl border border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all duration-500">
                                 @php $iconName = 'icons.' . $item['icon']; @endphp
@@ -131,38 +119,30 @@
                                     class="w-7 h-7 text-primary group-hover:text-surface transition-colors duration-500" />
                             </div>
                         </div>
-
-                        {{-- Text Content --}}
                         <h3 class="text-sm font-bold text-on-surface/40 uppercase tracking-widest mb-3">
                             {{ $item['label'] }}
                         </h3>
-
                         <p
                             class="text-lg font-bold text-on-surface mb-2 tracking-tight group-hover:text-primary transition-colors">
                             {{ $item['val'] }}
                         </p>
-
                         <p class="text-xs text-on-surface/50 font-medium">
                             {{ $item['sub'] }}
                         </p>
-
-                        {{-- Subtle hover accent bar --}}
                         <div
                             class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-primary rounded-t-full group-hover:w-12 transition-all duration-500">
                         </div>
                     </div>
                 @endforeach
-
             </div>
         </div>
     </section>
-
     {{-- Contact Form --}}
-    <section class="py-24" id="contactForm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16">
+    <section class="py-10 sm:py-14 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30" id="contactForm">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-10 lg:gap-15">
                 <div class="relative" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
-                    <div class="lg:sticky top-15 rounded-lg border border-border  transition-all duration-300 relative">
+                    <div class="lg:sticky lg:top-15 rounded-lg border border-border  transition-all duration-300 relative">
                         <div class="p-8">
                             <h3 class="text-2xl font-bold text-on-surface mb-6">Get In Touch</h3>
                             @if (session('success'))
@@ -309,26 +289,22 @@
             </div>
         </div>
     </section>
-
     {{-- CTA Section --}}
-    <section class="py-26 relative overflow-hidden bg-gradient-to-b from-background via-[#fffbee] to-primary-500/20">
-
-        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
+    <section class="py-20 sm:py-25 px-3 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-background via-[#fffbee] to-primary-500/20">
+        <div class="max-w-7xl mx-auto text-center">
             <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                 <div
                     class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
-                    <span class="text-sm font-semibold">Get in Touch</span>
+                    <span class="text-xs sm:text-sm font-semibold">Get in Touch</span>
                 </div>
-                <h2 class="text-4xl lg:text-6xl font-black text-foreground mb-8">
+                <h2 class="text-3xl lg:text-6xl font-bold mb-5 tracking-tight">
                     Ready to Get Started?
                 </h2>
-
-                <p class="text-xl text-on-surface/60 mb-12 max-w-2xl mx-auto leading-relaxed">
+                <p class="text-md sm:text-lg max-w-2xl mx-auto leading-relaxed mb-10">
                     Join 100+ satisfied clients who have transformed their businesses with our solutions
                 </p>
             </div>
-
-            <div class="flex items-center justify-center gap-8 text-on-surface/80 mb-10" data-aos="fade-up"
+            <div class="flex flex-wrap items-center justify-center gap-8 mb-10" data-aos="fade-up"
                 data-aos-delay="150" data-aos-duration="800">
                 <div class="flex items-center gap-2">
                     <x-icons.launch class="w-5 h-5" />
@@ -343,16 +319,13 @@
                     <span>Proven Results</span>
                 </div>
             </div>
-
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-
-                <a href="{{ route('contact') }}" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
+                <a href="#contactForm" data-aos="fade-up" data-aos-delay="150" data-aos-duration="800">
                     <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
                         <span>Get Free Consultation</span>
                         <x-icons.go class="w-4 h-4" />
                     </x-form.primary-button>
                 </a>
-
                 <a href="{{ config('staticdata.whatsapp_url') }}" data-aos="fade-up" data-aos-delay="150"
                     data-aos-duration="800">
                     <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
