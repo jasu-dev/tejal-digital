@@ -125,9 +125,11 @@
     {{-- Stats Section --}}
     @include('home.sections.stats')
 
+    @include('sections.projects-slider')
+
     {{-- Industries We Serve Section --}}
     @include('sections.industries')
-    
+
     {{-- Services Section --}}
     @include('home.sections.services')
 

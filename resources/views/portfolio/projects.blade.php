@@ -22,14 +22,14 @@
             'link' => route('portfolio.promofusion360'),
             'desc' =>
                 'A Laravel-based platform that allows users to earn by watching videos and referring new users after subscribing to a plan. Built with dual payment gateway support and a smooth multi-panel experience.',
-            'image' => 'assets/images/promofusion360.png',
+            'image' => 'assets/projects/promofusion360-web-application.webp',
             'gradient' => 'from-pink-100 to-rose-100',
             'challenge' =>
                 'Create a stable referral-based earning system with payment integration and tiered subscriptions, while keeping the experience beginner-friendly and scalable.',
             'solution' =>
                 'Developed using Laravel and Bootstrap + Tailwind CSS with integrated UPI and Cashfree gateways. Includes user and admin panels, referral tracking, and earnings management dashboard. Ongoing updates and maintenance handled actively.',
             'tags' => ['Laravel', 'Bootstrap', 'Tailwind CSS', 'MySQL', 'UPI', 'Cashfree', 'Referral System'],
-            'visible' => false, // hidden in original HTML (class="hidden")
+            'visible' => false,
         ],
         [
             'title' => 'KrishnaAcademy – LMS Platform',
@@ -52,7 +52,7 @@
             'link' => route('portfolio.kifayat-card'),
             'desc' =>
                 'A Laravel-based loyalty point system for shop owners. Merchants register and assign digital reward cards to their customers, who earn and redeem points on purchases. Full admin and user panel with real-time tracking and redemption options.',
-            'image' => 'assets/images/kifayatcard.png',
+            'image' => 'assets/projects/kifayatcard.webp',
             'gradient' => 'from-emerald-100 to-lime-100',
             'challenge' =>
                 'Creating a reward system that works seamlessly for both merchants and customers while managing card assignments and tracking points.',
@@ -67,7 +67,7 @@
             'link' => route('portfolio.tech-nukti'),
             'desc' =>
                 'A blazing-fast, custom WordPress theme built from scratch for Technukti.com. Designed with a clean, minimal layout, full responsiveness, and zero dependence on optimization plugins.',
-            'image' => 'assets/images/technukti.png',
+            'image' => 'assets/projects/tech-nukti-blog-website.webp',
             'gradient' => 'from-yellow-100 to-amber-100',
             'challenge' =>
                 'Creating a lightweight and elegant theme that passes all Core Web Vitals metrics without using 3rd-party speed tools or heavy plugins.',
@@ -82,7 +82,7 @@
             'link' => route('portfolio.growix-smart-qr'),
             'desc' =>
                 'Custom Laravel-based software for filtering negative reviews using unique QR codes for businesses. Admin and user panels included with Razorpay integration for seamless plan management and purchases.',
-            'image' => 'assets/images/growix.png',
+            'image' => 'assets/projects/growix-saas-software.webp',
             'gradient' => 'from-purple-100 to-indigo-100',
             'challenge' =>
                 'Building a review system that helps business owners control online reputation while integrating secure payments and user-friendly dashboards.',
@@ -97,7 +97,7 @@
             'link' => route('portfolio.tech-upkar'),
             'desc' =>
                 'A blazing-fast, hand-coded WordPress theme built for 100/100 PageSpeed scores — no caching, no optimization plugins. Fully responsive, clean design, and optimized to pass all Core Web Vitals flawlessly.',
-            'image' => 'assets/images/techupkar.png',
+            'image' => 'assets/projects/techupkar-blog-website.webp',
             'gradient' => 'from-lime-100 to-emerald-100',
             'challenge' =>
                 'Deliver a high-performance blog theme that achieves perfect Lighthouse scores and replicates the smooth navigation of premium themes — without any bloated dependencies.',
@@ -112,7 +112,7 @@
             'link' => route('portfolio.jixicloud'),
             'desc' =>
                 'Laravel-powered Website with admin tools for managing pricing and dynamic data. Integrated 3rd-party APIs for live domain rates and more. Fully responsive design with ongoing maintenance since launch.',
-            'image' => 'assets/images/jixicloud.png',
+            'image' => 'assets/projects/jixicloud-web-hosting-company.webp',
             'gradient' => 'from-sky-100 to-blue-100',
             'challenge' =>
                 'Building a modular CMS with external API integration and seamless control over dynamic content like domain pricing.',
@@ -154,7 +154,7 @@
 @endphp
 
 <section class="py-24">
-    <div class="max-w-6xl mx-auto px-6 space-y-12">
+    <div class="max-w-7xl mx-auto px-6 space-y-12">
         <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden">
             @foreach ($projects as $project)
                 <x-product-card :project="$project" />

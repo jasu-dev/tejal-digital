@@ -19,7 +19,7 @@
             'title' => 'Kifayat Card System',
             'link' => route('portfolio.kifayat-card'),
             'category' => 'Loyalty Program',
-            'image' => 'assets/images/kifayatcard.png',
+            'image' => 'assets/projects/kifayatcard.webp',
             'desc' => 'B2B loyalty point system with real-time tracking, shop owner panels, and redemption logic.',
         ]
     ];

@@ -63,12 +63,12 @@
                 </div>
                 <div class="relative">
                     <div
-                        class="max-w-md mx-auto border border-border/50 bg-background backdrop-blur-xl rounded-2xl p-4 flex items-center justify-center relative overflow-hidden group">
+                        class="max-w-md mx-auto border border-border/50 bg-background backdrop-blur-xl rounded-2xl flex items-center justify-center relative overflow-hidden group">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         </div>
-                        <div class="aspect-video rounded-xl overflow-hidden border border-outline-variant/30 relative z-10">
-                            <img src="{{ asset('assets/images/kifayatcard.png') }}" alt="Kifayat Card Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="rounded-xl overflow-hidden border border-outline-variant/30 relative z-10">
+                            <img src="{{ asset('assets/projects/kifayatcard.webp') }}" alt="Kifayat Card Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         </div>
                     </div>
                     {{-- Floating Tags --}}

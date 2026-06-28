@@ -7,7 +7,7 @@
 
     <div class="aspect-[16/10] overflow-hidden">
         <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}"
-            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700">
+            class="w-full h-full object-cover">
     </div>
 
     {{-- Content Area --}}
@@ -26,9 +26,9 @@
             {{ $project['desc'] }}
         </p>
         @if (isset($project['tags']))
-            <div class="flex flex-wrap gap-4 pt-4 border-t border-outline-variant/10">
+            <div class="flex flex-wrap gap-4 pt-4 border-t border-outline-variant/30">
                 @foreach ($project['tags'] as $tag)
-                    <span class="chip">{{ $tag }}</span>
+                    <span class="border rounded-lg bg-outline-variant/10 border-outline-variant/20 text-xs px-2 py-1">{{ $tag }}</span>
                 @endforeach
             </div>
         @endif
