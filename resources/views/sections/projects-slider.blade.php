@@ -29,37 +29,6 @@
             'title' => 'Tech Nukti Blog',
         ]
     ];
-
-    $projects2 = [
-        [
-            'image' => asset('assets/projects/kifayatcard-saas-application.webp'),
-            'title' => 'Kifayat Card SaaS',
-        ],
-        [
-            'image' => asset('assets/projects/futureboxx-service-company.webp'),
-            'title' => 'Futureboxx Service Platform',
-        ],
-        [
-            'image' => asset('assets/projects/sanchay-card-saas-application.webp'),
-            'title' => 'Sanchay Card Platform',
-        ],
-        [
-            'image' => asset('assets/projects/st-interior-desinger.webp'),
-            'title' => 'ST Interior Designer',
-        ],
-        [
-            'image' => asset('assets/projects/jm-courier-and-luggage-parcel.webp'),
-            'title' => 'JM Courier & Luggage',
-        ],
-        [
-            'image' => asset('assets/projects/techupkar-blog-website.webp'),
-            'title' => 'TechUpkar Tech Blog',
-        ],
-        [
-            'image' => asset('assets/projects/vaaxi-billing-saas-application.webp'),
-            'title' => 'Vaaxi Billing SaaS',
-        ],
-    ];
 @endphp
 
 <style>
@@ -108,13 +77,13 @@
     }
 </style>
 
-<section class="py-10 sm:py-14 px-3 sm:px-6 lg:px-8">
+<section class="py-10 sm:py-14 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
     <div class="max-w-7xl mx-auto">
 
         <div class="overflow-hidden mask-edges">
 
             {{-- Row 1 --}}
-            <div id="slider1" class="slider-track mb-6">
+            <div id="slider1" class="slider-track">
 
                 @foreach($projects as $project)
                     <div class="project-card">
@@ -130,25 +99,6 @@
                 @endforeach
 
             </div>
-
-            {{-- Row 2 --}}
-            <div id="slider2" class="slider-track">
-
-                @foreach($projects2 as $project)
-                    <div class="project-card">
-                        <img src="{{ $project['image'] }}" alt="{{ $project['title'] }}" loading="lazy">
-                    </div>
-                @endforeach
-
-                {{-- Duplicate --}}
-                @foreach($projects2 as $project)
-                    <div class="project-card">
-                        <img src="{{ $project['image'] }}" alt="{{ $project['title'] }}" loading="lazy">
-                    </div>
-                @endforeach
-
-            </div>
-
         </div>
 
     </div>
@@ -201,7 +151,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     createInfiniteSlider('#slider1', 0.60, false);
-    createInfiniteSlider('#slider2', 0.60, true);
 
 });
 </script>
