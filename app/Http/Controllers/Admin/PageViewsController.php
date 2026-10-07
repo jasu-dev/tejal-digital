@@ -45,12 +45,18 @@ class PageViewsController extends Controller
             ->limit(10)
             ->get();
 
-        $stats = [
-            'total'   => PageView::count(),
-            'today'   => PageView::whereDate('visited_at', today())->count(),
-            'week'    => PageView::where('visited_at', '>=', now()->subDays(7))->count(),
-            'month'   => PageView::where('visited_at', '>=', now()->subDays(30))->count(),
+        $periods = [
+            'total' => PageView::query(),
+            'today' => PageView::whereDate('visited_at', today()),
+            'week'  => PageView::where('visited_at', '>=', now()->subDays(7)),
+            'month' => PageView::where('visited_at', '>=', now()->subDays(30)),
         ];
+
+        $stats = [];
+        foreach ($periods as $key => $query) {
+            $stats[$key]             = (clone $query)->count();
+            $stats[$key . '_unique'] = PageView::uniqueVisitors(clone $query);
+        }
 
         return view('admin.pageviews.index', compact(
             'labels', 'data', 'topPages', 'topReferrers', 'stats'

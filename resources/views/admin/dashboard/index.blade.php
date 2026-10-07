@@ -10,7 +10,7 @@
         @php
             $cards = [
                 ['label'=>'Total Leads',       'value'=>$stats['total_leads'],      'sub'=>$stats['new_leads'].' new',         'color'=>'text-blue-600',   'bg'=>'bg-blue-50',   'icon'=>'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'],
-                ['label'=>'Today\'s Views',    'value'=>$stats['today_page_views'], 'sub'=>$stats['total_page_views'].' total','color'=>'text-emerald-600','bg'=>'bg-emerald-50','icon'=>'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z'],
+                ['label'=>'Today\'s Views',    'value'=>$stats['today_page_views'], 'sub'=>$stats['today_visitors'].' unique visitors · '.$stats['total_page_views'].' total','color'=>'text-emerald-600','bg'=>'bg-emerald-50','icon'=>'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z'],
             ];
         @endphp
         @foreach($cards as $card)

@@ -19,6 +19,7 @@ class DashboardController extends Controller
             'new_leads'          => ContactRequest::where('status', LeadStatus::New)->count(),
             'total_page_views'   => PageView::count(),
             'today_page_views'   => PageView::whereDate('visited_at', today())->count(),
+            'today_visitors'     => PageView::uniqueVisitors(PageView::whereDate('visited_at', today())),
         ];
 
         // Daily views for last 14 days

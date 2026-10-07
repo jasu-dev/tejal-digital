@@ -9,17 +9,17 @@
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         @php
             $pvCards = [
-                ['label' => 'Today',       'value' => $stats['today']],
-                ['label' => 'Last 7 Days', 'value' => $stats['week']],
-                ['label' => 'Last 30 Days','value' => $stats['month']],
-                ['label' => 'All Time',    'value' => $stats['total']],
+                ['label' => 'Today',       'value' => $stats['today'], 'unique' => $stats['today_unique']],
+                ['label' => 'Last 7 Days', 'value' => $stats['week'],  'unique' => $stats['week_unique']],
+                ['label' => 'Last 30 Days','value' => $stats['month'], 'unique' => $stats['month_unique']],
+                ['label' => 'All Time',    'value' => $stats['total'], 'unique' => $stats['total_unique']],
             ];
         @endphp
         @foreach($pvCards as $card)
         <div class="bg-white rounded-2xl border border-zinc-200 p-5">
             <p class="text-xs font-medium text-zinc-500 uppercase tracking-wider mb-2">{{ $card['label'] }}</p>
             <p class="text-3xl font-bold text-zinc-900">{{ number_format($card['value']) }}</p>
-            <p class="text-xs text-zinc-400 mt-1">page views</p>
+            <p class="text-xs text-zinc-400 mt-1">page views &middot; <span class="font-semibold text-zinc-600">{{ number_format($card['unique']) }}</span> unique visitors</p>
         </div>
         @endforeach
     </div>
