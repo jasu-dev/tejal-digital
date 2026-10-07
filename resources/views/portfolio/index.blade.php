@@ -34,7 +34,7 @@
         </div>
 
         <h1 class="text-4xl md:text-6xl text-center font-bold tracking-tight leading-[1.05] max-w-4xl my-5">
-            Websites &amp; Software <span class="text-gradient">We've Shipped</span>
+            Websites & Software We've Built
         </h1>
         <p class="text-foreground/80 text-base md:text-lg text-center max-w-2xl leading-relaxed">
             {{ config('staticdata.projects') }}+ projects for startups, agencies and growing businesses - custom Laravel

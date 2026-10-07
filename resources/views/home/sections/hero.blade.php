@@ -9,16 +9,11 @@
                     class="w-7 h-7 rounded-full border-2 border-white bg-primary-100 text-primary-700 text-[10px] font-bold flex items-center justify-center">{{ $initials }}</span>
             @endforeach
         </div>
-        <div class="flex text-amber-500">
-            @for ($i = 0; $i < 5; $i++)
-                <x-icons.star class="w-3.5 h-3.5 fill-current" />
-            @endfor
-        </div>
         <p class="text-foreground font-medium">Trusted by {{ config('staticdata.clients') }}+ businesses</p>
     </div>
 
-    <h1 class="text-4xl md:text-6xl lg:text-7xl text-center font-bold tracking-tight leading-[1.05] max-w-4xl mt-6 mb-5">
-        Websites &amp; Custom Software <span class="text-gradient">That Grow Your Business</span>
+    <h1 class="text-4xl md:text-5xl lg:text-6xl text-center font-bold tracking-tight leading-[1.05] max-w-4xl mt-6 mb-5">
+        Websites & Custom Software That Grow Your Business
     </h1>
     <p class="text-foreground/80 text-base md:text-lg text-center max-w-2xl leading-relaxed">
         We design and build fast websites, Laravel web apps, SaaS products, CRMs and eCommerce stores -
