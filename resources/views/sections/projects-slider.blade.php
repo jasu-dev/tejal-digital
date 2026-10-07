@@ -80,6 +80,18 @@
 <section class="py-10 sm:py-14 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
     <div class="max-w-7xl mx-auto">
 
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 px-1" data-aos="fade-up">
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-2">Recently shipped</p>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Real projects. Live for real businesses.</h2>
+            </div>
+            <a href="{{ route('portfolio') }}"
+                class="group inline-flex items-center gap-2 text-sm font-semibold text-primary shrink-0">
+                See all case studies
+                <x-icons.go class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+        </div>
+
         <div class="overflow-hidden mask-edges">
 
             {{-- Row 1 --}}

@@ -189,7 +189,7 @@
                     </div>
                     <span class="text-xs font-bold uppercase tracking-wider block mb-2">02</span>
                     <h3 class="text-xl font-bold mb-3">Multi-Tenant Setup</h3>
-                    <p class="text-sm leading-relaxed">Configuring secure tenant partitioning schemes—such as database-per-tenant, schema-per-tenant, or column separation rules.</p>
+                    <p class="text-sm leading-relaxed">Configuring secure tenant partitioning schemes-such as database-per-tenant, schema-per-tenant, or column separation rules.</p>
                 </div>
                 <!-- Service 3 -->
                 <div class="relative p-8 rounded-2xl border border-border bg-card overflow-hidden">

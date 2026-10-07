@@ -1,72 +1,50 @@
-<section class="relative -mt-20 pt-20 pb-15 px-2 flex flex-col items-center text-sm bg-cover bg-center bg-no-repeat border-b border-outline-variant/30"
+<section class="relative -mt-20 pt-20 pb-12 px-4 flex flex-col items-center text-sm bg-cover bg-center bg-no-repeat border-b border-outline-variant/30"
     style="background-image: url('{{ asset('assets/images/hero-gradient-bg.png') }}')">
 
     <div
-        class="flex flex-wrap items-center justify-center p-2 px-4 mt-10 md:mt-28 bg-white/50 backdrop-blur-xl border border-white/20 rounded-2xl">
-        <div class="flex">
-            <x-icons.party class="w-5 h-5" />
+        class="flex flex-wrap items-center justify-center gap-2 p-1.5 pr-4 mt-10 md:mt-24 bg-white/60 backdrop-blur-xl border border-white/40 rounded-full shadow-sm">
+        <div class="flex -space-x-2">
+            @foreach (['AT', 'KK', 'PF'] as $initials)
+                <span
+                    class="w-7 h-7 rounded-full border-2 border-white bg-primary-100 text-primary-700 text-[10px] font-bold flex items-center justify-center">{{ $initials }}</span>
+            @endforeach
         </div>
-        <p class="mx-2 text-foreground">100+ Happy Clients</p>
+        <div class="flex text-amber-500">
+            @for ($i = 0; $i < 5; $i++)
+                <x-icons.star class="w-3.5 h-3.5 fill-current" />
+            @endfor
+        </div>
+        <p class="text-foreground font-medium">Trusted by {{ config('staticdata.clients') }}+ businesses</p>
     </div>
 
-    <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5">
-        Best Website & Software Development Agency
+    <h1 class="text-4xl md:text-6xl lg:text-7xl text-center font-bold tracking-tight leading-[1.05] max-w-4xl mt-6 mb-5">
+        Websites &amp; Custom Software <span class="text-gradient">That Grow Your Business</span>
     </h1>
-    <p class="text-foreground md:text-base text-center max-w-xl mt-3">
-        We create stunning websites, powerful web applications, and digital solutions that drive real business
-        results.
+    <p class="text-foreground/80 text-base md:text-lg text-center max-w-2xl leading-relaxed">
+        We design and build fast websites, Laravel web apps, SaaS products, CRMs and eCommerce stores -
+        engineered to win customers and automate your operations.
     </p>
 
-    <div class="flex flex-col justify-center sm:flex-row gap-4 mt-5">
-        <a href="{{ route('portfolio') }}">
-            <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
+    <div class="flex flex-col justify-center sm:flex-row gap-3 mt-8 w-full sm:w-auto">
+        <a href="{{ route('contact') }}" class="w-full sm:w-auto">
+            <x-form.primary-button type="button"
+                class="w-full justify-center px-7 py-3.5 rounded-2xl text-base shadow-lg shadow-primary-500/25">
+                <span>Get a Free Project Quote</span>
+                <x-icons.go class="w-4 h-4" />
+            </x-form.primary-button>
+        </a>
+        <a href="{{ route('portfolio') }}" class="w-full sm:w-auto">
+            <x-form.secondary-button type="button" class="w-full justify-center px-7 py-3.5 rounded-2xl text-base">
                 <x-icons.play class="w-4 h-4" />
                 <span>View Our Work</span>
             </x-form.secondary-button>
         </a>
-        <a href="{{ route('contact') }}">
-            <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
-                <span>Start Your Project</span>
-                <x-icons.go class="w-4 h-4" />
-            </x-form.primary-button>
-        </a>
     </div>
 
-    <div class="hidden md:block overflow-hidden w-full relative max-w-5xl mx-auto select-none mt-14">
-        <div
-            class="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-background to-transparent">
-        </div>
-
-        <div class="marquee-inner flex will-change-transform min-w-[200%]">
-            <div class="flex py-4 gap-8" id="logo-container">
-                @php
-                    $techs = [
-                        ['name' => 'HTML', 'icon' => 'html5.svg'],
-                        ['name' => 'CSS', 'icon' => 'css.svg'],
-                        ['name' => 'JavaScript', 'icon' => 'js.svg'],
-                        ['name' => 'jQuery', 'icon' => 'jquery.svg'],
-                        ['name' => 'BootStrap', 'icon' => 'bootstrap.svg'],
-                        ['name' => 'Tailwind', 'icon' => 'tailwind.svg'],
-                        ['name' => 'PHP', 'icon' => 'php.svg'],
-                        ['name' => 'WordPress', 'icon' => 'wordpress.svg'],
-                        ['name' => 'Laravel', 'icon' => 'laravel.svg'],
-                        ['name' => 'CodeIgniter', 'icon' => 'codeigniter.svg'],
-                        ['name' => 'MySQL', 'icon' => 'mysql.svg'],
-                        ['name' => 'MongoDB', 'icon' => 'mongodb.svg'],
-                    ];
-                @endphp
-                @foreach (array_merge($techs, $techs) as $tech)
-                    <div class="flex items-center gap-4 px-6 py-4 rounded-2xl">
-                        <img src="{{ asset('assets/icons/' . $tech['icon']) }}" alt="{{ $tech['name'] }}"
-                            class="w-10 h-10" />
-                        <span class="text-foreground font-medium">{{ $tech['name'] }}</span>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-
-        <div
-            class="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-background to-transparent">
-        </div>
-    </div>
+    <ul class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 text-foreground/70">
+        <li class="flex items-center gap-1.5"><x-icons.check class="w-4 h-4 text-primary" /> Free consultation</li>
+        <li class="flex items-center gap-1.5"><x-icons.check class="w-4 h-4 text-primary" /> Reply within 2 hours</li>
+        <li class="flex items-center gap-1.5"><x-icons.check class="w-4 h-4 text-primary" /> {{ config('staticdata.experience_years') }}+ years experience</li>
+        <li class="flex items-center gap-1.5"><x-icons.check class="w-4 h-4 text-primary" /> MSME registered</li>
+    </ul>
 </section>

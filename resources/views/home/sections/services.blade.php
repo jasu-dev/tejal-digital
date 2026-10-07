@@ -135,56 +135,70 @@
     ];
 @endphp
 
-<section class="py-10 sm:py-14 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
+<section class="py-14 sm:py-20 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
     <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-10" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+        <div class="text-center mb-12" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
             <div
                 class="inline-flex items-center gap-2 px-4 py-2 mb-5 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
                 <span class="text-xs sm:text-sm font-semibold">Our Services</span>
             </div>
-            <h2 class="text-3xl lg:text-5xl font-bold text-primary mb-5">
-                What We Create
+            <h2 class="text-3xl lg:text-5xl font-bold tracking-tight mb-5">
+                Website &amp; Software Development, <span class="text-gradient">End to End</span>
             </h2>
-            <p class="text-md sm:text-lg max-w-3xl mx-auto">
-                From simple websites to complex applications, we deliver digital solutions that grow your business
+            <p class="text-md sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+                From a fast business website to a multi-tenant SaaS platform - one team handles strategy, design,
+                development, launch and long-term support.
             </p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($services as $service)
-                <div class="rounded-2xl border border-border bg-card transition-all duration-300 group relative overflow-hidden"
+                <div class="rounded-2xl border border-border bg-card transition-all duration-300 group relative overflow-hidden flex flex-col hover:border-primary/40 hover:shadow-xl hover:shadow-primary-500/5 hover:-translate-y-0.5"
                     data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 50 }}" data-aos-duration="600">
                     @if ($service['popular'])
                         <div class="absolute right-5 top-5">
                             <div
-                                class="inline-flex items-center rounded-full text-xs font-semibold bg-primary/10 px-4 py-1">
-                                <x-icons.star class="w-3 h-3 mr-1" />
+                                class="inline-flex items-center rounded-full text-xs font-semibold text-primary-700 bg-primary/10 px-3 py-1">
+                                <x-icons.star class="w-3 h-3 mr-1 fill-current" />
                                 <span>Most Popular</span>
                             </div>
                         </div>
                     @endif
-                    <div class="space-y-6 p-8">
+                    <div class="flex flex-col flex-1 p-7">
                         <div
-                            class="w-12 h-12 bg-primary/10 text-primary rounded-full border border-outline-variant/20 mb-6 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            class="w-12 h-12 bg-primary/10 text-primary rounded-2xl mb-6 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
                             <x-dynamic-component :component="'icons.' . $service['icon']" class="w-5 h-5" />
                         </div>
-                        <h3 class="text-xl lg:text-2xl font-bold text-foreground">
+                        <h3 class="text-xl font-bold tracking-tight text-foreground mb-3">
                             {{ $service['title'] }}
                         </h3>
-                        <p class="text-muted-foreground">
+                        <p class="text-muted-foreground leading-relaxed mb-5">
                             {{ $service['description'] }}
                         </p>
-                        @if (isset($service['link']))
-                            <div class="flex items-center justify-end">
+                        <ul class="space-y-2 mb-6 text-sm">
+                            @foreach (array_slice($service['key_points'], 0, 3) as $point)
+                                <li class="flex items-start gap-2">
+                                    <x-icons.check class="w-4 h-4 mt-0.5 shrink-0 text-primary" />
+                                    <span>{{ $point }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
+                        <div class="mt-auto pt-5 border-t border-border flex items-center justify-between">
+                            <a href="{{ route('contact') }}"
+                                class="text-sm font-semibold text-foreground hover:text-primary transition-colors">
+                                Get a quote
+                            </a>
+                            @if (isset($service['link']))
                                 <a href="{{ $service['link'] }}"
-                                    class="group/btn inline-flex items-center gap-2 text-sm font-bold text-primary">
+                                    class="group/btn inline-flex items-center gap-1.5 text-sm font-bold text-primary">
                                     <span>Explore service</span>
                                     <x-icons.chevron-right
                                         class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                                 </a>
-                            </div>
-                        @endif
+                            @endif
+                        </div>
                     </div>
                 </div>
             @endforeach
         </div>
+    </div>
 </section>

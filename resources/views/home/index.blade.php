@@ -125,28 +125,32 @@
     {{-- Stats Section --}}
     @include('home.sections.stats')
 
+    {{-- Recent Work Slider --}}
     @include('sections.projects-slider')
-
-    {{-- Industries We Serve Section --}}
-    @include('sections.industries')
 
     {{-- Services Section --}}
     @include('home.sections.services')
 
-    {{-- Lead Section --}}
+    {{-- Featured Projects Section --}}
+    @include('home.sections.projects')
+
+    {{-- Why Choose Us + Lead Section --}}
     @include('home.sections.lead')
 
-    {{-- Technologies We Use Section --}}
-    @include('sections.technologies-we-use')
+    {{-- Founder Section --}}
+    @include('sections.founder')
 
     {{-- Working Process Section --}}
     @include('sections.working-process')
 
-    {{-- Projects Section --}}
-    @include('home.sections.projects')
-
     {{-- Testimonials Section --}}
     @include('home.sections.testimonials')
+
+    {{-- Industries We Serve Section --}}
+    @include('sections.industries')
+
+    {{-- Technologies We Use Section --}}
+    @include('sections.technologies-we-use')
 
     {{-- Contact Section --}}
     @include('sections.contact')

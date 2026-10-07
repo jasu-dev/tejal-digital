@@ -69,8 +69,8 @@
             <div class="inline-flex items-center gap-2 px-4 py-2 mb-5 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
                 <span class="text-xs sm:text-sm font-semibold">Industries We Serve</span>
             </div>
-            <h2 class="text-3xl lg:text-5xl font-bold text-primary mb-5 font-sans">
-                Tailored Digital Solutions for Diverse Sectors
+            <h2 class="text-3xl lg:text-5xl font-bold tracking-tight mb-5">
+                Tailored Solutions for <span class="text-gradient">Your Industry</span>
             </h2>
             <p class="text-md sm:text-lg max-w-3xl mx-auto text-muted-foreground">
                 We build high-performance web applications, custom CRM platforms, and eCommerce ecosystems designed specifically to meet the unique challenges of your industry.
@@ -78,7 +78,7 @@
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
             @foreach ($industries as $industry)
-                <div class="rounded-2xl border border-border bg-card transition-all duration-300 group relative overflow-hidden flex flex-col justify-between"
+                <div class="rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/40 group relative overflow-hidden flex flex-col justify-between"
                     data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 50 }}" data-aos-duration="600">
                     <div class="space-y-4 p-6">
                         <div class="w-12 h-12 bg-primary/10 text-primary rounded-full border border-outline-variant/20 flex items-center justify-center group-hover:scale-110 transition-transform">

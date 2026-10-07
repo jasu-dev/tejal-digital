@@ -33,22 +33,22 @@
             <p class="ml-2 text-foreground">Our Portfolio</p>
         </div>
 
-        <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5">
-            Our Portfolio of Successful Digital Projects
+        <h1 class="text-4xl md:text-6xl text-center font-bold tracking-tight leading-[1.05] max-w-4xl my-5">
+            Websites &amp; Software <span class="text-gradient">We've Shipped</span>
         </h1>
-        <p class="text-foreground md:text-base text-center max-w-xl mt-3">
-            Explore our collection of successful projects that showcase our expertise in web development, design, and
-            digital solutions.
+        <p class="text-foreground/80 text-base md:text-lg text-center max-w-2xl leading-relaxed">
+            {{ config('staticdata.projects') }}+ projects for startups, agencies and growing businesses - custom Laravel
+            apps, SaaS platforms, CRMs, eCommerce and lightning-fast WordPress sites.
         </p>
 
         <div class="flex flex-col justify-center sm:flex-row gap-4 mt-8">
             <a href="{{ route('contact') }}">
-                <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl">
-                    <span>Start Your Project</span>
+                <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl shadow-lg shadow-primary-500/25">
+                    <span>Get a Free Project Quote</span>
                     <x-icons.go class="w-4 h-4" />
                 </x-form.primary-button>
             </a>
-            <a href="{{ config('staticdata.whatsapp_url') }}">
+            <a href="{{ config('staticdata.whatsapp_url') }}" target="_blank" rel="noopener">
                 <x-form.secondary-button type="button" class="px-7 py-3 rounded-2xl">
                     <x-icons.whatsapp class="w-4 h-4" />
                     <span>Chat with Us</span>

@@ -1,6 +1,6 @@
-{{-- Repeatable Project Card --}}
+{{-- Dynamic Portfolio from DB + Static Legacy Items --}}
 @php
-    $projects = [
+    $staticProjects = [
         [
             'title' => 'Attendance Manager System',
             'category' => 'Attendance System',
@@ -96,11 +96,11 @@
             'category' => 'WordPress Theme',
             'link' => route('portfolio.tech-upkar'),
             'desc' =>
-                'A blazing-fast, hand-coded WordPress theme built for 100/100 PageSpeed scores — no caching, no optimization plugins. Fully responsive, clean design, and optimized to pass all Core Web Vitals flawlessly.',
+                'A blazing-fast, hand-coded WordPress theme built for 100/100 PageSpeed scores - no caching, no optimization plugins. Fully responsive, clean design, and optimized to pass all Core Web Vitals flawlessly.',
             'image' => 'assets/projects/techupkar-blog-website.webp',
             'gradient' => 'from-lime-100 to-emerald-100',
             'challenge' =>
-                'Deliver a high-performance blog theme that achieves perfect Lighthouse scores and replicates the smooth navigation of premium themes — without any bloated dependencies.',
+                'Deliver a high-performance blog theme that achieves perfect Lighthouse scores and replicates the smooth navigation of premium themes - without any bloated dependencies.',
             'solution' =>
                 'Crafted a fully optimized theme using native WordPress functions, pure HTML/CSS, and a custom live search system. Achieves instant page loads and perfect Web Vitals scores out-of-the-box.',
             'tags' => ['WordPress', 'PHP', 'HTML', 'CSS', 'Live Search', 'Core Web Vitals'],
@@ -151,11 +151,39 @@
             'visible' => true,
         ],
     ];
+
+    // Convert DB items to the same array shape used by the card component
+    $dbProjectCards = isset($dbProjects) ? $dbProjects->map(fn($item) => [
+        'title'    => $item->title,
+        'category' => $item->category,
+        'link'     => $item->detail_url,
+        'desc'     => $item->description,
+        'image'    => $item->image_path ? \Illuminate\Support\Facades\Storage::disk('public')->url($item->image_path) : 'assets/images/hero-gradient-bg.png',
+        'gradient' => $item->gradient,
+        'tags'     => $item->tags ?? [],
+        'visible'  => true,
+    ])->toArray() : [];
+
+    // Merge: DB items first, then visible static items
+    $projects = array_merge(
+        $dbProjectCards,
+        array_filter($staticProjects, fn($p) => $p['visible'] ?? true)
+    );
 @endphp
 
-<section class="py-24">
-    <div class="max-w-7xl mx-auto px-6 space-y-12">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 overflow-hidden">
+<section class="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
+    <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10" data-aos="fade-up">
+            <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-2">Case studies</p>
+                <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">Selected work across web &amp; software</h2>
+            </div>
+            <p class="text-muted-foreground max-w-md">
+                Laravel platforms, SaaS products and high-performance WordPress builds - each one live and serving
+                real users.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             @foreach ($projects as $project)
                 <x-product-card :project="$project" />
             @endforeach

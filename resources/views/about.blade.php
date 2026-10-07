@@ -55,6 +55,8 @@
     </section>
     {{-- Stats Section --}}
     @include('home.sections.stats')
+    {{-- Founder Section --}}
+    @include('sections.founder')
     {{-- About Section --}}
     <section class="py-10 sm:py-14 px-3 overflow-hidden border-b border-outline-variant/30">
         <div class="max-w-7xl mx-auto">

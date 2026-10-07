@@ -5,9 +5,12 @@
                 class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-primary/10 border border-primary/30 text-primary-500 backdrop-blur-xl">
                 <span class="text-xs sm:text-sm font-semibold">How We Work</span>
             </div>
-            <h2 class="text-3xl lg:text-5xl font-bold mb-5">
-                Our Clear Working Process
+            <h2 class="text-3xl lg:text-5xl font-bold tracking-tight mb-5">
+                A Clear Process, <span class="text-gradient">No Surprises</span>
             </h2>
+            <p class="text-md sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+                You always know what's being built, when it ships and what it costs.
+            </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
             <!-- Connector Lines (Desktop Only) -->

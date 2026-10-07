@@ -84,18 +84,21 @@
                             'label' => 'Email Us',
                             'val' => config('staticdata.email'),
                             'sub' => 'Send us an email anytime',
+                            'href' => 'mailto:' . config('staticdata.email'),
                         ],
                         [
                             'icon' => 'call',
                             'label' => 'Call Us',
                             'val' => config('staticdata.phone'),
                             'sub' => 'Mon-Fri from 8am to 6pm',
+                            'href' => 'tel:' . config('staticdata.phone'),
                         ],
                         [
                             'icon' => 'target',
                             'label' => 'Visit Us',
                             'val' => 'Plot No. 3, Shiv Colony',
                             'sub' => 'Nagaur, Rajasthan',
+                            'href' => 'https://www.google.com/maps/search/?api=1&query=' . urlencode('Shiv Colony, Nagaur, Rajasthan 341001'),
                         ],
                         [
                             'icon' => 'time',
@@ -106,31 +109,34 @@
                     ];
                 @endphp
                 @foreach ($contactItems as $item)
-                    <div class="group relative rounded-2xl border border-border p-8 text-center transition-all duration-500 hover:border-primary/40"
+                    @php $tag = isset($item['href']) ? 'a' : 'div'; @endphp
+                    <{{ $tag }}
+                        @isset($item['href']) href="{{ $item['href'] }}" @if (str_starts_with($item['href'], 'http')) target="_blank" rel="noopener" @endif @endisset
+                        class="group relative block overflow-hidden rounded-2xl border border-border bg-card p-8 text-center transition-all duration-300 hover:border-primary/40 hover:shadow-xl hover:shadow-primary-500/5 hover:-translate-y-0.5"
                         data-aos="fade-up" data-aos-delay="{{ 100 * $loop->iteration }}" data-aos-duration="800">
                         <div class="relative w-16 h-16 mx-auto mb-8">
                             <div
-                                class="absolute inset-0 bg-primary/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all opacity-0 group-hover:opacity-100">
+                                class="absolute inset-0 bg-primary/20 rounded-2xl blur-xl transition-opacity duration-300 opacity-0 group-hover:opacity-100">
                             </div>
                             <div
-                                class="relative w-full h-full rounded-2xl border border-border flex items-center justify-center group-hover:border-primary group-hover:bg-primary transition-all duration-500">
+                                class="relative w-full h-full rounded-2xl border border-border bg-primary/10 text-primary flex items-center justify-center transition-colors duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-white">
                                 @php $iconName = 'icons.' . $item['icon']; @endphp
-                                <x-dynamic-component :component="$iconName" class="w-7 h-7 text-primary" />
+                                <x-dynamic-component :component="$iconName" class="w-7 h-7" />
                             </div>
                         </div>
-                        <h3 class="text-sm font-bold  uppercase tracking-widest mb-3">
+                        <h3 class="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-3">
                             {{ $item['label'] }}
                         </h3>
-                        <p class="text-lg font-bold  mb-2 tracking-tight group-hover:text-primary transition-colors">
-                            {{ $item['val'] }}
+                        <p class="text-lg font-bold mb-2 tracking-tight break-words group-hover:text-primary transition-colors">
+                            {!! str_replace('@', '@<wbr>', e($item['val'])) !!}
                         </p>
-                        <p class="text-xs  font-medium">
+                        <p class="text-xs text-muted-foreground font-medium">
                             {{ $item['sub'] }}
                         </p>
                         <div
-                            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-primary rounded-t-full group-hover:w-12 transition-all duration-500">
+                            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-primary rounded-t-full group-hover:w-12 transition-all duration-300">
                         </div>
-                    </div>
+                    </{{ $tag }}>
                 @endforeach
             </div>
         </div>

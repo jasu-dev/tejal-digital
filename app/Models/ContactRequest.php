@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
+use App\Enums\LeadStatus;
 use Illuminate\Database\Eloquent\Model;
 
 class ContactRequest extends Model
@@ -15,5 +18,10 @@ class ContactRequest extends Model
         'message',
         'ip_address',
         'user_agent',
+        'status',
+    ];
+
+    protected $casts = [
+        'status' => LeadStatus::class,
     ];
 }

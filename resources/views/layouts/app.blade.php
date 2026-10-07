@@ -73,7 +73,7 @@
         <!-- Desktop CTA Button -->
         <a href="{{ route('contact') }}" class="hidden md:flex">
             <x-form.primary-button type="button" class="rounded-full">
-                Get started
+                Get a Free Quote
                 <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
                     <x-icons.go class="w-4 h-4 text-foreground" />
                 </span>
@@ -101,7 +101,7 @@
                 class="block px-4 py-2.5 rounded-lg text-sm @activeMobileLink('contact')">Contact</a>
             <a href="{{ route('contact') }}" class="block">
                 <x-form.primary-button type="button" class="rounded-full">
-                    Get started
+                    Get a Free Quote
                     <span class="w-7 h-7 rounded-full bg-white flex items-center justify-center">
                         <x-icons.go class="w-4 h-4 text-foreground" />
                     </span>
@@ -122,7 +122,7 @@
                         class="h-10 w-auto brightness-0 invert" />
                 </a>
                 <p class="text-sm/7 mt-6">
-                    Crafting digital experiences that drive growth and innovation for businesses worldwide.
+                    Website and custom software development for businesses that want to grow - from Laravel web apps and SaaS to WordPress and eCommerce.
                 </p>
                 <div class="flex space-x-4">
                     <a href="https://www.facebook.com/tejaldigitalworks/"
@@ -142,37 +142,37 @@
             <div class="flex flex-col">
                 <div class="flex flex-col text-sm space-y-2.5">
                     <h2 class="text-lg font-bold mb-5 text-white">Company</h2>
-                    <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm" href="#">Home</a>
-                    <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm" href="#">About
+                    <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm" href="{{ route('home') }}">Home</a>
+                    <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm" href="{{ route('about') }}">About
                         us</a>
-                    <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm" href="#">Contact
+                    <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm" href="{{ route('contact') }}">Contact
                         us</a>
                     <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm"
-                        href="#">Portfolio</a>
+                        href="{{ route('portfolio') }}">Portfolio</a>
                     <a class="text-gray-300 hover:text-primary-500 transition-colors text-sm"
-                        href="#">Services</a>
+                        href="{{ route('services.index') }}">Services</a>
                 </div>
             </div>
             <div class="flex flex-col">
                 <div class="flex flex-col text-sm space-y-2.5">
                     <h2 class="text-lg font-bold mb-5 text-white">Services</h2>
-                    <a href="https://td-v2.test/services/laravel-development"
+                    <a href="{{ route('services.laravel-development') }}"
                         class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
                         Laravel Web App Development
                     </a>
-                    <a href="https://td-v2.test/services/saas-development"
+                    <a href="{{ route('services.saas-development') }}"
                         class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
                         SaaS Application Development
                     </a>
-                    <a href="https://td-v2.test/services/wordpress-development"
+                    <a href="{{ route('services.wordpress-development') }}"
                         class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
                         WordPress Theme Development
                     </a>
-                    <a href="https://td-v2.test/services/ecommerce-development"
+                    <a href="{{ route('services.ecommerce-development') }}"
                         class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
                         E-commerce Development
                     </a>
-                    <a href="https://td-v2.test/services/rest-api-development"
+                    <a href="{{ route('services.api-development') }}"
                         class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
                         API Development
                     </a>
@@ -207,13 +207,19 @@
         </div>
         <div class="flex flex-wrap items-center justify-center sm:justify-between gap-5 py-6 sm:py-4 border-t mt-6 border-white/10">
             <div>
-                <img src="{{ asset('assets/images/msme-logo.png') }}" class="h-10 w-auto bg-background rounded-md"/>
+                <img src="{{ asset('assets/images/msme-logo.png') }}" alt="MSME Registered" class="h-10 w-auto bg-background rounded-md"/>
             </div>
             <p>
-                Copyright 2025 © Tejal Digital. All Right Reserved.
+                Copyright {{ date('Y') }} © Tejal Digital. All Rights Reserved.
             </p>
         </div>
     </footer>
+
+    <a href="{{ config('staticdata.whatsapp_url') }}" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+        class="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-[#25D366] text-white pl-3.5 pr-4 py-3 shadow-xl shadow-black/15 hover:scale-105 transition-transform">
+        <x-icons.whatsapp class="w-6 h-6" />
+        <span class="hidden sm:inline text-sm font-semibold">Chat with us</span>
+    </a>
 
     <script>
         let menuOpen = false;

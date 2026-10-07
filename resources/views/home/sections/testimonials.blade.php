@@ -31,17 +31,26 @@
             <span class="text-xs sm:text-sm font-semibold">Testimonials</span>
             </div>
             <h2 class="text-3xl lg:text-5xl font-bold mb-5 tracking-tight">
-                Client Success Stories
+                What Our Clients Say
             </h2>
-            <p class="text-md sm:text-lg max-w-3xl mx-auto">
-                Trusted by founders and digital agencies to deliver robust Laravel solutions.
+            <p class="text-md sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+                Founders and agencies trust us to deliver reliable software - on time and built to last.
             </p>
+            <div class="inline-flex items-center gap-3 mt-6 rounded-full border border-border bg-card px-4 py-2 text-sm">
+                <span class="flex text-amber-500">
+                    @for ($i = 0; $i < 5; $i++)
+                        <x-icons.star class="w-4 h-4 fill-current" />
+                    @endfor
+                </span>
+                <span><strong>{{ config('staticdata.satisfaction') }}%</strong> client satisfaction across
+                    {{ config('staticdata.projects') }}+ projects</span>
+            </div>
         </div>
 
         {{-- Highlighted Grid --}}
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($testimonials as $item)
-                <div class="group rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:border-primary/40 relative overflow-hidden"
+                <div class="group rounded-2xl border border-border bg-card p-7 flex flex-col transition-all duration-300 hover:border-primary/40 relative overflow-hidden"
                     data-aos="fade-up" data-aos-delay="{{ 100 * $loop->iteration }}" data-aos-duration="800">
 
                     <div
@@ -49,29 +58,29 @@
                     </div>
 
                     {{-- Stars: Primary Glow --}}
-                    <div class="flex gap-1 mb-8 text-primary">
+                    <div class="flex gap-1 mb-6 text-amber-500">
                         @for ($i = 0; $i < 5; $i++)
                             <x-icons.star class="w-4 h-4 fill-current" />
                         @endfor
                     </div>
 
                     {{-- Quote --}}
-                    <blockquote class=" leading-relaxed italic mb-8 relative">
+                    <blockquote class="text-foreground/90 leading-relaxed mb-8 relative">
                         <span class="absolute -top-4 -left-2 text-4xl text-primary/20 font-serif">“</span>
                         {{ $item['quote'] }}
                     </blockquote>
 
                     {{-- Author Info --}}
-                    <div class="flex items-center gap-4 pt-4 border-t border-outline-variant/20">
+                    <div class="mt-auto flex items-center gap-4 pt-5 border-t border-border">
                         <div
-                            class="w-12 h-12 shrink-0 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                            class="w-12 h-12 shrink-0 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-primary-500/20">
                             <span class="font-bold text-sm tracking-tighter">{{ $item['initials'] }}</span>
                         </div>
                         <div>
-                            <div class="font-bold  group-hover:text-primary transition-colors">
+                            <div class="font-bold group-hover:text-primary transition-colors">
                                 {{ $item['name'] }}
                             </div>
-                            <div class="text-xs  uppercase tracking-widest mt-0.5">
+                            <div class="text-xs text-muted-foreground uppercase tracking-widest mt-0.5">
                                 {{ $item['role'] }}
                             </div>
                         </div>
