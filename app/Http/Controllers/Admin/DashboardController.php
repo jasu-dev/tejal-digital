@@ -8,7 +8,6 @@ use App\Enums\LeadStatus;
 use App\Http\Controllers\Controller;
 use App\Models\ContactRequest;
 use App\Models\PageView;
-use App\Models\PortfolioItem;
 use Illuminate\View\View;
 
 class DashboardController extends Controller
@@ -18,8 +17,6 @@ class DashboardController extends Controller
         $stats = [
             'total_leads'        => ContactRequest::count(),
             'new_leads'          => ContactRequest::where('status', LeadStatus::New)->count(),
-            'portfolio_items'    => PortfolioItem::count(),
-            'active_portfolio'   => PortfolioItem::active()->count(),
             'total_page_views'   => PageView::count(),
             'today_page_views'   => PageView::whereDate('visited_at', today())->count(),
         ];

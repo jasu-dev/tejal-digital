@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\AdminMiddleware;
+use App\Http\Middleware\NoIndex;
 use App\Http\Middleware\TrackPageView;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -17,8 +18,11 @@ return Application::configure(basePath: dirname(__DIR__))
             TrackPageView::class,
         ]);
 
+        $middleware->redirectGuestsTo(fn () => route('admin.login'));
+
         $middleware->alias([
             'admin' => AdminMiddleware::class,
+            'noindex' => NoIndex::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

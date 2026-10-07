@@ -1,4 +1,4 @@
-{{-- Dynamic Portfolio from DB + Static Legacy Items --}}
+{{-- Portfolio Items --}}
 @php
     $staticProjects = [
         [
@@ -152,23 +152,7 @@
         ],
     ];
 
-    // Convert DB items to the same array shape used by the card component
-    $dbProjectCards = isset($dbProjects) ? $dbProjects->map(fn($item) => [
-        'title'    => $item->title,
-        'category' => $item->category,
-        'link'     => $item->detail_url,
-        'desc'     => $item->description,
-        'image'    => $item->image_path ? \Illuminate\Support\Facades\Storage::disk('public')->url($item->image_path) : 'assets/images/hero-gradient-bg.png',
-        'gradient' => $item->gradient,
-        'tags'     => $item->tags ?? [],
-        'visible'  => true,
-    ])->toArray() : [];
-
-    // Merge: DB items first, then visible static items
-    $projects = array_merge(
-        $dbProjectCards,
-        array_filter($staticProjects, fn($p) => $p['visible'] ?? true)
-    );
+    $projects = array_filter($staticProjects, fn($p) => $p['visible'] ?? true);
 @endphp
 
 <section class="py-16 sm:py-20 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
