@@ -221,6 +221,85 @@
         <span class="hidden sm:inline text-sm font-semibold">Chat with us</span>
     </a>
 
+    {{-- Lead Capture Popup --}}
+    <div id="leadPopupOverlay"
+        style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.55); backdrop-filter:blur(4px); align-items:center; justify-content:center; padding:1rem;"
+        role="dialog" aria-modal="true" aria-labelledby="leadPopupTitle">
+        <div id="leadPopupCard"
+            style="background:#fff; border-radius:1.25rem; width:100%; max-width:480px; box-shadow:0 32px 80px rgba(0,0,0,0.22); overflow:hidden; transform:translateY(30px) scale(0.96); opacity:0; transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1), opacity 0.35s ease;">
+            {{-- Gradient header bar --}}
+            <div style="background:linear-gradient(135deg,#D64523 0%,#f07340 100%); padding:1.75rem 1.75rem 1.5rem; position:relative;">
+                <button id="leadPopupClose" onclick="closeLeadPopup()" aria-label="Close popup"
+                    style="position:absolute; top:1rem; right:1rem; background:rgba(255,255,255,0.2); border:none; border-radius:50%; width:2rem; height:2rem; cursor:pointer; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.1rem; line-height:1; transition:background 0.2s;"
+                    onmouseover="this.style.background='rgba(255,255,255,0.35)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
+                    ✕
+                </button>
+                <div style="display:inline-flex; align-items:center; gap:0.5rem; background:rgba(255,255,255,0.18); border-radius:999px; padding:0.25rem 0.75rem; margin-bottom:0.75rem;">
+                    <span style="font-size:0.7rem; font-weight:700; letter-spacing:0.08em; color:#fff; text-transform:uppercase;">Free Consultation</span>
+                </div>
+                <h2 id="leadPopupTitle" style="color:#fff; font-size:1.4rem; font-weight:800; margin:0 0 0.35rem; line-height:1.3;">
+                    Let's Build Something Great 🚀
+                </h2>
+                <p style="color:rgba(255,255,255,0.85); font-size:0.85rem; margin:0; line-height:1.6;">
+                    Drop your details and we'll get back to you within 24 hours with a free project estimate.
+                </p>
+            </div>
+            {{-- Form body --}}
+            <div style="padding:1.5rem 1.75rem 1.75rem;">
+                <div id="leadPopupSuccess" style="display:none; text-align:center; padding:1.5rem 0;">
+                    <div style="font-size:2.5rem; margin-bottom:0.5rem;">🎉</div>
+                    <p style="font-weight:700; font-size:1.1rem; color:#16a34a; margin:0 0 0.4rem;">Message Sent!</p>
+                    <p style="font-size:0.85rem; color:#6b7280; margin:0;">We'll reach out shortly. Talk soon!</p>
+                </div>
+                <form id="leadPopupForm" action="{{ route('contact.store') }}" method="POST" style="display:flex; flex-direction:column; gap:0.9rem;">
+                    @csrf
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+                        <div>
+                            <label for="lp_firstName" style="font-size:0.78rem; font-weight:600; color:#374151; display:block; margin-bottom:0.3rem;">First Name <span style="color:#D64523;">*</span></label>
+                            <input id="lp_firstName" name="firstName" type="text" placeholder="John" required
+                                style="width:100%; height:2.4rem; border:1.5px solid #e5e7eb; border-radius:0.5rem; padding:0 0.75rem; font-size:0.85rem; color:#111827; outline:none; transition:border-color 0.2s; box-sizing:border-box;"
+                                onfocus="this.style.borderColor='#D64523'" onblur="this.style.borderColor='#e5e7eb'">
+                        </div>
+                        <div>
+                            <label for="lp_lastName" style="font-size:0.78rem; font-weight:600; color:#374151; display:block; margin-bottom:0.3rem;">Last Name <span style="color:#D64523;">*</span></label>
+                            <input id="lp_lastName" name="lastName" type="text" placeholder="Doe" required
+                                style="width:100%; height:2.4rem; border:1.5px solid #e5e7eb; border-radius:0.5rem; padding:0 0.75rem; font-size:0.85rem; color:#111827; outline:none; transition:border-color 0.2s; box-sizing:border-box;"
+                                onfocus="this.style.borderColor='#D64523'" onblur="this.style.borderColor='#e5e7eb'">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="lp_email" style="font-size:0.78rem; font-weight:600; color:#374151; display:block; margin-bottom:0.3rem;">Email <span style="color:#D64523;">*</span></label>
+                        <input id="lp_email" name="email" type="email" placeholder="you@company.com" required
+                            style="width:100%; height:2.4rem; border:1.5px solid #e5e7eb; border-radius:0.5rem; padding:0 0.75rem; font-size:0.85rem; color:#111827; outline:none; transition:border-color 0.2s; box-sizing:border-box;"
+                            onfocus="this.style.borderColor='#D64523'" onblur="this.style.borderColor='#e5e7eb'">
+                    </div>
+                    <div>
+                        <label for="lp_phone" style="font-size:0.78rem; font-weight:600; color:#374151; display:block; margin-bottom:0.3rem;">Phone <span style="color:#D64523;">*</span></label>
+                        <input id="lp_phone" name="phone" type="tel" placeholder="+91 98765 43210" required
+                            style="width:100%; height:2.4rem; border:1.5px solid #e5e7eb; border-radius:0.5rem; padding:0 0.75rem; font-size:0.85rem; color:#111827; outline:none; transition:border-color 0.2s; box-sizing:border-box;"
+                            onfocus="this.style.borderColor='#D64523'" onblur="this.style.borderColor='#e5e7eb'">
+                    </div>
+                    <div>
+                        <label for="lp_message" style="font-size:0.78rem; font-weight:600; color:#374151; display:block; margin-bottom:0.3rem;">What do you need? <span style="color:#D64523;">*</span></label>
+                        <textarea id="lp_message" name="message" placeholder="Tell us briefly about your project..." required rows="3"
+                            style="width:100%; border:1.5px solid #e5e7eb; border-radius:0.5rem; padding:0.5rem 0.75rem; font-size:0.85rem; color:#111827; outline:none; transition:border-color 0.2s; resize:none; font-family:inherit; box-sizing:border-box;"
+                            onfocus="this.style.borderColor='#D64523'" onblur="this.style.borderColor='#e5e7eb'"></textarea>
+                    </div>
+                    <input type="hidden" name="service" value="General Inquiry">
+                    <button type="submit" id="leadPopupSubmitBtn"
+                        style="width:100%; padding:0.75rem; background:linear-gradient(135deg,#D64523,#f07340); color:#fff; font-weight:700; font-size:0.9rem; border:none; border-radius:0.6rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem; transition:opacity 0.2s, transform 0.15s; letter-spacing:0.01em;"
+                        onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                        <span>Get My Free Quote</span>
+                        <span style="font-size:1rem;">→</span>
+                    </button>
+                    <p style="text-align:center; font-size:0.72rem; color:#9ca3af; margin:0;">
+                        🔒 Your info is safe. No spam, ever.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
         let menuOpen = false;
 
@@ -244,6 +323,82 @@
                 bar3.classList.remove('-rotate-45', '-translate-y-2');
             }
         }
+
+        // ── Lead Capture Popup ──────────────────────────────────────────
+        (function () {
+            var STORAGE_KEY = 'td_lead_popup_shown';
+            var DELAY_MS    = 10000; // 10 seconds
+
+            function openLeadPopup() {
+                var overlay = document.getElementById('leadPopupOverlay');
+                var card    = document.getElementById('leadPopupCard');
+                overlay.style.display = 'flex';
+                // Trigger animation after paint
+                requestAnimationFrame(function () {
+                    requestAnimationFrame(function () {
+                        card.style.transform = 'translateY(0) scale(1)';
+                        card.style.opacity   = '1';
+                    });
+                });
+                document.addEventListener('keydown', onEscKey);
+            }
+
+            window.closeLeadPopup = function () {
+                var overlay = document.getElementById('leadPopupOverlay');
+                var card    = document.getElementById('leadPopupCard');
+                card.style.transform = 'translateY(30px) scale(0.96)';
+                card.style.opacity   = '0';
+                setTimeout(function () { overlay.style.display = 'none'; }, 380);
+                document.removeEventListener('keydown', onEscKey);
+                // Remember that the popup was dismissed this session
+                try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
+            };
+
+            function onEscKey(e) {
+                if (e.key === 'Escape') { closeLeadPopup(); }
+            }
+
+            // Close popup when clicking outside the card
+            document.getElementById('leadPopupOverlay').addEventListener('click', function (e) {
+                if (e.target === this) { closeLeadPopup(); }
+            });
+
+            // Handle form submission via fetch so the user stays on the page
+            document.getElementById('leadPopupForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                var form = this;
+                var btn  = document.getElementById('leadPopupSubmitBtn');
+                btn.disabled = true;
+                btn.querySelector('span').textContent = 'Sending…';
+
+                fetch(form.action, {
+                    method: 'POST',
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                    body: new FormData(form)
+                })
+                .then(function (res) {
+                    // Laravel redirects on success; any 2xx / 3xx is treated as OK
+                    form.style.display = 'none';
+                    document.getElementById('leadPopupSuccess').style.display = 'block';
+                    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
+                    setTimeout(closeLeadPopup, 3500);
+                })
+                .catch(function () {
+                    btn.disabled = false;
+                    btn.querySelector('span').textContent = 'Get My Free Quote';
+                    alert('Something went wrong. Please try again.');
+                });
+            });
+
+            // Fire after delay — only once per session
+            try {
+                if (!sessionStorage.getItem(STORAGE_KEY)) {
+                    setTimeout(openLeadPopup, DELAY_MS);
+                }
+            } catch(e) {
+                setTimeout(openLeadPopup, DELAY_MS);
+            }
+        })();
     </script>
 </body>
 

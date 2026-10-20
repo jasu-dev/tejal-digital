@@ -146,7 +146,7 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-2 gap-10 lg:gap-15">
                 <div class="relative" data-aos="fade-right" data-aos-delay="100" data-aos-duration="1000">
-                    <div class="lg:sticky lg:top-15 rounded-lg border border-border  transition-all duration-300 relative">
+                    <div class="lg:sticky lg:top-15 bg-white rounded-lg border border-border  transition-all duration-300 relative">
                         <div class="p-8">
                             <h3 class="text-2xl font-bold  mb-6">Get In Touch</h3>
                             @if (session('success'))
@@ -242,7 +242,7 @@
                                 ];
                             @endphp
                             @foreach ($stats as $stat)
-                                <div class="p-4 rounded-2xl border border-border">
+                                <div class="p-4 bg-white rounded-2xl border border-border">
                                     <div class="text-primary font-black text-xl">{{ $stat['val'] }}</div>
                                     <div class=" text-[10px] font-bold uppercase tracking-widest">
                                         {{ $stat['label'] }}</div>
