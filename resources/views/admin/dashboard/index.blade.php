@@ -32,17 +32,38 @@
     {{-- Charts + Top Pages Row --}}
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
-        {{-- 14-day Line Chart --}}
+        {{-- Line Chart with period filter --}}
         <div class="lg:col-span-2 bg-white rounded-2xl border border-zinc-200 p-5">
-            <div class="flex items-center justify-between mb-4">
-                <h2 class="text-sm font-semibold text-zinc-900">Page Views - Last 14 Days</h2>
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                <h2 class="text-sm font-semibold text-zinc-900">Page Views — {{ $chartLabel }}</h2>
+                {{-- Period filter pills --}}
+                <div class="flex flex-wrap gap-1.5">
+                    @php
+                        $dashPeriods = [
+                            'today'        => 'Today',
+                            'last_7_days'  => 'Last 7 Days',
+                            'last_14_days' => 'Last 14 Days',
+                            'this_month'   => 'This Month',
+                            'last_month'   => 'Last Month',
+                        ];
+                    @endphp
+                    @foreach($dashPeriods as $key => $label)
+                        <a href="{{ request()->fullUrlWithQuery(['period' => $key]) }}"
+                           class="px-3 py-1 rounded-full text-xs font-medium transition-colors
+                                  {{ $period === $key
+                                     ? 'bg-[#D64523] text-white shadow-sm'
+                                     : 'bg-zinc-100 text-zinc-500 hover:bg-zinc-200' }}">
+                            {{ $label }}
+                        </a>
+                    @endforeach
+                </div>
             </div>
             <canvas id="dashboardChart" height="120"></canvas>
         </div>
 
         {{-- Top Pages --}}
         <div class="bg-white rounded-2xl border border-zinc-200 p-5">
-            <h2 class="text-sm font-semibold text-zinc-900 mb-4">Top Pages</h2>
+            <h2 class="text-sm font-semibold text-zinc-900 mb-4">Top Pages <span class="text-xs font-normal text-zinc-400">({{ $chartLabel }})</span></h2>
             <div class="space-y-3">
                 @forelse($topPages as $page)
                 <div class="flex items-center justify-between gap-2">
@@ -72,15 +93,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script>
-@php
-    $chartLabels = [];
-    $chartData   = [];
-    for ($i = 13; $i >= 0; $i--) {
-        $date = now()->subDays($i)->format('Y-m-d');
-        $chartLabels[] = now()->subDays($i)->format('M d');
-        $chartData[]   = $dailyViews[$date]->count ?? 0;
-    }
-@endphp
 new Chart(document.getElementById('dashboardChart'), {
     type: 'bar',
     data: {
@@ -99,10 +111,9 @@ new Chart(document.getElementById('dashboardChart'), {
         plugins: { legend: { display: false } },
         scales: {
             y: { beginAtZero: true, ticks: { precision: 0, font: { size: 11 } }, grid: { color: '#f4f4f5' } },
-            x: { ticks: { font: { size: 11 } }, grid: { display: false } }
+            x: { ticks: { maxTicksLimit: 14, font: { size: 11 } }, grid: { display: false } }
         }
     }
 });
 </script>
 @endsection
-
