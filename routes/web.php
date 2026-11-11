@@ -51,6 +51,15 @@ Route::view('/website-development-company-in-lucknow', 'locations.lucknow')->nam
 // Redirects
 Route::redirect('/contact-us', '/contact', 301);
 
+// Old service URLs (previous site) → closest current page
+Route::permanentRedirect('/services/custom-software-development', '/services/laravel-development');
+Route::permanentRedirect('/services/admin-dashboard-development', '/services/custom-crm-development');
+Route::permanentRedirect('/services/maintenance-support', '/services');
+Route::permanentRedirect('/services/security-performance-optimization', '/services');
+
+// Cloudflare email-obfuscation links indexed from old pages
+Route::permanentRedirect('/cdn-cgi/l/email-protection', '/contact');
+
 // ─── Admin Routes ────────────────────────────────────────────────────────────
 Route::prefix('admin')->name('admin.')->middleware('noindex')->group(function (): void {
     // Guest-only: login
