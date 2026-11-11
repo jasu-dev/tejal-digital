@@ -4,7 +4,7 @@
     <title>KrishnaAcademy | Custom Laravel LMS & E-Learning Solution</title>
     <meta name="description"
         content="Discover how Tejal Digital engineered KrishnaAcademy, a premium Learning Management System featuring protected video streaming, auto-evaluated quizzes, and Razorpay.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="KrishnaAcademy, Laravel LMS, E-Learning Platform development, Razorpay payment gateway, online quiz software, protected video streaming, custom school portal">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="KrishnaAcademy LMS Case Study | Tejal Digital">
     <meta property="og:description"
         content="A deep dive into building a secure, scalable Learning Management System using Laravel, S3 Signed URLs, and MySQL.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/krishna-academy.png') }}">
 
     <!-- Twitter Card -->

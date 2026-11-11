@@ -4,7 +4,7 @@
     <title>SaaS Application Development Services | Build Scalable Products</title>
     <meta name="description"
         content="Expert SaaS application development services. We build secure, multi-tenant cloud software with automated subscription billing, custom client dashboards, and startup MVPs.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="SaaS Application Development, Multi-tenant Architecture, Subscription Billing System, SaaS MVP Development, Cloud Software Development, Stripe Billing Integration, Custom SaaS Dashboards">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="SaaS Application Development Services | Tejal Digital">
     <meta property="og:description"
         content="Turn your software concept into a profitable subscription product with secure multi-tenant infrastructure.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/og-image.png') }}">
 @endsection
 

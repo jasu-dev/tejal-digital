@@ -4,7 +4,7 @@
     <title>Laravel Web App Development Services | Custom & Scalable Solutions</title>
     <meta name="description"
         content="Expert Laravel web development services to build secure, scalable, and high-performance applications tailored to your business needs.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="Laravel Development, Custom Laravel Web Apps, Laravel Specialist, Scalable Web Applications, Laravel PHP Framework, Secure Web Solutions">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="Laravel Web App Development | Tejal Digital">
     <meta property="og:description"
         content="High-performance, secure, and scalable Laravel applications built by industry experts.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/og-image.png') }}">
 @endsection
 

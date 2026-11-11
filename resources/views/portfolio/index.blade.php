@@ -4,7 +4,7 @@
     <title>Our Work | Web Development Projects by Tejal Digital</title>
     <meta name="description"
         content="Browse featured projects from Tejal Digital – custom web apps, Laravel solutions, WordPress development, CRMs, and e-commerce builds.">
-    <link rel="canonical" href="https://www.tejaldigital.in/portfolio">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="Web Portfolio, Web Development Projects, Laravel Work, CRM Showcase, WordPress Projects, E-commerce Examples">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="Portfolio | Web Projects by Tejal Digital">
     <meta property="og:description"
         content="Explore our portfolio of Laravel apps, WordPress themes, CRMs, and custom software solutions.">
-    <meta property="og:url" content="https://www.tejaldigital.in/portfolio">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/og-image.png') }}">
 
     <!-- Twitter Card -->

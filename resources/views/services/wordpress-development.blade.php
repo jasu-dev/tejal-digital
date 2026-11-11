@@ -4,7 +4,7 @@
     <title>WordPress Theme Development | Custom, Fast & SEO-Friendly Themes</title>
     <meta name="description"
         content="Get a pixel-perfect, high-performance custom WordPress theme. We build lightweight, SEO-optimized themes that pass Core Web Vitals and represent your brand perfectly.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="Custom WordPress Theme, WordPress Development Services, Fast WP Themes, Genesis Child Theme, Gutenberg Block Development, WordPress Expert">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="WordPress Theme Development | Tejal Digital">
     <meta property="og:description"
         content="Stop using bloated templates. We build custom, blazing-fast WordPress themes designed for performance and conversions.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/og-image.png') }}">
 @endsection
 

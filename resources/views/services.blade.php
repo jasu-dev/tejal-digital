@@ -4,7 +4,7 @@
     <title>Our Services | Laravel, CRM, WordPress & Web Solutions</title>
     <meta name="description"
         content="Explore Tejal Digital’s services including custom web development, Laravel apps, CRM platforms, WordPress themes, APIs, and e-commerce solutions.">
-    <link rel="canonical" href="https://www.tejaldigital.in/services">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="Web Development Services, Laravel Development, WordPress Customization, CRM Development, E-commerce Web Solutions, API Integration, Admin Dashboard Development">
 
@@ -12,14 +12,14 @@
     <meta property="og:title" content="Our Web Development Services | Tejal Digital">
     <meta property="og:description"
         content="Full-stack web development services: custom Laravel apps, e-commerce, WordPress themes, APIs & more.">
-    <meta property="og:url" content="https://www.tejaldigital.in/services">
-    <meta property="og:image" content="https://www.tejaldigital.in/assets/images/og-image.png">
+    <meta property="og:url" content="@siteUrl">
+    <meta property="og:image" content="https://tejaldigital.in/assets/images/og-image.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:title" content="Our Services | Web Development by Tejal Digital">
     <meta name="twitter:description"
         content="Laravel, CRM, WordPress, APIs, e-commerce – explore end-to-end web solutions from Tejal Digital.">
-    <meta name="twitter:image" content="https://www.tejaldigital.in/assets/images/og-image.png">
+    <meta name="twitter:image" content="https://tejaldigital.in/assets/images/og-image.png">
 
     @verbatim
         <script type="application/ld+json">

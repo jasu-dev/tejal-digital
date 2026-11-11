@@ -4,7 +4,7 @@
     <title>Jixicloud | Custom WHMCS Hosting & Domain Management Portal</title>
     <meta name="description"
         content="Discover how Tejal Digital engineered Jixicloud, a Laravel-powered hosting management system with modular content management, live domain searches, and cPanel API hooks.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="Jixicloud, Laravel hosting portal, WHMCS integration, live domain checker API, custom hosting CMS, cPanel automated billing, hosting dashboard developer">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="Jixicloud Case Study | Tejal Digital">
     <meta property="og:description"
         content="Scaling cloud hosting administration portals using Laravel, live API rate loops, and WHMCS panel integration.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/jixicloud.png') }}">
 
     <!-- Twitter Card -->

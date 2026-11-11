@@ -4,7 +4,7 @@
     <title>PromoFusion360 | Laravel-Based Earning & Referral Platform</title>
     <meta name="description"
         content="Learn how we built PromoFusion360, a high-traffic earning platform featuring tiered subscriptions, dual payment gateways, and a robust referral system.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="PromoFusion360, Earning Platform, Referral Marketing Software, Laravel E-commerce, UPI Payment Integration, Cashfree Gateway Laravel">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="PromoFusion360 Case Study | Tejal Digital">
     <meta property="og:description"
         content="Scaling a referral-based earning platform with Laravel and integrated payment solutions.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/promofusion360.png') }}">
 
     <!-- Twitter Card -->

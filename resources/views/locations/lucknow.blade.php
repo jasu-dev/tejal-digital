@@ -1,5 +1,5 @@
 @php
-    $pageUrl = 'https://www.tejaldigital.in/website-development-company-in-lucknow';
+    $pageUrl = \App\Support\SiteUrl::to('website-development-company-in-lucknow');
 
     $services = [
         [
@@ -103,6 +103,25 @@
         ],
     ];
 
+    $trustStats = [
+        ['value' => config('staticdata.projects') . '+', 'label' => 'Projects delivered'],
+        ['value' => config('staticdata.clients') . '+', 'label' => 'Happy clients'],
+        ['value' => config('staticdata.experience_years') . '+', 'label' => 'Years of experience'],
+        ['value' => '2 hrs', 'label' => 'Typical reply time'],
+    ];
+
+    $process = [
+        ['title' => 'Discovery', 'description' => 'We learn your business goals, audience and competitors.'],
+        ['title' => 'Design', 'description' => 'We create an interface that fits your brand.'],
+        ['title' => 'Development', 'description' => 'We build your website with a modern, secure stack.'],
+        ['title' => 'Deployment', 'description' => 'We launch, monitor performance and keep improving.'],
+    ];
+
+    $testimonials = [
+        ['initials' => 'AT', 'name' => 'Animesh Tripathi', 'role' => 'Founder, Truly Digitally', 'quote' => 'Tejal Digital has been an outstanding development partner, delivering top-notch Laravel applications with reliability and precision.'],
+        ['initials' => 'KK', 'name' => 'Krishna Kant Soni', 'role' => 'Founder, Krishna Academy', 'quote' => 'Built a powerful and seamless LMS platform for us using Laravel. Their expertise, responsiveness, and attention to detail truly exceeded our expectations!'],
+    ];
+
     $areas = ['Gomti Nagar', 'Hazratganj', 'Aliganj', 'Indira Nagar', 'Alambagh', 'Mahanagar', 'Aminabad', 'Chowk', 'Jankipuram', 'Rajajipuram', 'Chinhat'];
     $nearby = ['Kanpur', 'Barabanki', 'Unnao'];
 
@@ -153,8 +172,8 @@
                 'provider' => [
                     '@type' => 'Organization',
                     'name' => 'Tejal Digital',
-                    'url' => 'https://www.tejaldigital.in/',
-                    'logo' => 'https://www.tejaldigital.in/assets/images/logo.svg',
+                    'url' => \App\Support\SiteUrl::to('/'),
+                    'logo' => \App\Support\SiteUrl::to('assets/images/logo.svg'),
                     'telephone' => config('staticdata.phone'),
                     'email' => config('staticdata.email'),
                 ],
@@ -162,7 +181,7 @@
             [
                 '@type' => 'BreadcrumbList',
                 'itemListElement' => [
-                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => 'https://www.tejaldigital.in/'],
+                    ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => \App\Support\SiteUrl::to('/')],
                     ['@type' => 'ListItem', 'position' => 2, 'name' => 'Website Development Company in Lucknow', 'item' => $pageUrl],
                 ],
             ],
@@ -184,14 +203,14 @@
     <title>Website Development Company in Lucknow | Tejal Digital</title>
     <meta name="description"
         content="Looking for a website development company in Lucknow? Tejal Digital builds fast WordPress, Laravel and eCommerce websites. 150+ projects. Free quote.">
-    <link rel="canonical" href="{{ $pageUrl }}">
+    <link rel="canonical" href="@siteUrl">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Website Development Company in Lucknow | Tejal Digital">
     <meta property="og:description"
         content="Fast, custom-built websites, online stores and web applications for Lucknow businesses. 150+ projects delivered. Get a free quote.">
-    <meta property="og:url" content="{{ $pageUrl }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/og-image.png') }}">
 
     <!-- Twitter -->
@@ -205,247 +224,289 @@
 @endsection
 
 @section('content')
-    {{-- Hero --}}
-    <section
-        class="relative -mt-20 pt-20 pb-14 px-4 flex flex-col items-center text-sm bg-cover bg-center bg-no-repeat border-b border-outline-variant/30"
-        style="background-image: url('{{ asset('assets/images/hero-gradient-bg.png') }}')">
+    {{-- Hero: simple, left-aligned introduction --}}
+    <section class="border-b border-border bg-gradient-to-b from-primary-50/60 to-background">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 pt-10 pb-12 md:pt-14 md:pb-16">
+            <nav aria-label="Breadcrumb" class="mb-6">
+                <ol class="flex items-center gap-1.5 text-sm text-muted-foreground">
+                    <li><a href="{{ route('home') }}" class="hover:text-primary transition-colors">Home</a></li>
+                    <li><x-icons.chevron-right class="w-3.5 h-3.5" /></li>
+                    <li class="text-foreground font-medium" aria-current="page">Website Development in Lucknow</li>
+                </ol>
+            </nav>
 
-        <nav class="mt-10 md:mt-20" aria-label="Breadcrumb">
-            <ol class="flex items-center gap-2 text-foreground/70">
-                <li><a href="{{ route('home') }}" class="hover:text-primary transition-colors">Home</a></li>
-                <li><x-icons.chevron-right class="w-4 h-4" /></li>
-                <li class="font-medium text-foreground" aria-current="page">Website Development in Lucknow</li>
-            </ol>
-        </nav>
+            <div class="max-w-3xl">
+                <p class="inline-flex items-center gap-1.5 rounded-full bg-primary/10 text-primary-700 px-3 py-1 text-sm font-semibold mb-4">
+                    <x-icons.map-pin class="w-4 h-4" /> Serving businesses across Lucknow
+                </p>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+                    Website Development Company in Lucknow
+                </h1>
+                <p class="text-lg text-foreground/80 leading-relaxed mb-8">
+                    Tejal Digital is a website development company serving Lucknow businesses with fast, custom-built
+                    websites, online stores and web applications. Over {{ config('staticdata.experience_years') }}+ years
+                    we have delivered {{ config('staticdata.projects') }}+ projects for {{ config('staticdata.clients') }}+
+                    clients, and you work directly with the developers who write your code.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="{{ route('contact') }}">
+                        <x-form.primary-button type="button" class="w-full sm:w-auto justify-center px-6 py-3 rounded-xl text-base">
+                            <span>Get a Free Quote</span>
+                            <x-icons.go class="w-4 h-4" />
+                        </x-form.primary-button>
+                    </a>
+                    <a href="{{ config('staticdata.whatsapp_url') }}" target="_blank" rel="noopener">
+                        <x-form.secondary-button type="button" class="w-full sm:w-auto justify-center px-6 py-3 rounded-xl text-base border-border bg-card hover:border-primary/40">
+                            <x-icons.whatsapp class="w-5 h-5 text-[#25D366]" />
+                            <span>Chat on WhatsApp</span>
+                        </x-form.secondary-button>
+                    </a>
+                </div>
+            </div>
 
-        <h1 class="text-4xl md:text-6xl text-center font-bold tracking-tight leading-[1.05] max-w-4xl mt-6 mb-5">
-            Website Development Company <span class="text-gradient">in Lucknow</span>
-        </h1>
-        <p class="text-foreground/80 text-base md:text-lg text-center max-w-3xl leading-relaxed">
-            Tejal Digital is a website development company serving Lucknow businesses with fast, custom-built websites,
-            online stores and web applications. Over {{ config('staticdata.experience_years') }}+ years we have delivered
-            {{ config('staticdata.projects') }}+ projects for {{ config('staticdata.clients') }}+ clients, and you work
-            directly with the developers who write your code.
-        </p>
-
-        <div class="flex flex-col justify-center sm:flex-row gap-3 mt-8 w-full sm:w-auto">
-            <a href="{{ route('contact') }}" class="w-full sm:w-auto">
-                <x-form.primary-button type="button"
-                    class="w-full justify-center px-7 py-3.5 rounded-2xl text-base shadow-lg shadow-primary-500/25">
-                    <span>Get a Free Quote</span>
-                    <x-icons.go class="w-4 h-4" />
-                </x-form.primary-button>
-            </a>
-            <a href="{{ config('staticdata.whatsapp_url') }}" target="_blank" rel="noopener" class="w-full sm:w-auto">
-                <x-form.secondary-button type="button" class="w-full justify-center px-7 py-3.5 rounded-2xl text-base">
-                    <x-icons.whatsapp class="w-5 h-5" />
-                    <span>Chat on WhatsApp</span>
-                </x-form.secondary-button>
-            </a>
+            <dl class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-10">
+                @foreach ($trustStats as $stat)
+                    <div class="rounded-2xl border border-border bg-card px-5 py-4">
+                        <dt class="text-sm text-muted-foreground">{{ $stat['label'] }}</dt>
+                        <dd class="text-2xl font-bold tracking-tight mt-1">{{ $stat['value'] }}</dd>
+                    </div>
+                @endforeach
+            </dl>
         </div>
-
-        <ul class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 text-foreground/70">
-            <li class="flex items-center gap-1.5"><x-icons.check class="w-4 h-4 text-primary" /> {{ config('staticdata.projects') }}+ projects delivered</li>
-            <li class="flex items-center gap-1.5"><x-icons.check class="w-4 h-4 text-primary" /> {{ config('staticdata.clients') }}+ happy clients</li>
-            <li class="flex items-center gap-1.5"><x-icons.check class="w-4 h-4 text-primary" /> {{ config('staticdata.experience_years') }}+ years of experience</li>
-            <li class="flex items-center gap-1.5"><x-icons.check class="w-4 h-4 text-primary" /> MSME registered</li>
-            <li class="flex items-center gap-1.5"><x-icons.check class="w-4 h-4 text-primary" /> Reply within 2 hours</li>
-        </ul>
     </section>
 
-    {{-- Services --}}
-    <section class="py-14 sm:py-20 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-12" data-aos="fade-up">
-                <h2 class="text-3xl lg:text-5xl font-bold tracking-tight mb-5">
-                    Website development services in Lucknow
-                </h2>
-                <p class="text-md sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+    {{-- Content + sticky quote card --}}
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16 lg:grid lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-12">
+        <article class="space-y-16 min-w-0">
+
+            {{-- Services --}}
+            <section>
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-3">Website development services in Lucknow</h2>
+                <p class="text-foreground/75 leading-relaxed mb-6">
                     One team handles strategy, design, development, launch and long-term support.
                 </p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                @foreach ($services as $service)
-                    <div class="rounded-2xl border border-border bg-card p-7 flex flex-col transition-colors hover:border-primary/40"
-                        data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 50 }}">
-                        <div class="w-12 h-12 bg-primary/10 text-primary rounded-2xl mb-5 flex items-center justify-center">
-                            <x-dynamic-component :component="'icons.' . $service['icon']" class="w-5 h-5" />
+                <div class="grid sm:grid-cols-2 gap-4">
+                    @foreach ($services as $service)
+                        <div class="rounded-2xl border border-border bg-card p-5 flex flex-col">
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="w-10 h-10 shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                                    <x-dynamic-component :component="'icons.' . $service['icon']" class="w-5 h-5" />
+                                </span>
+                                <h3 class="font-bold leading-snug">{{ $service['title'] }}</h3>
+                            </div>
+                            <p class="text-sm text-foreground/75 leading-relaxed">{{ $service['description'] }}</p>
+                            @isset($service['link'])
+                                <a href="{{ $service['link'] }}"
+                                    class="group mt-auto pt-4 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                                    Learn more<span class="sr-only"> about {{ $service['title'] }}</span>
+                                    <x-icons.chevron-right class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                                </a>
+                            @endisset
                         </div>
-                        <h3 class="text-xl font-bold tracking-tight mb-3">{{ $service['title'] }}</h3>
-                        <p class="text-muted-foreground leading-relaxed">{{ $service['description'] }}</p>
-                        @isset($service['link'])
-                            <a href="{{ $service['link'] }}"
-                                class="group mt-auto pt-5 inline-flex items-center gap-1.5 text-sm font-bold text-primary">
-                                Learn more<span class="sr-only"> about {{ $service['title'] }}</span>
-                                <x-icons.chevron-right class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                            </a>
-                        @endisset
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
+                    @endforeach
+                </div>
+            </section>
 
-    {{-- Industries --}}
-    <section class="py-14 sm:py-20 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl lg:text-5xl font-bold tracking-tight text-center mb-12" data-aos="fade-up">
-                Web development for Lucknow's key industries
-            </h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                @foreach ($industries as $industry)
-                    <div class="rounded-2xl border border-border bg-card p-6" data-aos="fade-up"
-                        data-aos-delay="{{ $loop->iteration * 50 }}">
-                        <div class="w-11 h-11 bg-primary/10 text-primary rounded-xl mb-4 flex items-center justify-center">
-                            <x-dynamic-component :component="'icons.' . $industry['icon']" class="w-5 h-5" />
+            {{-- Industries --}}
+            <section>
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-3">Web development for Lucknow's key industries</h2>
+                <p class="text-foreground/75 leading-relaxed mb-6">
+                    We have built websites and software for businesses like these:
+                </p>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    @foreach ($industries as $industry)
+                        <div class="flex gap-4 rounded-2xl border border-border bg-card p-5">
+                            <span class="w-10 h-10 shrink-0 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+                                <x-dynamic-component :component="'icons.' . $industry['icon']" class="w-5 h-5" />
+                            </span>
+                            <div>
+                                <h3 class="font-bold mb-1">{{ $industry['title'] }}</h3>
+                                <p class="text-sm text-foreground/75 leading-relaxed">{{ $industry['description'] }}</p>
+                            </div>
                         </div>
-                        <h3 class="text-lg font-bold tracking-tight mb-2">{{ $industry['title'] }}</h3>
-                        <p class="text-sm text-muted-foreground leading-relaxed">{{ $industry['description'] }}</p>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
+                    @endforeach
+                </div>
+            </section>
 
-    {{-- Why choose us --}}
-    <section class="py-14 sm:py-20 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
-        <div class="max-w-6xl mx-auto grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
-            <div class="lg:col-span-2" data-aos="fade-up">
-                <h2 class="text-3xl lg:text-5xl font-bold tracking-tight mb-5">
-                    Why Lucknow businesses choose <span class="text-gradient">Tejal Digital</span>
-                </h2>
+            {{-- Why choose us --}}
+            <section>
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">Why Lucknow businesses choose Tejal Digital</h2>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    @foreach ($reasons as $reason)
+                        <div class="rounded-2xl border border-border bg-card p-5 {{ $loop->last ? 'sm:col-span-2' : '' }}">
+                            <div class="flex items-center gap-2 mb-2">
+                                <x-icons.check class="w-5 h-5 shrink-0 text-primary" />
+                                <h3 class="font-bold">{{ rtrim($reason['title'], '.') }}</h3>
+                            </div>
+                            <p class="text-sm text-foreground/75 leading-relaxed">{{ $reason['description'] }}</p>
+                        </div>
+                    @endforeach
+                </div>
+            </section>
+
+            {{-- Process --}}
+            <section>
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">Our website development process</h2>
+                <ol class="grid sm:grid-cols-2 gap-4">
+                    @foreach ($process as $step)
+                        <li class="rounded-2xl border border-border bg-card p-5">
+                            <span class="inline-flex w-8 h-8 rounded-full bg-primary text-white text-sm font-bold items-center justify-center mb-3">{{ $loop->iteration }}</span>
+                            <h3 class="font-bold mb-1">{{ $step['title'] }}</h3>
+                            <p class="text-sm text-foreground/75 leading-relaxed">{{ $step['description'] }}</p>
+                        </li>
+                    @endforeach
+                </ol>
+            </section>
+
+            {{-- Recent work --}}
+            <section>
+                <div class="flex items-end justify-between gap-4 mb-6">
+                    <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Recent work</h2>
+                    <a href="{{ route('portfolio') }}" class="group shrink-0 inline-flex items-center gap-1 text-sm font-semibold text-primary">
+                        View full portfolio
+                        <x-icons.chevron-right class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                    </a>
+                </div>
+                <div class="grid sm:grid-cols-3 gap-4">
+                    @foreach ($projects as $project)
+                        <a href="{{ $project['link'] }}"
+                            class="group rounded-2xl border border-border bg-card overflow-hidden hover:border-primary/40 transition-colors flex flex-col">
+                            <div class="aspect-[16/10] bg-zinc-100 overflow-hidden border-b border-border">
+                                <img src="{{ asset($project['image']) }}" alt="{{ $project['alt'] }}" loading="lazy"
+                                    class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="p-4 flex flex-col flex-1">
+                                <p class="text-xs font-semibold uppercase tracking-wider text-primary mb-1">{{ $project['category'] }}</p>
+                                <h3 class="font-bold mb-1 group-hover:text-primary transition-colors">{{ $project['title'] }}</h3>
+                                <p class="text-sm text-foreground/75 leading-relaxed">{{ $project['desc'] }}</p>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
+            </section>
+
+            {{-- Cost --}}
+            <section class="rounded-2xl border border-primary/20 bg-primary-50/50 p-6 md:p-8">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-3">Website development cost in Lucknow</h2>
+                <p class="text-foreground/80 leading-relaxed mb-6">
+                    Cost depends on the number of pages, design complexity and features. We share a clear, itemized
+                    quote before any work begins, with no hidden charges.
+                </p>
                 <a href="{{ route('contact') }}">
-                    <x-form.primary-button type="button" class="px-7 py-3 rounded-2xl mt-3">
-                        <span>Get a Free Quote</span>
+                    <x-form.primary-button type="button" class="px-6 py-3 rounded-xl">
+                        <span>Get Your Quote</span>
                         <x-icons.go class="w-4 h-4" />
                     </x-form.primary-button>
                 </a>
-            </div>
-            <ul class="lg:col-span-3 space-y-4">
-                @foreach ($reasons as $reason)
-                    <li class="flex gap-4 rounded-2xl border border-border bg-card p-5" data-aos="fade-up"
-                        data-aos-delay="{{ $loop->iteration * 50 }}">
-                        <x-icons.check class="w-5 h-5 mt-0.5 shrink-0 text-primary" />
-                        <p class="leading-relaxed">
-                            <strong class="font-bold">{{ $reason['title'] }}</strong>
-                            <span class="text-muted-foreground">{{ $reason['description'] }}</span>
-                        </p>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    </section>
+            </section>
 
-    {{-- Process --}}
-    @include('sections.working-process')
+            {{-- Testimonials --}}
+            <section>
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">What our clients say</h2>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    @foreach ($testimonials as $testimonial)
+                        <figure class="rounded-2xl border border-border bg-card p-6 flex flex-col">
+                            <div class="flex gap-0.5 text-amber-500 mb-3" aria-label="5 out of 5 stars">
+                                @for ($i = 0; $i < 5; $i++)
+                                    <x-icons.star class="w-4 h-4 fill-current" />
+                                @endfor
+                            </div>
+                            <blockquote class="text-foreground/85 leading-relaxed mb-5">“{{ $testimonial['quote'] }}”</blockquote>
+                            <figcaption class="mt-auto flex items-center gap-3 pt-4 border-t border-border">
+                                <span class="w-10 h-10 rounded-full bg-primary text-white text-sm font-bold flex items-center justify-center">{{ $testimonial['initials'] }}</span>
+                                <span>
+                                    <span class="block font-semibold">{{ $testimonial['name'] }}</span>
+                                    <span class="block text-sm text-muted-foreground">{{ $testimonial['role'] }}</span>
+                                </span>
+                            </figcaption>
+                        </figure>
+                    @endforeach
+                </div>
+            </section>
 
-    {{-- Recent work --}}
-    <section class="py-14 sm:py-20 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl lg:text-5xl font-bold tracking-tight text-center mb-12" data-aos="fade-up">
-                Recent work
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                @foreach ($projects as $project)
-                    <x-product-card :project="$project" />
-                @endforeach
-            </div>
-            <div class="text-center mt-10">
-                <a href="{{ route('portfolio') }}">
-                    <x-form.secondary-button type="button"
-                        class="px-7 py-3 rounded-2xl border-border bg-card hover:border-primary/40">
-                        <span>View Full Portfolio</span>
+            {{-- Areas served --}}
+            <section>
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-3">Areas we serve in Lucknow</h2>
+                <p class="text-foreground/75 leading-relaxed mb-5">
+                    We work with businesses across {{ implode(', ', array_slice($areas, 0, -1)) }} and {{ end($areas) }},
+                    as well as nearby {{ implode(', ', array_slice($nearby, 0, -1)) }} and {{ end($nearby) }}.
+                </p>
+                <ul class="flex flex-wrap gap-2">
+                    @foreach (array_merge($areas, $nearby) as $area)
+                        <li class="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-sm">
+                            <x-icons.map-pin class="w-3.5 h-3.5 text-primary" />
+                            {{ $area }}
+                        </li>
+                    @endforeach
+                </ul>
+            </section>
+
+            {{-- FAQ --}}
+            <section>
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-6">Frequently asked questions</h2>
+                <div class="space-y-3">
+                    @foreach ($faqs as $faq)
+                        <details class="group rounded-2xl border border-border bg-card px-5 py-4 open:border-primary/40" @if ($loop->first) open @endif>
+                            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold [&::-webkit-details-marker]:hidden">
+                                <h3>{{ $faq['question'] }}</h3>
+                                <x-icons.chevron-right class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-90" />
+                            </summary>
+                            <p class="mt-3 text-foreground/75 leading-relaxed">{{ $faq['answer'] }}</p>
+                        </details>
+                    @endforeach
+                </div>
+            </section>
+        </article>
+
+        {{-- Sidebar quote card (desktop) --}}
+        <aside class="hidden lg:block">
+            <div class="sticky top-24 rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <h2 class="text-lg font-bold mb-2">Get a free quote</h2>
+                <p class="text-sm text-foreground/75 leading-relaxed mb-5">
+                    Tell us what you want to build. We reply within 2 hours with honest advice and a no-obligation estimate.
+                </p>
+                <a href="{{ route('contact') }}" class="block mb-3">
+                    <x-form.primary-button type="button" class="w-full justify-center py-3 rounded-xl">
+                        <span>Get Your Quote</span>
                         <x-icons.go class="w-4 h-4" />
-                    </x-form.secondary-button>
+                    </x-form.primary-button>
                 </a>
+                <a href="{{ config('staticdata.whatsapp_url') }}" target="_blank" rel="noopener"
+                    class="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-border text-sm font-semibold hover:border-primary/40 transition-colors">
+                    <x-icons.whatsapp class="w-4 h-4 text-[#25D366]" /> Chat on WhatsApp
+                </a>
+                <a href="tel:{{ config('staticdata.phone') }}"
+                    class="mt-2 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-border text-sm font-semibold hover:border-primary/40 transition-colors">
+                    <x-icons.call class="w-4 h-4 text-primary" /> {{ config('staticdata.phone') }}
+                </a>
+                <ul class="mt-5 pt-5 border-t border-border space-y-2 text-sm text-foreground/75">
+                    <li class="flex items-center gap-2"><x-icons.check class="w-4 h-4 text-primary shrink-0" /> Free, itemized quote</li>
+                    <li class="flex items-center gap-2"><x-icons.check class="w-4 h-4 text-primary shrink-0" /> Direct access to developers</li>
+                    <li class="flex items-center gap-2"><x-icons.check class="w-4 h-4 text-primary shrink-0" /> MSME registered</li>
+                </ul>
             </div>
-        </div>
-    </section>
-
-    {{-- Cost --}}
-    <section class="py-14 sm:py-20 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
-        <div class="max-w-4xl mx-auto rounded-3xl border border-border bg-card p-8 sm:p-12 text-center" data-aos="fade-up">
-            <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-5">Website development cost in Lucknow</h2>
-            <p class="text-md sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">
-                Cost depends on the number of pages, design complexity and features. We share a clear, itemized quote
-                before any work begins, with no hidden charges.
-            </p>
-            <a href="{{ route('contact') }}">
-                <x-form.primary-button type="button" class="px-7 py-3.5 rounded-2xl text-base shadow-lg shadow-primary-500/25">
-                    <span>Get Your Quote</span>
-                    <x-icons.go class="w-4 h-4" />
-                </x-form.primary-button>
-            </a>
-        </div>
-    </section>
-
-    {{-- Testimonials --}}
-    @include('home.sections.testimonials')
-
-    {{-- Areas served --}}
-    <section class="py-14 sm:py-20 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
-        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-            <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-5">Areas we serve in Lucknow</h2>
-            <p class="text-md sm:text-lg text-muted-foreground leading-relaxed mb-8">
-                We work with businesses across {{ implode(', ', array_slice($areas, 0, -1)) }} and {{ end($areas) }},
-                as well as nearby {{ implode(', ', array_slice($nearby, 0, -1)) }} and {{ end($nearby) }}.
-            </p>
-            <ul class="flex flex-wrap justify-center gap-2">
-                @foreach (array_merge($areas, $nearby) as $area)
-                    <li class="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3.5 py-1.5 text-sm font-medium">
-                        <x-icons.map-pin class="w-3.5 h-3.5 text-primary" />
-                        {{ $area }}
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    </section>
-
-    {{-- FAQ --}}
-    <section class="py-14 sm:py-20 px-3 sm:px-6 lg:px-8 border-b border-outline-variant/30">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-center mb-10">Frequently asked questions</h2>
-            <div class="space-y-3">
-                @foreach ($faqs as $faq)
-                    <details class="group rounded-2xl border border-border bg-card px-6 py-5 open:border-primary/40" @if ($loop->first) open @endif>
-                        <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold text-lg [&::-webkit-details-marker]:hidden">
-                            <h3>{{ $faq['question'] }}</h3>
-                            <x-icons.chevron-right class="w-5 h-5 shrink-0 text-primary transition-transform group-open:rotate-90" />
-                        </summary>
-                        <p class="mt-3 text-muted-foreground leading-relaxed">{{ $faq['answer'] }}</p>
-                    </details>
-                @endforeach
-            </div>
-        </div>
-    </section>
+        </aside>
+    </div>
 
     {{-- Final CTA --}}
-    <section class="py-20 sm:py-25 px-3 sm:px-6 lg:px-8 relative overflow-hidden bg-gradient-to-b from-background via-[#fffbee] to-primary-500/20">
-        <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-            <h2 class="text-3xl lg:text-5xl font-bold mb-5 tracking-tight">
-                Get a free quote for your Lucknow business
-            </h2>
-            <p class="text-md sm:text-lg text-foreground/80 max-w-2xl mx-auto leading-relaxed mb-10">
-                Tell us what you want to build. We reply within 2 hours with honest advice and a no-obligation estimate.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+    <section class="px-4 sm:px-6 pb-16">
+        <div class="max-w-6xl mx-auto rounded-3xl bg-zinc-900 text-white px-6 py-10 md:px-12 md:py-12 md:flex md:items-center md:justify-between gap-8">
+            <div class="max-w-xl mb-6 md:mb-0">
+                <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-2">Get a free quote for your Lucknow business</h2>
+                <p class="text-white/75 leading-relaxed">
+                    Tell us what you want to build. We reply within 2 hours with honest advice and a no-obligation estimate.
+                </p>
+            </div>
+            <div class="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3 shrink-0">
                 <a href="{{ route('contact') }}">
-                    <x-form.primary-button type="button" class="px-7 py-3.5 rounded-2xl text-base shadow-lg shadow-primary-500/25">
+                    <x-form.primary-button type="button" class="w-full justify-center px-6 py-3 rounded-xl">
                         <span>Get Free Consultation</span>
                         <x-icons.go class="w-4 h-4" />
                     </x-form.primary-button>
                 </a>
-                <a href="{{ config('staticdata.whatsapp_url') }}" target="_blank" rel="noopener">
-                    <x-form.secondary-button type="button" class="px-7 py-3.5 rounded-2xl text-base">
-                        <x-icons.whatsapp class="w-5 h-5" />
-                        <span>Chat on WhatsApp</span>
-                    </x-form.secondary-button>
-                </a>
-                <a href="tel:{{ config('staticdata.phone') }}">
-                    <x-form.secondary-button type="button" class="px-7 py-3.5 rounded-2xl text-base">
-                        <x-icons.call class="w-5 h-5" />
-                        <span>Call {{ config('staticdata.phone') }}</span>
-                    </x-form.secondary-button>
+                <a href="tel:{{ config('staticdata.phone') }}"
+                    class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/20 font-medium hover:bg-white/10 transition-colors">
+                    <x-icons.call class="w-4 h-4" /> Call {{ config('staticdata.phone') }}
                 </a>
             </div>
         </div>

@@ -4,7 +4,7 @@
     <title>Attendance Manager System | Geo-Fenced Employee Tracking Solution</title>
     <meta name="description"
         content="Discover how Tejal Digital built a secure Laravel-powered attendance system featuring geo-restriction, selfie verification, and automated leave management for modern agencies.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="Attendance Manager, Geo-Fenced Attendance, Laravel Web App, Selfie Verification System, Employee Tracking Software, HRMS Solution">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="Attendance Manager System | Case Study by Tejal Digital">
     <meta property="og:description"
         content="A deep dive into building a secure, geo-fenced attendance system using Laravel and MySQL.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/attendance.png') }}">
 
     <!-- Twitter Card -->

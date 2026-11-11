@@ -1,6 +1,9 @@
 <?php
 
 return [
+    // Preferred public address (www redirects here). Used for canonical, og:url and structured data URLs.
+    'site_url' => env('SITE_URL', 'https://tejaldigital.in'),
+
     'clients' => 100,
     'projects' => 150,
     'satisfaction' => 99,

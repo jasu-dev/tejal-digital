@@ -4,14 +4,14 @@
     <title>About Us | Tejal Digital - Expert Web Developers</title>
     <meta name="description"
         content="Learn about Tejal Digital’s journey and team. We build scalable web solutions using Laravel, WordPress, and modern tech to power businesses globally.">
-    <link rel="canonical" href="https://www.tejaldigital.in/about">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="About Tejal Digital, Web Developers, Development Company, Laravel Experts, Web Agency, Scalable Web Solutions">
     <!-- Open Graph -->
     <meta property="og:title" content="About Us | Tejal Digital">
     <meta property="og:description"
         content="Meet the team behind Tejal Digital – building high-quality, scalable web solutions for global clients.">
-    <meta property="og:url" content="https://tejaldigital.in/about">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/og-image.png') }}">
     <!-- Twitter Card -->
     <meta name="twitter:title" content="About Tejal Digital | Web Experts">

@@ -4,7 +4,7 @@
     <title>Custom CRM & ERP Development Services | Scalable Business Systems</title>
     <meta name="description"
         content="Boost business efficiency with custom CRM & ERP systems. Manage leads, track sales pipelines, automate workflows, and integrate ERP systems with Tejal Digital.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="Custom CRM Development, ERP Software Services, Sales Pipeline Software, Lead Management System, Bespoke CRM Solutions, Enterprise Resource Planning, Business Automation Software">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="Custom CRM & ERP Development Services | Tejal Digital">
     <meta property="og:description"
         content="Scale your sales and operations with a custom CRM/ERP system designed specifically for your business workflow.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/og-image.png') }}">
 @endsection
 

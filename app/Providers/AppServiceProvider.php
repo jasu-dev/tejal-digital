@@ -34,6 +34,11 @@ class AppServiceProvider extends ServiceProvider
             return "<?php echo request()->routeIs($expression) ? 'bg-zinc-50 font-medium text-zinc-800' : 'text-zinc-500 hover:bg-zinc-50'; ?>";
         });
 
+        // @siteUrl → canonical URL of the current page; @siteUrl('/about') → canonical URL of a path
+        Blade::directive('siteUrl', function ($expression) {
+            return "<?php echo e(\\App\\Support\\SiteUrl::to({$expression})); ?>";
+        });
+
         Blaze::optimize()
             ->in(resource_path('views/components'), memo: true, fold: true);
     }

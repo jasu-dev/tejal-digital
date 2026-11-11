@@ -4,7 +4,7 @@
     <title>eCommerce Website Development Services | Build High-Converting Online Stores</title>
     <meta name="description"
         content="Professional eCommerce website development services. We build fast, secure, and custom online stores, multi-vendor platforms, and marketplaces using Shopify, WooCommerce, and Laravel.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="eCommerce Website Development Services, Custom Online Store Development, eCommerce Web Design Company, WooCommerce Development, Shopify Store Builders, B2B Marketplace Portal, Multi-vendor Platforms, Laravel eCommerce">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="eCommerce Website Development Services | Tejal Digital">
     <meta property="og:description"
         content="Turn clicks into conversions. We engineer custom, lightning-fast digital storefronts and enterprise marketplaces designed to maximize your online sales.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/og-image.png') }}">
 @endsection
 

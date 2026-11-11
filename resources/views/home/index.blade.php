@@ -12,7 +12,7 @@
     <meta property="og:title" content="Tejal Digital | Best Web Development Agency">
     <meta property="og:description"
         content="Custom web apps, Laravel solutions, WordPress development, CRMs, APIs & e-commerce by Tejal Digital. Based in Nagaur, Rajasthan.">
-    <meta property="og:url" content="https://tejaldigital.in/">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/og-image.jpg') }}">
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
@@ -21,7 +21,7 @@
         content="Custom websites, Laravel apps, WordPress themes, CRMs, APIs & more. Contact Tejal Digital in Rajasthan.">
     <meta name="twitter:image" content="{{ asset('assets/images/og-image.jpg') }}">
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.tejaldigital.in/">
+    <link rel="canonical" href="@siteUrl">
     @verbatim
         <script type="application/ld+json">
             {   

@@ -4,7 +4,7 @@
     <title>Growix Smart QR | Custom Google Review Filter & Reputation SaaS</title>
     <meta name="description"
         content="Discover how Tejal Digital built Growix, a premium review filtering SaaS using dynamic QR codes. Divert negative reviews to private logs while routing positive ones to Google.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="Growix, Smart QR code review, Google reviews filter, online reputation management software, customer rating SaaS, Razorpay subscription Laravel, feedback routing platform">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="Growix Smart QR Case Study | Tejal Digital">
     <meta property="og:description"
         content="Building a reputation management SaaS with Laravel, dynamic QR generation, and custom rating redirect rules.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/growix.png') }}">
 
     <!-- Twitter Card -->

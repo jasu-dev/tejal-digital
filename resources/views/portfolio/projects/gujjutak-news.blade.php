@@ -4,7 +4,7 @@
     <title>Gujjutak News | Custom High-Traffic Regional News CMS</title>
     <meta name="description"
         content="Discover how Tejal Digital built Gujjutak News, a high-concurrency regional news platform using Laravel, Redis page caching, and automated Google News sitemaps.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="Gujjutak News, regional news CMS, Laravel news portal, Gujarati news website developer, high concurrency media server, Google News sitemap generator, Redis news caching">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="Gujjutak News Case Study | Tejal Digital">
     <meta property="og:description"
         content="Handling heavy visitor traffic on regional news portals with Laravel, Redis caching layers, and database indices.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/gujjutak.png') }}">
 
     <!-- Twitter Card -->

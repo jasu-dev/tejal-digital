@@ -4,7 +4,7 @@
     <title>TechUpkar Theme | Premium Speed-Optimized WordPress Portal</title>
     <meta name="description"
         content="Discover how Tejal Digital built TechUpkar, a custom WordPress theme delivering 100/100 Lighthouse performance, local font preloads, and clean ad layouts.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="TechUpkar, custom WordPress theme, Genesis child theme, high speed blog layouts, local fonts preloading, AdSense friendly WP, Core Web Vitals optimization">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="TechUpkar Blog Theme Case Study | Tejal Digital">
     <meta property="og:description"
         content="Achieving a perfect 100/100 PageSpeed mark for TechUpkar using lightweight Genesis hooks overrides.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/techupkar.png') }}">
 
     <!-- Twitter Card -->

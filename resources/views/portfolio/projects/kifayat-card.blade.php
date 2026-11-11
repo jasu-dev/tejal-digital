@@ -4,7 +4,7 @@
     <title>Kifayat Card | Custom Loyalty Reward System & Merchant SaaS</title>
     <meta name="description"
         content="Discover how Tejal Digital built Kifayat Card, a multi-tenant digital loyalty platform. Merchants scan customer QR codes to instantly award or redeem rewards.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="Kifayat Card, bachatcard, digital loyalty ledger, retail rewards program, merchant dashboard SaaS, QR code reward scanner, customer retention tool">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="Kifayat Card Case Study | Tejal Digital">
     <meta property="og:description"
         content="Scaling retail retention with a secure, QR-driven customer rewards and merchant database system using Laravel.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/kifayatcard.png') }}">
 
     <!-- Twitter Card -->

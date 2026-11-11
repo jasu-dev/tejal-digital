@@ -4,7 +4,7 @@
     <title>GMJ Child Pro | JS-Free Genesis WordPress Theme Showcase</title>
     <meta name="description"
         content="Discover how Tejal Digital engineered GMJ Child Pro, a custom Genesis WordPress child theme designed for Hindi blogs with 100/100 speed and zero frontend JS.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="GMJ Child Pro, Genesis child theme, custom WordPress developer, zero JS blog theme, fast Hindi blogging theme, local font optimization, Core Web Vitals WP">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="GMJ Child Pro Case Study | Tejal Digital">
     <meta property="og:description"
         content="Building high-performance WordPress themes for GMJ with zero JavaScript dependencies.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/gmjchildpro.png') }}">
 
     <!-- Twitter Card -->

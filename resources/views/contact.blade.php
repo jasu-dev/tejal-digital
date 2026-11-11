@@ -4,14 +4,14 @@
     <title>Contact Us | Tejal Digital - Let's Build Something Great</title>
     <meta name="description"
         content="Need a custom web app or site? Contact Tejal Digital for Laravel, CRM, WordPress, and API development services. Let’s discuss your project today.">
-    <link rel="canonical" href="https://www.tejaldigital.in/contact">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="Contact Web Developer, Hire Laravel Expert, Discuss Project, Web Development Inquiry, Get in Touch, Custom Website Quote">
     <!-- Open Graph -->
     <meta property="og:title" content="Contact Tejal Digital | Web Development Agency">
     <meta property="og:description"
         content="Reach out to Tejal Digital for secure, scalable web development solutions built for your business goals.">
-    <meta property="og:url" content="https://tejaldigital.in/contact">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/og-image.png') }}">
     <!-- Twitter Card -->
     <meta name="twitter:title" content="Contact Tejal Digital | Start Your Project">
@@ -23,7 +23,7 @@
         {
             "@context": "https://schema.org",
             "@type": "ContactPage",
-            "url": "https://tejaldigital.in/contact-us",
+            "url": "https://tejaldigital.in/contact",
             "mainEntity": {
                 "@type": "Organization",
                 "name": "Tejal Digital",

@@ -4,7 +4,7 @@
     <title>Tech Nukti | Custom High-Speed WordPress Theme</title>
     <meta name="description"
         content="Discover how Tejal Digital built Tech Nukti, a blazing-fast, custom WordPress theme achieving perfect 100/100 Lighthouse performance scores without bloat.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="Tech Nukti, custom WordPress theme, Technukti theme design, Google PageSpeed optimization, fast WP templates, Core Web Vitals, lightweight Gutenberg blocks">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="Tech Nukti Theme Case Study | Tejal Digital">
     <meta property="og:description"
         content="Building custom, zero-bloat WordPress themes for Technukti to maximize ad-revenue and SEO performance.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/technukti.png') }}">
 
     <!-- Twitter Card -->

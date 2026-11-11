@@ -4,7 +4,7 @@
     <title>REST API Development & Integration Services | Secure & Scalable APIs</title>
     <meta name="description"
         content="Professional REST API development and integration services. We design secure, scalable, and high-performance APIs, webhooks, and microservices for your digital platforms.">
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="REST API Development, API Integration Services, Third-party API Integration, Custom API Development, Webhook Integration, Payment Gateway Integration, RESTful Web Services, JSON API Developer">
 
@@ -12,7 +12,7 @@
     <meta property="og:title" content="REST API Development & Integration Services | Tejal Digital">
     <meta property="og:description"
         content="Scale your digital ecosystem with secure, high-performance APIs and seamless third-party integrations.">
-    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/og-image.png') }}">
 @endsection
 
