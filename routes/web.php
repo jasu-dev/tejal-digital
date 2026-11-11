@@ -45,6 +45,9 @@ Route::prefix('services')->group(function (): void {
     Route::view('/rest-api-development', 'services.api-development')->name('services.api-development');
 });
 
+// Location landing pages
+Route::view('/website-development-company-in-lucknow', 'locations.lucknow')->name('locations.lucknow');
+
 // Redirects
 Route::redirect('/contact-us', '/contact', 301);
 

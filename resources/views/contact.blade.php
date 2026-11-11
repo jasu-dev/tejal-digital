@@ -150,12 +150,21 @@
                         <div class="p-8">
                             <h3 class="text-2xl font-bold  mb-6">Get In Touch</h3>
                             @if (session('success'))
-                                <div class="text-green-600 font-medium mb-4">
-                                    {{ session('success') }}
+                                <div class="flex items-start gap-3 rounded-xl border border-green-200 bg-green-50 p-4 mb-6 text-green-800" role="status">
+                                    <x-icons.check class="w-5 h-5 mt-0.5 shrink-0" />
+                                    <p class="font-medium">{{ session('success') }}</p>
+                                </div>
+                                <script>if (typeof gtag === 'function') { gtag('event', 'generate_lead', { form: 'contact_page' }); }</script>
+                            @endif
+                            @if ($errors->any())
+                                <div class="rounded-xl border border-red-200 bg-red-50 p-4 mb-6 text-red-700 text-sm font-medium" role="alert">
+                                    Please fix the highlighted fields below and send again.
                                 </div>
                             @endif
                             <form action="{{ route('contact.store') }}" method="POST" class="space-y-6">
                                 @csrf
+                                <input type="hidden" name="form" value="contact_page">
+                                <input type="hidden" name="source_page" value="/{{ ltrim(request()->path(), '/') }}">
                                 <div class="grid sm:grid-cols-2 gap-4">
                                     <div>
                                         <x-form.label for="firstName" required>First Name</x-form.label>
@@ -198,7 +207,7 @@
                                     <x-form.select id="service" name="service" required>
                                         <option value="">Select a service</option>
                                         @foreach (config('staticdata.services') as $service)
-                                            <option value="{{ $service }}">{{ $service }}</option>
+                                            <option value="{{ $service }}" @selected(old('service') === $service)>{{ $service }}</option>
                                         @endforeach
                                     </x-form.select>
                                     @error('service')

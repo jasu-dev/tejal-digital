@@ -176,6 +176,10 @@
                         class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
                         API Development
                     </a>
+                    <a href="{{ route('locations.lucknow') }}"
+                        class="text-gray-300 hover:text-primary-500 transition-colors text-sm">
+                        Website Development in Lucknow
+                    </a>
                 </div>
             </div>
             <div class="flex flex-col">
@@ -286,6 +290,10 @@
                             onfocus="this.style.borderColor='#D64523'" onblur="this.style.borderColor='#e5e7eb'"></textarea>
                     </div>
                     <input type="hidden" name="service" value="General Inquiry">
+                    <input type="hidden" name="form" value="popup">
+                    <input type="hidden" name="source_page" value="/{{ ltrim(request()->path(), '/') }}">
+                    <div id="leadPopupErrors" role="alert"
+                        style="display:none; background:#fef2f2; border:1px solid #fecaca; color:#b91c1c; border-radius:0.5rem; padding:0.6rem 0.75rem; font-size:0.8rem; line-height:1.5;"></div>
                     <button type="submit" id="leadPopupSubmitBtn"
                         style="width:100%; padding:0.75rem; background:linear-gradient(135deg,#D64523,#f07340); color:#fff; font-weight:700; font-size:0.9rem; border:none; border-radius:0.6rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:0.5rem; transition:opacity 0.2s, transform 0.15s; letter-spacing:0.01em;"
                         onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
@@ -371,22 +379,45 @@
                 btn.disabled = true;
                 btn.querySelector('span').textContent = 'Sending…';
 
+                var errorBox = document.getElementById('leadPopupErrors');
+                errorBox.style.display = 'none';
+
+                function showError(messages) {
+                    errorBox.innerHTML = '';
+                    messages.forEach(function (msg) {
+                        var line = document.createElement('div');
+                        line.textContent = msg;
+                        errorBox.appendChild(line);
+                    });
+                    errorBox.style.display = 'block';
+                    btn.disabled = false;
+                    btn.querySelector('span').textContent = 'Get My Free Quote';
+                }
+
                 fetch(form.action, {
                     method: 'POST',
-                    headers: { 'X-Requested-With': 'XMLHttpRequest' },
+                    headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' },
                     body: new FormData(form)
                 })
                 .then(function (res) {
-                    // Laravel redirects on success; any 2xx / 3xx is treated as OK
-                    form.style.display = 'none';
-                    document.getElementById('leadPopupSuccess').style.display = 'block';
-                    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
-                    setTimeout(closeLeadPopup, 3500);
+                    return res.json().catch(function () { return {}; }).then(function (body) {
+                        if (res.ok) {
+                            form.style.display = 'none';
+                            document.getElementById('leadPopupSuccess').style.display = 'block';
+                            try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
+                            if (typeof gtag === 'function') { gtag('event', 'generate_lead', { form: 'popup' }); }
+                            setTimeout(closeLeadPopup, 3500);
+                        } else if (res.status === 422 && body.errors) {
+                            showError(Object.values(body.errors).map(function (m) { return m[0]; }));
+                        } else if (res.status === 419) {
+                            showError(['Your session expired. Please refresh the page and try again.']);
+                        } else {
+                            showError(['Something went wrong. Please try again, or chat with us on WhatsApp.']);
+                        }
+                    });
                 })
                 .catch(function () {
-                    btn.disabled = false;
-                    btn.querySelector('span').textContent = 'Get My Free Quote';
-                    alert('Something went wrong. Please try again.');
+                    showError(['Could not send your message. Please check your connection and try again.']);
                 });
             });
 

@@ -26,11 +26,22 @@ class PageView extends Model
         'ip_address',
         'user_agent',
         'referer',
+        'is_entry',
+        'channel',
+        'referrer_host',
+        'utm_source',
+        'utm_medium',
+        'utm_campaign',
+        'device_type',
+        'browser',
+        'os',
+        'country',
         'visited_at',
     ];
 
     protected $casts = [
         'visited_at' => 'datetime',
+        'is_entry'   => 'boolean',
     ];
 
     public static function isBot(?string $userAgent): bool

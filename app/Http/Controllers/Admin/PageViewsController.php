@@ -5,8 +5,13 @@ declare(strict_types=1);
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\ContactRequest;
 use App\Models\PageView;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
 class PageViewsController extends Controller
@@ -17,76 +22,139 @@ class PageViewsController extends Controller
 
         [$from, $to, $chartDays, $chartLabel] = $this->resolvePeriod($period);
 
-        // ── Chart data ────────────────────────────────────────────────────────
-        $labels = [];
-        $data   = [];
+        // Previous period of the same length, for the "vs previous period" comparison
+        $prevTo   = $from->copy()->subSecond();
+        $prevFrom = $prevTo->copy()->subSeconds((int) $from->diffInSeconds($to));
 
-        if ($chartDays > 0) {
-            // Daily breakdown
-            $dailyViews = PageView::selectRaw('DATE(visited_at) as date, COUNT(*) as count')
-                ->whereBetween('visited_at', [$from, $to])
-                ->groupBy('date')
-                ->orderBy('date')
-                ->get()
-                ->keyBy('date');
+        $current  = $this->summary($from, $to);
+        $previous = $this->summary($prevFrom, $prevTo);
 
-            for ($i = $chartDays - 1; $i >= 0; $i--) {
-                $date     = $from->copy()->addDays($chartDays - 1 - $i)->format('Y-m-d');
-                $labels[] = \Carbon\Carbon::parse($date)->format($chartDays <= 31 ? 'M d' : 'M');
-                $data[]   = $dailyViews[$date]->count ?? 0;
-            }
-        } else {
-            // "Today" — hourly breakdown
-            $hourlyViews = PageView::selectRaw('HOUR(visited_at) as hr, COUNT(*) as count')
-                ->whereDate('visited_at', today())
-                ->groupBy('hr')
-                ->orderBy('hr')
-                ->get()
-                ->keyBy('hr');
-
-            for ($h = 0; $h < 24; $h++) {
-                $labels[] = str_pad((string) $h, 2, '0', STR_PAD_LEFT) . ':00';
-                $data[]   = $hourlyViews[$h]->count ?? 0;
-            }
-        }
-
-        // ── Top pages (filtered) ─────────────────────────────────────────────
-        $topPagesQuery = PageView::selectRaw('path, COUNT(*) as count')
-            ->whereBetween('visited_at', [$from, $to])
-            ->groupBy('path')
-            ->orderByDesc('count')
-            ->limit(20);
-
-        $topPages = $topPagesQuery->get();
-
-        // ── Top referrers (filtered) ─────────────────────────────────────────
-        $topReferrers = PageView::selectRaw('referer, COUNT(*) as count')
-            ->whereNotNull('referer')
-            ->where('referer', '!=', '')
-            ->whereBetween('visited_at', [$from, $to])
-            ->groupBy('referer')
-            ->orderByDesc('count')
-            ->limit(10)
-            ->get();
-
-        // ── Stats cards ─────────────────────────────────────────────────────
-        $periods = [
-            'total' => PageView::query(),
-            'today' => PageView::whereDate('visited_at', today()),
-            'week'  => PageView::where('visited_at', '>=', now()->subDays(7)),
-            'month' => PageView::where('visited_at', '>=', now()->subDays(30)),
+        $kpis = [
+            ['label' => 'Page views',       'value' => number_format($current['views']),    'change' => $this->change($current['views'], $previous['views'])],
+            ['label' => 'Unique visitors',  'value' => number_format($current['visitors']), 'change' => $this->change($current['visitors'], $previous['visitors'])],
+            ['label' => 'Leads',            'value' => number_format($current['leads']),    'change' => $this->change($current['leads'], $previous['leads'])],
+            ['label' => 'Conversion rate',  'value' => $current['conversion'] . '%',         'change' => $this->change($current['conversion'], $previous['conversion']), 'hint' => 'Leads ÷ unique visitors'],
+            ['label' => 'Pages per visitor', 'value' => $current['pages_per_visitor'],       'change' => $this->change($current['pages_per_visitor'], $previous['pages_per_visitor'])],
         ];
 
-        $stats = [];
-        foreach ($periods as $key => $query) {
-            $stats[$key]             = (clone $query)->count();
-            $stats[$key . '_unique'] = PageView::uniqueVisitors(clone $query);
-        }
+        $chart = $this->chart($from, $to, $chartDays);
+
+        $views   = fn (): Builder => PageView::whereBetween('visited_at', [$from, $to]);
+        $entries = fn (): Builder => $views()->where('is_entry', true);
+        $leads   = fn (): Builder => ContactRequest::whereBetween('created_at', [$from, $to]);
+
+        // Traffic sources: visits (first page of each visit) and the leads they produced
+        $leadsByChannel = $leads()->selectRaw("COALESCE(channel, 'Unknown') as label, COUNT(*) as total")->groupBy('label')->pluck('total', 'label');
+        $channels = $entries()->selectRaw("COALESCE(channel, 'Unknown') as label, COUNT(*) as total")
+            ->groupBy('label')->orderByDesc('total')->get()
+            ->map(fn ($row) => [
+                'label' => $row->label,
+                'value' => (int) $row->total,
+                'leads' => (int) ($leadsByChannel[$row->label] ?? 0),
+            ]);
+
+        $topPages = $views()
+            ->selectRaw('path, COUNT(*) as total, COUNT(DISTINCT session_id) as visitors')
+            ->groupBy('path')->orderByDesc('total')->limit(15)->get();
+
+        $leadsByLanding = $leads()->selectRaw('landing_page, COUNT(*) as total')->whereNotNull('landing_page')->groupBy('landing_page')->pluck('total', 'landing_page');
+        $landingPages = $entries()
+            ->selectRaw('path, COUNT(*) as total')
+            ->groupBy('path')->orderByDesc('total')->limit(10)->get()
+            ->map(fn ($row) => [
+                'label' => $row->path,
+                'value' => (int) $row->total,
+                'leads' => (int) ($leadsByLanding[$row->path] ?? 0),
+            ]);
+
+        $referrers = $this->breakdown($entries()->whereNotNull('referrer_host'), 'referrer_host', 10);
+
+        $campaigns = $entries()
+            ->where(fn ($q) => $q->whereNotNull('utm_campaign')->orWhereNotNull('utm_source'))
+            ->selectRaw("COALESCE(utm_source, '—') as source, COALESCE(utm_medium, '—') as medium, COALESCE(utm_campaign, '—') as campaign, COUNT(*) as total")
+            ->groupBy('source', 'medium', 'campaign')->orderByDesc('total')->limit(10)->get();
+
+        // Audience: counted per visitor, not per page view
+        $devices   = $this->breakdown($views(), 'device_type', 5, visitors: true);
+        $browsers  = $this->breakdown($views(), 'browser', 8, visitors: true);
+        $systems   = $this->breakdown($views(), 'os', 8, visitors: true);
+        $countries = $this->breakdown($views()->whereNotNull('country'), 'country', 10, visitors: true);
+
+        // Where leads were submitted
+        $leadForms = $leads()->selectRaw("COALESCE(form, 'unknown') as label, COUNT(*) as total")->groupBy('label')->orderByDesc('total')->get()
+            ->map(fn ($row) => ['label' => ContactRequest::FORMS[$row->label] ?? 'Not recorded', 'value' => (int) $row->total]);
+        $leadPages = $this->breakdown($leads()->whereNotNull('source_page'), 'source_page', 8);
 
         return view('admin.pageviews.index', compact(
-            'labels', 'data', 'topPages', 'topReferrers', 'stats',
-            'period', 'chartLabel'
+            'period', 'chartLabel', 'kpis', 'chart',
+            'channels', 'topPages', 'landingPages', 'referrers', 'campaigns',
+            'devices', 'browsers', 'systems', 'countries', 'leadForms', 'leadPages'
         ));
+    }
+
+    /** @return array{views: int, visitors: int, leads: int, conversion: float, pages_per_visitor: float} */
+    private function summary(Carbon $from, Carbon $to): array
+    {
+        $views    = PageView::whereBetween('visited_at', [$from, $to])->count();
+        $visitors = PageView::uniqueVisitors(PageView::whereBetween('visited_at', [$from, $to]));
+        $leads    = ContactRequest::whereBetween('created_at', [$from, $to])->count();
+
+        return [
+            'views'             => $views,
+            'visitors'          => $visitors,
+            'leads'             => $leads,
+            'conversion'        => $visitors ? round($leads / $visitors * 100, 1) : 0.0,
+            'pages_per_visitor' => $visitors ? round($views / $visitors, 1) : 0.0,
+        ];
+    }
+
+    /** Percentage change vs the previous period; null when there is nothing to compare against. */
+    private function change(float|int $current, float|int $previous): ?float
+    {
+        return $previous > 0 ? round(($current - $previous) / $previous * 100) : null;
+    }
+
+    /** Group a query by a column; counts rows, or distinct visitors when $visitors is true. */
+    private function breakdown(Builder $query, string $column, int $limit, bool $visitors = false): Collection
+    {
+        $aggregate = $visitors ? 'COUNT(DISTINCT session_id)' : 'COUNT(*)';
+
+        return $query->selectRaw("COALESCE({$column}, 'Unknown') as label, {$aggregate} as total")
+            ->groupBy('label')->orderByDesc('total')->limit($limit)->get()
+            ->map(fn ($row) => ['label' => $row->label, 'value' => (int) $row->total]);
+    }
+
+    /** Views, visitors and leads per day (or per hour for "today"). */
+    private function chart(Carbon $from, Carbon $to, int $chartDays): array
+    {
+        $hourly = $chartDays === 0;
+        $bucket = fn (string $column): string => $hourly
+            ? (DB::getDriverName() === 'sqlite' ? "CAST(strftime('%H', {$column}) AS INTEGER)" : "HOUR({$column})")
+            : "DATE({$column})";
+
+        $traffic = PageView::selectRaw($bucket('visited_at') . ' as bucket, COUNT(*) as views, COUNT(DISTINCT session_id) as visitors')
+            ->whereBetween('visited_at', [$from, $to])->groupBy('bucket')->get()->keyBy('bucket');
+        $leads = ContactRequest::selectRaw($bucket('created_at') . ' as bucket, COUNT(*) as total')
+            ->whereBetween('created_at', [$from, $to])->groupBy('bucket')->pluck('total', 'bucket');
+
+        $chart = ['labels' => [], 'views' => [], 'visitors' => [], 'leads' => []];
+
+        $buckets = $hourly
+            ? collect(range(0, 23))->map(fn ($h) => [$h, str_pad((string) $h, 2, '0', STR_PAD_LEFT) . ':00'])
+            : collect(range(0, $chartDays - 1))->map(function ($i) use ($from, $chartDays) {
+                $day = $from->copy()->addDays($i);
+
+                return [$day->format('Y-m-d'), $day->format($chartDays <= 31 ? 'M d' : 'M')];
+            });
+
+        foreach ($buckets as [$key, $label]) {
+            $chart['labels'][]   = $label;
+            $chart['views'][]    = (int) ($traffic[$key]->views ?? 0);
+            $chart['visitors'][] = (int) ($traffic[$key]->visitors ?? 0);
+            $chart['leads'][]    = (int) ($leads[$key] ?? 0);
+        }
+
+        return $chart;
     }
 
     /**

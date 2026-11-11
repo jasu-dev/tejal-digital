@@ -23,8 +23,19 @@
                 @endforeach
             </select>
         </div>
+        @if($channels->isNotEmpty())
+        <div>
+            <label class="block text-xs font-medium text-zinc-600 mb-1">Source</label>
+            <select name="channel" class="border border-zinc-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#D64523]/30 focus:border-[#D64523]">
+                <option value="">All Sources</option>
+                @foreach($channels as $c)
+                    <option value="{{ $c }}" {{ request('channel') === $c ? 'selected' : '' }}>{{ $c }}</option>
+                @endforeach
+            </select>
+        </div>
+        @endif
         <button type="submit" class="bg-zinc-900 text-white text-sm px-4 py-2 rounded-xl hover:bg-zinc-700 transition-colors">Filter</button>
-        @if(request()->anyFilled(['search', 'status']))
+        @if(request()->anyFilled(['search', 'status', 'channel']))
             <a href="{{ route('admin.leads.index') }}" class="text-sm text-zinc-400 hover:text-zinc-600 self-end py-2">Clear</a>
         @endif
     </form>
@@ -49,6 +60,7 @@
                         <th class="text-left px-5 py-3 text-xs font-semibold text-zinc-500 uppercase tracking-wider">Name</th>
                         <th class="text-left px-5 py-3 text-xs font-semibold text-zinc-500 uppercase tracking-wider hidden sm:table-cell">Email / Phone</th>
                         <th class="text-left px-5 py-3 text-xs font-semibold text-zinc-500 uppercase tracking-wider hidden md:table-cell">Service</th>
+                        <th class="text-left px-5 py-3 text-xs font-semibold text-zinc-500 uppercase tracking-wider hidden xl:table-cell">Source</th>
                         <th class="text-left px-5 py-3 text-xs font-semibold text-zinc-500 uppercase tracking-wider">Status</th>
                         <th class="text-left px-5 py-3 text-xs font-semibold text-zinc-500 uppercase tracking-wider hidden lg:table-cell">Received</th>
                         <th class="text-right px-5 py-3 text-xs font-semibold text-zinc-500 uppercase tracking-wider">Actions</th>
@@ -65,6 +77,14 @@
                             <p class="text-zinc-400 text-xs">{{ $lead->phone }}</p>
                         </td>
                         <td class="px-5 py-4 hidden md:table-cell text-zinc-600">{{ $lead->service }}</td>
+                        <td class="px-5 py-4 hidden xl:table-cell">
+                            @if($lead->channel)
+                                <p class="text-zinc-700">{{ $lead->channel }}@if($lead->referrer) <span class="text-zinc-400">· {{ parse_url($lead->referrer, PHP_URL_HOST) }}</span>@endif</p>
+                                <p class="text-zinc-400 text-xs">{{ $lead->formLabel() }} · {{ $lead->source_page }}</p>
+                            @else
+                                <span class="text-zinc-300 text-xs">Not recorded</span>
+                            @endif
+                        </td>
                         <td class="px-5 py-4">
                             <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium {{ $lead->status->badgeClass() }}">
                                 {{ $lead->status->label() }}

@@ -6,7 +6,7 @@
     title="View {{ $project['title'] }} case study">
 
     <div class="relative aspect-[16/10] overflow-hidden bg-zinc-100 border-b border-border">
-        <img src="{{ asset($project['image']) }}" alt="{{ $project['title'] }}" loading="lazy"
+        <img src="{{ asset($project['image']) }}" alt="{{ $project['alt'] ?? $project['title'] }}" loading="lazy"
             class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
         @if (!empty($project['category']))
             <span

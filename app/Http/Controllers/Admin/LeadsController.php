@@ -21,6 +21,10 @@ class LeadsController extends Controller
             $query->where('status', $request->status);
         }
 
+        if ($request->filled('channel')) {
+            $query->where('channel', $request->channel);
+        }
+
         if ($request->filled('search')) {
             $search = $request->search;
             $query->where(function ($q) use ($search): void {
@@ -33,8 +37,9 @@ class LeadsController extends Controller
 
         $leads    = $query->paginate(20)->withQueryString();
         $statuses = LeadStatus::cases();
+        $channels = ContactRequest::whereNotNull('channel')->distinct()->orderBy('channel')->pluck('channel');
 
-        return view('admin.leads.index', compact('leads', 'statuses'));
+        return view('admin.leads.index', compact('leads', 'statuses', 'channels'));
     }
 
     public function show(ContactRequest $lead): View

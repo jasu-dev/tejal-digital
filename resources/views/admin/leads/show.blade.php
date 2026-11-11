@@ -55,6 +55,51 @@
         </div>
     </div>
 
+    {{-- Lead Source --}}
+    <div class="bg-white rounded-2xl border border-zinc-200 p-5 space-y-3">
+        <h3 class="text-sm font-semibold text-zinc-900">How they found you</h3>
+        @if($lead->channel || $lead->form)
+            @php
+                $sourceRows = array_filter([
+                    'Traffic source'   => $lead->channel,
+                    'Referring site'   => $lead->referrer,
+                    'Landing page'     => $lead->landing_page,
+                    'Submitted via'    => $lead->form ? $lead->formLabel() : null,
+                    'Submitted on page' => $lead->source_page,
+                    'Campaign'         => collect([$lead->utm_source, $lead->utm_medium, $lead->utm_campaign])->filter()->implode(' / ') ?: null,
+                    'Device'           => collect([$lead->device_type, $lead->os, $lead->browser])->filter()->implode(' · ') ?: null,
+                    'Country'          => $lead->country,
+                ]);
+            @endphp
+            <dl class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                @foreach($sourceRows as $label => $value)
+                    <div class="min-w-0">
+                        <dt class="text-xs text-zinc-400 mb-0.5">{{ $label }}</dt>
+                        <dd class="text-zinc-700 font-medium break-words">{{ $value }}</dd>
+                    </div>
+                @endforeach
+            </dl>
+
+            @php $journey = $lead->journey(); @endphp
+            @if($journey->isNotEmpty())
+                <div class="pt-3 border-t border-zinc-100">
+                    <p class="text-xs text-zinc-400 mb-2">Pages viewed before contacting you ({{ $journey->count() }})</p>
+                    <ol class="space-y-1.5 text-sm">
+                        @foreach($journey as $step)
+                            <li class="flex items-center gap-3">
+                                <span class="w-5 h-5 shrink-0 rounded-full bg-[#D64523]/10 text-[#D64523] text-[10px] font-bold flex items-center justify-center">{{ $loop->iteration }}</span>
+                                <span class="flex-1 min-w-0 truncate text-zinc-700">{{ $step->path }}</span>
+                                <span class="text-xs text-zinc-400 shrink-0">{{ $step->visited_at->format('h:i A') }}</span>
+                            </li>
+                        @endforeach
+                    </ol>
+                </div>
+            @endif
+        @else
+            <p class="text-sm text-zinc-400">Source details are recorded for leads received after the analytics update.</p>
+        @endif
+    </div>
+
     {{-- Message --}}
     <div class="bg-white rounded-2xl border border-zinc-200 p-5">
         <h3 class="text-sm font-semibold text-zinc-900 mb-3">Message</h3>
