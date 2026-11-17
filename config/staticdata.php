@@ -25,7 +25,7 @@ return [
         'bio' => 'I started Tejal Digital to give businesses a development partner who actually writes the code and stays accountable for it. Over the last few years I\'ve built Laravel web apps, SaaS products, CRMs and high-performance WordPress sites for startups, agencies and growing businesses across India and beyond.',
         'quote' => 'Every project is built like it\'s my own business on the line - clean code, honest timelines and support long after launch.',
         'socials' => [
-            'linkedin' => 'https://www.linkedin.com/in/jaswant-lohmror',
+            'linkedin' => 'https://www.linkedin.com/in/mrjasudev/',
             'github' => 'https://github.com/jasu-dev',
             'instagram' => 'https://www.instagram.com/mrjasudev/',
             'facebook' => 'https://www.facebook.com/mrjasudev',

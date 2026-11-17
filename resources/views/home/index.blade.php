@@ -37,7 +37,7 @@
                     "sameAs": [
                     "https://www.facebook.com/tejaldigitalworks/",
                     "https://www.instagram.com/tejal.digital/",
-                    "http://linkedin.com/jaswant-lohmror"
+                    "https://www.linkedin.com/in/mrjasudev/"
                     ]
                 },
                 "offers": [

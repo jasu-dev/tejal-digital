@@ -26,7 +26,7 @@
                 "sameAs": [
                     "https://www.facebook.com/tejaldigitalworks/",
                     "https://www.instagram.com/tejal.digital/",
-                    "http://linkedin.com/jaswant-lohmror"
+                    "https://www.linkedin.com/in/mrjasudev/"
                 ]
             }
         </script>
@@ -129,7 +129,7 @@
                         class="text-gray-400 hover:text-amber-500 transition-colors">
                         <x-icons.facebook class="h-5 w-5" />
                     </a>
-                    <a href="http://linkedin.com/jaswant-lohmror"
+                    <a href="https://www.linkedin.com/in/mrjasudev/"
                         class="text-gray-400 hover:text-amber-500 transition-colors">
                         <x-icons.linkedin class="h-5 w-5" />
                     </a>
