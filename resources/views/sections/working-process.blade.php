@@ -51,7 +51,7 @@
                     <div class="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-3">03.
                         Development</div>
                     <p class="text-muted-foreground text-sm leading-relaxed max-w-[240px] mx-auto">
-                        High-performance engineering using modern serverless stacks and frameworks.</p>
+                        Clean, tested code using proven frameworks like Laravel and WordPress.</p>
                 </div>
             </div>
             <!-- Step 4 -->

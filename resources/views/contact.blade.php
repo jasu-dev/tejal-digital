@@ -56,7 +56,7 @@
             Let's Build Something <br> Amazing Together
         </h1>
         <p class="text-foreground md:text-base text-center max-w-xl mt-3">
-            Ready to transform your digital presence? Get in touch with our team of experts and let's discuss your project.
+            Ready to transform your digital presence? Get in touch and talk directly to the developer who will build your project.
         </p>
         <div class="flex flex-col justify-center sm:flex-row gap-4 mt-8">
             <a href="#contactForm">
@@ -228,6 +228,10 @@
                                     <x-icons.launch class="w-5 h-5" />
                                     <span>Send Message</span>
                                 </x-form.primary-button>
+                                <p class="text-xs text-muted-foreground text-center">
+                                    We only use your details to reply to your enquiry. See our
+                                    <a href="{{ route('legal.privacy') }}" class="underline hover:text-primary">Privacy Policy</a>.
+                                </p>
                             </form>
                         </div>
                     </div>
@@ -247,7 +251,7 @@
                                         'label' => 'Client Satisfaction',
                                         'val' => config('staticdata.satisfaction') . '%',
                                     ],
-                                    ['label' => 'Support', 'val' => '24/7 Expert'],
+                                    ['label' => 'Reply time', 'val' => 'Within 2 hrs'],
                                 ];
                             @endphp
                             @foreach ($stats as $stat)

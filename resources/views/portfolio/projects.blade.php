@@ -163,8 +163,8 @@
                 <h2 class="text-3xl lg:text-4xl font-bold tracking-tight">Selected work across web &amp; software</h2>
             </div>
             <p class="text-muted-foreground max-w-md">
-                Laravel platforms, SaaS products and high-performance WordPress builds - each one live and serving
-                real users.
+                A hand-picked selection from the {{ config('staticdata.projects') }}+ projects we have delivered —
+                Laravel platforms, SaaS products and high-performance WordPress builds.
             </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

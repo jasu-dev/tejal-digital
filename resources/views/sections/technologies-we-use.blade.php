@@ -23,7 +23,7 @@
             <span class="text-xs sm:text-sm font-semibold">Technologies</span>
         </div>
         <h2 class="text-3xl lg:text-5xl font-bold mb-5 tracking-tight">
-            We Built With Modern Tech
+            We Build With Modern Tech
         </h2>
         <p class="text-md sm:text-lg max-w-3xl mx-auto">
             A high-performance stack curated for speed, security, and scalability.

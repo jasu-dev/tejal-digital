@@ -82,7 +82,7 @@
                         </span>
                         <div class="text-xs">
                             <div class="text-muted-foreground">Security</div>
-                            <div class="font-semibold text-foreground">100% Secure</div>
+                            <div class="font-semibold text-foreground">Security-first build</div>
                         </div>
                     </div>
                 </div>
@@ -246,7 +246,7 @@
                     <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] -mr-32 -mt-32">
                     </div>
                     <span class="text-xs font-bold uppercase tracking-wider block mb-2">06</span>
-                    <h3 class="text-xl font-bold mb-3">24/7 Support & Maintenance
+                    <h3 class="text-xl font-bold mb-3">Ongoing Support & Maintenance
                     </h3>
                     <p class="text-sm leading-relaxed">From regular security
                         patches and performance optimization to feature additions, we keep your platform running perfectly.

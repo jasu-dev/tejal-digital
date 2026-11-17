@@ -210,9 +210,24 @@
 
         </div>
         <div class="flex flex-wrap items-center justify-center sm:justify-between gap-5 py-6 sm:py-4 border-t mt-6 border-white/10">
-            <div>
+            <div class="flex flex-wrap items-center justify-center gap-4">
                 <img src="{{ asset('assets/images/msme-logo.png') }}" alt="MSME Registered" class="h-10 w-auto bg-background rounded-md"/>
+                @if (config('staticdata.udyam_number') || config('staticdata.gstin'))
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        @if (config('staticdata.udyam_number'))
+                            Udyam Reg. No.: <span class="text-gray-300">{{ config('staticdata.udyam_number') }}</span>
+                        @endif
+                        @if (config('staticdata.gstin'))
+                            <br>GSTIN: <span class="text-gray-300">{{ config('staticdata.gstin') }}</span>
+                        @endif
+                    </p>
+                @endif
             </div>
+            <nav aria-label="Legal" class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-gray-300">
+                <a href="{{ route('legal.privacy') }}" class="hover:text-primary-500 transition-colors">Privacy Policy</a>
+                <a href="{{ route('legal.terms') }}" class="hover:text-primary-500 transition-colors">Terms &amp; Conditions</a>
+                <a href="{{ route('legal.refund') }}" class="hover:text-primary-500 transition-colors">Refund Policy</a>
+            </nav>
             <p>
                 Copyright {{ date('Y') }} © Tejal Digital. All Rights Reserved.
             </p>
@@ -245,7 +260,7 @@
                     Let's Build Something Great 🚀
                 </h2>
                 <p style="color:rgba(255,255,255,0.85); font-size:0.85rem; margin:0; line-height:1.6;">
-                    Drop your details and we'll get back to you within 24 hours with a free project estimate.
+                    Drop your details and we'll reply within 2 hours with a free project estimate.
                 </p>
             </div>
             {{-- Form body --}}
@@ -301,7 +316,7 @@
                         <span style="font-size:1rem;">→</span>
                     </button>
                     <p style="text-align:center; font-size:0.72rem; color:#9ca3af; margin:0;">
-                        🔒 Your info is safe. No spam, ever.
+                        🔒 Your info is safe. No spam, ever. <a href="{{ route('legal.privacy') }}" style="color:#6b7280; text-decoration:underline;">Privacy Policy</a>
                     </p>
                 </form>
             </div>
@@ -334,10 +349,31 @@
 
         // ── Lead Capture Popup ──────────────────────────────────────────
         (function () {
-            var STORAGE_KEY = 'td_lead_popup_shown';
-            var DELAY_MS    = 10000; // 10 seconds
+            var STORAGE_KEY  = 'td_lead_popup_seen_at';
+            var DELAY_MS     = 45000;                    // show after 45s on a page…
+            var EXIT_MIN_MS  = 10000;                    // …or on exit intent, but not in the first 10s
+            var SNOOZE_MS    = 7 * 24 * 60 * 60 * 1000;  // once seen, stay hidden for 7 days
+            var SKIP_ON_PAGE = @json(request()->routeIs('contact'));
+            var loadedAt     = Date.now();
+            var opened       = false;
+
+            function rememberSeen() {
+                try { localStorage.setItem(STORAGE_KEY, String(Date.now())); } catch(e) {}
+                try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
+            }
+
+            function recentlySeen() {
+                try { if (sessionStorage.getItem(STORAGE_KEY)) { return true; } } catch(e) {}
+                try {
+                    var seenAt = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
+                    return seenAt > 0 && Date.now() - seenAt < SNOOZE_MS;
+                } catch(e) { return false; }
+            }
 
             function openLeadPopup() {
+                if (opened) { return; }
+                opened = true;
+                rememberSeen();
                 var overlay = document.getElementById('leadPopupOverlay');
                 var card    = document.getElementById('leadPopupCard');
                 overlay.style.display = 'flex';
@@ -358,8 +394,7 @@
                 card.style.opacity   = '0';
                 setTimeout(function () { overlay.style.display = 'none'; }, 380);
                 document.removeEventListener('keydown', onEscKey);
-                // Remember that the popup was dismissed this session
-                try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
+                rememberSeen();
             };
 
             function onEscKey(e) {
@@ -404,7 +439,7 @@
                         if (res.ok) {
                             form.style.display = 'none';
                             document.getElementById('leadPopupSuccess').style.display = 'block';
-                            try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
+                            rememberSeen();
                             if (typeof gtag === 'function') { gtag('event', 'generate_lead', { form: 'popup' }); }
                             setTimeout(closeLeadPopup, 3500);
                         } else if (res.status === 422 && body.errors) {
@@ -421,13 +456,18 @@
                 });
             });
 
-            // Fire after delay — only once per session
-            try {
-                if (!sessionStorage.getItem(STORAGE_KEY)) {
-                    setTimeout(openLeadPopup, DELAY_MS);
-                }
-            } catch(e) {
+            // Don't interrupt people who are already on the contact page or saw the popup recently
+            if (!SKIP_ON_PAGE && !recentlySeen()) {
                 setTimeout(openLeadPopup, DELAY_MS);
+
+                // Desktop exit intent: pointer leaves through the top of the window (towards tabs / back button)
+                if (window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+                    document.addEventListener('mouseout', function (e) {
+                        if (!e.relatedTarget && e.clientY <= 0 && Date.now() - loadedAt >= EXIT_MIN_MS) {
+                            openLeadPopup();
+                        }
+                    });
+                }
             }
         })();
     </script>

@@ -173,7 +173,7 @@
             ],
             [
                 'icon' => 'wordpress',
-                'popular' => true,
+                'popular' => false,
                 'link' => route('services.wordpress-development'),
                 'title' => 'WordPress Website Development',
                 'description' =>
@@ -188,7 +188,7 @@
             ],
             [
                 'icon' => 'cart',
-                'popular' => true,
+                'popular' => false,
                 'link' => route('services.ecommerce-development'),
                 'title' => 'eCommerce Website Development',
                 'description' =>
@@ -203,7 +203,7 @@
             ],
             [
                 'icon' => 'dashboard',
-                'popular' => true,
+                'popular' => false,
                 'title' => 'SaaS Application Development',
                 'link' => route('services.saas-development'),
                 'description' =>
@@ -283,7 +283,7 @@
                 'key_points' => [
                     'Regular core & framework patches',
                     'Automated daily cloud backups',
-                    '24/7 server uptime monitoring',
+                    'Automated uptime monitoring & alerts',
                     'Continuous bug fixing support',
                     'Periodic database health tune-ups',
                 ],

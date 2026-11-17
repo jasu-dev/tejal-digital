@@ -45,6 +45,11 @@ Route::prefix('services')->group(function (): void {
     Route::view('/rest-api-development', 'services.api-development')->name('services.api-development');
 });
 
+// Legal
+Route::view('/privacy-policy', 'legal.privacy')->name('legal.privacy');
+Route::view('/terms-and-conditions', 'legal.terms')->name('legal.terms');
+Route::view('/refund-policy', 'legal.refund')->name('legal.refund');
+
 // Location landing pages
 Route::view('/website-development-company-in-lucknow', 'locations.lucknow')->name('locations.lucknow');
 

@@ -1,4 +1,5 @@
 @php
+    // Optional per testimonial: 'photo' (path in public/) and 'linkedin' (profile URL) — shown when set
     $testimonials = [
         [
             'initials' => 'AT',
@@ -45,6 +46,15 @@
                 <span><strong>{{ config('staticdata.satisfaction') }}%</strong> client satisfaction across
                     {{ config('staticdata.projects') }}+ projects</span>
             </div>
+            @if (config('staticdata.google_reviews_url'))
+                <div class="mt-3">
+                    <a href="{{ config('staticdata.google_reviews_url') }}" target="_blank" rel="noopener"
+                        class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline">
+                        Read our reviews on Google
+                        <x-icons.go class="w-3.5 h-3.5" />
+                    </a>
+                </div>
+            @endif
         </div>
 
         {{-- Highlighted Grid --}}
@@ -72,13 +82,24 @@
 
                     {{-- Author Info --}}
                     <div class="mt-auto flex items-center gap-4 pt-5 border-t border-border">
-                        <div
-                            class="w-12 h-12 shrink-0 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-primary-500/20">
-                            <span class="font-bold text-sm tracking-tighter">{{ $item['initials'] }}</span>
-                        </div>
-                        <div>
-                            <div class="font-bold group-hover:text-primary transition-colors">
+                        @if (!empty($item['photo']))
+                            <img src="{{ asset($item['photo']) }}" alt="{{ $item['name'] }}" loading="lazy"
+                                class="w-12 h-12 shrink-0 rounded-full object-cover border border-border">
+                        @else
+                            <div
+                                class="w-12 h-12 shrink-0 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-primary-500/20">
+                                <span class="font-bold text-sm tracking-tighter">{{ $item['initials'] }}</span>
+                            </div>
+                        @endif
+                        <div class="flex-1 min-w-0">
+                            <div class="font-bold group-hover:text-primary transition-colors flex items-center gap-1.5">
                                 {{ $item['name'] }}
+                                @if (!empty($item['linkedin']))
+                                    <a href="{{ $item['linkedin'] }}" target="_blank" rel="noopener"
+                                        class="text-[#0A66C2] hover:opacity-80" aria-label="{{ $item['name'] }} on LinkedIn">
+                                        <x-icons.linkedin class="w-4 h-4" />
+                                    </a>
+                                @endif
                             </div>
                             <div class="text-xs text-muted-foreground uppercase tracking-widest mt-0.5">
                                 {{ $item['role'] }}

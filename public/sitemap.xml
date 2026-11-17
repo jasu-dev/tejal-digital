@@ -136,4 +136,19 @@
   <lastmod>2026-11-11T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://tejaldigital.in/privacy-policy</loc>
+  <lastmod>2026-11-17T00:00:00+00:00</lastmod>
+  <priority>0.30</priority>
+</url>
+<url>
+  <loc>https://tejaldigital.in/terms-and-conditions</loc>
+  <lastmod>2026-11-17T00:00:00+00:00</lastmod>
+  <priority>0.30</priority>
+</url>
+<url>
+  <loc>https://tejaldigital.in/refund-policy</loc>
+  <lastmod>2026-11-17T00:00:00+00:00</lastmod>
+  <priority>0.30</priority>
+</url>
 </urlset>

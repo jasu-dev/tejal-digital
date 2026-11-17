@@ -1,65 +1,41 @@
 @php
+    // Only industries we have shipped real work for, each with the project that proves it
     $industries = [
         [
-            'icon' => 'shopping-bag',
-            'title' => 'eCommerce & Retail',
-            'description' => 'Custom online stores, multi-vendor marketplaces, and secure payment integrations.'
-        ],
-        [
-            'icon' => 'activity',
-            'title' => 'Healthcare & Wellness',
-            'description' => 'Secure, HIPAA-compliant patient portals, appointment scheduling, and clinic dashboards.'
-        ],
-        [
-            'icon' => 'building',
-            'title' => 'Real Estate & Property',
-            'description' => 'Dynamic listing portals, MLS/IDX API integrations, and CRM platforms for property managers.'
-        ],
-        [
             'icon' => 'graduation-cap',
-            'title' => 'Education & EdTech',
-            'description' => 'Custom Learning Management Systems (LMS), virtual courses, and student/parent portals.'
+            'title' => 'Education & Coaching',
+            'description' => 'Learning platforms with video courses, quizzes, certificates and online fee payment.',
+            'example' => 'KrishnaAcademy LMS',
+            'link' => route('portfolio.krishna-academy'),
         ],
         [
-            'icon' => 'truck',
-            'title' => 'Logistics & Supply Chain',
-            'description' => 'Real-time shipment tracking, fleet management software, and supplier API connections.'
-        ],
-        [
-            'icon' => 'landmark',
-            'title' => 'Finance & FinTech',
-            'description' => 'Secure investor portals, financial dashboards, and custom banking utility applications.'
-        ],
-        [
-            'icon' => 'globe',
-            'title' => 'Travel & Hospitality',
-            'description' => 'Custom booking search engines, travel itinerary builders, and luxury hotel websites.'
-        ],
-        [
-            'icon' => 'briefcase',
-            'title' => 'Professional Services',
-            'description' => 'Intake forms, scheduling portals, and billing solutions for law firms and agencies.'
-        ],
-        [
-            'icon' => 'factory',
-            'title' => 'Manufacturing & Industrial',
-            'description' => 'B2B ordering portals, inventory trackers, and legacy database modernizations.'
-        ],
-        [
-            'icon' => 'utensils',
-            'title' => 'Food & Restaurant',
-            'description' => 'Direct ordering web apps, multi-location digital menus, and reservation tables.'
-        ],
-        [
-            'icon' => 'play',
-            'title' => 'Entertainment & Media',
-            'description' => 'Video streaming platforms, premium member galleries, and digital download portals.'
+            'icon' => 'shopping-bag',
+            'title' => 'Retail & Loyalty Programs',
+            'description' => 'Reward-point systems, QR cards and shop-owner panels that bring customers back.',
+            'example' => 'Kifayat Card',
+            'link' => route('portfolio.kifayat-card'),
         ],
         [
             'icon' => 'launch',
-            'title' => 'SaaS & Tech Startups',
-            'description' => 'Multi-tenant subscription architectures, stripe billing checkouts, and custom API portals.'
-        ]
+            'title' => 'SaaS & Startups',
+            'description' => 'Subscription products with user and admin panels, payments and referral systems.',
+            'example' => 'Growix Smart QR, PromoFusion360',
+            'link' => route('portfolio.growix-smart-qr'),
+        ],
+        [
+            'icon' => 'globe',
+            'title' => 'News, Media & Blogs',
+            'description' => 'Fast publishing websites with custom CMS, SEO tools and ad placements.',
+            'example' => 'Gujjutak News, Tech Nukti, TechUpkar',
+            'link' => route('portfolio.gujjutak-news'),
+        ],
+        [
+            'icon' => 'briefcase',
+            'title' => 'Local & Service Businesses',
+            'description' => 'Lead-generating websites for interior designers, movers, clinics and hosting companies.',
+            'example' => 'Alacritys Interior, Jasol Packers & Movers, JixiCloud',
+            'link' => route('portfolio'),
+        ],
     ];
 @endphp
 
@@ -70,17 +46,18 @@
                 <span class="text-xs sm:text-sm font-semibold">Industries We Serve</span>
             </div>
             <h2 class="text-3xl lg:text-5xl font-bold tracking-tight mb-5">
-                Tailored Solutions for <span class="text-gradient">Your Industry</span>
+                Industries We Have <span class="text-gradient">Built For</span>
             </h2>
             <p class="text-md sm:text-lg max-w-3xl mx-auto text-muted-foreground">
-                We build high-performance web applications, custom CRM platforms, and eCommerce ecosystems designed specifically to meet the unique challenges of your industry.
+                Every industry below comes with a real project you can look at.
             </p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach ($industries as $industry)
-                <div class="rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/40 group relative overflow-hidden flex flex-col justify-between"
+                <a href="{{ $industry['link'] }}"
+                    class="rounded-2xl border border-border bg-card transition-all duration-300 hover:border-primary/40 group relative overflow-hidden flex flex-col"
                     data-aos="fade-up" data-aos-delay="{{ $loop->iteration * 50 }}" data-aos-duration="600">
-                    <div class="space-y-4 p-6">
+                    <div class="space-y-4 p-6 flex-1">
                         <div class="w-12 h-12 bg-primary/10 text-primary rounded-full border border-outline-variant/20 flex items-center justify-center group-hover:scale-110 transition-transform">
                             <x-dynamic-component :component="'icons.' . $industry['icon']" class="w-5 h-5" />
                         </div>
@@ -91,7 +68,11 @@
                             {{ $industry['description'] }}
                         </p>
                     </div>
-                </div>
+                    <div class="px-6 py-4 border-t border-border text-sm flex items-center justify-between gap-3">
+                        <span><span class="text-muted-foreground">Example:</span> <span class="font-semibold">{{ $industry['example'] }}</span></span>
+                        <x-icons.chevron-right class="w-4 h-4 shrink-0 text-primary group-hover:translate-x-1 transition-transform" />
+                    </div>
+                </a>
             @endforeach
         </div>
     </div>

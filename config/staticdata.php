@@ -10,6 +10,11 @@ return [
     'experience_years' => 6,
     'email' => 'team@tejaldigital.in',
     'phone' => '+91-8949714118',
+    // Business registration & reviews — shown on the site only when filled in
+    'udyam_number' => env('UDYAM_NUMBER'),
+    'gstin' => env('GSTIN'),
+    'google_reviews_url' => env('GOOGLE_REVIEWS_URL'),
+
     'whatsapp_url' => 'https://wa.me/918949714118?text=Hi%2C%20I%27m%20interested%20in%20your%20web%20development%20services.%20Can%20we%20discuss%20further%3F',
 
     // Founder

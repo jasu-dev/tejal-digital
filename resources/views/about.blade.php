@@ -3,14 +3,14 @@
     <!-- About Page -->
     <title>About Us | Tejal Digital - Expert Web Developers</title>
     <meta name="description"
-        content="Learn about Tejal Digital’s journey and team. We build scalable web solutions using Laravel, WordPress, and modern tech to power businesses globally.">
+        content="Tejal Digital is a founder-led web development studio. You work directly with the developer building your Laravel, WordPress or eCommerce project.">
     <link rel="canonical" href="@siteUrl">
     <meta name="keywords"
         content="About Tejal Digital, Web Developers, Development Company, Laravel Experts, Web Agency, Scalable Web Solutions">
     <!-- Open Graph -->
     <meta property="og:title" content="About Us | Tejal Digital">
     <meta property="og:description"
-        content="Meet the team behind Tejal Digital – building high-quality, scalable web solutions for global clients.">
+        content="A founder-led studio: you talk directly to the developer who writes your code.">
     <meta property="og:url" content="@siteUrl">
     <meta property="og:image" content="{{ asset('assets/images/og-image.png') }}">
     <!-- Twitter Card -->
@@ -27,15 +27,15 @@
         <div
             class="flex flex-wrap items-center justify-center p-2 px-4 mt-10 md:mt-28 bg-white/50 backdrop-blur-xl border border-white/20 rounded-2xl">
             <x-icons.users class="w-4 h-4" />
-            <p class="ml-2 text-foreground">About Our Team</p>
+            <p class="ml-2 text-foreground">About Tejal Digital</p>
         </div>
 
         <h1 class="text-3xl md:text-6xl text-center font-bold max-w-3xl my-5">
-            Meet the Creative Minds
+            A Founder-Led Web Development Studio
         </h1>
         <p class="text-foreground md:text-base text-center max-w-xl mt-3">
-            We're a passionate team of developers, designers, and digital strategists dedicated to creating exceptional web
-            experiences that drive business growth.
+            Tejal Digital is led by its founder and lead developer. You talk directly to the person writing your code,
+            and for specialist work we bring in trusted freelancers we have worked with before.
         </p>
 
         <div class="flex flex-col justify-center sm:flex-row gap-4 mt-8">
@@ -92,7 +92,7 @@
                                 config('staticdata.experience_years') . '+ Years Experience',
                                 config('staticdata.projects') . '+ Projects Done',
                                 config('staticdata.satisfaction') . '% Satisfaction Rate',
-                                '24/7 Expert Support',
+                                'Ongoing Support After Launch',
                                 'Modern Tech Stack',
                                 'Transparent Pricing',
                             ];
@@ -144,7 +144,7 @@
                         [
                             'icon' => 'users',
                             'title' => 'Collaboration',
-                            'desc' => 'We work closely with our clients as partners, not just service providers.',
+                            'desc' => 'You work directly with the developer, as a partner rather than a ticket in a queue.',
                         ],
                         [
                             'icon' => 'love',

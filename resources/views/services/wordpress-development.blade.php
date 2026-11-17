@@ -243,7 +243,7 @@
                     class="p-8 rounded-2xl bg-card border border-border hover:border-primary/40 transition duration-300 flex flex-col justify-between">
                     <div>
                         <div class="text-xs font-bold uppercase tracking-widest text-primary mb-4">06</div>
-                        <h3 class="text-xl font-bold text-foreground mb-3">24/7 Support & Optimization</h3>
+                        <h3 class="text-xl font-bold text-foreground mb-3">Ongoing Support & Optimization</h3>
                         <p class=" text-sm leading-relaxed">Websites require ongoing vigilance. We manage
                             routine cloud backups, database tuning, proactive security updates, and regular optimization to
                             prevent slowdowns.</p>
